@@ -1,12 +1,12 @@
 import { IMessageRenderer } from "../types";
 
 import React, { FunctionComponent } from "react";
-import { MsgDelegate } from "@keplr-wallet/proto-types/cosmos/staking/v1beta1/tx";
+import { MsgDelegate } from "@titan-wallet/proto-types/cosmos/staking/v1beta1/tx";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../../stores";
-import { CoinPrimitive, Staking } from "@keplr-wallet/stores";
-import { Bech32Address } from "@keplr-wallet/cosmos";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPrimitive, Staking } from "@titan-wallet/stores";
+import { Bech32Address } from "@titan-wallet/cosmos";
+import { CoinPretty } from "@titan-wallet/unit";
 import { FormattedMessage } from "react-intl";
 import { ItemLogo } from "../../../../main/token-detail/msg-items/logo";
 import { MessageDelegateIcon } from "../../../../../components/icon";

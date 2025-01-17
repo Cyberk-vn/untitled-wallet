@@ -1,5 +1,5 @@
 import Transport from '@ledgerhq/hw-transport';
-import {CosmosApp, getAppInfo} from '@keplr-wallet/ledger-cosmos';
+import {CosmosApp, getAppInfo} from '@titan-wallet/ledger-cosmos';
 import TransportBLE from '@ledgerhq/react-native-hw-transport-ble';
 
 export const LedgerUtils = {

@@ -1,6 +1,6 @@
-import { AminoSignResponse, StdSignDoc } from "@keplr-wallet/types";
+import { AminoSignResponse, StdSignDoc } from "@titan-wallet/types";
 
-export interface KeplrCoreTypes {
+export interface TitanCoreTypes {
   __core__getAnalyticsId(): Promise<string>;
   __core__privilageSignAminoWithdrawRewards(
     chainId: string,

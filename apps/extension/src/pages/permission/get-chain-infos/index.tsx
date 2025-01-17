@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import {
   GlobalPermissionData,
   InteractionWaitingData,
-} from "@keplr-wallet/background";
+} from "@titan-wallet/background";
 import { observer } from "mobx-react-lite";
 import { HeaderLayout } from "../../../layouts/header";
 import { useStore } from "../../../stores";
@@ -109,7 +109,7 @@ export const GlobalPermissionGetChainInfosPage: FunctionComponent<{
         <Box alignX="center">
           <Gutter size="2.5rem" />
           <Image
-            alt="Keplr Logo Image"
+            alt="Titan Logo Image"
             src={require("../../../public/assets/logo-256.png")}
             style={{ width: "4.625rem", height: "4.625rem" }}
           />

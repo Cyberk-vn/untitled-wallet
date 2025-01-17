@@ -12,7 +12,7 @@ import {ChainImageFallback} from '../../../../components/image';
 import {ViewToken} from '../..';
 import {useStore} from '../../../../stores';
 import {Stack} from '../../../../components/stack';
-import {IntPretty} from '@keplr-wallet/unit';
+import {IntPretty} from '@titan-wallet/unit';
 import {formatAprString} from '../../utils';
 import {AprItem} from '../../../../stores/aprs';
 import {ArrowRightIcon} from '../../../../components/icon/arrow-right';

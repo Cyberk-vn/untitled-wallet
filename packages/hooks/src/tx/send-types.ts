@@ -1,4 +1,4 @@
-import { IAccountStore, MsgOpt } from "@keplr-wallet/stores";
+import { IAccountStore, MsgOpt } from "@titan-wallet/stores";
 
 export type AccountStore = IAccountStore<{
   cosmos?: {

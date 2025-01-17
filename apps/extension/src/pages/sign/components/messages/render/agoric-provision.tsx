@@ -2,8 +2,8 @@ import { IMessageRenderer } from "../types";
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import { CustomIcon } from "./custom-icon";
-import { MsgProvision } from "@keplr-wallet/proto-types/agoric/swingset/msgs";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { MsgProvision } from "@titan-wallet/proto-types/agoric/swingset/msgs";
+import { Bech32Address } from "@titan-wallet/cosmos";
 
 const b = (...chunks: any) => <b>{chunks}</b>;
 

@@ -19,7 +19,7 @@ import Animated, {
 import {TextButton} from '../../components/text-button';
 import {useNotification} from '../../hooks/notification';
 import {FormattedMessage, useIntl} from 'react-intl';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
 
 const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
 

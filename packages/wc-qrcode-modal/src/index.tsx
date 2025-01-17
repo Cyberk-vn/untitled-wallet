@@ -5,7 +5,7 @@ import SignClient from "@walletconnect/sign-client";
 import { ProposalTypes } from "@walletconnect/types";
 import SessionProperties = ProposalTypes.SessionProperties;
 
-export class KeplrQRCodeModalV2 {
+export class TitanQRCodeModalV2 {
   constructor(
     public readonly signClient: SignClient,
     protected readonly uiOptions?: ModalUIOptions
@@ -19,17 +19,17 @@ export class KeplrQRCodeModalV2 {
             "cosmos_getAccounts",
             "cosmos_signDirect",
             "cosmos_signAmino",
-            "keplr_getKey",
-            "keplr_signAmino",
-            "keplr_signDirect",
-            "keplr_signArbitrary",
-            "keplr_enable",
-            "keplr_signEthereum",
-            "keplr_experimentalSuggestChain",
-            "keplr_suggestToken",
+            "titan_getKey",
+            "titan_signAmino",
+            "titan_signDirect",
+            "titan_signArbitrary",
+            "titan_enable",
+            "titan_signEthereum",
+            "titan_experimentalSuggestChain",
+            "titan_suggestToken",
           ],
           chains: [...chainIds.map((chainId) => `cosmos:${chainId}`)],
-          events: ["accountsChanged", "chainChanged", "keplr_accountsChanged"],
+          events: ["accountsChanged", "chainChanged", "titan_accountsChanged"],
         },
       },
     });
@@ -51,7 +51,7 @@ export class KeplrQRCodeModalV2 {
 
   open(uri: string, cb: any) {
     const wrapper = document.createElement("div");
-    wrapper.setAttribute("id", "keplr-qrcode-modal-v2");
+    wrapper.setAttribute("id", "titan-qrcode-modal-v2");
     document.body.appendChild(wrapper);
 
     ReactDom.render(
@@ -68,7 +68,7 @@ export class KeplrQRCodeModalV2 {
   }
 
   close() {
-    const wrapper = document.getElementById("keplr-qrcode-modal-v2");
+    const wrapper = document.getElementById("titan-qrcode-modal-v2");
     if (wrapper) {
       document.body.removeChild(wrapper);
     }

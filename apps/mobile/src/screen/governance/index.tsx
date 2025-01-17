@@ -4,7 +4,7 @@ import {useStyle} from '../../styles';
 import {PageWithScrollView} from '../../components/page';
 import {StyleSheet, Text, ViewStyle} from 'react-native';
 import {useStore} from '../../stores';
-import {Dec} from '@keplr-wallet/unit';
+import {Dec} from '@titan-wallet/unit';
 import {ViewToken} from '../../components/token-view';
 import {Gutter} from '../../components/gutter';
 import {useNavigation} from '@react-navigation/native';
@@ -21,7 +21,7 @@ import {
   GovernanceV1ChainIdentifiers,
   NoDashboardLinkIdentifiers,
 } from '../../config';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
 import {EmptyView, EmptyViewText} from '../../components/empty-view';
 import {Box} from '../../components/box';
 import {FormattedMessage, useIntl} from 'react-intl';

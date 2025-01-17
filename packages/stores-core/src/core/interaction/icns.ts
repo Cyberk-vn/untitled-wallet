@@ -1,6 +1,6 @@
 import { InteractionStore } from "./interaction";
 import { computed, makeObservable } from "mobx";
-import { InteractionWaitingData } from "@keplr-wallet/background";
+import { InteractionWaitingData } from "@titan-wallet/background";
 
 export class ICNSInteractionStore {
   constructor(protected readonly interactionStore: InteractionStore) {

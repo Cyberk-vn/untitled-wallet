@@ -1,11 +1,11 @@
 import {
   EthereumProviderRpcError,
-  KeplrError,
+  TitanError,
   Message,
   MessageRequester,
   Result,
-} from '@keplr-wallet/router';
-import {JSONUint8Array} from '@keplr-wallet/router';
+} from '@titan-wallet/router';
+import {JSONUint8Array} from '@titan-wallet/router';
 import EventEmitter from 'eventemitter3';
 import {RNRouterBackground, RNRouterUI} from './rn-router';
 
@@ -70,7 +70,7 @@ export class RNMessageRequesterBase implements MessageRequester {
       } else {
         if ('module' in result.error) {
           if (typeof result.error.module === 'string') {
-            throw new KeplrError(
+            throw new TitanError(
               result.error.module,
               result.error.code,
               result.error.message,

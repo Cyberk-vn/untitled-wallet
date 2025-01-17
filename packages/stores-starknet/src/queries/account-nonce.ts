@@ -1,4 +1,4 @@
-import { ChainGetter, QuerySharedContext } from "@keplr-wallet/stores";
+import { ChainGetter, QuerySharedContext } from "@titan-wallet/stores";
 import {
   ObservableStarknetChainJsonRpcQuery,
   ObservableStarknetChainJsonRpcQueryMap,

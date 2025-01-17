@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { TokenCW20Service } from "./service";
 import {
   GetAllTokenInfosMsg,
@@ -50,7 +50,7 @@ export const getHandler: (
           keyRingCosmosService
         )(env, msg as GetSecret20ViewingKey);
       default:
-        throw new KeplrError("tokens", 120, "Unknown msg type");
+        throw new TitanError("tokens", 120, "Unknown msg type");
     }
   };
 };

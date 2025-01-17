@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import { observer } from "mobx-react-lite";
-import { KeyInfo } from "@keplr-wallet/background";
+import { KeyInfo } from "@titan-wallet/background";
 import { useStore } from "../../../stores";
 import { BackButton } from "../../../layouts/header/components";
 import { HeaderLayout } from "../../../layouts/header";
@@ -28,7 +28,7 @@ import { Button } from "../../../components/button";
 import styled, { useTheme } from "styled-components";
 import { FloatingDropdown } from "../../../components/dropdown";
 import { FormattedMessage, useIntl } from "react-intl";
-import { App, AppCoinType } from "@keplr-wallet/ledger-cosmos";
+import { App, AppCoinType } from "@titan-wallet/ledger-cosmos";
 import { SearchTextInput } from "../../../components/input";
 import { SpringValue, animated, to, useSpringValue } from "@react-spring/web";
 import { defaultSpringConfig } from "../../../styles/spring";
@@ -1002,7 +1002,7 @@ const KeyringItem = observer<
             await keyRingStore.selectKeyRing(keyInfo.id);
             await chainStore.waitSyncedEnabledChains();
 
-            dispatchGlobalEventExceptSelf("keplr_keyring_changed");
+            dispatchGlobalEventExceptSelf("titan_keyring_changed");
 
             navigate(-1);
           }}

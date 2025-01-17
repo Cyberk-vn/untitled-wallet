@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { ChainsService } from "./service";
 import {
   GetChainInfosWithCoreTypesMsg,
@@ -20,7 +20,7 @@ import {
   GetChainInfoWithoutEndpointsMsg,
   PingMsg,
 } from "./messages";
-import { ChainInfo } from "@keplr-wallet/types";
+import { ChainInfo } from "@titan-wallet/types";
 import { getBasicAccessPermissionType, PermissionService } from "../permission";
 import { PermissionInteractiveService } from "../permission-interactive";
 
@@ -96,7 +96,7 @@ export const getHandler: (
           msg as ClearAllChainEndpointsMsg
         );
       default:
-        throw new KeplrError("chains", 110, "Unknown msg type");
+        throw new TitanError("chains", 110, "Unknown msg type");
     }
   };
 };

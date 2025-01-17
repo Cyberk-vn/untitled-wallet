@@ -122,7 +122,7 @@ export const DrawerContent: FunctionComponent = observer(() => {
             }}>
             <Columns sum={1} gutter={4} alignY="center">
               <Text style={style.flatten(['h3', 'color-text-low'])}>
-                <FormattedMessage id="page.main.components.menu-bar.go-to-keplr-chain-registry" />
+                <FormattedMessage id="page.main.components.menu-bar.go-tochain-registry" />
               </Text>
               <LinkIcon size={20} color={style.get('color-text-low').color} />
             </Columns>

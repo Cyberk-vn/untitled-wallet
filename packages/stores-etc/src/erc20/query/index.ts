@@ -2,7 +2,7 @@ import {
   HasMapStore,
   ObservableJsonRPCQuery,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { Interface } from "@ethersproject/abi";
 import { computed, makeObservable } from "mobx";
 

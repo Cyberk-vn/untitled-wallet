@@ -15,19 +15,19 @@ import {
   useNoopAmountConfig,
   useSenderConfig,
   useTxConfigsValidate,
-} from "@keplr-wallet/hooks-starknet";
+} from "@titan-wallet/hooks-starknet";
 import { Button } from "../../../../components/button";
 import { Column, Columns } from "../../../../components/column";
 import {
   SubmitStarknetTxHashMsg,
   GetStarknetKeyParamsSelectedMsg,
   PlainObject,
-} from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT, KeplrError } from "@keplr-wallet/router";
+} from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT, TitanError } from "@titan-wallet/router";
 import { FeeControl } from "../input/fee-control";
-import { ExtensionKVStore, sleep } from "@keplr-wallet/common";
-import { CoinPretty, Dec } from "@keplr-wallet/unit";
+import { ExtensionKVStore, sleep } from "@titan-wallet/common";
+import { CoinPretty, Dec } from "@titan-wallet/unit";
 import { num } from "starknet";
 import { useNotification } from "../../../../hooks/notification";
 import { connectAndSignDeployAccountTxWithLedger } from "../../../sign/utils/handle-starknet-sign";
@@ -570,7 +570,7 @@ export const AccountActivationModal: FunctionComponent<{
                     starknetAccount.setIsDeployingAccount(false);
 
                     if (
-                      e instanceof KeplrError &&
+                      e instanceof TitanError &&
                       e.module === ErrModuleLedgerSign
                     ) {
                       setLedgerInteractingError(e);

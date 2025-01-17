@@ -1,10 +1,10 @@
 import React, {FunctionComponent} from 'react';
 import {observer} from 'mobx-react-lite';
-import {Staking} from '@keplr-wallet/stores';
-import {Bech32Address} from '@keplr-wallet/cosmos';
-import {MsgUndelegate} from '@keplr-wallet/proto-types/cosmos/staking/v1beta1/tx';
-import {Coin} from '@keplr-wallet/types';
-import {CoinPretty} from '@keplr-wallet/unit';
+import {Staking} from '@titan-wallet/stores';
+import {Bech32Address} from '@titan-wallet/cosmos';
+import {MsgUndelegate} from '@titan-wallet/proto-types/cosmos/staking/v1beta1/tx';
+import {Coin} from '@titan-wallet/types';
+import {CoinPretty} from '@titan-wallet/unit';
 import {FormattedMessage} from 'react-intl';
 import {IMessageRenderer} from './types';
 import * as ExpoImage from 'expo-image';

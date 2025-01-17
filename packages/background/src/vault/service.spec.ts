@@ -1,5 +1,5 @@
 import { VaultService } from "./service";
-import { KVStore, MemoryKVStore } from "@keplr-wallet/common";
+import { KVStore, MemoryKVStore } from "@titan-wallet/common";
 
 describe("Test vault service", () => {
   // Add polyfill for `getRandomValues`

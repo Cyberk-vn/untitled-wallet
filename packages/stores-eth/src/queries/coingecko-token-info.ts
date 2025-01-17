@@ -3,7 +3,7 @@ import {
   HasMapStore,
   ObservableQuery,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { makeObservable } from "mobx";
 export class ObservableQueryCoingeckoTokenInfoInner extends ObservableQuery<{
   id: string;

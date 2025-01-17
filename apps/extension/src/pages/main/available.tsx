@@ -7,7 +7,7 @@ import {
   TokenItem,
   TokenTitleView,
 } from "./components";
-import { CoinPretty, Dec } from "@keplr-wallet/unit";
+import { CoinPretty, Dec } from "@titan-wallet/unit";
 import { ViewToken } from "./index";
 import { observer } from "mobx-react-lite";
 import { Stack } from "../../components/stack";
@@ -16,7 +16,7 @@ import { useStore } from "../../stores";
 import { Styles, TextButton } from "../../components/button-text";
 import { Box } from "../../components/box";
 import { Modal } from "../../components/modal";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { Gutter } from "../../components/gutter";
 import { EmptyView } from "../../components/empty-view";
 import { Subtitle3 } from "../../components/typography";
@@ -26,10 +26,10 @@ import { Caption2 } from "../../components/typography";
 import { ColorPalette } from "../../styles";
 import { FormattedMessage, useIntl } from "react-intl";
 import styled, { useTheme } from "styled-components";
-import { DenomHelper } from "@keplr-wallet/common";
+import { DenomHelper } from "@titan-wallet/common";
 import { TokenDetailModal } from "./token-detail";
 import { useSearchParams } from "react-router-dom";
-import { ChainInfo, ModularChainInfo } from "@keplr-wallet/types";
+import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 import { useGetSearchChains } from "../../hooks/use-get-search-chains";
 
 const zeroDec = new Dec(0);

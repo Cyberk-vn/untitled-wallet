@@ -56,7 +56,7 @@ export type ChainedFunctionifyTuple<
  *      단순히 이후의 object의 field들을 강제로 이전의 결과에 같은 key로 집어넣는다.
  *      즉, nested object나 deep object는 다루지 못 한다. 또한 `Base`로 전달된 값을 mutate한다.
  *      같은 key의 field가 이미 이전 결과에 존재한다면 오류를 던진다.
- *      @keplr-wallet/stores 패키지 내에서 필요로 하는 최소한의 기능만을 한다.
+ *      @titan-wallet/stores 패키지 내에서 필요로 하는 최소한의 기능만을 한다.
  *      최소한의 case만을 다룰 수 있기 때문에 어떤 함수인지 이해한 상태로만 사용하길 바람.
  *
  * @param baseStore The base store on top.

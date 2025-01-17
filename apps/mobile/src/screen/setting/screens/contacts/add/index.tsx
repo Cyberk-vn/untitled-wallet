@@ -4,7 +4,7 @@ import {
   useMemoConfig,
   useRecipientConfig,
   useTxConfigsValidate,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {useIntl} from 'react-intl';
 import {useStore} from '../../../../../stores';
 import {MemoInput} from '../../../../../components/input/memo-input';

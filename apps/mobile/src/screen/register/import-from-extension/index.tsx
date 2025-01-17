@@ -7,14 +7,14 @@ import {Gutter} from '../../../components/gutter';
 import {useStyle} from '../../../styles';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {RootStackParamList, StackNavProp} from '../../../navigation';
-import {BIP44HDPath, PlainObject} from '@keplr-wallet/background';
+import {BIP44HDPath, PlainObject} from '@titan-wallet/background';
 import {AddressBookData} from '../../../stores/ui-config/address-book';
 import {useStore} from '../../../stores';
 import {NamePasswordInput} from '../components/name-password-input';
 import {useForm} from 'react-hook-form';
 import {SVGLoadingIcon} from '../../../components/spinner';
-import {sortedJsonByKeyStringify} from '@keplr-wallet/common';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
+import {sortedJsonByKeyStringify} from '@titan-wallet/common';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
 import {FormattedMessage, useIntl} from 'react-intl';
 
 export const ImportFromExtensionScreen: FunctionComponent = observer(() => {
@@ -129,7 +129,7 @@ export const FinalizeImportFromExtensionScreen: FunctionComponent = observer(
     useEffect(() => {
       if (!needPassword) {
         (async () => {
-          // background에서의 체인 정보의 변경사항 (keplr-chain-registry로부터의) 등을 sync 해야한다.
+          // background에서의 체인 정보의 변경사항 (titan-chain-registry로부터의) 등을 sync 해야한다.
           // 사실 문제가 되는 부분은 유저가 install한 직후이다.
           // 유저가 install한 직후에 바로 register page를 열도록 background가 짜여져있기 때문에
           // 이 경우 background에서 chains service가 체인 정보를 업데이트하기 전에 register page가 열린다.

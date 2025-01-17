@@ -3,7 +3,7 @@ import {
   HasMapStore,
   ObservableJsonRPCQuery,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 
 export class ObservableStarknetChainJsonRpcQuery<
   T = unknown,
@@ -34,8 +34,8 @@ export class ObservableStarknetChainJsonRpcQuery<
 
   // TODO: 이 방식을 유지할지 직접 쿼리를 날리지 나중에 결정
   // protected override async fetchResponse(): Promise<{ headers: any; data: T }> {
-  //   const keplr = await getKeplrFromWindow();
-  //   const data = await keplr?.ethereum.request({
+  //   const titan = await getTitanFromWindow();
+  //   const data = await titan?.ethereum.request({
   //     method: this.method,
   //     params: this.params,
   //     chainId: this._chainId,

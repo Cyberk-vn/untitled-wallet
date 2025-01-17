@@ -2,14 +2,14 @@ import { IMessageRenderer } from "../types";
 import React, { FunctionComponent, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../../stores";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import { FormattedMessage } from "react-intl";
 import { Gutter } from "../../../../../components/gutter";
 import { Box } from "../../../../../components/box";
 import { XAxis } from "../../../../../components/axis";
 import { Button } from "../../../../../components/button";
-import { MsgPayPacketFee } from "@keplr-wallet/proto-types/ibc/applications/fee/v1/tx";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { MsgPayPacketFee } from "@titan-wallet/proto-types/ibc/applications/fee/v1/tx";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import { CustomIcon } from "./custom-icon";
 
 export const PayPacketFeeMessage: IMessageRenderer = {

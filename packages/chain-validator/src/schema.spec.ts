@@ -14,8 +14,8 @@ import {
   CW20Currency,
   FeeCurrency,
   Secret20Currency,
-} from "@keplr-wallet/types";
-import { Bech32Config } from "@keplr-wallet/types";
+} from "@titan-wallet/types";
+import { Bech32Config } from "@titan-wallet/types";
 import Joi from "joi";
 import { Mutable } from "utility-types";
 

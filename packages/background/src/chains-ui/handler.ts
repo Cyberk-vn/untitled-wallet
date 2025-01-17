@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { ChainsUIService } from "./service";
 import {
   GetEnabledChainIdentifiersMsg,
@@ -34,7 +34,7 @@ export const getHandler: (service: ChainsUIService) => Handler = (service) => {
           msg as GetVaultsByEnabledChainMsg
         );
       default:
-        throw new KeplrError("chains", 110, "Unknown msg type");
+        throw new TitanError("chains", 110, "Unknown msg type");
     }
   };
 };

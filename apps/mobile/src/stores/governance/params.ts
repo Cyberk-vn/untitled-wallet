@@ -2,7 +2,7 @@ import {
   ChainGetter,
   ObservableChainQuery,
   QuerySharedContext,
-} from '@keplr-wallet/stores';
+} from '@titan-wallet/stores';
 import {GovParamsDeposit, GovParamsTally, GovParamsVoting} from './types';
 
 export class ObservableQueryGovParamTally extends ObservableChainQuery<GovParamsTally> {

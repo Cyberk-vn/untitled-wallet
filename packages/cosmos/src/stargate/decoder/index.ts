@@ -3,10 +3,10 @@ import {
   SignDoc,
   SignDocDirectAux,
   TxBody,
-} from "@keplr-wallet/proto-types/cosmos/tx/v1beta1/tx";
+} from "@titan-wallet/proto-types/cosmos/tx/v1beta1/tx";
 import { AnyWithUnpacked, defaultProtoCodec, ProtoCodec } from "../codec";
-import { SignMode } from "@keplr-wallet/proto-types/cosmos/tx/signing/v1beta1/signing";
-import { sortObjectByKey } from "@keplr-wallet/common";
+import { SignMode } from "@titan-wallet/proto-types/cosmos/tx/signing/v1beta1/signing";
+import { sortObjectByKey } from "@titan-wallet/common";
 
 export class ProtoSignDocDecoder {
   public static decode(bytes: Uint8Array): ProtoSignDocDecoder {

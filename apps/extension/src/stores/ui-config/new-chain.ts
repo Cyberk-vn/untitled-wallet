@@ -11,11 +11,11 @@ import {
   KVStore,
   PrefixKVStore,
   sortedJsonByKeyStringify,
-} from "@keplr-wallet/common";
+} from "@titan-wallet/common";
 import { ChainStore } from "../chain";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import semver from "semver";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import Joi from "joi";
 import { ChangelogConfig } from "./changelog";
 

@@ -2,9 +2,9 @@ import React, { FunctionComponent, useMemo } from "react";
 import { MsgHistory } from "../types";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import { MsgItemBase } from "./base";
-import { Staking } from "@keplr-wallet/stores";
+import { Staking } from "@titan-wallet/stores";
 import { ItemLogo } from "./logo";
 import { MessageCancelUndelegateIcon } from "../../../../components/icon";
 

@@ -5,7 +5,7 @@ import {
 } from "../../chain-query";
 import { ChainGetter } from "../../../chain";
 import { computed, makeObservable } from "mobx";
-import { CoinPretty, Dec, Int } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, Int } from "@titan-wallet/unit";
 import {
   CoinPrimitive,
   QueryResponse,

@@ -1,4 +1,4 @@
-import { KeplrError, Message } from "@keplr-wallet/router";
+import { TitanError, Message } from "@titan-wallet/router";
 import { ROUTE } from "./constants";
 
 export class EnableAccessMsg extends Message<void> {
@@ -12,7 +12,7 @@ export class EnableAccessMsg extends Message<void> {
 
   validateBasic(): void {
     if (!this.chainIds || this.chainIds.length === 0) {
-      throw new KeplrError("permission", 100, "chain id not set");
+      throw new TitanError("permission", 100, "chain id not set");
     }
   }
 
@@ -92,7 +92,7 @@ export class DisableAccessMsg extends Message<void> {
 
   validateBasic(): void {
     if (!this.chainIds) {
-      throw new KeplrError("permission", 100, "chain id not set");
+      throw new TitanError("permission", 100, "chain id not set");
     }
   }
 
@@ -120,7 +120,7 @@ export class IsEnabledAccessMsg extends Message<boolean> {
 
   validateBasic(): void {
     if (!this.chainIds || this.chainIds.length === 0) {
-      throw new KeplrError("permission", 100, "chain id not set");
+      throw new TitanError("permission", 100, "chain id not set");
     }
   }
 

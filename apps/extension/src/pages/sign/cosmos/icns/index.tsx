@@ -8,7 +8,7 @@ import { ColorPalette } from "../../../../styles";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
 import { useInteractionInfo } from "../../../../hooks";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useTheme } from "styled-components";
 import { handleExternalInteractionWithNoProceedNext } from "../../../../utils";
@@ -123,7 +123,7 @@ export const SignCosmosICNSPage: FunctionComponent = observer(() => {
       <Box height="100%" padding="0.75rem" paddingBottom="0">
         <Box alignX="center">
           <Image
-            alt="Keplr Logo Image"
+            alt="Titan Logo Image"
             src={require("../../../../public/assets/icns-logo.svg")}
             style={{ width: "4.625rem", height: "4.625rem" }}
           />

@@ -4,7 +4,7 @@ import {
   IGasConfig,
   IGasSimulator,
   ISenderConfig,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../../stores';
 import {FormattedMessage, useIntl} from 'react-intl';
@@ -20,7 +20,7 @@ import {Text, View} from 'react-native';
 import {Button} from '../../button';
 import {TextInput} from '../text-input/text-input';
 import {Dropdown} from '../../dropdown';
-import {Dec} from '@keplr-wallet/unit';
+import {Dec} from '@titan-wallet/unit';
 import {registerCardModal} from '../../modal/card';
 import {VerticalCollapseTransition} from '../../transition';
 import {GuideBox} from '../../guide-box';

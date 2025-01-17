@@ -29,8 +29,8 @@ export const WasmMessageView: FunctionComponent<{
   useEffect(() => {
     // If msg is string, it will be the message for secret-wasm.
     // So, try to decrypt.
-    // But, if this msg is not encrypted via Keplr, Keplr cannot decrypt it.
-    // TODO: Handle the error case. If an error occurs, rather than rejecting the signing, it informs the user that Keplr cannot decrypt it and allows the user to choose.
+    // But, if this msg is not encrypted via Titan, Titan cannot decrypt it.
+    // TODO: Handle the error case. If an error occurs, rather than rejecting the signing, it informs the user that Titan cannot decrypt it and allows the user to choose.
     if (isSecretWasm && typeof msg === 'string') {
       (async () => {
         try {
@@ -39,12 +39,12 @@ export const WasmMessageView: FunctionComponent<{
           const nonce = cipherText.slice(0, 32);
           cipherText = cipherText.slice(64);
 
-          const keplr = await accountStore.getAccount(chainId).getKeplr();
-          if (!keplr) {
-            throw new Error("Can't get the keplr API");
+          const titan = await accountStore.getAccount(chainId).getTitan();
+          if (!titan) {
+            throw new Error("Can't get the titan API");
           }
 
-          const enigmaUtils = keplr.getEnigmaUtils(chainId);
+          const enigmaUtils = titan.getEnigmaUtils(chainId);
           let plainText = Buffer.from(
             await enigmaUtils.decrypt(cipherText, nonce),
           );
@@ -57,7 +57,7 @@ export const WasmMessageView: FunctionComponent<{
           setWarningMsg('');
         } catch {
           setWarningMsg(
-            "Failed to decrypt Secret message. This may be due to Keplr's encrypt/decrypt seed not matching the transaction seed.",
+            "Failed to decrypt Secret message. This may be due to Titan's encrypt/decrypt seed not matching the transaction seed.",
           );
         }
       })();

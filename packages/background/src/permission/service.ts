@@ -1,5 +1,5 @@
 import { InteractionService } from "../interaction";
-import { Env, KeplrError, WEBPAGE_PORT } from "@keplr-wallet/router";
+import { Env, TitanError, WEBPAGE_PORT } from "@titan-wallet/router";
 import {
   AllPermissionDataPerOrigin,
   getBasicAccessPermissionType,
@@ -9,9 +9,9 @@ import {
   PermissionData,
   PermissionOptions,
 } from "./types";
-import { KVStore } from "@keplr-wallet/common";
+import { KVStore } from "@titan-wallet/common";
 import { ChainsService } from "../chains";
-import { ChainInfo } from "@keplr-wallet/types";
+import { ChainInfo } from "@titan-wallet/types";
 import { action, autorun, makeObservable, observable, runInAction } from "mobx";
 import { migrate } from "./migrate";
 import { computedFn } from "mobx-utils";
@@ -323,7 +323,7 @@ export class PermissionService {
     }
 
     if (!this.hasPermission(chainId, type, origin)) {
-      throw new KeplrError("permission", 130, `${origin} is not permitted`);
+      throw new TitanError("permission", 130, `${origin} is not permitted`);
     }
   }
 
@@ -377,7 +377,7 @@ export class PermissionService {
     }
 
     if (!this.hasGlobalPermission(type, origin)) {
-      throw new KeplrError("permission", 130, `${origin} is not permitted`);
+      throw new TitanError("permission", 130, `${origin} is not permitted`);
     }
   }
 
@@ -655,7 +655,7 @@ export class PermissionService {
 
       this.interactionService.dispatchEvent(
         WEBPAGE_PORT,
-        "keplr_chainChanged",
+        "titan_chainChanged",
         {
           origin,
           evmChainId: evmInfo.chainId,
@@ -713,7 +713,7 @@ export class PermissionService {
 
       this.interactionService.dispatchEvent(
         WEBPAGE_PORT,
-        "keplr_starknetChainChanged",
+        "titan_starknetChainChanged",
         {
           origin,
           starknetChainId,

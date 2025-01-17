@@ -2,10 +2,10 @@ import {
   ObservableChainQuery,
   ChainGetter,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { TaxCaps, TaxRate } from "./types";
 import { computed, makeObservable } from "mobx";
-import { RatePretty, Int } from "@keplr-wallet/unit";
+import { RatePretty, Int } from "@titan-wallet/unit";
 import { computedFn } from "mobx-utils";
 
 export class ObservableQueryTaxCaps extends ObservableChainQuery<TaxCaps> {

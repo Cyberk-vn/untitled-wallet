@@ -1,9 +1,9 @@
-import { KVStore, PrefixKVStore } from "@keplr-wallet/common";
+import { KVStore, PrefixKVStore } from "@titan-wallet/common";
 import { action, autorun, makeObservable, observable, runInAction } from "mobx";
 import { computedFn } from "mobx-utils";
 import { Channel } from "./types";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
-import { IChainStore } from "@keplr-wallet/stores";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
+import { IChainStore } from "@titan-wallet/stores";
 
 /**
  * IBCChannelStore saves the IBC channel infomations to the storage.

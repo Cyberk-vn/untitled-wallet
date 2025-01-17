@@ -3,7 +3,7 @@ import {observer} from 'mobx-react-lite';
 import {TextInput} from '../../../components/input';
 import {Controller, useForm} from 'react-hook-form';
 import {useStore} from '../../../stores';
-import {InteractionWaitingData} from '@keplr-wallet/background';
+import {InteractionWaitingData} from '@titan-wallet/background';
 import {useIntl} from 'react-intl';
 import {Box} from '../../../components/box';
 import {useStyle} from '../../../styles';

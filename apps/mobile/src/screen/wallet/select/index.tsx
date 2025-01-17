@@ -9,7 +9,7 @@ import {observer} from 'mobx-react-lite';
 import {
   GetCosmosKeysForEachVaultSettledMsg,
   KeyInfo,
-} from '@keplr-wallet/background';
+} from '@titan-wallet/background';
 import {useStore} from '../../../stores';
 import {Box} from '../../../components/box';
 import {XAxis, YAxis} from '../../../components/axis';
@@ -18,14 +18,14 @@ import {Gutter} from '../../../components/gutter';
 import {Column, Columns} from '../../../components/column';
 import {CopyOutlineIcon} from '../../../components/icon';
 import {Button} from '../../../components/button';
-import {App, AppCoinType} from '@keplr-wallet/ledger-cosmos';
+import {App, AppCoinType} from '@titan-wallet/ledger-cosmos';
 import {StyleSheet, Text} from 'react-native';
 import {StackActions, useNavigation} from '@react-navigation/native';
 import {useIntl} from 'react-intl';
 import {EllipsisIcon} from '../../../components/icon/ellipsis';
 import {StackNavProp} from '../../../navigation';
 import * as ExpoImage from 'expo-image';
-import {BACKGROUND_PORT} from '@keplr-wallet/router';
+import {BACKGROUND_PORT} from '@titan-wallet/router';
 import {RNMessageRequesterInternal} from '../../../router';
 import * as Clipboard from 'expo-clipboard';
 import {MenuModal, ModalMenuItem} from '../../../components/modal/menu-modal';

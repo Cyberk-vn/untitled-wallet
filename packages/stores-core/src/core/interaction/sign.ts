@@ -1,8 +1,8 @@
 import { InteractionStore } from "./interaction";
 import { computed, makeObservable } from "mobx";
-import { SignDocWrapper } from "@keplr-wallet/cosmos";
-import { KeplrSignOptions, StdSignDoc } from "@keplr-wallet/types";
-import { InteractionWaitingData, PlainObject } from "@keplr-wallet/background";
+import { SignDocWrapper } from "@titan-wallet/cosmos";
+import { TitanSignOptions, StdSignDoc } from "@titan-wallet/types";
+import { InteractionWaitingData, PlainObject } from "@titan-wallet/background";
 
 export type SignInteractionData =
   | {
@@ -12,7 +12,7 @@ export type SignInteractionData =
       signer: string;
       pubKey: Uint8Array;
       signDoc: StdSignDoc;
-      signOptions: KeplrSignOptions & {
+      signOptions: TitanSignOptions & {
         isADR36WithString?: boolean;
       };
       keyType: string;
@@ -32,7 +32,7 @@ export type SignInteractionData =
       pubKey: Uint8Array;
       signDocBytes: Uint8Array;
       isDirectAux?: boolean;
-      signOptions: KeplrSignOptions;
+      signOptions: TitanSignOptions;
       keyType: string;
       keyInsensitive: PlainObject;
     };

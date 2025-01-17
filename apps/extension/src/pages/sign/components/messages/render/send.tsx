@@ -1,16 +1,16 @@
 import { IMessageRenderer } from "../types";
 
 import React, { FunctionComponent } from "react";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../../stores";
-import { Bech32Address } from "@keplr-wallet/cosmos";
-import { MsgSend } from "@keplr-wallet/proto-types/cosmos/bank/v1beta1/tx";
-import { Coin } from "@keplr-wallet/types";
+import { Bech32Address } from "@titan-wallet/cosmos";
+import { MsgSend } from "@titan-wallet/proto-types/cosmos/bank/v1beta1/tx";
+import { Coin } from "@titan-wallet/types";
 import { FormattedMessage } from "react-intl";
 import { MessageSendIcon } from "../../../../../components/icon";
 import { ItemLogo } from "../../../../main/token-detail/msg-items/logo";
-import { MsgSend as ThorMsgSend } from "@keplr-wallet/proto-types/thorchain/v1/types/msg_send";
+import { MsgSend as ThorMsgSend } from "@titan-wallet/proto-types/thorchain/v1/types/msg_send";
 
 export const SendMessage: IMessageRenderer = {
   process(chainId: string, msg) {

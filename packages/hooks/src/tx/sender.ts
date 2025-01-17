@@ -1,7 +1,7 @@
 import { ISenderConfig, UIProperties } from "./types";
 import { TxChainSetter } from "./chain";
 import { action, makeObservable, observable } from "mobx";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { useState } from "react";
 
 export class SenderConfig extends TxChainSetter implements ISenderConfig {

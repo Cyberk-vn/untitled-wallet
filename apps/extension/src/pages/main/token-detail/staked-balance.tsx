@@ -6,7 +6,7 @@ import { XAxis, YAxis } from "../../../components/axis";
 import { Gutter } from "../../../components/gutter";
 import { Body3, Subtitle1, Subtitle3 } from "../../../components/typography";
 import { useStore } from "../../../stores";
-import { Dec } from "@keplr-wallet/unit";
+import { Dec } from "@titan-wallet/unit";
 import { useTheme } from "styled-components";
 
 export const StakedBalance: FunctionComponent<{

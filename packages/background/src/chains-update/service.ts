@@ -1,7 +1,7 @@
-import { KVStore, isServiceWorker } from "@keplr-wallet/common";
+import { KVStore, isServiceWorker } from "@titan-wallet/common";
 import { ChainsService } from "../chains";
 import { ChainsUIService } from "../chains-ui";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { autorun, makeObservable, observable, runInAction, toJS } from "mobx";
 
 /**

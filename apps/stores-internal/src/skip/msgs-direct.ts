@@ -3,11 +3,11 @@ import {
   HasMapStore,
   ObservableQuery,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { MsgsDirectResponse } from "./types";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import { computed, makeObservable } from "mobx";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import Joi from "joi";
 
 const Schema = Joi.object<MsgsDirectResponse>({

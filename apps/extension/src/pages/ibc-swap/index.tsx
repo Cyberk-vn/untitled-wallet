@@ -11,18 +11,18 @@ import { useNavigate } from "react-router";
 import {
   IBCSwapAmountConfig,
   useIBCSwapConfig,
-} from "@keplr-wallet/hooks-internal";
+} from "@titan-wallet/hooks-internal";
 import { SwapAssetInfo } from "./components/swap-asset-info";
 import { SwapFeeInfo } from "./components/swap-fee-info";
 import { Gutter } from "../../components/gutter";
 import { ColorPalette } from "../../styles";
-import { ExtensionKVStore } from "@keplr-wallet/common";
+import { ExtensionKVStore } from "@titan-wallet/common";
 import {
   EmptyAmountError,
   useGasSimulator,
   useTxConfigsValidate,
   ZeroAmountError,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { useNotification } from "../../hooks/notification";
 import { FormattedMessage, useIntl } from "react-intl";
 import { SwapFeeBps, TermsOfUseUrl } from "../../config.ui";
@@ -37,18 +37,18 @@ import styled, { useTheme } from "styled-components";
 import { GuideBox } from "../../components/guide-box";
 import { VerticalCollapseTransition } from "../../components/transition/vertical-collapse";
 import { useGlobarSimpleBar } from "../../hooks/global-simplebar";
-import { Dec, DecUtils, Int } from "@keplr-wallet/unit";
-import { MakeTxResponse, WalletStatus } from "@keplr-wallet/stores";
+import { Dec, DecUtils, Int } from "@titan-wallet/unit";
+import { MakeTxResponse, WalletStatus } from "@titan-wallet/stores";
 import { autorun } from "mobx";
 import {
   LogAnalyticsEventMsg,
   RecordTxWithSkipSwapMsg,
   SendTxAndRecordMsg,
   SendTxAndRecordWithIBCSwapMsg,
-} from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT, Message } from "@keplr-wallet/router";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+} from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT, Message } from "@titan-wallet/router";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { useEffectOnce } from "../../hooks/use-effect-once";
 import { amountToAmbiguousAverage, amountToAmbiguousString } from "../../utils";
 import { Button } from "../../components/button";
@@ -56,8 +56,8 @@ import { TextButtonProps } from "../../components/button-text";
 import {
   UnsignedEVMTransaction,
   UnsignedEVMTransactionWithErc20Approvals,
-} from "@keplr-wallet/stores-eth";
-import { EthTxStatus } from "@keplr-wallet/types";
+} from "@titan-wallet/stores-eth";
+import { EthTxStatus } from "@titan-wallet/types";
 
 const TextButtonStyles = {
   Container: styled.div`
@@ -192,7 +192,7 @@ export const IBCSwapPage: FunctionComponent = observer(() => {
       [key: string]: number | undefined;
     };
     swapFeeBps?: 50;
-  }>(process.env["KEPLR_EXT_CONFIG_SERVER"], "/swap-fee/info.json");
+  }>(process.env["TITAN_EXT_CONFIG_SERVER"], "/swap-fee/info.json");
   useEffect(() => {
     const defaultSwapFeeBps = SwapFeeBps.value;
     if (querySwapFeeBps.response) {
@@ -808,17 +808,17 @@ export const IBCSwapPage: FunctionComponent = observer(() => {
               routeDurationSeconds =
                 queryRoute.response.data.estimated_route_duration_seconds;
 
-              // 일단은 체인 id를 keplr에서 사용하는 형태로 바꿔야 한다.
+              // 일단은 체인 id를 titan에서 사용하는 형태로 바꿔야 한다.
               for (const chainId of queryRoute.response.data.chain_ids) {
                 const isOnlyEvm = parseInt(chainId) > 0;
-                const chainIdInKeplr = isOnlyEvm
+                const chainIdInTitan = isOnlyEvm
                   ? `eip155:${chainId}`
                   : chainId;
-                if (!chainStore.hasChain(chainIdInKeplr)) {
+                if (!chainStore.hasChain(chainIdInTitan)) {
                   continue;
                 }
 
-                const receiverAccount = accountStore.getAccount(chainIdInKeplr);
+                const receiverAccount = accountStore.getAccount(chainIdInTitan);
                 if (receiverAccount.walletStatus !== WalletStatus.Loaded) {
                   await receiverAccount.init();
                 }
@@ -836,7 +836,7 @@ export const IBCSwapPage: FunctionComponent = observer(() => {
                       receiverChainInfo.evm != null)
                   ) {
                     throw new Error(
-                      "Please connect Ethereum app on Ledger with Keplr to get the address"
+                      "Please connect Ethereum app on Ledger with Titan to get the address"
                     );
                   }
 
@@ -847,7 +847,7 @@ export const IBCSwapPage: FunctionComponent = observer(() => {
 
                 simpleRoute.push({
                   isOnlyEvm,
-                  chainId: chainIdInKeplr,
+                  chainId: chainIdInTitan,
                   receiver: isOnlyEvm
                     ? receiverAccount.ethereumHexAddress
                     : receiverAccount.bech32Address,
@@ -920,7 +920,7 @@ export const IBCSwapPage: FunctionComponent = observer(() => {
                       receiverChainInfo.evm != null)
                   ) {
                     throw new Error(
-                      "Please connect Ethereum app on Ledger with Keplr to get the address"
+                      "Please connect Ethereum app on Ledger with Titan to get the address"
                     );
                   }
 

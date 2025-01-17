@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { SendTxMsg, SubmitStarknetTxHashMsg } from "./messages";
 import { BackgroundTxService } from "./service";
 import { PermissionInteractiveService } from "../permission-interactive";
@@ -26,7 +26,7 @@ export const getHandler: (
           msg as SubmitStarknetTxHashMsg
         );
       default:
-        throw new KeplrError("tx", 110, "Unknown msg type");
+        throw new TitanError("tx", 110, "Unknown msg type");
     }
   };
 };

@@ -3,8 +3,8 @@ import {
   FnRequestInteraction,
   MessageSender,
   APP_PORT,
-} from "@keplr-wallet/router";
-import { openPopupWindow as openPopupWindowInner } from "@keplr-wallet/popup";
+} from "@titan-wallet/router";
+import { openPopupWindow as openPopupWindowInner } from "@titan-wallet/popup";
 import { InExtensionMessageRequester } from "../requester";
 import { ReplacePageMsg } from "../interaction-addon";
 

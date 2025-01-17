@@ -1,5 +1,5 @@
 import { serialize, TransactionTypes } from "@ethersproject/transactions";
-import { EthSignType } from "@keplr-wallet/types";
+import { EthSignType } from "@titan-wallet/types";
 import { KeystoneEthereumSDK } from "@keystonehq/keystone-sdk";
 
 export interface KeystoneUR {

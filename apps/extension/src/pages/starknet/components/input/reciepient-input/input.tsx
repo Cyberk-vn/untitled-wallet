@@ -5,7 +5,7 @@ import {
   EmptyAddressError,
   IRecipientConfig,
   IRecipientConfigWithStarknetID,
-} from "@keplr-wallet/hooks-starknet";
+} from "@titan-wallet/hooks-starknet";
 import { ProfileIcon } from "../../../../../components/icon";
 import { Box } from "../../../../../components/box";
 import { AddressBookModal } from "../../address-book-modal";

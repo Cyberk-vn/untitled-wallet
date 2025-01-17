@@ -1,5 +1,5 @@
-import { IChainStore } from "@keplr-wallet/stores";
-import { ChainInfo } from "@keplr-wallet/types";
+import { IChainStore } from "@titan-wallet/stores";
+import { ChainInfo } from "@titan-wallet/types";
 
 export interface InternalChainStore<C extends ChainInfo = ChainInfo>
   extends IChainStore<C> {

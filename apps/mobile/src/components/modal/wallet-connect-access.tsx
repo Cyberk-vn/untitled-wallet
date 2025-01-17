@@ -8,7 +8,7 @@ import {Text} from 'react-native';
 import {XAxis} from '../axis';
 import {Button} from '../button';
 import {Gutter} from '../gutter';
-import {PermissionData} from '@keplr-wallet/background';
+import {PermissionData} from '@titan-wallet/background';
 import {WCMessageRequester} from '../../stores/wallet-connect/msg-requester';
 import * as ExpoImage from 'expo-image';
 import {Box} from '../box';

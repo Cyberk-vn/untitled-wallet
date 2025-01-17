@@ -4,7 +4,7 @@ import {useStore} from '../../stores';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {useStyle} from '../../styles';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
-import {WalletStatus} from '@keplr-wallet/stores';
+import {WalletStatus} from '@titan-wallet/stores';
 import {autorun} from 'mobx';
 import {RootStackParamList, StackNavProp} from '../../navigation';
 import {PageWithScrollView} from '../../components/page';
@@ -90,7 +90,7 @@ export const MigrationScreen: FunctionComponent = observer(() => {
 
         <React.Fragment>
           <Text style={style.flatten(['h1', 'color-text-high'])}>
-            <FormattedMessage id="page.unlock.paragraph-section.keplr-here" />
+            <FormattedMessage id="page.unlock.paragraph-section.titan-here" />
           </Text>
         </React.Fragment>
 

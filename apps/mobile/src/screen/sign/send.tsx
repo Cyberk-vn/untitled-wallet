@@ -1,9 +1,9 @@
-import {MsgSend} from '@keplr-wallet/proto-types/cosmos/bank/v1beta1/tx';
+import {MsgSend} from '@titan-wallet/proto-types/cosmos/bank/v1beta1/tx';
 import React, {FunctionComponent} from 'react';
-import {Coin} from '@keplr-wallet/types';
+import {Coin} from '@titan-wallet/types';
 import {observer} from 'mobx-react-lite';
-import {CoinPretty} from '@keplr-wallet/unit';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {CoinPretty} from '@titan-wallet/unit';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {IMessageRenderer} from './types';
 import * as ExpoImage from 'expo-image';
 import {FormattedMessage} from 'react-intl';

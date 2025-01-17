@@ -4,10 +4,10 @@ import {
   EmptyAmountError,
   IAmountConfig,
   ZeroAmountError,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { TextInput } from "../text-input";
 import { useStore } from "../../../stores";
-import { CoinPretty, Dec, DecUtils } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, DecUtils } from "@titan-wallet/unit";
 import { Box } from "../../box";
 import { Body2, Body3, Button2 } from "../../typography";
 import { ColorPalette } from "../../../styles";

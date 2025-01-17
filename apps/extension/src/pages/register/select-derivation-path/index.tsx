@@ -25,12 +25,12 @@ import { Styles } from "./styles";
 import { WalletIcon } from "../../../components/icon/wallet";
 import { Button } from "../../../components/button";
 import { useStore } from "../../../stores";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import { useNavigate } from "react-router";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useTheme } from "styled-components";
-import { AppCurrency } from "@keplr-wallet/types";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { AppCurrency } from "@titan-wallet/types";
+import { CoinPretty } from "@titan-wallet/unit";
 import { dispatchGlobalEventExceptSelf } from "../../../utils/global-events";
 
 export const SelectDerivationPathScene: FunctionComponent<{
@@ -129,7 +129,7 @@ export const SelectDerivationPathScene: FunctionComponent<{
             }
             await chainStore.enableChainInfoInUIWithVaultId(vaultId, chainId);
 
-            dispatchGlobalEventExceptSelf("keplr_derivation_path_changed", {
+            dispatchGlobalEventExceptSelf("titan_derivation_path_changed", {
               chainId,
               keyId: vaultId,
             });
@@ -251,7 +251,7 @@ export const SelectDerivationPathScene: FunctionComponent<{
                   chainId
                 );
 
-                dispatchGlobalEventExceptSelf("keplr_derivation_path_changed", {
+                dispatchGlobalEventExceptSelf("titan_derivation_path_changed", {
                   chainId,
                   keyId: vaultId,
                 });

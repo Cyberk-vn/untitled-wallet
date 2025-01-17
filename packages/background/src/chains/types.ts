@@ -1,4 +1,4 @@
-import { ChainInfo } from "@keplr-wallet/types";
+import { ChainInfo } from "@titan-wallet/types";
 
 export type ChainInfoWithSuggestedOptions = ChainInfo & {
   readonly updateFromRepoDisabled?: boolean;

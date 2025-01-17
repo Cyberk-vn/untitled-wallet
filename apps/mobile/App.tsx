@@ -39,10 +39,10 @@ import {ErrorBoundary} from './error-boundary';
 import {APP_VERSION, CODEPUSH_VERSION} from './constants';
 import {UpdateProgress} from './update-progress';
 import {APP_STORE_URL, PLAY_STORE_URL} from './src/config';
-import {simpleFetch} from '@keplr-wallet/simple-fetch';
+import {simpleFetch} from '@titan-wallet/simple-fetch';
 import {LedgerBLEProvider} from './src/provider/ledger-ble';
 import Bugsnag from '@bugsnag/react-native';
-import {ImportFromExtensionProvider} from 'keplr-wallet-mobile-private';
+import {ImportFromExtensionProvider} from 'titan-wallet-mobile-private';
 import {AsyncKVStore} from './src/common';
 import {AutoLock} from './src/components/unlock-modal';
 import {setJSExceptionHandler} from 'react-native-exception-handler';
@@ -336,8 +336,8 @@ class AppUpdateWrapper extends Component<{}, AppUpdateWrapperState> {
 
     const storeApiUrl =
       Platform.OS === 'ios'
-        ? '/lookup?bundleId=com.chainapsis.keplrwallet'
-        : '/store/apps/details?id=com.chainapsis.keplr';
+        ? '/lookup?bundleId=com.chainapsis.titanwallet'
+        : '/store/apps/details?id=com.chainapsis.titan';
 
     const response = await simpleFetch(baseURL, storeApiUrl);
 
@@ -378,8 +378,8 @@ class AppUpdateWrapper extends Component<{}, AppUpdateWrapperState> {
             newVersionAvailable: true,
             updateURL:
               Platform.OS === 'ios'
-                ? `https://apps.apple.com/${country}/app/keplr-wallet/id${iosTrackId}`
-                : `https://play.google.com/store/apps/details?id=com.chainapsis.keplr&hl=${country}`,
+                ? `https://apps.apple.com/${country}/app/titan-wallet/id${iosTrackId}`
+                : `https://play.google.com/store/apps/details?id=com.chainapsis.titan&hl=${country}`,
           },
         });
       }

@@ -4,16 +4,16 @@ import {
   TxChainSetter,
   UIProperties,
 } from "../tx";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { action, computed, makeObservable, observable } from "mobx";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import { SignDocHelper } from "./index";
 import { useState } from "react";
-import { Msg } from "@keplr-wallet/types";
-import { AnyWithUnpacked, UnknownMessage } from "@keplr-wallet/cosmos";
-import { MsgSend } from "@keplr-wallet/proto-types/cosmos/bank/v1beta1/tx";
-import { MsgDelegate } from "@keplr-wallet/proto-types/cosmos/staking/v1beta1/tx";
-import { MsgTransfer } from "@keplr-wallet/proto-types/ibc/applications/transfer/v1/tx";
+import { Msg } from "@titan-wallet/types";
+import { AnyWithUnpacked, UnknownMessage } from "@titan-wallet/cosmos";
+import { MsgSend } from "@titan-wallet/proto-types/cosmos/bank/v1beta1/tx";
+import { MsgDelegate } from "@titan-wallet/proto-types/cosmos/staking/v1beta1/tx";
+import { MsgTransfer } from "@titan-wallet/proto-types/ibc/applications/transfer/v1/tx";
 
 // This config helps the fee config to calculate that the fee is enough to send with considering
 // the amount in the sign doc.

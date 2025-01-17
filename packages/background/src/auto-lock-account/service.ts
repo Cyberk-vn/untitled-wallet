@@ -1,4 +1,4 @@
-import { KVStore } from "@keplr-wallet/common";
+import { KVStore } from "@titan-wallet/common";
 import { KeyRingService } from "../keyring";
 import { action, autorun, makeObservable, observable, runInAction } from "mobx";
 

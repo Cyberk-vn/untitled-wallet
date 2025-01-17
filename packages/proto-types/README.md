@@ -1,4 +1,4 @@
-This package is used inside the keplr-wallet library.  
+This package is used inside the titan-wallet library.  
 The protobuf option differs from cosmjs. There’s no guarantee that this could be used with cosmjs, as it’s also not recommended.  
 
 This package is created by proto-types-gen directory.  

@@ -1,4 +1,4 @@
-import { ObservableQuery, QuerySharedContext } from "@keplr-wallet/stores";
+import { ObservableQuery, QuerySharedContext } from "@titan-wallet/stores";
 
 export class ObservableQueryTokenContracts extends ObservableQuery<
   TokenContract[]

@@ -13,7 +13,7 @@ import LottieView from 'lottie-react-native';
 import * as Clipboard from 'expo-clipboard';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../stores';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {Bech32Address} from '@titan-wallet/cosmos';
 
 export const CopyAddressModal = registerCardModal(
   observer<{

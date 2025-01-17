@@ -1,5 +1,5 @@
-import { Message } from "@keplr-wallet/router";
-import { SettledResponses } from "@keplr-wallet/types";
+import { Message } from "@titan-wallet/router";
+import { SettledResponses } from "@titan-wallet/types";
 import { ROUTE } from "./constants";
 import {
   Call,

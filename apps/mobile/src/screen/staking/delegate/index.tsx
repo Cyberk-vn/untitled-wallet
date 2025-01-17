@@ -7,7 +7,7 @@ import {
   useGasSimulator,
   useDelegateTxConfig,
   useTxConfigsValidate,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {AsyncKVStore} from '../../../common';
 import {AmountInput} from '../../../components/input/amount-input';
 import {MemoInput} from '../../../components/input/memo-input';
@@ -22,7 +22,7 @@ import {ValidatorCard} from '../components/validator-card';
 import {GuideBox} from '../../../components/guide-box';
 import {useNotification} from '../../../hooks/notification';
 import {useIntl} from 'react-intl';
-import {simpleFetch} from '@keplr-wallet/simple-fetch';
+import {simpleFetch} from '@titan-wallet/simple-fetch';
 import {APR_API_URL} from '../../../config.ts';
 
 export const SignDelegateScreen: FunctionComponent = observer(() => {

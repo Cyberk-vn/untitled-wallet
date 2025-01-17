@@ -3,7 +3,7 @@ import {Box} from '../../../../components/box';
 import {TokenTitleView} from '../token';
 import {Stack} from '../../../../components/stack';
 import {useStyle} from '../../../../styles';
-import {ChainInfo} from '@keplr-wallet/types';
+import {ChainInfo} from '@titan-wallet/types';
 import {Gutter} from '../../../../components/gutter';
 import {ChainImageFallback} from '../../../../components/image';
 import {Column, Columns} from '../../../../components/column';

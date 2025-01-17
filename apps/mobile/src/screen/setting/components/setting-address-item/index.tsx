@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from 'react';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {Text} from 'react-native';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {useStyle} from '../../../../styles';
 import {Box} from '../../../../components/box';
 import {Column, Columns} from '../../../../components/column';

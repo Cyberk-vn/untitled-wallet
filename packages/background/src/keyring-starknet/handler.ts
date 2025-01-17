@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   GetStarknetKeyMsg,
   GetStarknetKeysSettledMsg,
@@ -68,7 +68,7 @@ export const getHandler: (
           msg as GetStarknetKeyParamsSelectedMsg
         );
       default:
-        throw new KeplrError("keyring", 221, "Unknown msg type");
+        throw new TitanError("keyring", 221, "Unknown msg type");
     }
   };
 };
@@ -187,7 +187,7 @@ const handleRequestJsonRpcToStarknetMsg: (
 ) => {
   return async (env, msg) => {
     let skipEnable = false;
-    if (msg.method === "keplr_initStarknetProviderState") {
+    if (msg.method === "titan_initStarknetProviderState") {
       skipEnable = true;
     }
     if (msg.method === "wallet_getPermissions") {

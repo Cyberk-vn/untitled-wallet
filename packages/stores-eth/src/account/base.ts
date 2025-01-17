@@ -1,12 +1,12 @@
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import {
   AppCurrency,
   ERC20Currency,
   EthSignType,
   EthTxReceipt,
-  Keplr,
-} from "@keplr-wallet/types";
-import { DenomHelper, retry } from "@keplr-wallet/common";
+  Titan,
+} from "@titan-wallet/types";
+import { DenomHelper, retry } from "@titan-wallet/common";
 import { erc20ContractInterface } from "../constants";
 import { hexValue } from "@ethersproject/bytes";
 import { parseUnits } from "@ethersproject/units";
@@ -54,7 +54,7 @@ export class EthereumAccountBase {
   constructor(
     protected readonly chainGetter: ChainGetter,
     protected readonly chainId: string,
-    protected readonly getKeplr: () => Promise<Keplr | undefined>
+    protected readonly getTitan: () => Promise<Titan | undefined>
   ) {
     makeObservable(this);
   }
@@ -78,8 +78,8 @@ export class EthereumAccountBase {
     const { to, value, data } = unsignedTx;
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const keplr = (await this.getKeplr())!;
-    const gasEstimated = await keplr.ethereum.request<string>({
+    const titan = (await this.getTitan())!;
+    const gasEstimated = await titan.ethereum.request<string>({
       method: "eth_estimateGas",
       params: [
         {
@@ -152,8 +152,8 @@ export class EthereumAccountBase {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const keplr = (await this.getKeplr())!;
-    const implementationAddress = await keplr.ethereum.request<string>({
+    const titan = (await this.getTitan())!;
+    const implementationAddress = await titan.ethereum.request<string>({
       method: "eth_call",
       params: [
         {
@@ -168,7 +168,7 @@ export class EthereumAccountBase {
     const gasPriceOracleContractAddress =
       "0x" + implementationAddress.slice(26);
 
-    const l1Fee = await keplr.ethereum.request<string>({
+    const l1Fee = await titan.ethereum.request<string>({
       method: "eth_call",
       params: [
         {
@@ -290,9 +290,9 @@ export class EthereumAccountBase {
       }
 
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const keplr = (await this.getKeplr())!;
+      const titan = (await this.getTitan())!;
 
-      const transactionCount = await keplr.ethereum.request<string>({
+      const transactionCount = await titan.ethereum.request<string>({
         method: "eth_getTransactionCount",
         params: [sender, "pending"],
         chainId: this.chainId,
@@ -302,7 +302,7 @@ export class EthereumAccountBase {
         nonce: parseInt(transactionCount),
       };
 
-      const signEthereum = keplr.signEthereum.bind(keplr);
+      const signEthereum = titan.signEthereum.bind(titan);
 
       const signature = await signEthereum(
         this.chainId,
@@ -322,7 +322,7 @@ export class EthereumAccountBase {
         "hex"
       );
 
-      const sendEthereumTx = keplr.sendEthereumTx.bind(keplr);
+      const sendEthereumTx = titan.sendEthereumTx.bind(titan);
       const txHash = await sendEthereumTx(this.chainId, signedTx);
       if (!txHash) {
         throw new Error("No tx hash responded");
@@ -335,7 +335,7 @@ export class EthereumAccountBase {
       retry(
         () => {
           return new Promise<void>(async (resolve, reject) => {
-            const txReceipt = await keplr.ethereum.request<EthTxReceipt>({
+            const txReceipt = await titan.ethereum.request<EthTxReceipt>({
               method: "eth_getTransactionReceipt",
               params: [txHash],
               chainId: this.chainId,

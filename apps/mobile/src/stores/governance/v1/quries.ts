@@ -3,7 +3,7 @@ import {
   ObservableQueryStakingPool,
   QueriesSetBase,
   QuerySharedContext,
-} from '@keplr-wallet/stores';
+} from '@titan-wallet/stores';
 import {DeepReadonly} from 'utility-types';
 import {ObservableQueryGovernanceV1} from './proposals';
 import {ObservableQueryProposalVoteV1} from './vote';

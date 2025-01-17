@@ -3,9 +3,9 @@ import {
   MessageRequester,
   Result,
   JSONUint8Array,
-  KeplrError,
+  TitanError,
   EthereumProviderRpcError,
-} from '@keplr-wallet/router';
+} from '@titan-wallet/router';
 import EventEmitter from 'eventemitter3';
 
 export class WCMessageRequester implements MessageRequester {
@@ -15,11 +15,11 @@ export class WCMessageRequester implements MessageRequester {
   ) {}
 
   static getVirtualURL = (id: string): string => {
-    return `https://keplr_wc_virtual@2.${id}`;
+    return `https://titan_wc_virtual@2.${id}`;
   };
 
   static isVirtualURL = (url: string): boolean => {
-    return url.startsWith('https://keplr_wc_virtual@2.');
+    return url.startsWith('https://titan_wc_virtual@2.');
   };
 
   static getIdFromVirtualURL = (url: string): string => {
@@ -27,7 +27,7 @@ export class WCMessageRequester implements MessageRequester {
       throw new Error('URL is not for wallet connect v2');
     }
 
-    return url.replace('https://keplr_wc_virtual@2.', '').replace('/', '');
+    return url.replace('https://titan_wc_virtual@2.', '').replace('/', '');
   };
 
   async sendMessage<M extends Message<unknown>>(
@@ -75,7 +75,7 @@ export class WCMessageRequester implements MessageRequester {
       } else {
         if ('module' in result.error) {
           if (typeof result.error.module === 'string') {
-            throw new KeplrError(
+            throw new TitanError(
               result.error.module,
               result.error.code,
               result.error.message,

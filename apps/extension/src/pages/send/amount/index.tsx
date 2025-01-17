@@ -19,7 +19,7 @@ import {
   useGasSimulator,
   useSendMixedIBCTransferConfig,
   useTxConfigsValidate,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { useNavigate } from "react-router";
 import { AmountInput, RecipientInput } from "../../../components/input";
 import { TokenItem } from "../../main/components";
@@ -30,17 +30,17 @@ import { XAxis, YAxis } from "../../../components/axis";
 import { Gutter } from "../../../components/gutter";
 import { FeeControl } from "../../../components/input/fee-control";
 import { useNotification } from "../../../hooks/notification";
-import { DenomHelper, ExtensionKVStore } from "@keplr-wallet/common";
+import { DenomHelper, ExtensionKVStore } from "@titan-wallet/common";
 import { ENSInfo, ICNSInfo } from "../../../config.ui";
-import { CoinPretty, Dec, DecUtils } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, DecUtils } from "@titan-wallet/unit";
 import { ColorPalette } from "../../../styles";
-import { openPopupWindow } from "@keplr-wallet/popup";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT, Message } from "@keplr-wallet/router";
+import { openPopupWindow } from "@titan-wallet/popup";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT, Message } from "@titan-wallet/router";
 import {
   LogAnalyticsEventMsg,
   SendTxAndRecordMsg,
-} from "@keplr-wallet/background";
+} from "@titan-wallet/background";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useTxConfigsQueryString } from "../../../hooks/use-tx-config-query-string";
 import { LayeredHorizontalRadioGroup } from "../../../components/radio-group";
@@ -52,9 +52,9 @@ import {
 import { useIBCChannelConfigQueryString } from "../../../hooks/use-ibc-channel-config-query-string";
 import { VerticalCollapseTransition } from "../../../components/transition/vertical-collapse";
 import { GuideBox } from "../../../components/guide-box";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { amountToAmbiguousAverage, isRunningInSidePanel } from "../../../utils";
-import { EthTxStatus } from "@keplr-wallet/types";
+import { EthTxStatus } from "@titan-wallet/types";
 
 const Styles = {
   Flex1: styled.div`

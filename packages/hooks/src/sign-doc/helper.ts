@@ -1,16 +1,16 @@
 import { action, computed, makeObservable, observable } from "mobx";
 import { useState } from "react";
 import { IFeeConfig, IMemoConfig } from "../tx";
-import { SignDocWrapper } from "@keplr-wallet/cosmos";
+import { SignDocWrapper } from "@titan-wallet/cosmos";
 import {
   SignDoc,
   SignDocDirectAux,
   TxBody,
   AuthInfo,
   Fee,
-} from "@keplr-wallet/proto-types/cosmos/tx/v1beta1/tx";
-import { escapeHTML } from "@keplr-wallet/common";
-import { StdFee } from "@keplr-wallet/types";
+} from "@titan-wallet/proto-types/cosmos/tx/v1beta1/tx";
+import { escapeHTML } from "@titan-wallet/common";
+import { StdFee } from "@titan-wallet/types";
 import { Mutable } from "utility-types";
 
 export class SignDocHelper {
@@ -45,7 +45,7 @@ export class SignDocHelper {
       const signDoc = {
         ...aminoSignDoc,
         // XXX: Set fee payer/granter if the requested sign doc has fee payer/granter.
-        //      Currently, there is no support for fee delegation within keplr,
+        //      Currently, there is no support for fee delegation within titan,
         //      but this handling is essential for external services that set fee payer/granter.
         fee: (() => {
           const fee = { ...stdFee } as Mutable<StdFee>;

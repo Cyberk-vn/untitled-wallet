@@ -1,10 +1,10 @@
-import { KVStore } from "@keplr-wallet/common";
-import { Env } from "@keplr-wallet/router";
+import { KVStore } from "@titan-wallet/common";
+import { Env } from "@titan-wallet/router";
 import {
-  KEPLR_EXT_ANALYTICS_API_URL,
-  KEPLR_EXT_ANALYTICS_API_AUTH_TOKEN,
+  TITAN_EXT_ANALYTICS_API_URL,
+  TITAN_EXT_ANALYTICS_API_AUTH_TOKEN,
 } from "./constants";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import { action, autorun, makeObservable, observable, runInAction } from "mobx";
 
 export class AnalyticsService {
@@ -76,7 +76,7 @@ export class AnalyticsService {
       number | string | boolean | number[] | string[] | undefined
     >
   ): Promise<void> {
-    if (!KEPLR_EXT_ANALYTICS_API_URL || !KEPLR_EXT_ANALYTICS_API_AUTH_TOKEN) {
+    if (!TITAN_EXT_ANALYTICS_API_URL || !TITAN_EXT_ANALYTICS_API_AUTH_TOKEN) {
       return;
     }
 
@@ -110,11 +110,11 @@ export class AnalyticsService {
       })
     ).toString("base64");
     await simpleFetch(
-      KEPLR_EXT_ANALYTICS_API_URL,
+      TITAN_EXT_ANALYTICS_API_URL,
       `/log?msg=${encodeURIComponent(loggingMsg)}`,
       {
         headers: {
-          Authorization: KEPLR_EXT_ANALYTICS_API_AUTH_TOKEN,
+          Authorization: TITAN_EXT_ANALYTICS_API_AUTH_TOKEN,
         },
       }
     );

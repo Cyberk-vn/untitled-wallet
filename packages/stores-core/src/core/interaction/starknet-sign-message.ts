@@ -1,4 +1,4 @@
-import { PlainObject } from "@keplr-wallet/background";
+import { PlainObject } from "@titan-wallet/background";
 import { InteractionStore } from "./interaction";
 import { computed, makeObservable } from "mobx";
 import { TypedData as StarknetTypedData } from "starknet";

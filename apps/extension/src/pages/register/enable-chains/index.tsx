@@ -14,8 +14,8 @@ import {
   useSceneEvents,
   useSceneTransition,
 } from "../../../components/transition";
-import { ModularChainInfo } from "@keplr-wallet/types";
-import { CoinPretty, Dec } from "@keplr-wallet/unit";
+import { ModularChainInfo } from "@titan-wallet/types";
+import { CoinPretty, Dec } from "@titan-wallet/unit";
 import { Box } from "../../../components/box";
 import { Column, Columns } from "../../../components/column";
 import { XAxis, YAxis } from "../../../components/axis";
@@ -34,9 +34,9 @@ import { useEffectOnce } from "../../../hooks/use-effect-once";
 import { useNavigate } from "react-router";
 import { ChainImageFallback } from "../../../components/image";
 import { Checkbox } from "../../../components/checkbox";
-import { KeyRingCosmosService } from "@keplr-wallet/background";
-import { WalletStatus } from "@keplr-wallet/stores";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { KeyRingCosmosService } from "@titan-wallet/background";
+import { WalletStatus } from "@titan-wallet/stores";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { TextButton } from "../../../components/button-text";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Tag } from "../../../components/tag";
@@ -1244,7 +1244,7 @@ export const EnableChainsScene: FunctionComponent<{
               ]);
 
               dispatchGlobalEventExceptSelf(
-                "keplr_enabled_chain_changed",
+                "titan_enabled_chain_changed",
                 vaultId
               );
 
@@ -1276,7 +1276,7 @@ export const EnableChainsScene: FunctionComponent<{
                           ...ledgerStarknetAppNeeds
                         );
                         dispatchGlobalEventExceptSelf(
-                          "keplr_enabled_chain_changed",
+                          "titan_enabled_chain_changed",
                           keyInfo.id
                         );
                         replaceToWelcomePage();
@@ -1316,7 +1316,7 @@ export const EnableChainsScene: FunctionComponent<{
                           ...ledgerEthereumAppNeeds
                         );
                         dispatchGlobalEventExceptSelf(
-                          "keplr_enabled_chain_changed",
+                          "titan_enabled_chain_changed",
                           keyInfo.id
                         );
                         sceneTransition.push("enable-chains", {

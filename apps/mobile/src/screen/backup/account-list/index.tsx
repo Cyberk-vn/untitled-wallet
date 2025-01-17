@@ -1,11 +1,11 @@
 import React, {FunctionComponent, useEffect, useMemo, useState} from 'react';
 import {observer} from 'mobx-react-lite';
 import {RNMessageRequesterInternal} from '../../../router';
-import {BACKGROUND_PORT} from '@keplr-wallet/router';
+import {BACKGROUND_PORT} from '@titan-wallet/router';
 import {
   GetLegacyKeyRingInfosMsg,
   KeyRingLegacy,
-} from '@keplr-wallet/background';
+} from '@titan-wallet/background';
 import {StyleSheet, Text} from 'react-native';
 import {Box} from '../../../components/box';
 import {useStyle} from '../../../styles';

@@ -2,14 +2,14 @@ import { PhishingListService } from "./service";
 import Http from "http";
 
 const phishings = [
-  "keplr-vvallet-app.online",
+  "titan-vvallet-app.online",
   "xn--kplr-vva.com",
-  "keplr-vvallet.tech",
-  "app-keplr-vvallet.online",
-  "keplr-vvallet-app.space",
-  "keplr-vvallet-app.host",
-  "app-keplr-vvallet.tech",
-  "app-keplr-vvallet.host",
+  "titan-vvallet.tech",
+  "appvvallet.online",
+  "titan-vvallet-app.space",
+  "titan-vvallet-app.host",
+  "appvvallet.tech",
+  "appvvallet.host",
 ];
 
 const subdomains = ["scam1.service.com", "scam2.service.com"];

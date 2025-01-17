@@ -6,10 +6,10 @@ import {
   IChainInfoImpl,
   IQueriesStore,
   QueryError,
-} from '@keplr-wallet/stores';
-import {CoinPretty, Dec, PricePretty} from '@keplr-wallet/unit';
+} from '@titan-wallet/stores';
+import {CoinPretty, Dec, PricePretty} from '@titan-wallet/unit';
 import {action, autorun, computed} from 'mobx';
-import {DenomHelper} from '@keplr-wallet/common';
+import {DenomHelper} from '@titan-wallet/common';
 import {computedFn} from 'mobx-utils';
 import {BinarySortArray} from '../../common';
 

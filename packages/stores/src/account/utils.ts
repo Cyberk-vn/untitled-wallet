@@ -1,4 +1,4 @@
-import { EthermintChainIdHelper } from "@keplr-wallet/cosmos";
+import { EthermintChainIdHelper } from "@titan-wallet/cosmos";
 import { ProtoMsgsOrWithAminoMsgs } from "./types";
 
 export function txEventsWithPreOnFulfill(

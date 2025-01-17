@@ -1,4 +1,4 @@
-rootProject.name = 'keplrmobile'
+rootProject.name = 'titanmobile'
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app', ':react-native-code-push'
 project(':react-native-code-push').projectDir = new File(["node", "--print", "require.resolve('react-native-code-push/package.json')"].execute(null, rootDir).text.trim(), "../android/app")

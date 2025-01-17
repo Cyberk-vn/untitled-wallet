@@ -6,7 +6,7 @@ import {
   IGasSimulator,
   InsufficientFeeError,
   ISenderConfig,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { useTheme } from "styled-components";
 import { ColorPalette } from "../../../styles";
 import { Body2, Subtitle4 } from "../../typography";
@@ -15,15 +15,15 @@ import { Modal } from "../../modal";
 import { TransactionFeeModal } from "./modal";
 import { useStore } from "../../../stores";
 import { autorun } from "mobx";
-import { CoinPretty, Dec, PricePretty } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, PricePretty } from "@titan-wallet/unit";
 import { Box } from "../../box";
 import { VerticalResizeTransition } from "../../transition";
 import { FormattedMessage, useIntl } from "react-intl";
 import { XAxis, YAxis } from "../../axis";
 import { UIConfigStore } from "../../../stores/ui-config";
-import { IChainStore, IQueriesStore } from "@keplr-wallet/stores";
+import { IChainStore, IQueriesStore } from "@titan-wallet/stores";
 import { Tooltip } from "../../tooltip";
-import { EthereumAccountBase } from "@keplr-wallet/stores-eth";
+import { EthereumAccountBase } from "@titan-wallet/stores-eth";
 
 // 기본적으로 `FeeControl` 안에 있는 로직이였지만 `FeeControl` 말고도 다른 UI를 가진 똑같은 기능의 component가
 // 여러개 생기게 되면서 공통적으로 사용하기 위해서 custom hook으로 분리함

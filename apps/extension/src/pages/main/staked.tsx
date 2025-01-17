@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { CollapsibleList } from "../../components/collapsible-list";
 import { MainEmptyView, TokenItem, TokenTitleView } from "./components";
-import { Dec } from "@keplr-wallet/unit";
+import { Dec } from "@titan-wallet/unit";
 import { observer } from "mobx-react-lite";
 import { Stack } from "../../components/stack";
 import { useStore } from "../../stores";
@@ -176,7 +176,7 @@ export const StakedTabView: FunctionComponent<{
               }
               onClick={async () => {
                 await browser.tabs.create({
-                  url: "https://wallet.keplr.app/?modal=staking",
+                  url: "https://wallet.titan.app/?modal=staking",
                 });
 
                 close();

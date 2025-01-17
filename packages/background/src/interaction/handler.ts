@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   ApproveInteractionMsg,
   RejectInteractionMsg,
@@ -57,7 +57,7 @@ export const getHandler: (service: InteractionService) => Handler = (
           msg as PingContentScriptTabHasOpenedSidePanelMsg
         );
       default:
-        throw new KeplrError("interaction", 100, "Unknown msg type");
+        throw new TitanError("interaction", 100, "Unknown msg type");
     }
   };
 };

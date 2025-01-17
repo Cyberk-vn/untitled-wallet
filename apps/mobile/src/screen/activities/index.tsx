@@ -4,8 +4,8 @@ import {Box} from '../../components/box';
 import {RefreshControl, Text} from 'react-native';
 import {useStyle} from '../../styles';
 import {action, computed, makeObservable, observable} from 'mobx';
-import {IAccountStore, IChainInfoImpl, IChainStore} from '@keplr-wallet/stores';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {IAccountStore, IChainInfoImpl, IChainStore} from '@titan-wallet/stores';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {useStore} from '../../stores';
 import {usePaginatedCursorQuery} from '../../hooks';
 import {ResMsgsHistory} from './types.ts';
@@ -91,7 +91,7 @@ export const ActivitiesScreen: FunctionComponent = observer(() => {
   const [selectedKey, setSelectedKey] = useState<string>('__all__');
 
   const querySupported = queriesStore.simpleQuery.queryGet<string[]>(
-    process.env['KEPLR_EXT_CONFIG_SERVER'] || '',
+    process.env['TITAN_EXT_CONFIG_SERVER'] || '',
     '/tx-history/supports',
   );
 
@@ -109,9 +109,9 @@ export const ActivitiesScreen: FunctionComponent = observer(() => {
   otherBech32Addresses.setSupportedChainList(supportedChainList);
 
   const msgHistory = usePaginatedCursorQuery<ResMsgsHistory>(
-    process.env['KEPLR_EXT_TX_HISTORY_BASE_URL'] || '',
+    process.env['TITAN_EXT_TX_HISTORY_BASE_URL'] || '',
     () => {
-      return `/history/msgs/keplr-multi-chain?baseBech32Address=${
+      return `/history/msgs/titan-multi-chain?baseBech32Address=${
         account.bech32Address
       }&chainIdentifiers=${(() => {
         if (selectedKey === '__all__') {

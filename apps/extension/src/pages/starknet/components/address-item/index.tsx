@@ -9,7 +9,7 @@ import {
   FloatingDropdownItem,
 } from "../../../../components/dropdown";
 import { ColorPalette } from "../../../../styles";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Gutter } from "../../../../components/gutter";
 import { IconButton } from "../../../../components/icon-button";

@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { InteractionAddonService } from "./service";
 import { ReplacePageMsg } from "./messages";
 
@@ -16,7 +16,7 @@ export const getHandler: (service: InteractionAddonService) => Handler = (
       case ReplacePageMsg:
         return handleReplacePageMsg(service)(env, msg as ReplacePageMsg);
       default:
-        throw new KeplrError(
+        throw new TitanError(
           "extension-interaction-addon",
           100,
           "Unknown msg type"

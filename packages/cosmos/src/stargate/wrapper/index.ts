@@ -1,9 +1,9 @@
 import { ProtoSignDocDecoder } from "../decoder";
-import { Coin, StdSignDoc } from "@keplr-wallet/types";
+import { Coin, StdSignDoc } from "@titan-wallet/types";
 import {
   SignDoc,
   SignDocDirectAux,
-} from "@keplr-wallet/proto-types/cosmos/tx/v1beta1/tx";
+} from "@titan-wallet/proto-types/cosmos/tx/v1beta1/tx";
 import { checkAndValidateADR36AminoSignDoc } from "../../adr-36";
 
 export class SignDocWrapper {

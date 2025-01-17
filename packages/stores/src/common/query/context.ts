@@ -1,6 +1,6 @@
-import { KVStore, MultiGet, WrapMultiGetKVStore } from "@keplr-wallet/common";
-import { DebounceActionTimer } from "@keplr-wallet/mobx-utils";
-import { SettledResponse } from "@keplr-wallet/types";
+import { KVStore, MultiGet, WrapMultiGetKVStore } from "@titan-wallet/common";
+import { DebounceActionTimer } from "@titan-wallet/mobx-utils";
+import { SettledResponse } from "@titan-wallet/types";
 
 export class QuerySharedContext {
   protected multiGetStore: MultiGet;

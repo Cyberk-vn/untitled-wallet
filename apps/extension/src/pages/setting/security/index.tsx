@@ -8,9 +8,9 @@ import { useNavigate } from "react-router";
 import { Box } from "../../../components/box";
 import { useIntl } from "react-intl";
 import { Toggle } from "../../../components/toggle";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
-import { SetDisableAnalyticsMsg } from "@keplr-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
+import { SetDisableAnalyticsMsg } from "@titan-wallet/background";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../stores";
 

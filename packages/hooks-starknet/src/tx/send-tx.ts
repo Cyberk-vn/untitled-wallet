@@ -1,4 +1,4 @@
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import {
   useFeeConfig,
   useGasConfig,
@@ -6,7 +6,7 @@ import {
   useSenderConfig,
 } from "./index";
 import { useAmountConfig } from "./amount";
-import { StarknetQueriesStore } from "@keplr-wallet/stores-starknet";
+import { StarknetQueriesStore } from "@titan-wallet/stores-starknet";
 
 export const useSendTxConfig = (
   chainGetter: ChainGetter,

@@ -1,4 +1,4 @@
-import { KeplrError, Message } from "@keplr-wallet/router";
+import { TitanError, Message } from "@titan-wallet/router";
 import { ROUTE } from "./constants";
 
 // Return the tx hash
@@ -17,11 +17,11 @@ export class SendTxEthereumMsg extends Message<string> {
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("tx", 100, "chain id is empty");
+      throw new TitanError("tx", 100, "chain id is empty");
     }
 
     if (!this.tx) {
-      throw new KeplrError("tx", 101, "tx is empty");
+      throw new TitanError("tx", 101, "tx is empty");
     }
   }
 

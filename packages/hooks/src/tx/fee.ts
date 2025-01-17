@@ -8,15 +8,15 @@ import {
   UIProperties,
 } from "./types";
 import { TxChainSetter } from "./chain";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { action, computed, makeObservable, observable } from "mobx";
-import { CoinPretty, Dec, DecUtils, Int } from "@keplr-wallet/unit";
-import { Currency, FeeCurrency, StdFee } from "@keplr-wallet/types";
+import { CoinPretty, Dec, DecUtils, Int } from "@titan-wallet/unit";
+import { Currency, FeeCurrency, StdFee } from "@titan-wallet/types";
 import { computedFn } from "mobx-utils";
 import { useState } from "react";
 import { InsufficientFeeError } from "./errors";
 import { QueriesStore } from "./internal";
-import { DenomHelper } from "@keplr-wallet/common";
+import { DenomHelper } from "@titan-wallet/common";
 
 export class FeeConfig extends TxChainSetter implements IFeeConfig {
   @observable.ref
@@ -342,7 +342,7 @@ export class FeeConfig extends TxChainSetter implements IFeeConfig {
       this.chainInfo.features &&
       this.chainInfo.features.includes("terra-classic-fee")
     ) {
-      const etcQueries = this.queriesStore.get(this.chainId).keplrETC;
+      const etcQueries = this.queriesStore.get(this.chainId).titanETC;
       if (
         etcQueries &&
         etcQueries.queryTerraClassicTaxRate.response &&
@@ -898,7 +898,7 @@ export class FeeConfig extends TxChainSetter implements IFeeConfig {
       this.chainInfo.features &&
       this.chainInfo.features.includes("terra-classic-fee")
     ) {
-      const etcQueries = this.queriesStore.get(this.chainId).keplrETC;
+      const etcQueries = this.queriesStore.get(this.chainId).titanETC;
       if (etcQueries) {
         if (
           etcQueries.queryTerraClassicTaxRate.error ||

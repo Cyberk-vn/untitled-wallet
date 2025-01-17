@@ -4,7 +4,7 @@ import {
   ChainIdHelper,
   TendermintTxTracer,
   WsReadyState,
-} from "@keplr-wallet/cosmos";
+} from "@titan-wallet/cosmos";
 import { BackgroundTxService, Notification } from "../tx";
 import {
   action,
@@ -14,7 +14,7 @@ import {
   runInAction,
   toJS,
 } from "mobx";
-import { KVStore, retry } from "@keplr-wallet/common";
+import { KVStore, retry } from "@titan-wallet/common";
 import {
   IBCHistory,
   RecentSendHistory,
@@ -28,9 +28,9 @@ import {
   ChainInfo,
   EthTxReceipt,
   EthTxStatus,
-} from "@keplr-wallet/types";
-import { CoinPretty } from "@keplr-wallet/unit";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+} from "@titan-wallet/types";
+import { CoinPretty } from "@titan-wallet/unit";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import { id } from "@ethersproject/hash";
 
 export class RecentSendHistoryService {

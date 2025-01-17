@@ -1,11 +1,11 @@
 import {
   ChainInfo,
   EthSignType,
-  Keplr,
-  Keplr as IKeplr,
-  KeplrIntereactionOptions,
-  KeplrMode,
-  KeplrSignOptions,
+  Titan,
+  Titan as ITitan,
+  TitanIntereactionOptions,
+  TitanMode,
+  TitanSignOptions,
   Key,
   BroadcastMode,
   AminoSignResponse,
@@ -28,17 +28,17 @@ import {
   WalletEvents,
   AccountChangeEventHandler,
   NetworkChangeEventHandler,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 import {
   Result,
   JSONUint8Array,
   EthereumProviderRpcError,
-} from "@keplr-wallet/router";
-import { KeplrEnigmaUtils } from "./enigma";
+} from "@titan-wallet/router";
+import { TitanEnigmaUtils } from "./enigma";
 import { CosmJSOfflineSigner, CosmJSOfflineSignerOnlyAmino } from "./cosmjs";
 import deepmerge from "deepmerge";
 import Long from "long";
-import { KeplrCoreTypes } from "./core-types";
+import { TitanCoreTypes } from "./core-types";
 import EventEmitter from "events";
 import {
   AccountInterface,
@@ -51,7 +51,7 @@ import {
 export interface ProxyRequest {
   type: "proxy-request";
   id: string;
-  method: keyof (Keplr & KeplrCoreTypes);
+  method: keyof (Titan & TitanCoreTypes);
   args: any[];
   ethereumProviderMethod?: keyof IEthereumProvider;
   starknetProviderMethod?: keyof IStarknetProvider;
@@ -76,46 +76,46 @@ function defineUnwritablePropertyIfPossible(o: any, p: string, value: any) {
     }
   } else {
     console.warn(
-      `Failed to inject ${p} from keplr. Probably, other wallet is trying to intercept Keplr`
+      `Failed to inject ${p} from titan. Probably, other wallet is trying to intercept Titan`
     );
   }
 }
 
-export function injectKeplrToWindow(keplr: IKeplr): void {
-  defineUnwritablePropertyIfPossible(window, "keplr", keplr);
+export function injectTitanToWindow(titan: ITitan): void {
+  defineUnwritablePropertyIfPossible(window, "titan", titan);
   defineUnwritablePropertyIfPossible(
     window,
     "getOfflineSigner",
-    keplr.getOfflineSigner
+    titan.getOfflineSigner
   );
   defineUnwritablePropertyIfPossible(
     window,
     "getOfflineSignerOnlyAmino",
-    keplr.getOfflineSignerOnlyAmino
+    titan.getOfflineSignerOnlyAmino
   );
   defineUnwritablePropertyIfPossible(
     window,
     "getOfflineSignerAuto",
-    keplr.getOfflineSignerAuto
+    titan.getOfflineSignerAuto
   );
   defineUnwritablePropertyIfPossible(
     window,
     "getEnigmaUtils",
-    keplr.getEnigmaUtils
+    titan.getEnigmaUtils
   );
 
-  defineUnwritablePropertyIfPossible(window, "starknet_keplr", keplr.starknet);
+  defineUnwritablePropertyIfPossible(window, "starknet_titan", titan.starknet);
 }
 
 /**
- * InjectedKeplr would be injected to the webpage.
+ * InjectedTitan would be injected to the webpage.
  * In the webpage, it can't request any messages to the extension because it doesn't have any API related to the extension.
  * So, to request some methods of the extension, this will proxy the request to the content script that is injected to webpage on the extension level.
  * This will use `window.postMessage` to interact with the content script.
  */
-export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
+export class InjectedTitan implements ITitan, TitanCoreTypes {
   static startProxy(
-    keplr: IKeplr & KeplrCoreTypes,
+    titan: ITitan & TitanCoreTypes,
     eventListener: {
       addMessageListener: (fn: (e: any) => void) => void;
       removeMessageListener: (fn: (e: any) => void) => void;
@@ -160,10 +160,10 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
         }
 
         if (
-          !keplr[message.method] ||
+          !titan[message.method] ||
           (message.method !== "ethereum" &&
             message.method !== "starknet" &&
-            typeof keplr[message.method] !== "function")
+            typeof titan[message.method] !== "function")
         ) {
           throw new Error(`Invalid method: ${message.method}`);
         }
@@ -197,7 +197,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
                 accountNumber?: string | null;
               } = message.args[2];
 
-              const result = await keplr.signDirect(
+              const result = await titan.signDirect(
                 message.args[0],
                 message.args[1],
                 {
@@ -236,7 +236,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
                 sequence?: string | null;
               } = message.args[2];
 
-              const result = await keplr.signDirectAux(
+              const result = await titan.signDirectAux(
                 message.args[0],
                 message.args[1],
                 {
@@ -285,8 +285,8 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
               throw new Error("networkVersion is not function");
             }
 
-            if (ethereumProviderMethod === "isKeplr") {
-              throw new Error("isKeplr is not function");
+            if (ethereumProviderMethod === "isTitan") {
+              throw new Error("isTitan is not function");
             }
 
             if (ethereumProviderMethod === "isMetaMask") {
@@ -295,7 +295,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
 
             if (
               ethereumProviderMethod === undefined ||
-              typeof keplr.ethereum[ethereumProviderMethod] !== "function"
+              typeof titan.ethereum[ethereumProviderMethod] !== "function"
             ) {
               throw new Error(
                 `${message.ethereumProviderMethod} is not function or invalid Ethereum provider method`
@@ -304,14 +304,14 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
 
             const messageArgs = JSONUint8Array.unwrap(message.args);
             if (ethereumProviderMethod === "request") {
-              return await keplr.ethereum.request(
+              return await titan.ethereum.request(
                 typeof messageArgs === "string"
                   ? JSON.parse(messageArgs)
                   : messageArgs
               );
             }
 
-            return await keplr.ethereum[ethereumProviderMethod](
+            return await titan.ethereum[ethereumProviderMethod](
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               ...(typeof messageArgs === "string"
@@ -365,7 +365,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
 
             if (
               starknetProviderMethod === undefined ||
-              typeof keplr.starknet?.[starknetProviderMethod] !== "function"
+              typeof titan.starknet?.[starknetProviderMethod] !== "function"
             ) {
               throw new Error(
                 `${message.starknetProviderMethod} is not function or invalid Starknet provider method`
@@ -374,14 +374,14 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
 
             const messageArgs = JSONUint8Array.unwrap(message.args);
             if (starknetProviderMethod === "request") {
-              return await keplr.starknet.request(
+              return await titan.starknet.request(
                 typeof messageArgs === "string"
                   ? JSON.parse(messageArgs)
                   : messageArgs
               );
             }
 
-            return await keplr.starknet[starknetProviderMethod](
+            return await titan.starknet[starknetProviderMethod](
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               ...(typeof messageArgs === "string"
@@ -390,7 +390,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
             );
           }
 
-          return await keplr[method](
+          return await titan[method](
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             ...JSONUint8Array.unwrap(message.args)
@@ -434,7 +434,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
   }
 
   protected requestMethod(
-    method: keyof (IKeplr & KeplrCoreTypes),
+    method: keyof (ITitan & TitanCoreTypes),
     args: any[]
   ): Promise<any> {
     const bytes = new Uint8Array(8);
@@ -490,11 +490,11 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
 
   protected enigmaUtils: Map<string, SecretUtils> = new Map();
 
-  public defaultOptions: KeplrIntereactionOptions = {};
+  public defaultOptions: TitanIntereactionOptions = {};
 
   constructor(
     public readonly version: string,
-    public readonly mode: KeplrMode,
+    public readonly mode: TitanMode,
     protected readonly onStarknetStateChange: (state: {
       selectedAddress: string | null;
       chainId: string | null;
@@ -547,7 +547,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
       }
     }
     // Freeze methods
-    const methodNames = Object.getOwnPropertyNames(InjectedKeplr.prototype);
+    const methodNames = Object.getOwnPropertyNames(InjectedTitan.prototype);
     for (const methodName of methodNames) {
       if (
         methodName !== "constructor" &&
@@ -616,7 +616,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
     chainId: string,
     signer: string,
     signDoc: StdSignDoc,
-    signOptions: KeplrSignOptions = {}
+    signOptions: TitanSignOptions = {}
   ): Promise<AminoSignResponse> {
     return await this.requestMethod("signAmino", [
       chainId,
@@ -635,7 +635,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
       chainId?: string | null;
       accountNumber?: Long | null;
     },
-    signOptions: KeplrSignOptions = {}
+    signOptions: TitanSignOptions = {}
   ): Promise<DirectSignResponse> {
     const result = await this.requestMethod("signDirect", [
       chainId,
@@ -687,7 +687,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
       sequence?: Long | null;
     },
     signOptions: Exclude<
-      KeplrSignOptions,
+      TitanSignOptions,
       "preferNoSetFee" | "disableBalanceCheck"
     > = {}
   ): Promise<DirectAuxSignResponse> {
@@ -792,21 +792,21 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
 
   getOfflineSigner(
     chainId: string,
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): OfflineAminoSigner & OfflineDirectSigner {
     return new CosmJSOfflineSigner(chainId, this, signOptions);
   }
 
   getOfflineSignerOnlyAmino(
     chainId: string,
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): OfflineAminoSigner {
     return new CosmJSOfflineSignerOnlyAmino(chainId, this, signOptions);
   }
 
   async getOfflineSignerAuto(
     chainId: string,
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): Promise<OfflineAminoSigner | OfflineDirectSigner> {
     const key = await this.getKey(chainId);
     if (key.isNanoLedger) {
@@ -882,7 +882,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
       return this.enigmaUtils.get(chainId)!;
     }
 
-    const enigmaUtils = new KeplrEnigmaUtils(chainId, this);
+    const enigmaUtils = new TitanEnigmaUtils(chainId, this);
     this.enigmaUtils.set(chainId, enigmaUtils);
     return enigmaUtils;
   }
@@ -896,7 +896,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
       primaryType: string;
     },
     signDoc: StdSignDoc,
-    signOptions: KeplrSignOptions = {}
+    signOptions: TitanSignOptions = {}
   ): Promise<AminoSignResponse> {
     return await this.requestMethod("experimentalSignEIP712CosmosTx_v0", [
       chainId,
@@ -1051,14 +1051,14 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
 
   selectedAddress: string | null = null;
 
-  isKeplr = true;
+  isTitan = true;
   isMetaMask = true;
 
   protected _isConnected = false;
   protected _currentChainId: string | null = null;
 
   constructor(
-    protected readonly injectedKeplr: () => InjectedKeplr,
+    protected readonly injectedTitan: () => InjectedTitan,
     protected readonly eventListener: {
       addMessageListener: (fn: (e: any) => void) => void;
       removeMessageListener: (fn: (e: any) => void) => void;
@@ -1078,22 +1078,22 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
 
     this._initProviderState();
 
-    window.addEventListener("keplr_keystorechange", async () => {
+    window.addEventListener("titan_keystorechange", async () => {
       if (this._currentChainId) {
-        const chainInfo = await injectedKeplr().getChainInfoWithoutEndpoints(
+        const chainInfo = await injectedTitan().getChainInfoWithoutEndpoints(
           this._currentChainId
         );
 
         if (chainInfo) {
           const selectedAddress = (
-            await injectedKeplr().getKey(this._currentChainId)
+            await injectedTitan().getKey(this._currentChainId)
           ).ethereumHexAddress;
           this._handleAccountsChanged(selectedAddress);
         }
       }
     });
 
-    window.addEventListener("keplr_chainChanged", (event) => {
+    window.addEventListener("titan_chainChanged", (event) => {
       const origin = (event as CustomEvent).detail.origin;
 
       if (origin === window.location.origin) {
@@ -1102,7 +1102,7 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
       }
     });
 
-    window.addEventListener("keplr_ethSubscription", (event: Event) => {
+    window.addEventListener("titan_ethSubscription", (event: Event) => {
       const origin = (event as CustomEvent).detail.origin;
       const providerId = (event as CustomEvent).detail.providerId;
 
@@ -1206,7 +1206,7 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
       currentChainId: string;
       selectedAddress: string;
     } | null>("request", {
-      method: "keplr_initProviderState",
+      method: "titan_initProviderState",
     });
 
     if (initialProviderState) {
@@ -1239,7 +1239,7 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
   protected _handleDisconnect = async () => {
     if (this._isConnected) {
       await this._requestMethod("request", {
-        method: "keplr_disconnect",
+        method: "titan_disconnect",
       });
 
       this._isConnected = false;
@@ -1338,7 +1338,7 @@ class StarknetProvider implements IStarknetProvider {
     public readonly version: string,
     public readonly icon: string,
 
-    protected readonly _injectedKeplr: () => InjectedKeplr,
+    protected readonly _injectedTitan: () => InjectedTitan,
     protected readonly onStateChange: (state: {
       selectedAddress: string | null;
       chainId: string | null;
@@ -1364,10 +1364,10 @@ class StarknetProvider implements IStarknetProvider {
   ) {
     this._initProviderState();
 
-    window.addEventListener("keplr_keystorechange", async () => {
+    window.addEventListener("titan_keystorechange", async () => {
       if (this._currentChainId) {
         const selectedAddress = (
-          await this._injectedKeplr().getStarknetKey(this._currentChainId)
+          await this._injectedTitan().getStarknetKey(this._currentChainId)
         ).hexAddress;
 
         this.selectedAddress = selectedAddress;
@@ -1384,7 +1384,7 @@ class StarknetProvider implements IStarknetProvider {
       }
     });
 
-    window.addEventListener("keplr_starknetChainChanged", (event) => {
+    window.addEventListener("titan_starknetChainChanged", (event) => {
       const origin = (event as CustomEvent).detail.origin;
       const starknetChainId = (event as CustomEvent).detail.starknetChainId;
 
@@ -1471,7 +1471,7 @@ class StarknetProvider implements IStarknetProvider {
       selectedAddress: string | null;
       rpc: string | null;
     }>({
-      type: "keplr_initStarknetProviderState",
+      type: "titan_initStarknetProviderState",
     });
 
     if (currentChainId != null && selectedAddress != null && rpc != null) {
@@ -1518,7 +1518,7 @@ class StarknetProvider implements IStarknetProvider {
       selectedAddress: string;
       rpc: string;
     }>({
-      type: "keplr_enableStarknetProvider",
+      type: "titan_enableStarknetProvider",
     });
 
     this.onStateChange({
@@ -1539,7 +1539,7 @@ class StarknetProvider implements IStarknetProvider {
       currentChainId: string | null;
       selectedAddress: string | null;
     }>({
-      type: "keplr_initStarknetProviderState",
+      type: "titan_initStarknetProviderState",
     });
 
     if (currentChainId != null && selectedAddress != null) {

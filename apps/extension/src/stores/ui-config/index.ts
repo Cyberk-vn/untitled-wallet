@@ -10,20 +10,20 @@ import {
   runInAction,
   toJS,
 } from "mobx";
-import { KVStore } from "@keplr-wallet/common";
-import { CoinGeckoPriceStore } from "@keplr-wallet/stores";
-import { KeyRingStore } from "@keplr-wallet/stores-core";
-import { FiatCurrency } from "@keplr-wallet/types";
+import { KVStore } from "@titan-wallet/common";
+import { CoinGeckoPriceStore } from "@titan-wallet/stores";
+import { KeyRingStore } from "@titan-wallet/stores-core";
+import { FiatCurrency } from "@titan-wallet/types";
 import { CopyAddressConfig } from "./copy-address";
 import { ChainStore } from "../chain";
 import { AddressBookConfig } from "./address-book";
-import { BACKGROUND_PORT, MessageRequester } from "@keplr-wallet/router";
+import { BACKGROUND_PORT, MessageRequester } from "@titan-wallet/router";
 import manifest from "../../manifest.v2.json";
 import { IBCSwapConfig } from "./ibc-swap";
 import { NewChainSuggestionConfig } from "./new-chain";
 import { ChangelogConfig } from "./changelog";
 import { SelectWalletConfig } from "./select-wallet";
-import { GetSidePanelIsSupportedMsg } from "@keplr-wallet/background";
+import { GetSidePanelIsSupportedMsg } from "@titan-wallet/background";
 import { isRunningInSidePanel } from "../../utils";
 
 export interface UIConfigOptions {

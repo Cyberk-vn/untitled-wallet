@@ -2,7 +2,7 @@ import {observer} from 'mobx-react-lite';
 import React, {FunctionComponent, useMemo, useState} from 'react';
 import {useStyle} from '../../../styles';
 import {useStore} from '../../../stores';
-import {Dec} from '@keplr-wallet/unit';
+import {Dec} from '@titan-wallet/unit';
 import {TokenItem, ViewToken} from '../../../components/token-view';
 import {SearchIcon} from '../../../components/icon';
 import {TextInput} from '../../../components/input';

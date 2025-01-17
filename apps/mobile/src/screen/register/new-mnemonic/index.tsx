@@ -5,7 +5,7 @@ import {useStyle} from '../../../styles';
 import {Box} from '../../../components/box';
 import {Text, View} from 'react-native';
 import {HorizontalRadioGroup} from '../../../components/radio-group';
-import {Mnemonic} from '@keplr-wallet/crypto';
+import {Mnemonic} from '@titan-wallet/crypto';
 import * as Crypto from 'expo-crypto';
 import * as Clipboard from 'expo-clipboard';
 import {TextButton} from '../../../components/text-button';

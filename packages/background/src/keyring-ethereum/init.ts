@@ -1,4 +1,4 @@
-import { Router } from "@keplr-wallet/router";
+import { Router } from "@titan-wallet/router";
 import { KeyRingEthereumService } from "./service";
 import { RequestJsonRpcToEvmMsg, RequestSignEthereumMsg } from "./messages";
 import { ROUTE } from "./constants";

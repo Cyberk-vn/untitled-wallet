@@ -9,7 +9,7 @@ import {observer} from 'mobx-react-lite';
 import {useStore} from '../../stores';
 import {Text, View, StyleSheet} from 'react-native';
 import {useStyle} from '../../styles';
-import {TendermintTxTracer} from '@keplr-wallet/cosmos';
+import {TendermintTxTracer} from '@titan-wallet/cosmos';
 import {Buffer} from 'buffer/';
 import LottieView from 'lottie-react-native';
 import {SimpleGradient} from '../../components/svg';
@@ -19,9 +19,9 @@ import {Box} from '../../components/box';
 import {TextButton} from '../../components/text-button';
 import {useNotification} from '../../hooks/notification';
 import {FormattedMessage, useIntl} from 'react-intl';
-import {EthTxReceipt, EthTxStatus} from '@keplr-wallet/types';
-import {simpleFetch} from '@keplr-wallet/simple-fetch';
-import {retry} from '@keplr-wallet/common';
+import {EthTxReceipt, EthTxStatus} from '@titan-wallet/types';
+import {simpleFetch} from '@titan-wallet/simple-fetch';
+import {retry} from '@titan-wallet/common';
 
 export const TxPendingResultScreen: FunctionComponent = observer(() => {
   const {chainStore} = useStore();

@@ -1,5 +1,5 @@
 import bech32, { fromWords } from "bech32";
-import { Bech32Config } from "@keplr-wallet/types";
+import { Bech32Config } from "@titan-wallet/types";
 import { Buffer } from "buffer/";
 import { getAddress as getEthAddress } from "@ethersproject/address";
 

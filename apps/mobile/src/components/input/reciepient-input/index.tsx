@@ -3,7 +3,7 @@ import {
   IMemoConfig,
   IRecipientConfig,
   IRecipientConfigWithICNS,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import React, {forwardRef, useState} from 'react';
 import {observer} from 'mobx-react-lite';
 import {TextInput} from '../text-input/text-input';
@@ -13,7 +13,7 @@ import {UserIcon} from '../../icon/user';
 import {useIntl} from 'react-intl';
 import {AddressBookModal} from './address-book-modal';
 import {TextInput as NativeTextInput} from 'react-native';
-import {AppCurrency} from '@keplr-wallet/types';
+import {AppCurrency} from '@titan-wallet/types';
 
 export interface RecipientInputWithAddressBookProps {
   historyType: string;

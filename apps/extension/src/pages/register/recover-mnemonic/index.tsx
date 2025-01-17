@@ -24,10 +24,10 @@ import { Bleed } from "../../../components/bleed";
 import { Styles } from "../new-mnemonic/styles";
 import { XAxis } from "../../../components/axis";
 import { TextInput, TextInputProps } from "../../../components/input";
-import { Mnemonic } from "@keplr-wallet/crypto";
+import { Mnemonic } from "@titan-wallet/crypto";
 import { Buffer } from "buffer/";
 import { FormattedMessage, useIntl } from "react-intl";
-import { isMnemonicWord } from "@keplr-wallet/common";
+import { isMnemonicWord } from "@titan-wallet/common";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const bip39 = require("bip39");
 

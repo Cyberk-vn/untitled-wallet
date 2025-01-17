@@ -7,9 +7,9 @@ import ReactDOM from "react-dom";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { StoreProvider, useStore } from "./stores";
 import { ColorPalette, GlobalStyle, ScrollBarStyle } from "./styles";
-import { Keplr } from "@keplr-wallet/provider";
+import { Titan } from "@titan-wallet/provider";
 import manifest from "./manifest.v2.json";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
 import { configure } from "mobx";
 import { ModalRootProvider } from "./components/modal";
 import { ConfirmProvider, useConfirm } from "./hooks/confirm";
@@ -28,7 +28,7 @@ import { Checkbox } from "./components/checkbox";
 import TransportWebHID from "@ledgerhq/hw-transport-webhid";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 import { LedgerUtils } from "./utils";
-import { CosmosApp } from "@keplr-wallet/ledger-cosmos";
+import { CosmosApp } from "@titan-wallet/ledger-cosmos";
 import { AppThemeProvider } from "./theme";
 import Transport from "@ledgerhq/hw-transport";
 import Eth from "@ledgerhq/hw-app-eth";
@@ -43,7 +43,7 @@ configure({
   enforceActions: "always", // Make mobx to strict mode.
 });
 
-window.keplr = new Keplr(
+window.titan = new Titan(
   manifest.version,
   "core",
   new InExtensionMessageRequester()
@@ -75,7 +75,7 @@ const LedgerGrantPage: FunctionComponent = observer(() => {
           src={require(theme.mode === "light"
             ? "./public/assets/img/intro-logo-light.png"
             : "./public/assets/img/intro-logo.png")}
-          alt="Keplr logo"
+          alt="Titan logo"
           style={{
             width: "10.625rem",
             aspectRatio: "453 / 153",
@@ -342,7 +342,7 @@ const LedgerGrantPage: FunctionComponent = observer(() => {
                           let app = new Eth(transport);
 
                           try {
-                            // Ensure that the keplr can connect to ethereum app on ledger.
+                            // Ensure that the titan can connect to ethereum app on ledger.
                             // getAppConfiguration() works even if the ledger is on screen saver mode.
                             // To detect the screen saver mode, we should request the address before using.
                             await app.getAddress("m/44'/60'/0'/0/0");
@@ -359,7 +359,7 @@ const LedgerGrantPage: FunctionComponent = observer(() => {
                           );
                           app = new Eth(transport);
 
-                          // Ensure that the keplr can connect to ethereum app on ledger.
+                          // Ensure that the titan can connect to ethereum app on ledger.
                           // getAppConfiguration() works even if the ledger is on screen saver mode.
                           // To detect the screen saver mode, we should request the address before using.
                           await app.getAddress("m/44'/60'/0'/0/0");

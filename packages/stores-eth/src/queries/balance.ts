@@ -1,12 +1,12 @@
-import { DenomHelper } from "@keplr-wallet/common";
+import { DenomHelper } from "@titan-wallet/common";
 import {
   BalanceRegistry,
   ChainGetter,
   IObservableQueryBalanceImpl,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
-import { AppCurrency, ChainInfo } from "@keplr-wallet/types";
-import { CoinPretty, Int } from "@keplr-wallet/unit";
+} from "@titan-wallet/stores";
+import { AppCurrency, ChainInfo } from "@titan-wallet/types";
+import { CoinPretty, Int } from "@titan-wallet/unit";
 import { computed, makeObservable } from "mobx";
 import { EthereumAccountBase } from "../account";
 import { ObservableEvmChainJsonRpcQuery } from "./evm-chain-json-rpc";

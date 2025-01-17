@@ -1,9 +1,9 @@
-import { KVStore, PrefixKVStore } from "@keplr-wallet/common";
+import { KVStore, PrefixKVStore } from "@titan-wallet/common";
 import { action, autorun, makeObservable, observable, runInAction } from "mobx";
 import { ChainStore } from "../chain";
 import { computedFn } from "mobx-utils";
-import { IChainInfoImpl } from "@keplr-wallet/stores";
-import { AppCurrency } from "@keplr-wallet/types";
+import { IChainInfoImpl } from "@titan-wallet/stores";
+import { AppCurrency } from "@titan-wallet/types";
 
 export class IBCSwapConfig {
   protected readonly kvStore: KVStore;

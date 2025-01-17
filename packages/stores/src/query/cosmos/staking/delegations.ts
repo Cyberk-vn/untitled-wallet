@@ -4,7 +4,7 @@ import {
 } from "../../chain-query";
 import { Delegation, Delegations } from "./types";
 import { ChainGetter } from "../../../chain";
-import { CoinPretty, Dec, Int } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, Int } from "@titan-wallet/unit";
 import { computed, makeObservable } from "mobx";
 import { computedFn } from "mobx-utils";
 import { QuerySharedContext } from "../../../common";

@@ -1,10 +1,10 @@
 import {
   EnvProducer,
-  KeplrError,
+  TitanError,
   MessageSender,
   Result,
   Router,
-} from '@keplr-wallet/router';
+} from '@titan-wallet/router';
 
 import EventEmitter from 'eventemitter3';
 
@@ -45,7 +45,7 @@ export class RNRouterBase extends Router {
       console.log(
         `Failed to process msg ${message.type}: ${e?.message || e?.toString()}`,
       );
-      if (e instanceof KeplrError) {
+      if (e instanceof TitanError) {
         sender.resolver({
           error: {
             code: e.code,

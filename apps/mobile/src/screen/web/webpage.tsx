@@ -18,9 +18,9 @@ import {
 } from 'react-native';
 import RNFS from 'react-native-fs';
 import EventEmitter from 'eventemitter3';
-import {RNInjectedKeplr} from '../../injected/injected-provider';
+import {RNInjectedTitan} from '../../injected/injected-provider';
 import {useStore} from '../../stores';
-import {Keplr} from '@keplr-wallet/provider';
+import {Titan} from '@titan-wallet/provider';
 import {
   RNMessageRequesterExternal,
   RNMessageRequesterInternal,
@@ -30,12 +30,12 @@ import {Gutter} from '../../components/gutter';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {RootStackParamList} from '../../navigation';
 import DeviceInfo from 'react-native-device-info';
-import {BACKGROUND_PORT} from '@keplr-wallet/router';
+import {BACKGROUND_PORT} from '@titan-wallet/router';
 import {
   CheckBadTwitterIdMsg,
   CheckURLIsPhishingOnMobileMsg,
   URLTempAllowOnMobileMsg,
-} from '@keplr-wallet/background';
+} from '@titan-wallet/background';
 import {useConfirm} from '../../hooks/confirm';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {useNotification} from '../../hooks/notification';
@@ -48,7 +48,7 @@ import {useStyle} from '../../styles';
 import {registerModal} from '../../components/modal/v2';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
-const blockListURL = 'https://blocklist.keplr.app';
+const blockListURL = 'https://blocklist.titan.app';
 
 export const useInjectedSourceCode = () => {
   const [code, setCode] = useState<string | undefined>();
@@ -263,12 +263,12 @@ export const WebpageScreen: FunctionComponent = observer(() => {
   );
 
   useEffect(() => {
-    const unlisten = RNInjectedKeplr.startProxy(
-      new Keplr(
+    const unlisten = RNInjectedTitan.startProxy(
+      new Titan(
         '0.12.20',
         'core',
         new RNMessageRequesterExternal(() => {
-          //NOTE - 웹뷰 내부에서 페이지 이동을 할경우 해당 url이 window.keplr의 origin과는 동기화가 안됨
+          //NOTE - 웹뷰 내부에서 페이지 이동을 할경우 해당 url이 window.titan의 origin과는 동기화가 안됨
           //해서 웹 뷰 내부에서 url 변경시 ref에 저장 후 인터랙션시 사용하도록 함
           //state를 안 쓴이유는 state는 비동기라서 이전 상태값을 가지고 있는 경우가 있어서 ref를 사용함
           const url = (() => {
@@ -301,7 +301,7 @@ export const WebpageScreen: FunctionComponent = observer(() => {
           );
         },
       },
-      RNInjectedKeplr.parseWebviewMessage,
+      RNInjectedTitan.parseWebviewMessage,
     );
 
     return () => {
@@ -402,7 +402,7 @@ export const WebpageScreen: FunctionComponent = observer(() => {
         <WebView
           source={{uri}}
           ref={webviewRef}
-          applicationNameForUserAgent={`KeplrWalletMobile/${DeviceInfo.getVersion()}`}
+          applicationNameForUserAgent={`TitanWalletMobile/${DeviceInfo.getVersion()}`}
           injectedJavaScriptBeforeContentLoaded={sourceCode}
           injectedJavaScript={imageLongPressScript}
           onMessage={onMessage}

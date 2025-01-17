@@ -1,5 +1,5 @@
-import { AnalyticsClient, Properties } from "@keplr-wallet/analytics";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { AnalyticsClient, Properties } from "@titan-wallet/analytics";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import {
   action,
   autorun,
@@ -8,7 +8,7 @@ import {
   runInAction,
   toJS,
 } from "mobx";
-import { KVStore } from "@keplr-wallet/common";
+import { KVStore } from "@titan-wallet/common";
 import { Buffer } from "buffer/";
 
 // https://developer.chrome.com/docs/extensions/mv3/tut_analytics/

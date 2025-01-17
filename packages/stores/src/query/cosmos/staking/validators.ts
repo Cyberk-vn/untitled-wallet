@@ -7,7 +7,7 @@ import { ChainGetter } from "../../../chain";
 import { computed, makeObservable, observable, runInAction } from "mobx";
 import { ObservableQuery, QuerySharedContext } from "../../../common";
 import PQueue from "p-queue";
-import { CoinPretty, Dec } from "@keplr-wallet/unit";
+import { CoinPretty, Dec } from "@titan-wallet/unit";
 import { computedFn } from "mobx-utils";
 
 interface KeybaseResult {

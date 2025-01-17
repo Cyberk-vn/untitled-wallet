@@ -71,14 +71,14 @@ import {WebpageScreen} from './screen/web/webpage';
 import {GovernanceListScreen} from './screen/governance/list';
 import {GovernanceScreen} from './screen/governance';
 import {FinalizeKeyScreen} from './screen/register/finalize-key';
-import {PlainObject} from '@keplr-wallet/background';
+import {PlainObject} from '@titan-wallet/background';
 import {EnableChainsScreen} from './screen/register/enable-chains';
 import {RecoverMnemonicScreen} from './screen/register/recover-mnemonic';
 import {WelcomeScreen} from './screen/register/welcome';
 import {SelectDerivationPathScreen} from './screen/register/select-derivation-path';
 import {ConnectHardwareWalletScreen} from './screen/register/connect-hardware';
 import {ConnectLedgerScreen} from './screen/register/connect-ledger';
-import {App} from '@keplr-wallet/ledger-cosmos';
+import {App} from '@titan-wallet/ledger-cosmos';
 import {
   SignDelegateScreen,
   SignUndelegateScreen,
@@ -1166,7 +1166,7 @@ export const AppNavigation: FunctionComponent = observer(() => {
             name="Register.FinalizeImportFromExtension"
             component={FinalizeImportFromExtensionScreen}
             options={{
-              title: 'Import from Keplr Extension',
+              title: 'Import from Titan Extension',
               ...registerHeaderOptions,
             }}
           />

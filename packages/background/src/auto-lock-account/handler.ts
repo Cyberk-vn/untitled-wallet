@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   GetAutoLockAccountDurationMsg,
   UpdateAutoLockAccountDurationMsg,
@@ -45,7 +45,7 @@ export const getHandler: (service: AutoLockAccountService) => Handler = (
           msg as GetAutoLockStateMsg
         );
       default:
-        throw new KeplrError("auto-lock-account", 100, "Unknown msg type");
+        throw new TitanError("auto-lock-account", 100, "Unknown msg type");
     }
   };
 };

@@ -57,19 +57,19 @@ export const Modal: FunctionComponent<{
       if (checkAndroid) {
         // Save the mobile link.
         saveMobileLinkInfo({
-          name: "Keplr",
-          href: "intent://wcV2#Intent;package=com.chainapsis.keplr;scheme=keplrwallet;end;",
+          name: "Titan",
+          href: "intent://wcV2#Intent;package=com.chainapsis.titan;scheme=titanwallet;end;",
         });
 
-        return `intent://wcV2?${uri}#Intent;package=com.chainapsis.keplr;scheme=keplrwallet;end;`;
+        return `intent://wcV2?${uri}#Intent;package=com.chainapsis.titan;scheme=titanwallet;end;`;
       } else {
         // Save the mobile link.
         saveMobileLinkInfo({
-          name: "Keplr",
-          href: `keplrwallet://wcV2`,
+          name: "Titan",
+          href: `titanwallet://wcV2`,
         });
 
-        return `keplrwallet://wcV2?${uri}`;
+        return `titanwallet://wcV2?${uri}`;
       }
     }
   }, [checkAndroid, checkMobile, uri]);

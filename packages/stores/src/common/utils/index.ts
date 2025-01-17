@@ -1,6 +1,6 @@
-import { Currency } from "@keplr-wallet/types";
+import { Currency } from "@titan-wallet/types";
 import { CoinPrimitive } from "../types";
-import { CoinPretty, Dec, Int } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, Int } from "@titan-wallet/unit";
 import { IChainInfoImpl } from "../../chain";
 
 export class StoreUtils {

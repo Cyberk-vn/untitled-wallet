@@ -1,11 +1,11 @@
 import { EnigmaUtils } from "./enigma-utils";
 import { ChainsService } from "../chains";
-import { KVStore } from "@keplr-wallet/common";
-import { ChainInfo } from "@keplr-wallet/types";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { KVStore } from "@titan-wallet/common";
+import { ChainInfo } from "@titan-wallet/types";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { Buffer } from "buffer/";
 import { KeyRingCosmosService } from "../keyring-cosmos";
-import { Hash } from "@keplr-wallet/crypto";
+import { Hash } from "@titan-wallet/crypto";
 import { autorun, observable, runInAction, toJS } from "mobx";
 
 export class SecretWasmService {
@@ -83,8 +83,8 @@ export class SecretWasmService {
   ): Promise<Uint8Array> {
     const chainInfo = await this.chainsService.getChainInfoOrThrow(chainId);
 
-    // XXX: Keplr should generate the seed deterministically according to the account.
-    // Otherwise, it will lost the encryption/decryption key if Keplr is uninstalled or local storage is cleared.
+    // XXX: Titan should generate the seed deterministically according to the account.
+    // Otherwise, it will lost the encryption/decryption key if Titan is uninstalled or local storage is cleared.
     // For now, use the signature of some string to generate the seed.
     // It need to more research.
     const seed = await this.getSeed(chainInfo);
@@ -101,8 +101,8 @@ export class SecretWasmService {
   ): Promise<Uint8Array> {
     const chainInfo = await this.chainsService.getChainInfoOrThrow(chainId);
 
-    // XXX: Keplr should generate the seed deterministically according to the account.
-    // Otherwise, it will lost the encryption/decryption key if Keplr is uninstalled or local storage is cleared.
+    // XXX: Titan should generate the seed deterministically according to the account.
+    // Otherwise, it will lost the encryption/decryption key if Titan is uninstalled or local storage is cleared.
     // For now, use the signature of some string to generate the seed.
     // It need to more research.
     const seed = await this.getSeed(chainInfo);
@@ -161,7 +161,7 @@ export class SecretWasmService {
       return Hash.sha256(
         await this.keyRingCosmosService.legacySignArbitraryInternal(
           chainInfo.chainId,
-          "Create Keplr Secret encryption key. Only approve requests by Keplr."
+          "Create Titan Secret encryption key. Only approve requests by Titan."
         )
       );
     })();

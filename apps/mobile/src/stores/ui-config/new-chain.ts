@@ -3,7 +3,7 @@ import {
   KVStore,
   PrefixKVStore,
   sortedJsonByKeyStringify,
-} from '@keplr-wallet/common';
+} from '@titan-wallet/common';
 import {
   action,
   autorun,
@@ -15,9 +15,9 @@ import {
 } from 'mobx';
 import {ChangelogConfig} from './changelog.ts';
 import {ChainStore} from '../chain';
-import {simpleFetch} from '@keplr-wallet/simple-fetch';
+import {simpleFetch} from '@titan-wallet/simple-fetch';
 import semver from 'semver';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
 
 interface Remote {
   version: string;

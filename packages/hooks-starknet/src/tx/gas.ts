@@ -1,6 +1,6 @@
 import { IGasConfig, UIProperties } from "./types";
 import { TxChainSetter } from "./chain";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { action, computed, makeObservable, observable } from "mobx";
 import { useState } from "react";
 

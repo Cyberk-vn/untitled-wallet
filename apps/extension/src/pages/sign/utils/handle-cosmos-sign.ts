@@ -2,13 +2,13 @@ import {
   connectAndSignEIP712WithLedger,
   connectAndSignWithLedger,
 } from "./cosmos-ledger-sign";
-import { SignInteractionStore } from "@keplr-wallet/stores-core";
+import { SignInteractionStore } from "@titan-wallet/stores-core";
 import {
   EthermintChainIdHelper,
   SignDocWrapper,
   serializeSignDoc,
   Bech32Address,
-} from "@keplr-wallet/cosmos";
+} from "@titan-wallet/cosmos";
 import KeystoneSDK, {
   KeystoneCosmosSDK,
   KeystoneEvmSDK,
@@ -32,8 +32,8 @@ import {
   handleKeystoneUSBError,
 } from "../../../utils/keystone";
 import Base from "@keystonehq/hw-app-base";
-import { PlainObject } from "@keplr-wallet/background";
-import { KeplrError } from "@keplr-wallet/router";
+import { PlainObject } from "@titan-wallet/background";
+import { TitanError } from "@titan-wallet/router";
 import { LedgerOptions } from "./ledger-types";
 
 export interface KeystoneOptions {
@@ -118,7 +118,7 @@ export const handleCosmosPreSign = async (
     case "keystone": {
       const keystoneOptions = options as KeystoneOptions;
       const keystoneSDK = new KeystoneSDK({
-        origin: "Keplr Extension",
+        origin: "Titan Extension",
       });
       const address = interactionData.data.signer;
       const path = getPathFromPubKey(
@@ -126,7 +126,7 @@ export const handleCosmosPreSign = async (
         Buffer.from(interactionData.data.pubKey).toString("hex")
       );
       if (path === null) {
-        throw new KeplrError(
+        throw new TitanError(
           ErrModuleKeystoneSign,
           ErrInvalidSigner,
           "Invalid signer"
@@ -201,7 +201,7 @@ export const handleCosmosPreSign = async (
             cbor: response.cbor.toString("hex"),
           } as KeystoneUR;
         } catch (e) {
-          throw new KeplrError(
+          throw new TitanError(
             ErrModuleKeystoneSign,
             ErrKeystoneUSBCommunication,
             handleKeystoneUSBError(e)
@@ -223,14 +223,14 @@ export const handleCosmosPreSign = async (
           new UR(Buffer.from(urResult.cbor, "hex"), urResult.type)
         );
       } catch (e) {
-        throw new KeplrError(
+        throw new TitanError(
           ErrModuleKeystoneSign,
           ErrInvalidSignature,
           e.message || "Invalid signature"
         );
       }
       if (signResult.requestId !== requestId) {
-        throw new KeplrError(
+        throw new TitanError(
           ErrModuleKeystoneSign,
           ErrInvalidRequestId,
           "Invalid request id"
@@ -245,7 +245,7 @@ export const handleCosmosPreSign = async (
             ] as PlainObject
           )["pubKey"]
       ) {
-        throw new KeplrError(
+        throw new TitanError(
           ErrModuleKeystoneSign,
           ErrInvalidPublicKey,
           "Invalid public key"

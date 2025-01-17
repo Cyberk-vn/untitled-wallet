@@ -4,7 +4,7 @@ import { ObservableQuerySecretContractCodeHash } from "./contract-hash";
 import { ObservableQuerySecret20ContractInfo } from "./secret20-contract-info";
 import { DeepReadonly } from "utility-types";
 import { ObservableQuerySecret20BalanceRegistry } from "./secret20-balance";
-import { Keplr } from "@keplr-wallet/types";
+import { Titan } from "@titan-wallet/types";
 import { QuerySharedContext } from "../../common";
 
 export interface SecretQueries {
@@ -13,7 +13,7 @@ export interface SecretQueries {
 
 export const SecretQueries = {
   use(options: {
-    apiGetter: () => Promise<Keplr | undefined>;
+    apiGetter: () => Promise<Titan | undefined>;
   }): (
     queriesSetBase: QueriesSetBase,
     sharedContext: QuerySharedContext,
@@ -48,7 +48,7 @@ export class SecretQueriesImpl {
     sharedContext: QuerySharedContext,
     chainId: string,
     chainGetter: ChainGetter,
-    apiGetter: () => Promise<Keplr | undefined>
+    apiGetter: () => Promise<Titan | undefined>
   ) {
     this.querySecretContractCodeHash =
       new ObservableQuerySecretContractCodeHash(

@@ -1,7 +1,7 @@
 import { useEffectOnce } from "./use-effect-once";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Channel, IIBCChannelConfig } from "@keplr-wallet/hooks";
+import { Channel, IIBCChannelConfig } from "@titan-wallet/hooks";
 import { toJS } from "mobx";
 
 export const useIBCChannelConfigQueryString = (

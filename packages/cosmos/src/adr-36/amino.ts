@@ -1,8 +1,8 @@
-import { StdSignDoc } from "@keplr-wallet/types";
+import { StdSignDoc } from "@titan-wallet/types";
 import { serializeSignDoc } from "../signing";
 import { Bech32Address } from "../bech32";
 import { Buffer } from "buffer/";
-import { Hash, PubKeySecp256k1 } from "@keplr-wallet/crypto";
+import { Hash, PubKeySecp256k1 } from "@titan-wallet/crypto";
 
 /**
  * Check the sign doc is for ADR-36.

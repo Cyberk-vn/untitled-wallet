@@ -2,7 +2,7 @@ import { ObservableChainQuery } from "../../chain-query";
 import { DistributionParams } from "./types";
 import { ChainGetter } from "../../../chain";
 import { computed, makeObservable } from "mobx";
-import { RatePretty } from "@keplr-wallet/unit";
+import { RatePretty } from "@titan-wallet/unit";
 import { QuerySharedContext } from "../../../common";
 
 export class ObservableQueryDistributionParams extends ObservableChainQuery<DistributionParams> {

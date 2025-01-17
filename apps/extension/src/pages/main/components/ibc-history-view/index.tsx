@@ -7,9 +7,9 @@ import {
   RemoveIBCHistoryMsg,
   RemoveSkipHistoryMsg,
   SkipHistory,
-} from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+} from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 import { useLayoutEffectOnce } from "../../../../hooks/use-effect-once";
 import { Stack } from "../../../../components/stack";
 import { Box } from "../../../../components/box";
@@ -30,8 +30,8 @@ import {
   XMarkIcon,
 } from "../../../../components/icon";
 import { useStore } from "../../../../stores";
-import { CoinPretty } from "@keplr-wallet/unit";
-import { IChainInfoImpl } from "@keplr-wallet/stores";
+import { CoinPretty } from "@titan-wallet/unit";
+import { IChainInfoImpl } from "@titan-wallet/stores";
 import { ChainImageFallback } from "../../../../components/image";
 import { IconProps } from "../../../../components/icon/types";
 import { useSpringValue, animated, easings } from "@react-spring/web";
@@ -1143,12 +1143,12 @@ const SkipHistoryViewItem: FunctionComponent<{
                   }
 
                   const isOnlyEvm = parseInt(transferAssetRelease.chain_id) > 0;
-                  const chainIdInKeplr = isOnlyEvm
+                  const chainIdInTitan = isOnlyEvm
                     ? `eip155:${transferAssetRelease.chain_id}`
                     : transferAssetRelease.chain_id;
 
-                  if (chainStore.hasChain(chainIdInKeplr)) {
-                    const releasedChain = chainStore.getChain(chainIdInKeplr);
+                  if (chainStore.hasChain(chainIdInTitan)) {
+                    const releasedChain = chainStore.getChain(chainIdInTitan);
 
                     const destinationDenom = (() => {
                       const currency = releasedChain.forceFindCurrency(

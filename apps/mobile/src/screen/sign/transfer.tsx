@@ -1,12 +1,12 @@
 import {IMessageRenderer} from './types.ts';
-import {MsgTransfer} from '@keplr-wallet/proto-types/ibc/applications/transfer/v1/tx';
+import {MsgTransfer} from '@titan-wallet/proto-types/ibc/applications/transfer/v1/tx';
 import * as ExpoImage from 'expo-image';
 import {FormattedMessage, useIntl} from 'react-intl';
 import React, {FunctionComponent, useState} from 'react';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../stores';
-import {Coin, CoinPretty} from '@keplr-wallet/unit';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {Coin, CoinPretty} from '@titan-wallet/unit';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {StyleSheet, Text} from 'react-native';
 import {useStyle} from '../../styles';
 import {XAxis} from '../../components/axis';

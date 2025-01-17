@@ -4,27 +4,27 @@ export const CosmosMethods = [
   'cosmos_getAccounts',
   'cosmos_signDirect',
   'cosmos_signAmino',
-  'keplr_getKey',
-  'keplr_signAmino',
-  'keplr_signDirect',
-  'keplr_signArbitrary',
-  'keplr_enable',
-  'keplr_signEthereum',
-  'keplr_experimentalSuggestChain',
-  'keplr_suggestToken',
+  'titan_getKey',
+  'titan_signAmino',
+  'titan_signDirect',
+  'titan_signArbitrary',
+  'titan_enable',
+  'titan_signEthereum',
+  'titan_experimentalSuggestChain',
+  'titan_suggestToken',
 ];
 // https://docs.walletconnect.com/2.0/javascript/web3wallet/wallet-usage#emit-session-events
 // On docs, it describes only about ethereum.
 // However, "accountsChanged" event is not standardised for cosmos.
 // Even though, "accountsChanged" event not standardised enough,
-// Keplr implements it by own way.
+// Titan implements it by own way.
 // In multi chain ecosystem, it is slightly hard to sync changed account when dapp uses multiple chains.
 // To reduce this problem, emit events with changed accounts information with CAIP-10 to permit dapp to sync account with events immediately.
-// However, keplr doesn't invoke "chainChanged" event. The reason is multi-chain philosophy of keplr.
+// However, titan doesn't invoke "chainChanged" event. The reason is multi-chain philosophy of titan.
 export const CosmosEvents = [
   'accountsChanged',
   'chainChanged',
-  'keplr_accountsChanged',
+  'titan_accountsChanged',
 ];
 
 export const SessionProposalSchema = Joi.object({

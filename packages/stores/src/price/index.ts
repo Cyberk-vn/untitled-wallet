@@ -1,12 +1,12 @@
 import { ObservableQuery, QuerySharedContext } from "../common";
 import { CoinGeckoSimplePrice } from "./types";
-import { KVStore } from "@keplr-wallet/common";
-import { Dec, CoinPretty, Int, PricePretty } from "@keplr-wallet/unit";
-import { FiatCurrency } from "@keplr-wallet/types";
+import { KVStore } from "@titan-wallet/common";
+import { Dec, CoinPretty, Int, PricePretty } from "@titan-wallet/unit";
+import { FiatCurrency } from "@titan-wallet/types";
 import { DeepReadonly } from "utility-types";
 import deepmerge from "deepmerge";
 import { action, autorun, makeObservable, observable } from "mobx";
-import { makeURL } from "@keplr-wallet/simple-fetch";
+import { makeURL } from "@titan-wallet/simple-fetch";
 
 class Throttler {
   protected fns: (() => void)[] = [];

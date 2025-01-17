@@ -7,7 +7,7 @@ import {
   useGasSimulator,
   useRedelegateTxConfig,
   useTxConfigsValidate,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {AsyncKVStore} from '../../../common';
 import {AmountInput} from '../../../components/input/amount-input';
 import {MemoInput} from '../../../components/input/memo-input';
@@ -19,7 +19,7 @@ import {FeeControl} from '../../../components/input/fee-control';
 import {Gutter} from '../../../components/gutter';
 import {LogBox, Text} from 'react-native';
 import {StackNavProp, StakeNavigation} from '../../../navigation';
-import {Staking} from '@keplr-wallet/stores';
+import {Staking} from '@titan-wallet/stores';
 import {Column, Columns} from '../../../components/column';
 import {ValidatorImage} from '../components/validator-image';
 import {ArrowRightIcon} from '../../../components/icon/arrow-right';

@@ -22,11 +22,11 @@ import {Gutter} from '../../../components/gutter';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {RootStackParamList, StackNavProp} from '../../../navigation.tsx';
 import {HugeQueriesStore} from '../../../stores/huge-queries';
-import {ObservableQueryIbcSwap} from '@keplr-wallet/stores-internal';
+import {ObservableQueryIbcSwap} from '@titan-wallet/stores-internal';
 import {computed, makeObservable} from 'mobx';
-import {Currency} from '@keplr-wallet/types';
-import {IChainInfoImpl} from '@keplr-wallet/stores';
-import {CoinPretty, Dec} from '@keplr-wallet/unit';
+import {Currency} from '@titan-wallet/types';
+import {IChainInfoImpl} from '@titan-wallet/stores';
+import {CoinPretty, Dec} from '@titan-wallet/unit';
 import {TextInput as NativeInput} from 'react-native';
 import {ViewToken} from '../../../components/token-view';
 

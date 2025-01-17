@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {IIBCChannelConfig} from '@keplr-wallet/hooks';
+import {IIBCChannelConfig} from '@titan-wallet/hooks';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../../../stores';
 import {useStyle} from '../../../../styles';

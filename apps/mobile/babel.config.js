@@ -12,14 +12,14 @@ module.exports = {
           ...(() => {
             const p = path.resolve(
               __dirname,
-              './src/keplr-wallet-mobile-private/index.ts',
+              './src/titan-wallet-mobile-private/index.ts',
             );
 
             if (fs.existsSync(p)) {
               return {
-                'keplr-wallet-mobile-private': path.resolve(
+                'titan-wallet-mobile-private': path.resolve(
                   __dirname,
-                  './src/keplr-wallet-mobile-private/index.ts',
+                  './src/titan-wallet-mobile-private/index.ts',
                 ),
               };
             }
@@ -40,19 +40,19 @@ module.exports = {
       'transform-inline-environment-variables',
       {
         include: [
-          'KEPLR_EXT_ETHEREUM_ENDPOINT',
-          'KEPLR_EXT_ANALYTICS_API_AUTH_TOKEN',
-          'KEPLR_EXT_ANALYTICS_API_URL',
-          'KEPLR_EXT_COINGECKO_ENDPOINT',
-          'KEPLR_EXT_COINGECKO_GETPRICE',
-          'KEPLR_EXT_TRANSAK_API_KEY',
-          'KEPLR_EXT_MOONPAY_API_KEY',
-          'KEPLR_EXT_KADO_API_KEY',
-          'KEPLR_EXT_CHAIN_REGISTRY_URL',
-          'KEPLR_EXT_TOKEN_FACTORY_BASE_URL',
-          'KEPLR_EXT_TOKEN_FACTORY_URI',
-          'KEPLR_EXT_TX_HISTORY_BASE_URL',
-          'KEPLR_EXT_CONFIG_SERVER',
+          'TITAN_EXT_ETHEREUM_ENDPOINT',
+          'TITAN_EXT_ANALYTICS_API_AUTH_TOKEN',
+          'TITAN_EXT_ANALYTICS_API_URL',
+          'TITAN_EXT_COINGECKO_ENDPOINT',
+          'TITAN_EXT_COINGECKO_GETPRICE',
+          'TITAN_EXT_TRANSAK_API_KEY',
+          'TITAN_EXT_MOONPAY_API_KEY',
+          'TITAN_EXT_KADO_API_KEY',
+          'TITAN_EXT_CHAIN_REGISTRY_URL',
+          'TITAN_EXT_TOKEN_FACTORY_BASE_URL',
+          'TITAN_EXT_TOKEN_FACTORY_URI',
+          'TITAN_EXT_TX_HISTORY_BASE_URL',
+          'TITAN_EXT_CONFIG_SERVER',
           'WC_PROJECT_ID',
           'SKIP_API_KEY',
         ],

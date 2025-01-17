@@ -4,11 +4,11 @@ import {
   AccountStore,
   CosmosAccount,
   CosmosQueries,
-} from "@keplr-wallet/stores";
-import { IndexedDBKVStore } from "@keplr-wallet/common";
-import { ChainInfo } from "@keplr-wallet/types";
+} from "@titan-wallet/stores";
+import { IndexedDBKVStore } from "@titan-wallet/common";
+import { ChainInfo } from "@titan-wallet/types";
 import { EmbedChainInfos } from "../config";
-import { getWCKeplr } from "../get-wc-keplr";
+import { getWCTitan } from "../get-wc-titan";
 
 export class RootStore {
   public readonly chainStore: ChainStore;
@@ -31,12 +31,12 @@ export class RootStore {
     this.accountStore = new AccountStore(
       window,
       this.chainStore,
-      getWCKeplr,
+      getWCTitan,
       () => {
         return {
           suggestChain: false,
           autoInit: true,
-          getKeplr: getWCKeplr,
+          getTitan: getWCTitan,
         };
       },
       CosmosAccount.use({

@@ -8,10 +8,10 @@ import {
   EthSignType,
   ICNSAdr36Signatures,
   IEthereumProvider,
-  Keplr,
-  KeplrIntereactionOptions,
-  KeplrMode,
-  KeplrSignOptions,
+  Titan,
+  TitanIntereactionOptions,
+  TitanMode,
+  TitanSignOptions,
   Key,
   OfflineAminoSigner,
   OfflineDirectSigner,
@@ -19,12 +19,12 @@ import {
   SettledResponses,
   StdSignature,
   StdSignDoc,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 import SignClient from "@walletconnect/sign-client";
 import {
   CosmJSOfflineSigner,
   CosmJSOfflineSignerOnlyAmino,
-} from "@keplr-wallet/provider";
+} from "@titan-wallet/provider";
 import { Buffer } from "buffer/";
 import { ProposalTypes, SessionTypes } from "@walletconnect/types";
 import Long from "long";
@@ -45,7 +45,7 @@ interface RequestParams {
   expiry?: number;
 }
 
-interface KeplrGetKeyWalletConnectV2Response {
+interface TitanGetKeyWalletConnectV2Response {
   // Name of the selected key store.
   readonly name: string;
   readonly algo: string;
@@ -56,21 +56,21 @@ interface KeplrGetKeyWalletConnectV2Response {
   readonly isNanoLedger: boolean;
 }
 
-export class KeplrWalletConnectV2 implements Keplr {
-  defaultOptions: KeplrIntereactionOptions = {};
+export class TitanWalletConnectV2 implements Titan {
+  defaultOptions: TitanIntereactionOptions = {};
 
   readonly version: string = "0.12.20";
-  readonly mode: KeplrMode = "walletconnect";
-  protected readonly storeKey = "keplr_wallet_connect_v2_key";
+  readonly mode: TitanMode = "walletconnect";
+  protected readonly storeKey = "titan_wallet_connect_v2_key";
   protected readonly storeSuggestChainKey =
-    "keplr_wallet_connect_v2_suggest_chain_key";
+    "titan_wallet_connect_v2_suggest_chain_key";
   protected readonly storeSuggestTokenKey =
-    "keplr_wallet_connect_v2_suggest_token_key";
+    "titan_wallet_connect_v2_suggest_token_key";
 
   constructor(
     public readonly signClient: SignClient,
     public readonly options: {
-      sendTx?: Keplr["sendTx"];
+      sendTx?: Titan["sendTx"];
       sessionProperties?: ProposalTypes.SessionProperties;
     }
   ) {
@@ -79,10 +79,10 @@ export class KeplrWalletConnectV2 implements Keplr {
     }
 
     signClient.on("session_event", (event) => {
-      if (event.params.event.name === "keplr_accountsChanged") {
+      if (event.params.event.name === "titan_accountsChanged") {
         this.saveKeys(event.params.event.data);
 
-        window.dispatchEvent(new Event("keplr_keystorechange"));
+        window.dispatchEvent(new Event("titan_keystorechange"));
       }
     });
 
@@ -102,7 +102,7 @@ export class KeplrWalletConnectV2 implements Keplr {
           if (key.hasOwnProperty("chainId")) {
             this.saveLastSeenKey(
               key["chainId"],
-              this.convertToKeplrGetKeyWalletConnectV2Response(key)
+              this.convertToTitanGetKeyWalletConnectV2Response(key)
             );
           }
         });
@@ -110,9 +110,9 @@ export class KeplrWalletConnectV2 implements Keplr {
     }
   }
 
-  protected convertToKeplrGetKeyWalletConnectV2Response(
+  protected convertToTitanGetKeyWalletConnectV2Response(
     data: any
-  ): KeplrGetKeyWalletConnectV2Response {
+  ): TitanGetKeyWalletConnectV2Response {
     if (
       !data.hasOwnProperty("name") ||
       !data.hasOwnProperty("algo") ||
@@ -158,7 +158,7 @@ export class KeplrWalletConnectV2 implements Keplr {
 
   protected getLastSeenKey(
     chainId: string
-  ): KeplrGetKeyWalletConnectV2Response | undefined {
+  ): TitanGetKeyWalletConnectV2Response | undefined {
     const saved = this.getAllLastSeenKey();
 
     if (!saved) {
@@ -179,7 +179,7 @@ export class KeplrWalletConnectV2 implements Keplr {
 
   protected saveLastSeenKey(
     chainId: string,
-    response: KeplrGetKeyWalletConnectV2Response
+    response: TitanGetKeyWalletConnectV2Response
   ) {
     let saved = this.getAllLastSeenKey();
 
@@ -193,7 +193,7 @@ export class KeplrWalletConnectV2 implements Keplr {
   }
 
   protected saveAllLastSeenKey(data: {
-    [chainId: string]: KeplrGetKeyWalletConnectV2Response | undefined;
+    [chainId: string]: TitanGetKeyWalletConnectV2Response | undefined;
   }) {
     localStorage.setItem(this.getKeyLastSeenKey(), JSON.stringify(data));
   }
@@ -376,7 +376,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       topic: topic,
       chainId: this.getNamespaceChainId(),
       request: {
-        method: "keplr_enable",
+        method: "titan_enable",
         params: {
           chainId: chainIds,
         },
@@ -439,7 +439,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       primaryType: string;
     },
     _signDoc: StdSignDoc,
-    _signOptions: KeplrSignOptions = {}
+    _signOptions: TitanSignOptions = {}
   ): Promise<AminoSignResponse> {
     throw new Error("Not yet implemented");
   }
@@ -468,7 +468,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       topic,
       chainId: this.getNamespaceChainId(),
       request: {
-        method: "keplr_experimentalSuggestChain",
+        method: "titan_experimentalSuggestChain",
         params: {
           chainInfo: _chainInfo,
         },
@@ -554,7 +554,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       topic,
       chainId: this.getNamespaceChainId(),
       request: {
-        method: "keplr_getKey",
+        method: "titan_getKey",
         params: {
           chainId,
         },
@@ -589,14 +589,14 @@ export class KeplrWalletConnectV2 implements Keplr {
 
   getOfflineSigner(
     chainId: string,
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): OfflineAminoSigner & OfflineDirectSigner {
     return new CosmJSOfflineSigner(chainId, this, signOptions);
   }
 
   async getOfflineSignerAuto(
     chainId: string,
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): Promise<OfflineAminoSigner | OfflineDirectSigner> {
     const key = await this.getKey(chainId);
     if (key.isNanoLedger) {
@@ -607,7 +607,7 @@ export class KeplrWalletConnectV2 implements Keplr {
 
   getOfflineSignerOnlyAmino(
     chainId: string,
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): OfflineAminoSigner {
     return new CosmJSOfflineSignerOnlyAmino(chainId, this, signOptions);
   }
@@ -635,7 +635,7 @@ export class KeplrWalletConnectV2 implements Keplr {
     chainId: string,
     signer: string,
     signDoc: StdSignDoc,
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): Promise<AminoSignResponse> {
     this.checkDeepLink();
 
@@ -645,7 +645,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       topic,
       chainId: this.getNamespaceChainId(),
       request: {
-        method: "keplr_signAmino",
+        method: "titan_signAmino",
         params: {
           chainId,
           signer,
@@ -671,7 +671,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       topic,
       chainId: this.getNamespaceChainId(),
       request: {
-        method: "keplr_signArbitrary",
+        method: "titan_signArbitrary",
         params: {
           chainId,
           signer,
@@ -695,7 +695,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       chainId?: string | null;
       accountNumber?: Long | null;
     },
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): Promise<DirectSignResponse> {
     this.checkDeepLink();
 
@@ -705,7 +705,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       topic,
       chainId: this.getNamespaceChainId(),
       request: {
-        method: "keplr_signDirect",
+        method: "titan_signDirect",
         params: {
           chainId,
           signer,
@@ -772,7 +772,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       } | null;
     },
     _signOptions?: Exclude<
-      KeplrSignOptions,
+      TitanSignOptions,
       "preferNoSetFee" | "disableBalanceCheck"
     >
   ): Promise<DirectAuxSignResponse> {
@@ -793,7 +793,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       topic,
       chainId: this.getNamespaceChainId(),
       request: {
-        method: "keplr_signEthereum",
+        method: "titan_signEthereum",
         params: {
           chainId,
           signer,
@@ -833,7 +833,7 @@ export class KeplrWalletConnectV2 implements Keplr {
       topic,
       chainId: this.getNamespaceChainId(),
       request: {
-        method: "keplr_suggestToken",
+        method: "titan_suggestToken",
         params: {
           chainId: _chainId,
           contractAddress: _contractAddress,
@@ -917,7 +917,7 @@ class MockEthereumProvider extends EventEmitter implements IEthereumProvider {
 
   readonly networkVersion: string | null = null;
 
-  readonly isKeplr: boolean = true;
+  readonly isTitan: boolean = true;
   readonly isMetaMask: boolean = true;
 
   constructor() {

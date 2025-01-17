@@ -2,12 +2,12 @@ import * as $protobuf from "protobufjs";
 import {
   MsgProvision,
   MsgWalletSpendAction,
-} from "@keplr-wallet/proto-types/agoric/swingset/msgs";
-import { Any } from "@keplr-wallet/proto-types/google/protobuf/any";
+} from "@titan-wallet/proto-types/agoric/swingset/msgs";
+import { Any } from "@titan-wallet/proto-types/google/protobuf/any";
 import {
   MsgMultiSend,
   MsgSend,
-} from "@keplr-wallet/proto-types/cosmos/bank/v1beta1/tx";
+} from "@titan-wallet/proto-types/cosmos/bank/v1beta1/tx";
 import {
   MsgDelegate,
   MsgUndelegate,
@@ -20,32 +20,32 @@ import {
   MsgDisableTokenizeShares,
   MsgEnableTokenizeShares,
   MsgValidatorBond,
-} from "@keplr-wallet/proto-types/cosmos/staking/v1beta1/tx";
+} from "@titan-wallet/proto-types/cosmos/staking/v1beta1/tx";
 import {
   MsgExec,
   MsgGrant,
   MsgRevoke,
-} from "@keplr-wallet/proto-types/cosmos/authz/v1beta1/tx";
-import { MsgVote } from "@keplr-wallet/proto-types/cosmos/gov/v1beta1/tx";
+} from "@titan-wallet/proto-types/cosmos/authz/v1beta1/tx";
+import { MsgVote } from "@titan-wallet/proto-types/cosmos/gov/v1beta1/tx";
 import {
   MsgSetWithdrawAddress,
   MsgWithdrawDelegatorReward,
-} from "@keplr-wallet/proto-types/cosmos/distribution/v1beta1/tx";
+} from "@titan-wallet/proto-types/cosmos/distribution/v1beta1/tx";
 import {
   MsgExecuteContract,
   MsgInstantiateContract,
-} from "@keplr-wallet/proto-types/cosmwasm/wasm/v1/tx";
-import { MsgTransfer } from "@keplr-wallet/proto-types/ibc/applications/transfer/v1/tx";
+} from "@titan-wallet/proto-types/cosmwasm/wasm/v1/tx";
+import { MsgTransfer } from "@titan-wallet/proto-types/ibc/applications/transfer/v1/tx";
 import {
   MsgPayPacketFee,
   MsgPayPacketFeeAsync,
   MsgRegisterPayee,
   MsgRegisterCounterpartyPayee,
-} from "@keplr-wallet/proto-types/ibc/applications/fee/v1/tx";
+} from "@titan-wallet/proto-types/ibc/applications/fee/v1/tx";
 import { UnknownMessage } from "./unknown";
-import { GenericAuthorization } from "@keplr-wallet/proto-types/cosmos/authz/v1beta1/authz";
-import { StakeAuthorization } from "@keplr-wallet/proto-types/cosmos/staking/v1beta1/authz";
-import { SendAuthorization } from "@keplr-wallet/proto-types/cosmos/bank/v1beta1/authz";
+import { GenericAuthorization } from "@titan-wallet/proto-types/cosmos/authz/v1beta1/authz";
+import { StakeAuthorization } from "@titan-wallet/proto-types/cosmos/staking/v1beta1/authz";
+import { SendAuthorization } from "@titan-wallet/proto-types/cosmos/bank/v1beta1/authz";
 import {
   MsgLiquidStake,
   MsgLSMLiquidStake,
@@ -62,7 +62,7 @@ import {
   MsgClearBalance,
   MsgUndelegateHost,
   MsgUpdateInnerRedemptionRateBounds,
-} from "@keplr-wallet/proto-types/stride/stakeibc/tx";
+} from "@titan-wallet/proto-types/stride/stakeibc/tx";
 import {
   MsgLiquidStake as MsgLiquidStakeStakeTia,
   MsgRedeemStake as MsgRedeemStakeStakeTia,
@@ -77,7 +77,7 @@ import {
   MsgOverwriteUnbondingRecord,
   MsgOverwriteRedemptionRecord,
   MsgSetOperatorAddress,
-} from "@keplr-wallet/proto-types/stride/staketia/tx";
+} from "@titan-wallet/proto-types/stride/staketia/tx";
 import {
   MsgLiquidStake as MsgLiquidStakeStakeDym,
   MsgRedeemStake as MsgRedeemStakeStakeDym,
@@ -92,9 +92,9 @@ import {
   MsgOverwriteUnbondingRecord as MsgOverwriteUnbondingRecordStakeDym,
   MsgOverwriteRedemptionRecord as MsgOverwriteRedemptionRecordStakeDym,
   MsgSetOperatorAddress as MsgSetOperatorAddressStakeDym,
-} from "@keplr-wallet/proto-types/stride/stakedym/tx";
+} from "@titan-wallet/proto-types/stride/stakedym/tx";
 import { Buffer } from "buffer/";
-import { MsgSend as ThorMsgSend } from "@keplr-wallet/proto-types/thorchain/v1/types/msg_send";
+import { MsgSend as ThorMsgSend } from "@titan-wallet/proto-types/thorchain/v1/types/msg_send";
 
 export * from "./unknown";
 

@@ -1,10 +1,10 @@
-import { SignEthereumInteractionStore } from "@keplr-wallet/stores-core";
-import { EthSignType } from "@keplr-wallet/types";
+import { SignEthereumInteractionStore } from "@titan-wallet/stores-core";
+import { EthSignType } from "@titan-wallet/types";
 import Transport from "@ledgerhq/hw-transport";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 import { UREncoder } from "@keystonehq/keystone-sdk";
 import Base from "@keystonehq/hw-app-base";
-import { KeplrError } from "@keplr-wallet/router";
+import { TitanError } from "@titan-wallet/router";
 import {
   ErrCodeDeviceLocked,
   ErrFailedGetPublicKey,
@@ -17,12 +17,12 @@ import {
 } from "./ledger-types";
 import Eth from "@ledgerhq/hw-app-eth";
 import { LedgerUtils } from "../../../utils";
-import { PubKeySecp256k1 } from "@keplr-wallet/crypto";
+import { PubKeySecp256k1 } from "@titan-wallet/crypto";
 import {
   domainHash,
   EIP712MessageValidator,
   messageHash,
-} from "@keplr-wallet/background";
+} from "@titan-wallet/background";
 import { serialize, TransactionTypes } from "@ethersproject/transactions";
 import TransportWebHID from "@ledgerhq/hw-transport-webhid";
 import {
@@ -35,7 +35,7 @@ import {
   ErrKeystoneUSBCommunication,
 } from "./keystone";
 import KeystoneSDK, { UR, utils } from "@keystonehq/keystone-sdk";
-import { EthermintChainIdHelper } from "@keplr-wallet/cosmos";
+import { EthermintChainIdHelper } from "@titan-wallet/cosmos";
 import {
   createKeystoneTransport,
   handleKeystoneUSBError,
@@ -87,7 +87,7 @@ export const handleEthereumPreSignByKeystone = async (
   options: KeystoneOptions
 ): Promise<Uint8Array | undefined> => {
   const keystoneSDK = new KeystoneSDK({
-    origin: "Keplr Extension",
+    origin: "Titan Extension",
   });
   const address = interactionData.data.signer;
   const path = getPathFromPubKey(
@@ -149,7 +149,7 @@ export const handleEthereumPreSignByKeystone = async (
         cbor: response.cbor.toString("hex"),
       } as KeystoneUR;
     } catch (e) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleKeystoneSign,
         ErrKeystoneUSBCommunication,
         handleKeystoneUSBError(e)
@@ -189,7 +189,7 @@ export const connectAndSignEthWithLedger = async (
       ? await TransportWebHID.create()
       : await TransportWebUSB.create();
   } catch (e) {
-    throw new KeplrError(
+    throw new TitanError(
       ErrModuleLedgerSign,
       ErrFailedInit,
       "Failed to init transport"
@@ -198,7 +198,7 @@ export const connectAndSignEthWithLedger = async (
 
   let ethApp = new Eth(transport);
 
-  // Ensure that the keplr can connect to ethereum app on ledger.
+  // Ensure that the titan can connect to ethereum app on ledger.
   // getAppConfiguration() works even if the ledger is on screen saver mode.
   // To detect the screen saver mode, we should request the address before using.
   try {
@@ -206,7 +206,7 @@ export const connectAndSignEthWithLedger = async (
   } catch (e) {
     // Device is locked
     if (e?.message.includes("(0x6b0c)")) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrCodeDeviceLocked,
         "Device is locked"
@@ -236,7 +236,7 @@ export const connectAndSignEthWithLedger = async (
 
       pubKey = new PubKeySecp256k1(Buffer.from(res.publicKey, "hex"));
     } catch (e) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrFailedGetPublicKey,
         e.message || e.toString()
@@ -248,7 +248,7 @@ export const connectAndSignEthWithLedger = async (
         "hex"
       ) !== Buffer.from(pubKey.toBytes()).toString("hex")
     ) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrPublicKeyUnmatched,
         "Public key unmatched"
@@ -306,14 +306,14 @@ export const connectAndSignEthWithLedger = async (
       }
     } catch (e) {
       if (e?.message.includes("(0x6985)")) {
-        throw new KeplrError(
+        throw new TitanError(
           ErrModuleLedgerSign,
           ErrSignRejected,
           "User rejected signing"
         );
       }
 
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrFailedSign,
         e.message || e.toString()

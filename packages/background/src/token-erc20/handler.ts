@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { TokenERC20Service } from "./service";
 import {
   GetAllERC20TokenInfosMsg,
@@ -38,7 +38,7 @@ export const getHandler: (
           msg as RemoveERC20TokenMsg
         );
       default:
-        throw new KeplrError("tokens", 120, "Unknown msg type");
+        throw new TitanError("tokens", 120, "Unknown msg type");
     }
   };
 };

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import { SignStarknetTxInteractionStore } from "@keplr-wallet/stores-core";
+import { SignStarknetTxInteractionStore } from "@titan-wallet/stores-core";
 import { handleExternalInteractionWithNoProceedNext } from "../../../../utils";
 import { observer, useLocalObservable } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
@@ -17,9 +17,9 @@ import {
   useNoopAmountConfig,
   useSenderConfig,
   useTxConfigsValidate,
-} from "@keplr-wallet/hooks-starknet";
-import { MemoryKVStore } from "@keplr-wallet/common";
-import { CoinPretty, Dec, Int } from "@keplr-wallet/unit";
+} from "@titan-wallet/hooks-starknet";
+import { MemoryKVStore } from "@titan-wallet/common";
+import { CoinPretty, Dec, Int } from "@titan-wallet/unit";
 import { num, InvocationsSignerDetails } from "starknet";
 import { Box } from "../../../../components/box";
 import { ColorPalette } from "../../../../styles";
@@ -33,7 +33,7 @@ import { ViewDataButton } from "../../../sign/components/view-data-button";
 import { AccountActivationModal } from "../../components/account-activation-modal";
 import { Modal } from "../../../../components/modal";
 import { connectAndSignInvokeTxWithLedger } from "../../../sign/utils/handle-starknet-sign";
-import { KeplrError } from "@keplr-wallet/router";
+import { TitanError } from "@titan-wallet/router";
 import { ErrModuleLedgerSign } from "../../../sign/utils/ledger-types";
 import { LedgerGuideBox } from "../../../sign/components/ledger-guide-box";
 import { useNavigate } from "react-router";
@@ -316,7 +316,7 @@ export const SignStarknetTxView: FunctionComponent<{
       }
 
       // XXX: 요청되었을때 계정이 deploy되어있지 않았다면 nonce는 0이다.
-      //      이 경우 keplr UI 쪽에서 계정을 deploy 했었을 것이기 때문에 nonce를 새롭게 받아와야한다.
+      //      이 경우 titan UI 쪽에서 계정을 deploy 했었을 것이기 때문에 nonce를 새롭게 받아와야한다.
       let nonce = new Int(num.toBigInt(interactionData.data.details.nonce));
       if (nonce.equals(new Int(0))) {
         nonce = await starknetAccountStore
@@ -424,7 +424,7 @@ export const SignStarknetTxView: FunctionComponent<{
     } catch (e) {
       console.log(e);
 
-      if (e instanceof KeplrError) {
+      if (e instanceof TitanError) {
         if (e.module === ErrModuleLedgerSign) {
           setLedgerInteractingError(e);
         } else {

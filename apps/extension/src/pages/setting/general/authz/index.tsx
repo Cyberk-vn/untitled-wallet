@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
-import { AuthZ } from "@keplr-wallet/stores";
+import { AuthZ } from "@titan-wallet/stores";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
 import { BackButton } from "../../../../layouts/header/components";
@@ -11,7 +11,7 @@ import { Body3, H4, Subtitle3 } from "../../../../components/typography";
 import { Stack } from "../../../../components/stack";
 import styled from "styled-components";
 import { ColorPalette } from "../../../../styles";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import { FormattedDate, FormattedMessage, useIntl } from "react-intl";
 import { Columns } from "../../../../components/column";
 import { useNavigate } from "react-router";

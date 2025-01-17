@@ -76,9 +76,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
         compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.chainapsis.keplr"
+    namespace "com.chainapsis.titan"
     defaultConfig {
-        applicationId "com.chainapsis.keplr"
+        applicationId "com.chainapsis.titan"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

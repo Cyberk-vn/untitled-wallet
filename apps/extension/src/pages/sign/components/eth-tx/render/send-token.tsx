@@ -1,8 +1,8 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../../stores";
-import { CoinPretty, Dec } from "@keplr-wallet/unit";
-import { erc20ContractInterface } from "@keplr-wallet/stores-eth";
+import { CoinPretty, Dec } from "@titan-wallet/unit";
+import { erc20ContractInterface } from "@titan-wallet/stores-eth";
 import { BigNumber } from "@ethersproject/bignumber";
 import { IEthTxRenderer } from "../types";
 import { ItemLogo } from "../../../../main/token-detail/msg-items/logo";

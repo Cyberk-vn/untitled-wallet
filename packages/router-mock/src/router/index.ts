@@ -2,8 +2,8 @@ import {
   Router,
   MessageSender,
   Result,
-  KeplrError,
-} from "@keplr-wallet/router";
+  TitanError,
+} from "@titan-wallet/router";
 import { EventEmitter } from "events";
 
 export class MockRouter extends Router {
@@ -38,7 +38,7 @@ export class MockRouter extends Router {
       console.log(
         `Failed to process msg ${message.type}: ${e?.message || e?.toString()}`
       );
-      if (e instanceof KeplrError) {
+      if (e instanceof TitanError) {
         sender.resolver({
           error: {
             code: e.code,

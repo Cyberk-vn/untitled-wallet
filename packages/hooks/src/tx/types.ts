@@ -1,5 +1,5 @@
-import { AppCurrency, FeeCurrency, StdFee } from "@keplr-wallet/types";
-import { CoinPretty, Dec } from "@keplr-wallet/unit";
+import { AppCurrency, FeeCurrency, StdFee } from "@titan-wallet/types";
+import { CoinPretty, Dec } from "@titan-wallet/unit";
 
 export interface ITxChainSetter {
   chainId: string;

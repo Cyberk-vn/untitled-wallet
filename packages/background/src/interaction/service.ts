@@ -3,9 +3,9 @@ import {
   APP_PORT,
   Env,
   FnRequestInteractionOptions,
-  KeplrError,
+  TitanError,
   MessageRequester,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   InteractionPingMsg,
   PushEventDataMsg,
@@ -66,7 +66,7 @@ export class InteractionService {
   // And, don't ensure that the event is delivered successfully, just ignore the any errors.
   dispatchEvent(port: string, type: string, data: unknown) {
     if (!type) {
-      throw new KeplrError("interaction", 101, "Type should not be empty");
+      throw new TitanError("interaction", 101, "Type should not be empty");
     }
 
     const msg = new PushEventDataMsg({
@@ -87,7 +87,7 @@ export class InteractionService {
     options?: Omit<FnRequestInteractionOptions, "unstableOnClose">
   ): Promise<unknown> {
     if (!type) {
-      throw new KeplrError("interaction", 101, "Type should not be empty");
+      throw new TitanError("interaction", 101, "Type should not be empty");
     }
 
     // TODO: Add timeout?
@@ -112,7 +112,7 @@ export class InteractionService {
     options?: Omit<FnRequestInteractionOptions, "unstableOnClose">
   ): Promise<Return> {
     if (!type) {
-      throw new KeplrError("interaction", 101, "Type should not be empty");
+      throw new TitanError("interaction", 101, "Type should not be empty");
     }
 
     // TODO: Add timeout?
@@ -155,7 +155,7 @@ export class InteractionService {
 
     const id = msg.data.id;
     if (this.resolverMap.has(id)) {
-      throw new KeplrError("interaction", 100, "Id is aleady in use");
+      throw new TitanError("interaction", 100, "Id is aleady in use");
     }
 
     return new Promise<unknown>((resolve, reject) => {
@@ -280,7 +280,7 @@ export class InteractionService {
     };
 
     if (this.waitingMap.has(id)) {
-      throw new KeplrError("interaction", 100, "Id is aleady in use");
+      throw new TitanError("interaction", 100, "Id is aleady in use");
     }
 
     const wasEmpty = this.waitingMap.size === 0;

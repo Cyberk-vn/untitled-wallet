@@ -14,7 +14,7 @@ import { Gutter } from "../../../components/gutter";
 import { useRegisterHeader } from "../components/header";
 import { RegisterH4 } from "../components/typography";
 import { ArrowDownTrayIcon, GoogleIcon } from "../../../components/icon";
-import * as KeplrWalletPrivate from "keplr-wallet-private";
+import * as TitanWalletPrivate from "titan-wallet-private";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useTheme } from "styled-components";
 
@@ -106,8 +106,8 @@ export const RegisterIntroExistingUserScene: FunctionComponent = () => {
                 color="secondary"
                 left={<GoogleIcon />}
                 onClick={() => {
-                  if (KeplrWalletPrivate.onGoogleSignInClick) {
-                    KeplrWalletPrivate.onGoogleSignInClick(sceneTransition);
+                  if (TitanWalletPrivate.onGoogleSignInClick) {
+                    TitanWalletPrivate.onGoogleSignInClick(sceneTransition);
                   } else {
                     alert(
                       intl.formatMessage({ id: "error.not-supported-error" })

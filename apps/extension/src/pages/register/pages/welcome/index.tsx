@@ -160,7 +160,7 @@ export const WelcomePage: FunctionComponent = observer(() => {
                           id: "pages.register.pages.welcome.dashboard-link.paragraph",
                         })}
                         src={require("../../../../public/assets/logo-256.png")}
-                        url="https://wallet.keplr.app/"
+                        url="https://wallet.titan.app/"
                       />
                     </Column>
                     <Column weight={1}>
@@ -206,7 +206,7 @@ export const WelcomePage: FunctionComponent = observer(() => {
               e.preventDefault();
 
               browser.tabs.create({
-                url: "https://twitter.com/intent/follow?twterm%5Efollow%7Ctwgr%5Ekeplrwallet&screen_name=KeplrWallet",
+                url: "https://twitter.com/intent/follow?twterm%5Efollow%7Ctwgr%5Etitanwallet&screen_name=TitanWallet",
               });
             }}
           >

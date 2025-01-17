@@ -34,12 +34,12 @@ import {
   useRoute,
 } from '@react-navigation/native';
 import {RootStackParamList, StackNavProp} from '../../navigation';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {SVGLoadingIcon} from '../../components/spinner';
 import {GuideBox} from '../../components/guide-box';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
-import {useImportFromExtension} from 'keplr-wallet-mobile-private';
+import {useImportFromExtension} from 'titan-wallet-mobile-private';
 
 export const CameraScreen: FunctionComponent = observer(() => {
   const {chainStore, walletConnectStore} = useStore();

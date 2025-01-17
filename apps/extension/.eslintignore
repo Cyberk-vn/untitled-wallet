@@ -21,7 +21,7 @@ dist/*
 prod/*
 build/*
 
-noop-keplr-wallet-private/build
+noop-titan-wallet-private/build
 
 yarn.lock
 

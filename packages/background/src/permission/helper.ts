@@ -1,4 +1,4 @@
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 
 export class PermissionKeyHelper {
   static globalKey = "_global__permission_";

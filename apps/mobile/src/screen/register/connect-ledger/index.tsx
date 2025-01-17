@@ -24,10 +24,10 @@ import {useStore} from '../../../stores';
 import {LedgerUtils} from '../../../utils';
 import {useLedgerBLE} from '../../../provider/ledger-ble';
 import {ScrollViewRegisterContainer} from '../components/scroll-view-register-container';
-import {AppHRP, CosmosApp} from '@keplr-wallet/ledger-cosmos';
+import {AppHRP, CosmosApp} from '@titan-wallet/ledger-cosmos';
 import Transport from '@ledgerhq/hw-transport';
 import Eth from '@ledgerhq/hw-app-eth';
-import {PubKeySecp256k1} from '@keplr-wallet/crypto';
+import {PubKeySecp256k1} from '@titan-wallet/crypto';
 
 export type Step = 'unknown' | 'connected' | 'app';
 
@@ -74,7 +74,7 @@ export const ConnectLedgerScreen: FunctionComponent = observer(() => {
     if (propApp === 'Ethereum') {
       let ethApp = new Eth(transport);
 
-      // Ensure that the keplr can connect to ethereum app on ledger.
+      // Ensure that the titan can connect to ethereum app on ledger.
       // getAppConfiguration() works even if the ledger is on screen saver mode.
       // To detect the screen saver mode, we should request the address before using.
       try {

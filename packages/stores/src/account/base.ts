@@ -1,7 +1,7 @@
 import { action, computed, flow, makeObservable, observable } from "mobx";
-import { AppCurrency, Keplr } from "@keplr-wallet/types";
+import { AppCurrency, Titan } from "@titan-wallet/types";
 import { ChainGetter } from "../chain";
-import { DenomHelper, toGenerator } from "@keplr-wallet/common";
+import { DenomHelper, toGenerator } from "@titan-wallet/common";
 import { MakeTxResponse } from "./types";
 import { AccountSharedContext } from "./context";
 
@@ -21,7 +21,7 @@ export interface MsgOpt {
 export interface AccountSetOpts {
   readonly suggestChain: boolean;
   readonly suggestChainFn?: (
-    keplr: Keplr,
+    titan: Titan,
     chainInfo: ReturnType<ChainGetter["getChain"]>
   ) => Promise<void>;
   readonly autoInit: boolean;
@@ -83,8 +83,8 @@ export class AccountSetBase {
     }
   }
 
-  getKeplr(): Promise<Keplr | undefined> {
-    return this.sharedContext.getKeplr();
+  getTitan(): Promise<Titan | undefined> {
+    return this.sharedContext.getTitan();
   }
 
   registerMakeSendTokenFn(
@@ -102,20 +102,20 @@ export class AccountSetBase {
 
     if ("cosmos" in modularChainInfo) {
       if (this.opts.suggestChain) {
-        const keplr = await this.sharedContext.getKeplr();
+        const titan = await this.sharedContext.getTitan();
         if (this.opts.suggestChainFn) {
           await this.sharedContext.suggestChain(async () => {
-            if (keplr && this.opts.suggestChainFn) {
+            if (titan && this.opts.suggestChainFn) {
               await this.opts.suggestChainFn(
-                keplr,
+                titan,
                 this.chainGetter.getChain(chainId)
               );
             }
           });
         } else {
           await this.sharedContext.suggestChain(async () => {
-            if (keplr) {
-              await keplr.experimentalSuggestChain(
+            if (titan) {
+              await titan.experimentalSuggestChain(
                 this.chainGetter.getChain(chainId).embedded
               );
             }
@@ -137,9 +137,9 @@ export class AccountSetBase {
 
     // If the store has never been initialized, add the event listener.
     if (!this.hasInited) {
-      // If key store in the keplr extension is changed, this event will be dispatched.
+      // If key store in the titan extension is changed, this event will be dispatched.
       this.eventListener.addEventListener(
-        "keplr_keystorechange",
+        "titan_keystorechange",
         this.handleInit
       );
     }
@@ -148,13 +148,13 @@ export class AccountSetBase {
     // Set wallet status as loading whenever try to init.
     this._walletStatus = WalletStatus.Loading;
 
-    const keplr = yield* toGenerator(this.sharedContext.getKeplr());
-    if (!keplr) {
+    const titan = yield* toGenerator(this.sharedContext.getTitan());
+    if (!titan) {
       this._walletStatus = WalletStatus.NotExist;
       return;
     }
 
-    this._walletVersion = keplr.version;
+    this._walletVersion = titan.version;
 
     try {
       yield this.enable(this.chainId);
@@ -218,7 +218,7 @@ export class AccountSetBase {
     this._walletStatus = WalletStatus.NotInit;
     this.hasInited = false;
     this.eventListener.removeEventListener(
-      "keplr_keystorechange",
+      "titan_keystorechange",
       this.handleInit
     );
     this._bech32Address = "";

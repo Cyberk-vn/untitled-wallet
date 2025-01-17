@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   InteractionPingMsg,
   PushEventDataMsg,
@@ -27,7 +27,7 @@ export const getHandler: (service: InteractionForegroundService) => Handler = (
       case InteractionPingMsg:
         return handleInteractionPing(service)(env, msg as InteractionPingMsg);
       default:
-        throw new KeplrError("interaction", 110, "Unknown msg type");
+        throw new TitanError("interaction", 110, "Unknown msg type");
     }
   };
 };

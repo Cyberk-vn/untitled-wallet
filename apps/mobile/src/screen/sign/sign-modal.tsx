@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useEffect, useState} from 'react';
-import {SignInteractionStore} from '@keplr-wallet/stores-core';
+import {SignInteractionStore} from '@titan-wallet/stores-core';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../stores';
 import {FormattedMessage, useIntl} from 'react-intl';
@@ -12,12 +12,12 @@ import {
   useSignDocHelper,
   useTxConfigsValidate,
   useZeroAllowedGasConfig,
-} from '@keplr-wallet/hooks';
-import {unescapeHTML} from '@keplr-wallet/common';
-import {CoinPretty, Dec, Int} from '@keplr-wallet/unit';
-import {MsgGrant} from '@keplr-wallet/proto-types/cosmos/authz/v1beta1/tx';
-import {defaultProtoCodec} from '@keplr-wallet/cosmos';
-import {GenericAuthorization} from '@keplr-wallet/stores/build/query/cosmos/authz/types';
+} from '@titan-wallet/hooks';
+import {unescapeHTML} from '@titan-wallet/common';
+import {CoinPretty, Dec, Int} from '@titan-wallet/unit';
+import {MsgGrant} from '@titan-wallet/proto-types/cosmos/authz/v1beta1/tx';
+import {defaultProtoCodec} from '@titan-wallet/cosmos';
+import {GenericAuthorization} from '@titan-wallet/stores/build/query/cosmos/authz/types';
 import {BaseModalHeader} from '../../components/modal';
 import {Column, Columns} from '../../components/column';
 import {Text} from 'react-native';
@@ -35,7 +35,7 @@ import {Checkbox} from '../../components/checkbox';
 import {registerCardModal} from '../../components/modal/card';
 import {SpecialButton} from '../../components/special-button';
 import {handleCosmosPreSign} from './util/handle-cosmos-sign';
-import {KeplrError} from '@keplr-wallet/router';
+import {TitanError} from '@titan-wallet/router';
 import {ErrModuleLedgerSign} from './util/ledger-types';
 import {LedgerGuideBox} from '../../components/guide-box/ledger-guide-box';
 import {FlatList} from '../../components/flat-list';
@@ -369,7 +369,7 @@ export const SignModal = registerCardModal(
         } catch (e) {
           console.log(e);
 
-          if (e instanceof KeplrError) {
+          if (e instanceof TitanError) {
             if (e.module === ErrModuleLedgerSign) {
               setLedgerInteractingError(e);
             } else {

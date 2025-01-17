@@ -4,7 +4,7 @@ import {observer} from 'mobx-react-lite';
 import {StackNavProp, StakeNavigation} from '../../../navigation';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {useStore} from '../../../stores';
-import {Staking} from '@keplr-wallet/stores';
+import {Staking} from '@titan-wallet/stores';
 import {Box} from '../../../components/box';
 import {DebounceSearchTextInput} from '../../../components/input/search-text-input';
 import {ValidatorListItem} from '../components/validator-item';
@@ -14,7 +14,7 @@ import {ArrowDownUpIcon} from '../../../components/icon';
 import {TextButton} from '../../../components/text-button';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {SelectItemModal} from '../../../components/modal/select-item-modal';
-import {Dec} from '@keplr-wallet/unit';
+import {Dec} from '@titan-wallet/unit';
 import {
   BoundaryScrollView,
   BoundaryScrollViewBoundary,

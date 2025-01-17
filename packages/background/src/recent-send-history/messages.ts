@@ -1,7 +1,7 @@
-import { Message } from "@keplr-wallet/router";
+import { Message } from "@titan-wallet/router";
 import { ROUTE } from "./constants";
 import { IBCHistory, RecentSendHistory, SkipHistory } from "./types";
-import { AppCurrency } from "@keplr-wallet/types";
+import { AppCurrency } from "@titan-wallet/types";
 
 export class GetRecentSendHistoriesMsg extends Message<RecentSendHistory[]> {
   public static type() {

@@ -13,7 +13,7 @@ import {FormattedMessage, useIntl} from 'react-intl';
 import * as ExpoImage from 'expo-image';
 import {Column, Columns} from '../../components/column';
 import {ViewDataButton} from './sign-modal';
-import {checkAndValidateADR36AminoSignDoc} from '@keplr-wallet/cosmos';
+import {checkAndValidateADR36AminoSignDoc} from '@titan-wallet/cosmos';
 import {ScrollView} from '../../components/scroll-view/common-scroll-view';
 
 export const ADR36SignModal = registerCardModal(

@@ -1,6 +1,6 @@
 import { IntPretty, IntPrettyOptions } from "./int-pretty";
 import { Dec } from "./decimal";
-import { FiatCurrency } from "@keplr-wallet/types";
+import { FiatCurrency } from "@titan-wallet/types";
 import { DeepReadonly } from "utility-types";
 import { DecUtils } from "./dec-utils";
 import bigInteger from "big-integer";

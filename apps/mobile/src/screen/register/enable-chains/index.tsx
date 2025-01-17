@@ -23,14 +23,14 @@ import {
   IChainInfoImpl,
   IQueriesStore,
   WalletStatus,
-} from '@keplr-wallet/stores';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
+} from '@titan-wallet/stores';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
 import {
   ChainInfoWithCoreTypes,
   KeyRingCosmosService,
-} from '@keplr-wallet/background';
-import {CoinPretty, Dec} from '@keplr-wallet/unit';
-import {ChainInfo} from '@keplr-wallet/types';
+} from '@titan-wallet/background';
+import {CoinPretty, Dec} from '@titan-wallet/unit';
+import {ChainInfo} from '@titan-wallet/types';
 import {XAxis, YAxis} from '../../../components/axis';
 import * as ExpoImage from 'expo-image';
 import {Checkbox} from '../../../components/checkbox';

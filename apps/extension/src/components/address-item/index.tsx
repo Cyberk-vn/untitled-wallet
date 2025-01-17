@@ -6,7 +6,7 @@ import { Body2, H5 } from "../typography";
 import { EllipsisIcon, ProfileIcon, DocumentTextIcon } from "../icon";
 import { FloatingDropdown, FloatingDropdownItem } from "../dropdown";
 import { ColorPalette } from "../../styles";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Gutter } from "../gutter";
 import { IconButton } from "../icon-button";

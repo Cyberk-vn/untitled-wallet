@@ -13,11 +13,11 @@ import {
   useSceneEvents,
   useSceneTransition,
 } from "../../../components/transition";
-import { WalletStatus } from "@keplr-wallet/stores";
+import { WalletStatus } from "@titan-wallet/stores";
 import AnimCreating from "../../../public/assets/lottie/register/creating.json";
 import AnimCreatingLight from "../../../public/assets/lottie/register/creating-light.json";
 import lottie from "lottie-web";
-import { PlainObject } from "@keplr-wallet/background";
+import { PlainObject } from "@titan-wallet/background";
 import { MultiAccounts } from "@keystonehq/keystone-sdk";
 import { useTheme } from "styled-components";
 import { dispatchGlobalEventExceptSelf } from "../../../utils/global-events";
@@ -116,7 +116,7 @@ export const FinalizeKeyScene: FunctionComponent<{
         // Chain store should be initialized before creating the key.
         await chainStore.waitUntilInitialized();
 
-        // background에서의 체인 정보의 변경사항 (keplr-chain-registry로부터의) 등을 sync 해야한다.
+        // background에서의 체인 정보의 변경사항 (titan-chain-registry로부터의) 등을 sync 해야한다.
         // 사실 문제가 되는 부분은 유저가 install한 직후이다.
         // 유저가 install한 직후에 바로 register page를 열도록 background가 짜여져있기 때문에
         // 이 경우 background에서 chains service가 체인 정보를 업데이트하기 전에 register page가 열린다.
@@ -200,7 +200,7 @@ export const FinalizeKeyScene: FunctionComponent<{
           }
         }
 
-        dispatchGlobalEventExceptSelf("keplr_new_key_created", vaultId);
+        dispatchGlobalEventExceptSelf("titan_new_key_created", vaultId);
 
         await Promise.allSettled(promises);
 

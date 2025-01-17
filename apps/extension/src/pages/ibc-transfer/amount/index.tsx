@@ -10,7 +10,7 @@ import {
   IGasSimulator,
   IMemoConfig,
   ISenderConfig,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { MemoInput } from "../../../components/input/memo-input";
 import { FeeControl } from "../../../components/input/fee-control";
 import { useIntl } from "react-intl";

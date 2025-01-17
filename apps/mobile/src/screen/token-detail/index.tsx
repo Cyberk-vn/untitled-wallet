@@ -22,7 +22,7 @@ import {AddressChip} from './components/address-chip.tsx';
 import {QRCodeChip} from './components/qr-chip.tsx';
 import {ReceiveModal} from './components/receive-modal.tsx';
 import {StakedBalance} from './components/staked-balance.tsx';
-import {CoinPretty, Dec, DecUtils} from '@keplr-wallet/unit';
+import {CoinPretty, Dec, DecUtils} from '@titan-wallet/unit';
 import {TokenInfos} from './components/token-info.tsx';
 import {Box} from '../../components/box';
 import {Stack} from '../../components/stack';
@@ -78,7 +78,7 @@ export const TokenDetailScreen: FunctionComponent = observer(() => {
   })();
 
   const querySupported = queriesStore.simpleQuery.queryGet<string[]>(
-    process.env['KEPLR_EXT_CONFIG_SERVER'] || '',
+    process.env['TITAN_EXT_CONFIG_SERVER'] || '',
     '/tx-history/supports',
   );
 
@@ -155,7 +155,7 @@ export const TokenDetailScreen: FunctionComponent = observer(() => {
   ];
 
   const msgHistory = usePaginatedCursorQuery<ResMsgsHistory>(
-    process.env['KEPLR_EXT_TX_HISTORY_BASE_URL'] || '',
+    process.env['TITAN_EXT_TX_HISTORY_BASE_URL'] || '',
     () => {
       return `/history/msgs/${chainInfo.chainIdentifier}/${
         accountStore.getAccount(chainId).bech32Address

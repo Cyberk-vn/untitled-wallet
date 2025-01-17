@@ -4,8 +4,8 @@ import { HeaderLayout } from "../../layouts/header";
 import { CommunityInfoView, RawInfoView, OriginInfoView } from "./components";
 import { useStore } from "../../stores";
 import { useInteractionInfo } from "../../hooks";
-import { InteractionWaitingData } from "@keplr-wallet/background";
-import { ChainInfo } from "@keplr-wallet/types";
+import { InteractionWaitingData } from "@titan-wallet/background";
+import { ChainInfo } from "@titan-wallet/types";
 import { FormattedMessage, useIntl } from "react-intl";
 import { ArrowLeftIcon } from "../../components/icon";
 import { Box } from "../../components/box";
@@ -181,7 +181,7 @@ const SuggestChainPageImpl: FunctionComponent<{
                 await chainStore.updateChainInfosFromBackground();
                 await chainStore.updateEnabledChainIdentifiersFromBackground();
 
-                dispatchGlobalEventExceptSelf("keplr_suggested_chain_added");
+                dispatchGlobalEventExceptSelf("titan_suggested_chain_added");
 
                 if (!proceedNext) {
                   if (

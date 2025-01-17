@@ -1,5 +1,5 @@
 import { Buffer } from "buffer/";
-import { Any } from "@keplr-wallet/proto-types/google/protobuf/any";
+import { Any } from "@titan-wallet/proto-types/google/protobuf/any";
 
 export class UnknownMessage implements Any {
   constructor(

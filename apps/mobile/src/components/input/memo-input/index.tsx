@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {IMemoConfig} from '@keplr-wallet/hooks';
+import {IMemoConfig} from '@titan-wallet/hooks';
 import {observer} from 'mobx-react-lite';
 import {useIntl} from 'react-intl';
 import {TextInput} from '../text-input/text-input';

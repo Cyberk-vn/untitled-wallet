@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { ColorPalette } from "../../../../styles";
 import { observer } from "mobx-react-lite";
 import { Skeleton } from "../../../../components/skeleton";
-import { ChainInfo } from "@keplr-wallet/types";
+import { ChainInfo } from "@titan-wallet/types";
 import { FormattedMessage, useIntl } from "react-intl";
 import { TextButton } from "../../../../components/button-text";
 

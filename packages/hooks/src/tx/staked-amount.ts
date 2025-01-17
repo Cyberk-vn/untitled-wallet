@@ -5,9 +5,9 @@ import {
   UIProperties,
 } from "./types";
 import { TxChainSetter } from "./chain";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { action, computed, makeObservable, observable } from "mobx";
-import { AppCurrency } from "@keplr-wallet/types";
+import { AppCurrency } from "@titan-wallet/types";
 import {
   EmptyAmountError,
   InsufficientAmountError,
@@ -16,7 +16,7 @@ import {
   NotSupportedCurrencyError,
   ZeroAmountError,
 } from "./errors";
-import { CoinPretty, Dec, DecUtils, Int } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, DecUtils, Int } from "@titan-wallet/unit";
 import { useState } from "react";
 import { QueriesStore } from "./internal";
 

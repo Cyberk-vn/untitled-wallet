@@ -1,7 +1,7 @@
 import assert from "assert";
 import { ProtoSignDocDecoder } from "./index";
 
-import { MsgSend } from "@keplr-wallet/proto-types/cosmos/bank/v1beta1/tx";
+import { MsgSend } from "@titan-wallet/proto-types/cosmos/bank/v1beta1/tx";
 
 describe("Test decode sign doc", () => {
   it("should decode properly", function () {

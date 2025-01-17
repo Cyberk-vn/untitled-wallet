@@ -20,14 +20,14 @@ const commonResolve = (dir) => ({
   },
 });
 const altResolve = () => {
-  const p = path.resolve(__dirname, "./src/keplr-wallet-private/index.ts");
+  const p = path.resolve(__dirname, "./src/titan-wallet-private/index.ts");
 
   if (fs.existsSync(p)) {
     return {
       alias: {
-        "keplr-wallet-private": path.resolve(
+        "titan-wallet-private": path.resolve(
           __dirname,
-          "./src/keplr-wallet-private/index.ts"
+          "./src/titan-wallet-private/index.ts"
         ),
       },
     };
@@ -44,7 +44,7 @@ const fileRule = {
   },
 };
 
-const keplrLogoBase64 = `data:image/png;base64,${fs.readFileSync(
+const titanLogoBase64 = `data:image/png;base64,${fs.readFileSync(
   "src/public/assets/icon/icon-128.png",
   "base64"
 )}`;
@@ -168,29 +168,29 @@ module.exports = {
       //      Probably, if development mode, this difference makes the blinking styling for transition components which changes the styling by JS code.
       //      At present, rather than fixing this for development mode, We fix this by forcing cssom to be enabled, and will fix this later when we have time.
       SC_DISABLE_SPEEDY: false,
-      KEPLR_EXT_ETHEREUM_ENDPOINT: "",
-      KEPLR_EXT_ANALYTICS_API_AUTH_TOKEN: "",
-      KEPLR_EXT_ANALYTICS_API_URL: "",
-      KEPLR_EXT_COINGECKO_ENDPOINT: "",
-      KEPLR_EXT_COINGECKO_GETPRICE: "",
-      KEPLR_EXT_COINGECKO_COIN_DATA_BY_TOKEN_ADDRESS: "",
-      KEPLR_EXT_TRANSAK_API_KEY: "",
-      KEPLR_EXT_MOONPAY_API_KEY: "",
-      KEPLR_EXT_KADO_API_KEY: "",
-      KEPLR_EXT_CHAIN_REGISTRY_URL: "",
-      KEPLR_EXT_GOOGLE_MEASUREMENT_ID: "",
-      KEPLR_EXT_GOOGLE_API_KEY_FOR_MEASUREMENT: "",
-      KEPLR_EXT_TOKEN_FACTORY_BASE_URL: "",
-      KEPLR_EXT_TOKEN_FACTORY_URI: "",
-      KEPLR_EXT_TX_HISTORY_BASE_URL: "",
-      KEPLR_EXT_CONFIG_SERVER: "",
+      TITAN_EXT_ETHEREUM_ENDPOINT: "",
+      TITAN_EXT_ANALYTICS_API_AUTH_TOKEN: "",
+      TITAN_EXT_ANALYTICS_API_URL: "",
+      TITAN_EXT_COINGECKO_ENDPOINT: "",
+      TITAN_EXT_COINGECKO_GETPRICE: "",
+      TITAN_EXT_COINGECKO_COIN_DATA_BY_TOKEN_ADDRESS: "",
+      TITAN_EXT_TRANSAK_API_KEY: "",
+      TITAN_EXT_MOONPAY_API_KEY: "",
+      TITAN_EXT_KADO_API_KEY: "",
+      TITAN_EXT_CHAIN_REGISTRY_URL: "",
+      TITAN_EXT_GOOGLE_MEASUREMENT_ID: "",
+      TITAN_EXT_GOOGLE_API_KEY_FOR_MEASUREMENT: "",
+      TITAN_EXT_TOKEN_FACTORY_BASE_URL: "",
+      TITAN_EXT_TOKEN_FACTORY_URI: "",
+      TITAN_EXT_TX_HISTORY_BASE_URL: "",
+      TITAN_EXT_CONFIG_SERVER: "",
       WC_PROJECT_ID: "",
-      KEPLR_EXT_EIP6963_PROVIDER_INFO_NAME: "Keplr",
-      KEPLR_EXT_EIP6963_PROVIDER_INFO_RDNS: "app.keplr",
-      KEPLR_EXT_EIP6963_PROVIDER_INFO_ICON: keplrLogoBase64,
-      KEPLR_EXT_STARKNET_PROVIDER_INFO_ID: "keplr",
-      KEPLR_EXT_STARKNET_PROVIDER_INFO_NAME: "Keplr",
-      KEPLR_EXT_STARKNET_PROVIDER_INFO_ICON: keplrLogoBase64,
+      TITAN_EXT_EIP6963_PROVIDER_INFO_NAME: "Titan",
+      TITAN_EXT_EIP6963_PROVIDER_INFO_RDNS: "app.titan",
+      TITAN_EXT_EIP6963_PROVIDER_INFO_ICON: titanLogoBase64,
+      TITAN_EXT_STARKNET_PROVIDER_INFO_ID: "titan",
+      TITAN_EXT_STARKNET_PROVIDER_INFO_NAME: "Titan",
+      TITAN_EXT_STARKNET_PROVIDER_INFO_ICON: titanLogoBase64,
       SKIP_API_KEY: "",
     }),
     new ForkTsCheckerWebpackPlugin(),

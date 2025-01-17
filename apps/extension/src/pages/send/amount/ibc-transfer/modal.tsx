@@ -9,13 +9,13 @@ import SimpleBar from "simplebar-react";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
 import { Body3, Subtitle2, Subtitle3 } from "../../../../components/typography";
-import { IIBCChannelConfig, IRecipientConfig } from "@keplr-wallet/hooks";
+import { IIBCChannelConfig, IRecipientConfig } from "@titan-wallet/hooks";
 import { ChainImageFallback } from "../../../../components/image";
 import { XAxis, YAxis } from "../../../../components/axis";
 import { FormattedMessage, useIntl } from "react-intl";
 import { EmptyView } from "../../../../components/empty-view";
 import { HomeIcon } from "../../../../components/icon";
-import { WalletStatus } from "@keplr-wallet/stores";
+import { WalletStatus } from "@titan-wallet/stores";
 
 export const IBCTransferSelectDestinationModal: FunctionComponent<{
   chainId: string;

@@ -131,7 +131,7 @@ platform :ios do
     )
 
     increment_version_number(
-      xcodeproj: "keplrmobile.xcodeproj",
+      xcodeproj: "titanmobile.xcodeproj",
       version_number: version,
     )
 
@@ -140,7 +140,7 @@ platform :ios do
     ) + 1
     UI.message("Build number will be #{build_number}")
     increment_build_number(
-      xcodeproj: "keplrmobile.xcodeproj",
+      xcodeproj: "titanmobile.xcodeproj",
       build_number: build_number,
     )
 
@@ -154,7 +154,7 @@ platform :ios do
       code_sign_identity: "Apple Distribution",
     )
 
-    build_app(workspace: "keplrmobile.xcworkspace", scheme: "mobile")
+    build_app(workspace: "titanmobile.xcworkspace", scheme: "mobile")
 
     # Reinit api key (Possibly, building app can take more than 20min)
     app_store_connect_api_key(
@@ -168,10 +168,10 @@ platform :ios do
     upload_to_testflight(
       apple_id: apple_id,
       team_id: team_id,
-      app_identifier: "com.chainapsis.keplrwallet",
+      app_identifier: "com.chainapsis.titanwallet",
       skip_submission: true
     )
 
-    sh("cd .. && curl --http1.1 https://upload.bugsnag.com/ -F apiKey=#{ENV["BUGSNAG_API_KEY"]} -F dsym=@keplrmobile.app.dSYM.zip")
+    sh("cd .. && curl --http1.1 https://upload.bugsnag.com/ -F apiKey=#{ENV["BUGSNAG_API_KEY"]} -F dsym=@titanmobile.app.dSYM.zip")
   end
 end

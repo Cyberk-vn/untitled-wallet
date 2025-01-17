@@ -1,5 +1,5 @@
 import { RecipientConfig, UIProperties } from "../tx";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { IIBCChannelConfig } from "./types";
 import { useState } from "react";
 import { action, makeObservable, observable, override } from "mobx";

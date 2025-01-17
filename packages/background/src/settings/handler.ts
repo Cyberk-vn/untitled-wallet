@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { SettingsService } from "./service";
 import { GetThemeOptionMsg, SetThemeOptionMsg } from "./messages";
 
@@ -16,7 +16,7 @@ export const getHandler: (service: SettingsService) => Handler = (service) => {
       case SetThemeOptionMsg:
         return handleSetThemeOptionMsg(service)(env, msg as SetThemeOptionMsg);
       default:
-        throw new KeplrError("settings", 110, "Unknown msg type");
+        throw new TitanError("settings", 110, "Unknown msg type");
     }
   };
 };

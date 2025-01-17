@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import { observer } from "mobx-react-lite";
-import { ISenderConfig } from "@keplr-wallet/hooks";
+import { ISenderConfig } from "@titan-wallet/hooks";
 import { useStore } from "../../../../stores";
 import { Box } from "../../../../components/box";
 import { XAxis } from "../../../../components/axis";
@@ -19,12 +19,12 @@ import {
   CurrencyImageFallback,
   RawImageFallback,
 } from "../../../../components/image";
-import { AppCurrency } from "@keplr-wallet/types";
-import { IBCSwapAmountConfig } from "@keplr-wallet/hooks-internal";
+import { AppCurrency } from "@titan-wallet/types";
+import { IBCSwapAmountConfig } from "@titan-wallet/hooks-internal";
 import { useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";
 import { LoadingIcon } from "../../../../components/icon";
-import { CoinPretty, Dec, DecUtils } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, DecUtils } from "@titan-wallet/unit";
 import { useEffectOnce } from "../../../../hooks/use-effect-once";
 import { VerticalCollapseTransition } from "../../../../components/transition/vertical-collapse";
 import { Modal } from "../../../../components/modal";

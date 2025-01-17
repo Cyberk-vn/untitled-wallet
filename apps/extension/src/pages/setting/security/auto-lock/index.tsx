@@ -15,9 +15,9 @@ import {
   GetLockOnSleepMsg,
   SetLockOnSleepMsg,
   UpdateAutoLockAccountDurationMsg,
-} from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+} from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { YAxis } from "../../../../components/axis";

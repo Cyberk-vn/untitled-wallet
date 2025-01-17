@@ -2,15 +2,15 @@ import { AccountSetBase, AccountSetBaseSuper, MsgOpt } from "./base";
 import { CosmwasmQueries, IQueriesStore, QueriesSetBase } from "../query";
 import { CoinPrimitive } from "../common";
 import { ChainGetter } from "../chain";
-import { DenomHelper } from "@keplr-wallet/common";
-import { Dec, DecUtils } from "@keplr-wallet/unit";
-import { AppCurrency } from "@keplr-wallet/types";
+import { DenomHelper } from "@titan-wallet/common";
+import { Dec, DecUtils } from "@titan-wallet/unit";
+import { AppCurrency } from "@titan-wallet/types";
 import { DeepPartial, DeepReadonly } from "utility-types";
-import { MsgExecuteContract } from "@keplr-wallet/proto-types/cosmwasm/wasm/v1/tx";
+import { MsgExecuteContract } from "@titan-wallet/proto-types/cosmwasm/wasm/v1/tx";
 import { Buffer } from "buffer/";
 import deepmerge from "deepmerge";
 import { CosmosAccount } from "./cosmos";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 
 export interface CosmwasmAccount {
   cosmwasm: CosmwasmAccountImpl;

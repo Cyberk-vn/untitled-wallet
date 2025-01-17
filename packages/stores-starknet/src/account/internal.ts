@@ -16,14 +16,14 @@ import {
   hash as starknetHash,
   DeployAccountSignerDetails,
 } from "starknet";
-import { Keplr } from "@keplr-wallet/types";
+import { Titan } from "@titan-wallet/types";
 
 export class StoreAccount extends Account {
   constructor(
     public readonly rpc: string,
     public override readonly address: string,
-    public readonly keplrChainId: string,
-    protected readonly getKeplr: () => Promise<Keplr | undefined>
+    public readonly titanChainId: string,
+    protected readonly getTitan: () => Promise<Titan | undefined>
   ) {
     super({ nodeUrl: rpc }, address, "", "1");
   }
@@ -68,12 +68,12 @@ export class StoreAccount extends Account {
       details
     );
 
-    const keplr = await this.getKeplr();
-    if (!keplr) {
-      throw new Error("Keplr is not initialized");
+    const titan = await this.getTitan();
+    if (!titan) {
+      throw new Error("Titan is not initialized");
     }
     const { transaction: newTransaction, signature } =
-      await keplr.signStarknetDeployAccountTransaction(this.keplrChainId, {
+      await titan.signStarknetDeployAccountTransaction(this.titanChainId, {
         ...stark.v3Details(details),
         classHash,
         constructorCalldata: compiledCalldata,
@@ -208,13 +208,13 @@ export class StoreAccount extends Account {
       }
     })();
 
-    const keplr = await this.getKeplr();
-    if (!keplr) {
-      throw new Error("Keplr is not initialized");
+    const titan = await this.getTitan();
+    if (!titan) {
+      throw new Error("Titan is not initialized");
     }
     const { transaction: newTransaction, signature } =
-      await keplr.signStarknetDeployAccountTransaction(
-        this.keplrChainId,
+      await titan.signStarknetDeployAccountTransaction(
+        this.titanChainId,
         signerDetails
       );
 
@@ -272,15 +272,15 @@ export class StoreAccount extends Account {
       cairoVersion: await this.getCairoVersion(),
     };
 
-    const keplr = await this.getKeplr();
-    if (!keplr) {
-      throw new Error("Keplr is not initialized");
+    const titan = await this.getTitan();
+    if (!titan) {
+      throw new Error("Titan is not initialized");
     }
     const {
       transactions: newTransactions,
       details: newDetails,
       signature,
-    } = await keplr.signStarknetTx(this.keplrChainId, calls, signerDetails);
+    } = await titan.signStarknetTx(this.titanChainId, calls, signerDetails);
 
     const calldata = transaction.getExecuteCalldata(
       newTransactions,
@@ -352,15 +352,15 @@ export class StoreAccount extends Account {
       }
     })();
 
-    const keplr = await this.getKeplr();
-    if (!keplr) {
-      throw new Error("Keplr is not initialized");
+    const titan = await this.getTitan();
+    if (!titan) {
+      throw new Error("Titan is not initialized");
     }
     const {
       transactions: newTransactions,
       details: newDetails,
       signature,
-    } = await keplr.signStarknetTx(this.keplrChainId, calls, signerDetails);
+    } = await titan.signStarknetTx(this.titanChainId, calls, signerDetails);
 
     const calldata = transaction.getExecuteCalldata(
       newTransactions,

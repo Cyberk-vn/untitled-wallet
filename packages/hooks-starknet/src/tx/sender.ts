@@ -1,9 +1,9 @@
 import { ISenderConfig, UIProperties } from "./types";
 import { TxChainSetter } from "./chain";
 import { action, makeObservable, observable } from "mobx";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { useState } from "react";
-import { StarknetQueriesStore } from "@keplr-wallet/stores-starknet";
+import { StarknetQueriesStore } from "@titan-wallet/stores-starknet";
 import {
   AccountNotDeployed,
   EmptyAddressError,

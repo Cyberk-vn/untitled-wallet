@@ -1,15 +1,15 @@
 import {autorun, makeObservable, observable, runInAction, toJS} from 'mobx';
-import {KVStore, PrefixKVStore} from '@keplr-wallet/common';
+import {KVStore, PrefixKVStore} from '@titan-wallet/common';
 import {ChainStore} from '../chain';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
-import {Key, SettledResponses} from '@keplr-wallet/types';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
+import {Key, SettledResponses} from '@titan-wallet/types';
 import {
   GetCosmosKeysForEachVaultSettledMsg,
   RecentSendHistory,
   GetRecentSendHistoriesMsg,
-} from '@keplr-wallet/background';
-import {BACKGROUND_PORT, MessageRequester} from '@keplr-wallet/router';
-import {KeyRingStore} from '@keplr-wallet/stores-core';
+} from '@titan-wallet/background';
+import {BACKGROUND_PORT, MessageRequester} from '@titan-wallet/router';
+import {KeyRingStore} from '@titan-wallet/stores-core';
 
 export interface AddressBookData {
   name: string;

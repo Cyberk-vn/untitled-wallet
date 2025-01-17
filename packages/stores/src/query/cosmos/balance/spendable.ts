@@ -4,7 +4,7 @@ import {
   ObservableChainQueryMap,
 } from "../../chain-query";
 import { ChainGetter } from "../../../chain";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import { computed } from "mobx";
 import { QuerySharedContext } from "../../../common";
 

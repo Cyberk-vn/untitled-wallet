@@ -1,4 +1,4 @@
-import { BACKGROUND_PORT, MessageRequester } from "@keplr-wallet/router";
+import { BACKGROUND_PORT, MessageRequester } from "@titan-wallet/router";
 import { computed, makeObservable, observable, runInAction } from "mobx";
 import {
   AllPermissionDataPerOrigin,
@@ -7,8 +7,8 @@ import {
   GetAllPermissionDataPerOriginMsg,
   RemoveGlobalPermissionOriginMsg,
   RemovePermissionOrigin,
-} from "@keplr-wallet/background";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+} from "@titan-wallet/background";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 
 export class PermissionManagerStore {
   @observable

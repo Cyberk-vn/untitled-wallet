@@ -1,4 +1,4 @@
-import {KVStore, PrefixKVStore} from '@keplr-wallet/common';
+import {KVStore, PrefixKVStore} from '@titan-wallet/common';
 import {
   action,
   autorun,
@@ -8,7 +8,7 @@ import {
   toJS,
 } from 'mobx';
 import Joi from 'joi';
-import {simpleFetch} from '@keplr-wallet/simple-fetch';
+import {simpleFetch} from '@titan-wallet/simple-fetch';
 
 interface VersionHistory {
   version: string;
@@ -102,7 +102,7 @@ export class ChangelogConfig {
       const res = await simpleFetch<{
         versions: VersionHistory[];
       }>(
-        process.env['KEPLR_EXT_CONFIG_SERVER'] || '',
+        process.env['TITAN_EXT_CONFIG_SERVER'] || '',
         `/changelog-mobile/${lastVersion}/${currentVersion}`,
       );
 

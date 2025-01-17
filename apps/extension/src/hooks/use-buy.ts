@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useStore } from "../stores";
 import { FiatOnRampServiceInfo } from "../config.ui";
 
-import { ChainInfo, AppCurrency } from "@keplr-wallet/types";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { ChainInfo, AppCurrency } from "@titan-wallet/types";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 
 export const useBuy = (selectedTokenInfo?: {
   chainId: string;
@@ -17,7 +17,7 @@ export const useBuy = (selectedTokenInfo?: {
   useEffect(() => {
     (async () => {
       const response = await simpleFetch<{ list: FiatOnRampServiceInfo[] }>(
-        "https://raw.githubusercontent.com/chainapsis/keplr-fiat-on-off-ramp-registry/main/fiat-on-off-ramp-list.json"
+        "https://raw.githubusercontent.com/chainapsis/titan-fiat-on-off-ramp-registry/main/fiat-on-off-ramp-list.json"
       );
 
       setFiatOnRampServiceInfos(response.data.list);
@@ -91,7 +91,7 @@ export const useBuy = (selectedTokenInfo?: {
         case "moonpay":
           return {
             apiKey:
-              process.env["KEPLR_EXT_MOONPAY_API_KEY"] ?? serviceInfo.apiKey,
+              process.env["TITAN_EXT_MOONPAY_API_KEY"] ?? serviceInfo.apiKey,
             showWalletAddressForm: "true",
             walletAddresses: encodeURIComponent(
               JSON.stringify(
@@ -111,7 +111,7 @@ export const useBuy = (selectedTokenInfo?: {
         case "transak":
           return {
             apiKey:
-              process.env["KEPLR_EXT_TRANSAK_API_KEY"] ?? serviceInfo.apiKey,
+              process.env["TITAN_EXT_TRANSAK_API_KEY"] ?? serviceInfo.apiKey,
             hideMenu: "true",
             walletAddressesData: encodeURIComponent(
               JSON.stringify({
@@ -133,7 +133,7 @@ export const useBuy = (selectedTokenInfo?: {
           };
         case "kado":
           return {
-            apiKey: process.env["KEPLR_EXT_KADO_API_KEY"] ?? serviceInfo.apiKey,
+            apiKey: process.env["TITAN_EXT_KADO_API_KEY"] ?? serviceInfo.apiKey,
             product: "BUY",
             networkList: buySupportChainAccounts.map((chainAccount) =>
               chainAccount.chainInfo.chainName.toUpperCase()

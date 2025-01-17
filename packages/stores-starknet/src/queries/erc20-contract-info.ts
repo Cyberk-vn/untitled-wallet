@@ -2,7 +2,7 @@ import {
   ChainGetter,
   HasMapStore,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { computed, makeObservable } from "mobx";
 import { ObservableStarknetChainJsonRpcQuery } from "./starknet-chain-json-rpc";
 import { shortString } from "starknet";

@@ -12,11 +12,11 @@ import {
   useMemoConfig,
   useRecipientConfig,
   useTxConfigsValidate,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import {
   useRecipientConfig as useRecipientConfigForStarknet,
   useTxConfigsValidate as useTxConfigsValidateForStarknet,
-} from "@keplr-wallet/hooks-starknet";
+} from "@titan-wallet/hooks-starknet";
 import { useStore } from "../../../../stores";
 import { MemoInput } from "../../../../components/input/memo-input";
 import { useNavigate } from "react-router";

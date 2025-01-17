@@ -1,4 +1,4 @@
-import { isServiceWorker } from "@keplr-wallet/common";
+import { isServiceWorker } from "@titan-wallet/common";
 
 export const runIfOnlyAppStart = async (
   key: string,

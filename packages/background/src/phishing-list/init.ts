@@ -1,4 +1,4 @@
-import { Router } from "@keplr-wallet/router";
+import { Router } from "@titan-wallet/router";
 import { ROUTE } from "./constants";
 import { getHandler } from "./handler";
 import { PhishingListService } from "./service";

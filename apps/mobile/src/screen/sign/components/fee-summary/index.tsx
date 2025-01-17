@@ -4,14 +4,14 @@ import {
   IFeeConfig,
   IGasConfig,
   InsufficientFeeError,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {observer} from 'mobx-react-lite';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {useStyle} from '../../../../styles';
 import {Box} from '../../../../components/box';
 import {XAxis} from '../../../../components/axis';
 import {Text, View} from 'react-native';
-import {CoinPretty, Dec, PricePretty} from '@keplr-wallet/unit';
+import {CoinPretty, Dec, PricePretty} from '@titan-wallet/unit';
 import {Gutter} from '../../../../components/gutter';
 import {GuideBox} from '../../../../components/guide-box';
 

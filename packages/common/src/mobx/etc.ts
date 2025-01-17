@@ -1,6 +1,6 @@
 // Copied from the mobx-state-tree repository.
 /**
- * @deprecated use `toGenerator` from @keplr-wallet/mobx-utils
+ * @deprecated use `toGenerator` from @titan-wallet/mobx-utils
  * @experimental
  * experimental api - might change on minor/patch releases
  *

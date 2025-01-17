@@ -1,5 +1,5 @@
-import { Buffer } from "buffer/";
-import { Hash } from "@keplr-wallet/crypto";
+import { Buffer } from "buffer";
+import { Hash } from "@titan-wallet/crypto/build/hash";
 
 export class DenomHelper {
   static ibcDenom(

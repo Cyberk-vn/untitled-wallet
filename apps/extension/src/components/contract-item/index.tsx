@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { Box } from "../box";
 import { ColorPalette } from "../../styles";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import { Gutter } from "../gutter";
 import { YAxis } from "../axis";
 import { Caption1, Subtitle3 } from "../typography";

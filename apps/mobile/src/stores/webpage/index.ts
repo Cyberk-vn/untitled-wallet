@@ -1,5 +1,5 @@
 import {action, flow, makeObservable, observable} from 'mobx';
-import {KVStore, toGenerator} from '@keplr-wallet/common';
+import {KVStore, toGenerator} from '@titan-wallet/common';
 import {FavoriteUrl, SearchedUrl} from './types.ts';
 
 const maxFavoriteUrls = 5;

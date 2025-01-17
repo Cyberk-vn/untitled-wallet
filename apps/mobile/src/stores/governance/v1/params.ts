@@ -3,7 +3,7 @@ import {
   ChainGetter,
   ObservableChainQuery,
   QuerySharedContext,
-} from '@keplr-wallet/stores';
+} from '@titan-wallet/stores';
 
 export class ObservableQueryGovV1ParamTally extends ObservableChainQuery<GovV1ParamsTally> {
   constructor(

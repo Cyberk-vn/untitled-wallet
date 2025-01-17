@@ -1,4 +1,4 @@
-import { Message } from "@keplr-wallet/router";
+import { Message } from "@titan-wallet/router";
 import { TokenScan } from "./service";
 import { ROUTE } from "./constants";
 

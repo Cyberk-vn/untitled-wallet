@@ -1,5 +1,5 @@
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
-import { simpleFetch, SimpleFetchResponse } from "@keplr-wallet/simple-fetch";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
+import { simpleFetch, SimpleFetchResponse } from "@titan-wallet/simple-fetch";
 
 export class DifferentChainVersionError extends Error {
   constructor(m: string) {
@@ -165,7 +165,7 @@ export async function checkEvmRpcConnectivity(
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "request-source": "keplr-wallet-extension/chain-validator",
+        "request-source": "titan-wallet-extension/chain-validator",
       },
       body: JSON.stringify({
         jsonrpc: "2.0",
@@ -204,7 +204,7 @@ export async function checkStarknetRpcConnectivity(
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "request-source": "keplr-wallet-extension/chain-validator",
+        "request-source": "titan-wallet-extension/chain-validator",
       },
       body: JSON.stringify({
         jsonrpc: "2.0",

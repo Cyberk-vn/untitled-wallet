@@ -3,7 +3,7 @@ import {observer} from 'mobx-react-lite';
 import {Box} from '../../../components/box';
 import LottieView from 'lottie-react-native';
 import {useStore} from '../../../stores';
-import {WalletStatus} from '@keplr-wallet/stores';
+import {WalletStatus} from '@titan-wallet/stores';
 import {
   RouteProp,
   useFocusEffect,
@@ -119,7 +119,7 @@ export const FinalizeKeyScreen: FunctionComponent = observer(() => {
       // Chain store should be initialized before creating the key.
       await chainStore.waitUntilInitialized();
 
-      // background에서의 체인 정보의 변경사항 (keplr-chain-registry로부터의) 등을 sync 해야한다.
+      // background에서의 체인 정보의 변경사항 (titan-chain-registry로부터의) 등을 sync 해야한다.
       // 사실 문제가 되는 부분은 유저가 install한 직후이다.
       // 유저가 install한 직후에 바로 register page를 열도록 background가 짜여져있기 때문에
       // 이 경우 background에서 chains service가 체인 정보를 업데이트하기 전에 register page가 열린다.

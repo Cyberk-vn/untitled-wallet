@@ -19,7 +19,7 @@ import { Styles } from "./styles";
 import { Gutter } from "../../../components/gutter";
 import { Bleed } from "../../../components/bleed";
 import { Box } from "../../../components/box";
-import { Mnemonic } from "@keplr-wallet/crypto";
+import { Mnemonic } from "@titan-wallet/crypto";
 import { SetBip44PathCard, useBIP44PathState } from "../components/bip-44-path";
 import { observer } from "mobx-react-lite";
 import lottie from "lottie-web";

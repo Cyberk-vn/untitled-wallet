@@ -1,4 +1,4 @@
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 
 export type CopyBag = { payload: Array<[any, bigint]> };
 

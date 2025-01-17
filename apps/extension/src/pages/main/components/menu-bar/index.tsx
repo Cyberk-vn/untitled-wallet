@@ -25,9 +25,9 @@ import { Column, Columns } from "../../../../components/column";
 import {
   GetSidePanelEnabledMsg,
   GetSidePanelIsSupportedMsg,
-} from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+} from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 import Color from "color";
 
 const Styles = {
@@ -222,7 +222,7 @@ export const MenuBar: FunctionComponent<{
                     e.preventDefault();
 
                     browser.tabs.create({
-                      url: "https://help.keplr.app/articles/side-panel-mode",
+                      url: "https://help.titan.app/articles/side-panel-mode",
                     });
                   }}
                   width="17"
@@ -329,7 +329,7 @@ export const MenuBar: FunctionComponent<{
 
               await keyRingStore.lock();
 
-              dispatchGlobalEventExceptSelf("keplr_keyring_locked");
+              dispatchGlobalEventExceptSelf("titan_keyring_locked");
             }}
           >
             <FormattedMessage id="page.main.components.menu-bar.lock-wallet-title" />
@@ -356,7 +356,7 @@ export const MenuBar: FunctionComponent<{
               e.preventDefault();
 
               browser.tabs.create({
-                url: "https://chains.keplr.app/",
+                url: "https://chains.titan.app/",
               });
             }}
           >
@@ -368,7 +368,7 @@ export const MenuBar: FunctionComponent<{
                     : ColorPalette["gray-300"]
                 }
               >
-                <FormattedMessage id="page.main.components.menu-bar.go-to-keplr-chain-registry" />
+                <FormattedMessage id="page.main.components.menu-bar.go-tochain-registry" />
               </Button2>
 
               <Gutter size="0.25rem" />

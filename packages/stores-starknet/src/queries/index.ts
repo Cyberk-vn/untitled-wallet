@@ -1,4 +1,4 @@
-import { ChainGetter, QuerySharedContext } from "@keplr-wallet/stores";
+import { ChainGetter, QuerySharedContext } from "@titan-wallet/stores";
 import { DeepReadonly } from "utility-types";
 import { ObservableQueryStarknetERC20Balance } from "./erc20-balance";
 import { ObservableQueryStarknetERC20ContractInfo } from "./erc20-contract-info";

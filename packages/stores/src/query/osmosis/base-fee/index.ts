@@ -3,7 +3,7 @@ import { ChainGetter } from "../../../chain";
 import { computed, makeObservable } from "mobx";
 import { BaseFee } from "./types";
 import { QuerySharedContext } from "../../../common";
-import { Dec } from "@keplr-wallet/unit";
+import { Dec } from "@titan-wallet/unit";
 
 export class ObservableQueryBaseFee extends ObservableChainQuery<BaseFee> {
   constructor(

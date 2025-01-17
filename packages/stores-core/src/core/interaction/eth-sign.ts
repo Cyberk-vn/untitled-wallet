@@ -1,7 +1,7 @@
 import { InteractionStore } from "./interaction";
 import { computed, makeObservable } from "mobx";
-import { EthSignType } from "@keplr-wallet/types";
-import { PlainObject } from "@keplr-wallet/background";
+import { EthSignType } from "@titan-wallet/types";
+import { PlainObject } from "@titan-wallet/background";
 
 export type SignEthereumInteractionData = {
   origin: string;

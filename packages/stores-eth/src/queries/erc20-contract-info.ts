@@ -2,7 +2,7 @@ import {
   ChainGetter,
   HasMapStore,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { ObservableQueryEVMChainERC20MetadataInner } from "./erc20-metadata";
 import { computed } from "mobx";
 

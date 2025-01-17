@@ -1,4 +1,4 @@
-import {KVStore, toGenerator} from '@keplr-wallet/common';
+import {KVStore, toGenerator} from '@titan-wallet/common';
 import {action, flow, makeObservable, observable} from 'mobx';
 
 export class FavoriteWebpageStore {

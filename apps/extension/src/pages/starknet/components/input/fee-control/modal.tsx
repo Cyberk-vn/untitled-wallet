@@ -10,7 +10,7 @@ import {
   IFeeConfig,
   IGasSimulator,
   ISenderConfig,
-} from "@keplr-wallet/hooks-starknet";
+} from "@titan-wallet/hooks-starknet";
 import { useStore } from "../../../../../stores";
 import { GuideBox } from "../../../../../components/guide-box";
 import { Box } from "../../../../../components/box";

@@ -1,9 +1,9 @@
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 
 export const EmbedChainInfos = [
   {
-    rpc: "https://rpc-cosmoshub.keplr.app",
-    rest: "https://lcd-cosmoshub.keplr.app",
+    rpc: "https://rpc-cosmoshub.titan.app",
+    rest: "https://lcd-cosmoshub.titan.app",
     chainId: "cosmoshub-4",
     chainName: "Cosmos",
     stakeCurrency: {
@@ -14,11 +14,11 @@ export const EmbedChainInfos = [
     },
     walletUrl:
       process.env["NODE_ENV"] === "production"
-        ? "https://wallet.keplr.app/chains/cosmos-hub"
+        ? "https://wallet.titan.app/chains/cosmos-hub"
         : "http://localhost:8081/chains/cosmos-hub",
     walletUrlForStaking:
       process.env["NODE_ENV"] === "production"
-        ? "https://wallet.keplr.app/chains/cosmos-hub"
+        ? "https://wallet.titan.app/chains/cosmos-hub"
         : "http://localhost:8081/chains/cosmos-hub",
     bip44: {
       coinType: 118,
@@ -44,8 +44,8 @@ export const EmbedChainInfos = [
     features: ["stargate", "ibc-transfer"],
   },
   {
-    rpc: "https://rpc-osmosis.keplr.app",
-    rest: "https://lcd-osmosis.keplr.app",
+    rpc: "https://rpc-osmosis.titan.app",
+    rest: "https://lcd-osmosis.titan.app",
     chainId: "osmosis-1",
     chainName: "Osmosis",
     stakeCurrency: {
@@ -60,7 +60,7 @@ export const EmbedChainInfos = [
         : "https://app.osmosis.zone",
     walletUrlForStaking:
       process.env["NODE_ENV"] === "production"
-        ? "https://wallet.keplr.app/chains/osmosis"
+        ? "https://wallet.titan.app/chains/osmosis"
         : "http://localhost:8081/chains/osmosis",
     bip44: { coinType: 118 },
     bech32Config: Bech32Address.defaultBech32Config("osmo"),
@@ -94,11 +94,11 @@ export const EmbedChainInfos = [
     features: ["stargate", "ibc-transfer"],
   },
   {
-    rpc: "https://rpc-evmos.keplr.app",
-    rest: "https://lcd-evmos.keplr.app",
+    rpc: "https://rpc-evmos.titan.app",
+    rest: "https://lcd-evmos.titan.app",
     evm: {
       chainId: 9001,
-      rpc: "https://evm-evmos.keplr.app",
+      rpc: "https://evm-evmos.titan.app",
     },
     chainId: "evmos_9001-2",
     chainName: "Evmos",
@@ -108,8 +108,8 @@ export const EmbedChainInfos = [
       coinDecimals: 18,
       coinGeckoId: "evmos",
     },
-    walletUrl: "https://wallet.keplr.app/chains/evmos",
-    walletUrlForStaking: "https://wallet.keplr.app/chains/evmos",
+    walletUrl: "https://wallet.titan.app/chains/evmos",
+    walletUrlForStaking: "https://wallet.titan.app/chains/evmos",
     bip44: {
       coinType: 60,
     },

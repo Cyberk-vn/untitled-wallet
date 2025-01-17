@@ -1,7 +1,7 @@
-import {InjectedKeplr} from '@keplr-wallet/provider';
-import {KeplrMode} from '@keplr-wallet/types';
+import {InjectedTitan} from '@titan-wallet/provider';
+import {TitanMode} from '@titan-wallet/types';
 
-export class RNInjectedKeplr extends InjectedKeplr {
+export class RNInjectedTitan extends InjectedTitan {
   static parseWebviewMessage(message: any): any {
     if (message && typeof message === 'string') {
       try {
@@ -14,7 +14,7 @@ export class RNInjectedKeplr extends InjectedKeplr {
     return message;
   }
 
-  constructor(version: string, mode: KeplrMode) {
+  constructor(version: string, mode: TitanMode) {
     super(
       version,
       mode,
@@ -28,7 +28,7 @@ export class RNInjectedKeplr extends InjectedKeplr {
           window.ReactNativeWebView.postMessage(JSON.stringify(message));
         },
       },
-      RNInjectedKeplr.parseWebviewMessage,
+      RNInjectedTitan.parseWebviewMessage,
     );
   }
 }

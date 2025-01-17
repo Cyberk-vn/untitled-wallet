@@ -4,7 +4,7 @@ import {useStore} from '../../../stores';
 import {RectButton} from '../../../components/rect-button';
 import {Text} from 'react-native';
 import {useStyle} from '../../../styles';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {CopyOutlineIcon} from '../../../components/icon';
 import {Gutter} from '../../../components/gutter';
 import {XAxis} from '../../../components/axis';

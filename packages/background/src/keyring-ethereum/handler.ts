@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { RequestSignEthereumMsg, RequestJsonRpcToEvmMsg } from "./messages";
 import { KeyRingEthereumService } from "./service";
 import { PermissionInteractiveService } from "../permission-interactive";
@@ -29,7 +29,7 @@ export const getHandler: (
           permissionInteractionService
         )(env, msg as RequestJsonRpcToEvmMsg);
       default:
-        throw new KeplrError("keyring", 221, "Unknown msg type");
+        throw new TitanError("keyring", 221, "Unknown msg type");
     }
   };
 };
@@ -69,7 +69,7 @@ const handleRequestJsonRpcToEvmMsg: (
   permissionInteractionService
 ) => {
   return async (env, msg) => {
-    if (msg.method !== "keplr_initProviderState") {
+    if (msg.method !== "titan_initProviderState") {
       await permissionInteractionService.ensureEnabledForEVM(env, msg.origin);
     }
 

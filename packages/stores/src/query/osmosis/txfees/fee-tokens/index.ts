@@ -3,7 +3,7 @@ import { QueryResponse, QuerySharedContext } from "../../../../common";
 import { ChainGetter } from "../../../../chain";
 import { computed, makeObservable } from "mobx";
 import { FeeTokens } from "./types";
-import { FeeCurrency } from "@keplr-wallet/types";
+import { FeeCurrency } from "@titan-wallet/types";
 import { computedFn } from "mobx-utils";
 
 export class ObservableQueryTxFeesFeeTokens extends ObservableChainQuery<FeeTokens> {

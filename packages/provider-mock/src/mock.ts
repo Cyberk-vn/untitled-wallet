@@ -1,9 +1,9 @@
 import {
   EthSignType,
-  Keplr,
-  KeplrIntereactionOptions,
-  KeplrMode,
-  KeplrSignOptions,
+  Titan,
+  TitanIntereactionOptions,
+  TitanMode,
+  TitanSignOptions,
   Key,
   AminoSignResponse,
   BroadcastMode,
@@ -18,19 +18,19 @@ import {
   SettledResponses,
   DirectAuxSignResponse,
   IEthereumProvider,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 import {
   Bech32Address,
   encodeSecp256k1Signature,
   serializeSignDoc,
-} from "@keplr-wallet/cosmos";
+} from "@titan-wallet/cosmos";
 import {
   CosmJSOfflineSigner,
   CosmJSOfflineSignerOnlyAmino,
-} from "@keplr-wallet/provider";
-import { Hash, Mnemonic, PrivKeySecp256k1 } from "@keplr-wallet/crypto";
+} from "@titan-wallet/provider";
+import { Hash, Mnemonic, PrivKeySecp256k1 } from "@titan-wallet/crypto";
 import Long from "long";
-import { SignDoc } from "@keplr-wallet/proto-types/cosmos/tx/v1beta1/tx";
+import { SignDoc } from "@titan-wallet/proto-types/cosmos/tx/v1beta1/tx";
 import EventEmitter from "events";
 import {
   Call,
@@ -38,11 +38,11 @@ import {
   InvocationsSignerDetails,
 } from "starknet";
 
-export class MockKeplr implements Keplr {
+export class MockTitan implements Titan {
   readonly version: string = "0.0.1";
-  readonly mode: KeplrMode = "extension";
+  readonly mode: TitanMode = "extension";
 
-  public defaultOptions: KeplrIntereactionOptions = {};
+  public defaultOptions: TitanIntereactionOptions = {};
 
   public readonly walletMap: {
     [chainId: string]: PrivKeySecp256k1 | undefined;
@@ -199,7 +199,7 @@ export class MockKeplr implements Keplr {
 
   getOfflineSigner(
     chainId: string,
-    _?: KeplrSignOptions
+    _?: TitanSignOptions
   ): OfflineAminoSigner & OfflineDirectSigner {
     return new CosmJSOfflineSigner(chainId, this);
   }
@@ -220,7 +220,7 @@ export class MockKeplr implements Keplr {
     chainId: string,
     signer: string,
     signDoc: StdSignDoc,
-    _?: KeplrSignOptions
+    _?: TitanSignOptions
   ): Promise<AminoSignResponse> {
     const wallet = await this.getWallet(chainId);
 
@@ -258,7 +258,7 @@ export class MockKeplr implements Keplr {
       /** SignDoc accountNumber */
       accountNumber?: Long | null;
     },
-    _?: KeplrSignOptions
+    _?: TitanSignOptions
   ): Promise<DirectSignResponse> {
     const wallet = await this.getWallet(chainId);
 
@@ -318,7 +318,7 @@ export class MockKeplr implements Keplr {
       } | null;
     },
     _signOptions?: Exclude<
-      KeplrSignOptions,
+      TitanSignOptions,
       "preferNoSetFee" | "disableBalanceCheck"
     >
   ): Promise<DirectAuxSignResponse> {
@@ -338,14 +338,14 @@ export class MockKeplr implements Keplr {
 
   getOfflineSignerAuto(
     _chainId: string,
-    _?: KeplrSignOptions
+    _?: TitanSignOptions
   ): Promise<OfflineAminoSigner | OfflineDirectSigner> {
     throw new Error("Not implemented");
   }
 
   getOfflineSignerOnlyAmino(
     chainId: string,
-    _?: KeplrSignOptions
+    _?: TitanSignOptions
   ): OfflineAminoSigner {
     return new CosmJSOfflineSignerOnlyAmino(chainId, this);
   }
@@ -359,7 +359,7 @@ export class MockKeplr implements Keplr {
       primaryType: string;
     },
     _signDoc: StdSignDoc,
-    _signOptions: KeplrSignOptions = {}
+    _signOptions: TitanSignOptions = {}
   ): Promise<AminoSignResponse> {
     throw new Error("Not yet implemented");
   }
@@ -443,7 +443,7 @@ class MockEthereumProvider extends EventEmitter implements IEthereumProvider {
 
   readonly networkVersion: string | null = null;
 
-  readonly isKeplr: boolean = true;
+  readonly isTitan: boolean = true;
   readonly isMetaMask: boolean = true;
 
   constructor() {

@@ -3,11 +3,11 @@ import { SecretQueries, QueriesSetBase, IQueriesStore } from "../query";
 import { Buffer } from "buffer/";
 import { CoinPrimitive } from "../common";
 import { ChainGetter } from "../chain";
-import { DenomHelper } from "@keplr-wallet/common";
-import { MsgExecuteContract } from "@keplr-wallet/proto-types/secret/compute/v1beta1/msg";
-import { Bech32Address } from "@keplr-wallet/cosmos";
-import { Dec, DecUtils } from "@keplr-wallet/unit";
-import { AppCurrency, KeplrSignOptions, StdFee } from "@keplr-wallet/types";
+import { DenomHelper } from "@titan-wallet/common";
+import { MsgExecuteContract } from "@titan-wallet/proto-types/secret/compute/v1beta1/msg";
+import { Bech32Address } from "@titan-wallet/cosmos";
+import { Dec, DecUtils } from "@titan-wallet/unit";
+import { AppCurrency, TitanSignOptions, StdFee } from "@titan-wallet/types";
 import { DeepPartial, DeepReadonly, Optional } from "utility-types";
 import { CosmosAccount } from "./cosmos";
 import deepmerge from "deepmerge";
@@ -155,7 +155,7 @@ export class SecretAccountImpl {
     contractAddress: string,
     memo: string = "",
     stdFee: Partial<StdFee> = {},
-    signOptions?: KeplrSignOptions,
+    signOptions?: TitanSignOptions,
     onFulfill?: (tx: any, viewingKey: string) => void
   ) {
     const random = new Uint8Array(32);
@@ -268,7 +268,7 @@ export class SecretAccountImpl {
     sentFunds: CoinPrimitive[],
     memo: string = "",
     stdFee: Optional<StdFee, "amount">,
-    signOptions?: KeplrSignOptions,
+    signOptions?: TitanSignOptions,
     onTxEvents?:
       | ((tx: any) => void)
       | {
@@ -350,12 +350,12 @@ export class SecretAccountImpl {
 
     const contractCodeHash = queryContractCodeHashResponse.data.code_hash;
 
-    const keplr = await this.base.getKeplr();
-    if (!keplr) {
-      throw new Error("Can't get the Keplr API");
+    const titan = await this.base.getTitan();
+    if (!titan) {
+      throw new Error("Can't get the Titan API");
     }
 
-    const enigmaUtils = keplr.getEnigmaUtils(this.chainId);
+    const enigmaUtils = titan.getEnigmaUtils(this.chainId);
     return await enigmaUtils.encrypt(contractCodeHash, obj);
   }
 

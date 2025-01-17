@@ -1,5 +1,5 @@
 import { parseDomain } from "./utils";
-import { simpleFetch, SimpleFetchResponse } from "@keplr-wallet/simple-fetch";
+import { simpleFetch, SimpleFetchResponse } from "@titan-wallet/simple-fetch";
 
 class IntervalFetcher<R> {
   // If blocked urls is "scam1.com", "scam2.service.com",

@@ -1,10 +1,10 @@
 import React, {FunctionComponent, useState} from 'react';
 import {observer} from 'mobx-react-lite';
 
-import {Bech32Address, ChainIdHelper} from '@keplr-wallet/cosmos';
+import {Bech32Address, ChainIdHelper} from '@titan-wallet/cosmos';
 import * as Clipboard from 'expo-clipboard';
 
-import {IChainInfoImpl} from '@keplr-wallet/stores';
+import {IChainInfoImpl} from '@titan-wallet/stores';
 import Color from 'color';
 import {useStore} from '../../../../stores';
 import {Box} from '../../../../components/box';

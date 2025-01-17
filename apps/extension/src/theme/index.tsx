@@ -1,4 +1,4 @@
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
 import React, {
   createContext,
   FunctionComponent,
@@ -9,8 +9,8 @@ import React, {
   useState,
 } from "react";
 import { ThemeProvider } from "styled-components";
-import { SetThemeOptionMsg } from "@keplr-wallet/background";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+import { SetThemeOptionMsg } from "@titan-wallet/background";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 
 export type ThemeOption = "dark" | "light" | "auto";
 

@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useState} from 'react';
-import {IIBCChannelConfig, IRecipientConfig} from '@keplr-wallet/hooks';
+import {IIBCChannelConfig, IRecipientConfig} from '@titan-wallet/hooks';
 import {observer} from 'mobx-react-lite';
 import {Box} from '../../../../components/box';
 import {Text} from 'react-native';
@@ -14,7 +14,7 @@ import {ScrollView} from '../../../../components/scroll-view/common-scroll-view'
 import {XAxis} from '../../../../components/axis';
 import {ChainImageFallback} from '../../../../components/image';
 import {RectButton} from '../../../../components/rect-button';
-import {WalletStatus} from '@keplr-wallet/stores';
+import {WalletStatus} from '@titan-wallet/stores';
 import {Gutter} from '../../../../components/gutter';
 import Svg, {Path} from 'react-native-svg';
 
