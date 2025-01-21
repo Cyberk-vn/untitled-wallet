@@ -65,9 +65,12 @@
   "pages.register.components.form.name-password.confirm-password-placeholder": "At least 8 characters in length",
   "pages.register.components.form.name-password.short-password-error": "Too short password",
   "pages.register.components.form.name-password.password-not-match-error": "Password should match",
+
   "pages.register.intro.create-wallet-button": "Create a new wallet",
   "pages.register.intro.import-wallet-button": "Import an existing wallet",
   "pages.register.intro.connect-hardware-wallet-button": "Connect Ledger",
+  "pages.register.intro.create-new-passphrase-button": "Create a new passphrase account",
+
   "pages.register.intro-new-user.title": "Create New Wallet",
   "pages.register.intro-new-user.paragraph": "Select the way you want to create your wallet",
   "pages.register.intro-new-user.recovery-path-title": "Use Recovery Phrase",

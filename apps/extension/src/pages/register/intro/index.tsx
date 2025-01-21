@@ -41,7 +41,7 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
       <Stack gutter="1.25rem">
         <Button
           text={intl.formatMessage({
-            id: "pages.register.intro.create-wallet-button",
+            id: "pages.register.intro.create-new-passphrase-button",
           })}
           size="large"
           onClick={() => {

@@ -52,6 +52,7 @@
   "pages.register.intro.create-wallet-button": "Create a new wallet",
   "pages.register.intro.import-wallet-button": "Import an existing wallet",
   "pages.register.intro.connect-hardware-wallet-button": "Connect Hardware Wallet",
+  "pages.register.intro.create-new-passphrase-button": "Create a new passphrase account",
 
   "pages.register.intro-new-user.title": "Welcome to Titan",
   "pages.register.intro-new-user.paragraph": "Select the way you want to create your wallet",
