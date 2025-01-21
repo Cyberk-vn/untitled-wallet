@@ -48,6 +48,7 @@
   "pages.register.intro.connect-hardware-wallet-button": "连接硬件钱包",
   "pages.register.intro.create-new-passphrase-button": "创建新助记词",
   "pages.register.intro.more-options-button": "更多选项",
+  "pages.register.intro.paragraph-privacy-tos": "继续使用，即表示你同意我们的<tos>服务条款</tos>和<privacy>隐私政策</privacy>",
 
   "pages.register.intro-new-user.title": "欢迎使用Titan",
   "pages.register.intro-new-user.paragraph": "选择你想要创建钱包的方式",

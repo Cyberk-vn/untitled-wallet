@@ -71,6 +71,7 @@
   "pages.register.intro.connect-hardware-wallet-button": "Connect Ledger",
   "pages.register.intro.create-new-passphrase-button": "Create a new passphrase account",
   "pages.register.intro.more-options-button": "More options",
+  "pages.register.intro.paragraph-privacy-tos": "By continuing, you agree to our <tos>Terms of Service</tos> and <privacy>Privacy Policy</privacy>",
 
   "pages.register.intro-new-user.title": "Create New Wallet",
   "pages.register.intro-new-user.paragraph": "Select the way you want to create your wallet",
