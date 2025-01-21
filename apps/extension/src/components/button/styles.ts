@@ -8,7 +8,7 @@ import {
   ButtonTheme,
 } from "./types";
 
-export const ButtonRadius = "0.375rem";
+export const ButtonRadius = "999px";
 
 export const makeTextAndSvgColor = (color: string) => {
   return css`
@@ -62,7 +62,7 @@ const buttonStyleFromColorAndMode: Record<
     light: {
       fill: {
         enabled: css`
-          background-color: ${ColorPalette["blue-400"]};
+          background-color: ${ColorPalette["orange-400"]};
 
           ${makeTextAndSvgColor(ColorPalette["white"])}
 
@@ -74,7 +74,7 @@ const buttonStyleFromColorAndMode: Record<
           }
         `,
         disabled: css`
-          background-color: ${ColorPalette["blue-400"]};
+          background-color: ${ColorPalette["orange-400"]};
 
           ::after {
             background-color: ${ColorPalette["gray-300"]};
@@ -88,7 +88,7 @@ const buttonStyleFromColorAndMode: Record<
     dark: {
       fill: {
         enabled: css`
-          background-color: ${ColorPalette["blue-400"]};
+          background-color: ${ColorPalette["orange-400"]};
 
           ${makeTextAndSvgColor(ColorPalette["white"])}
 
@@ -100,7 +100,7 @@ const buttonStyleFromColorAndMode: Record<
           }
         `,
         disabled: css`
-          background-color: ${ColorPalette["blue-400"]};
+          background-color: ${ColorPalette["orange-400"]};
 
           ::after {
             background-color: ${ColorPalette["gray-600"]};
@@ -116,9 +116,9 @@ const buttonStyleFromColorAndMode: Record<
     light: {
       fill: {
         enabled: css`
-          background-color: ${ColorPalette["blue-50"]};
+          background-color: ${ColorPalette["orange-50"]};
 
-          ${makeTextAndSvgColor(ColorPalette["blue-400"])}
+          ${makeTextAndSvgColor(ColorPalette["orange-400"])}
 
           :hover {
             ::after {
@@ -129,9 +129,9 @@ const buttonStyleFromColorAndMode: Record<
         `,
 
         disabled: css`
-          background-color: ${ColorPalette["blue-50"]};
+          background-color: ${ColorPalette["orange-50"]};
 
-          ${makeTextAndSvgColor(ColorPalette["blue-200"])}
+          ${makeTextAndSvgColor(ColorPalette["orange-200"])}
         `,
       },
     },
