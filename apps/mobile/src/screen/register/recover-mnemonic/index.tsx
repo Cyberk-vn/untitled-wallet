@@ -17,7 +17,7 @@ import {ScrollViewRegisterContainer} from '../components/scroll-view-register-co
 import {VerticalCollapseTransition} from '../../../components/transition';
 import {NamePasswordInput} from '../components/name-password-input';
 import {useStore} from '../../../stores';
-import {isMnemonicWord} from '@keplr-wallet/common';
+import {isMnemonicWord} from '@titan-wallet/common';
 
 const bip39 = require('bip39');
 

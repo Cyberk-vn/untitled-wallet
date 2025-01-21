@@ -7,9 +7,9 @@ import {useStyle} from './src/styles';
 import {Gutter} from './src/components/gutter';
 import {Button} from './src/components/button';
 import {useStore} from './src/stores';
-import {ClearAllIBCHistoryMsg} from '@keplr-wallet/background';
-import {InExtensionMessageRequester} from '@keplr-wallet/router-extension';
-import {BACKGROUND_PORT} from '@keplr-wallet/router';
+import {ClearAllIBCHistoryMsg} from '@titan-wallet/background';
+import {InExtensionMessageRequester} from '@titan-wallet/router-extension';
+import {BACKGROUND_PORT} from '@titan-wallet/router';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {ErrorRestartModal} from './src/components/modal/error-restart-modal';
 

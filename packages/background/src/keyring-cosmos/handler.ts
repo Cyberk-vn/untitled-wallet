@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   GetCosmosKeyMsg,
   GetCosmosKeysSettledMsg,
@@ -27,7 +27,7 @@ import { PermissionInteractiveService } from "../permission-interactive";
 import {
   SignDoc,
   SignDocDirectAux,
-} from "@keplr-wallet/proto-types/cosmos/tx/v1beta1/tx";
+} from "@titan-wallet/proto-types/cosmos/tx/v1beta1/tx";
 
 export const getHandler: (
   service: KeyRingCosmosService,
@@ -114,7 +114,7 @@ export const getHandler: (
           permissionInteractionService
         )(env, msg as RequestCosmosSignDirectAuxMsg);
       default:
-        throw new KeplrError("keyring", 221, "Unknown msg type");
+        throw new TitanError("keyring", 221, "Unknown msg type");
     }
   };
 };

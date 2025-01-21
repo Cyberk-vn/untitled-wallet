@@ -6,13 +6,13 @@ import {
   Env,
   EthereumProviderRpcError,
   WEBPAGE_PORT,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   ChainInfo,
   EthereumSignResponse,
   EthSignType,
-} from "@keplr-wallet/types";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+} from "@titan-wallet/types";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import { Buffer } from "buffer/";
 import {
   domainHash,
@@ -25,7 +25,7 @@ import {
   TransactionTypes,
   UnsignedTransaction,
 } from "@ethersproject/transactions";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import { getBasicAccessPermissionType, PermissionService } from "../permission";
 import { BackgroundTxEthereumService } from "../tx-ethereum";
 import { TokenERC20Service } from "../token-erc20";
@@ -327,7 +327,7 @@ export class KeyRingEthereumService {
     const currentChainId =
       this.permissionService.getCurrentChainIdForEVM(origin) ?? chainId;
     if (currentChainId == null) {
-      if (method === "keplr_initProviderState") {
+      if (method === "titan_initProviderState") {
         return {
           currentEvmChainId: null,
           currentChainId: null,
@@ -366,8 +366,8 @@ export class KeyRingEthereumService {
 
     const result = (await (async () => {
       switch (method) {
-        case "keplr_initProviderState":
-        case "keplr_connect": {
+        case "titan_initProviderState":
+        case "titan_connect": {
           try {
             const pubkey = await this.keyRingService.getPubKeySelected(
               currentChainInfo.chainId
@@ -386,7 +386,7 @@ export class KeyRingEthereumService {
             return null;
           }
         }
-        case "keplr_disconnect": {
+        case "titan_disconnect": {
           return this.permissionService.removeAllTypePermission([origin]);
         }
         case "eth_chainId": {
@@ -637,7 +637,7 @@ export class KeyRingEthereumService {
         case "eth_subscribe": {
           if (!currentChainEVMInfo.websocket) {
             throw new Error(
-              `WebSocket endpoint for current chain has not been provided to Keplr.`
+              `WebSocket endpoint for current chain has not been provided to Titan.`
             );
           }
 
@@ -664,7 +664,7 @@ export class KeyRingEthereumService {
                   if (eventData.method === "eth_subscription") {
                     this.interactionService.dispatchEvent(
                       WEBPAGE_PORT,
-                      "keplr_ethSubscription",
+                      "titan_ethSubscription",
                       {
                         origin,
                         providerId,
@@ -721,7 +721,7 @@ export class KeyRingEthereumService {
 
           if (!currentChainEVMInfo.websocket) {
             throw new Error(
-              `WebSocket endpoint for current chain has not been provided to Keplr.`
+              `WebSocket endpoint for current chain has not been provided to Titan.`
             );
           }
 

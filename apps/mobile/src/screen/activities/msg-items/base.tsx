@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useMemo} from 'react';
-import {CoinPretty, Dec, PricePretty} from '@keplr-wallet/unit';
+import {CoinPretty, Dec, PricePretty} from '@titan-wallet/unit';
 import {observer} from 'mobx-react-lite';
 import {MsgHistory} from '../types.ts';
 import {useStore} from '../../../stores';
@@ -79,7 +79,7 @@ export const MsgItemBase: FunctionComponent<{
     const queryExplorer = queriesStore.simpleQuery.queryGet<{
       link: string;
     }>(
-      process.env['KEPLR_EXT_CONFIG_SERVER'] || '',
+      process.env['TITAN_EXT_CONFIG_SERVER'] || '',
       `/tx-history/explorer/${chainInfo.chainIdentifier}`,
     );
 

@@ -1,5 +1,5 @@
-import { ERC20Currency } from "@keplr-wallet/types";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { ERC20Currency } from "@titan-wallet/types";
+import { CoinPretty } from "@titan-wallet/unit";
 
 export interface ITxChainSetter {
   chainId: string;

@@ -9,12 +9,12 @@ import {
   runInAction,
 } from "mobx";
 import { useEffect, useState } from "react";
-import { KVStore } from "@keplr-wallet/common";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { KVStore } from "@titan-wallet/common";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { TxChainSetter } from "./chain";
-import { ChainGetter, MakeTxResponse } from "@keplr-wallet/stores";
-import { Coin, StdFee } from "@keplr-wallet/types";
-import { isSimpleFetchError } from "@keplr-wallet/simple-fetch";
+import { ChainGetter, MakeTxResponse } from "@titan-wallet/stores";
+import { Coin, StdFee } from "@titan-wallet/types";
+import { isSimpleFetchError } from "@titan-wallet/simple-fetch";
 
 type TxSimulate = Pick<MakeTxResponse, "simulate">;
 export type SimulateGasFn = () => TxSimulate;

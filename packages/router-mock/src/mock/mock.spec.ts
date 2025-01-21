@@ -1,5 +1,5 @@
 import assert from "assert";
-import { Message, Router } from "@keplr-wallet/router";
+import { Message, Router } from "@titan-wallet/router";
 import { MockRouter } from "../router";
 import { MockEnv } from "../env";
 import { MockMessageRequester } from "../requester";

@@ -5,7 +5,7 @@ import {
   verifyADR36AminoSignDoc,
 } from "./amino";
 import { serializeSignDoc } from "../signing";
-import { Hash, PrivKeySecp256k1 } from "@keplr-wallet/crypto";
+import { Hash, PrivKeySecp256k1 } from "@titan-wallet/crypto";
 import { Bech32Address } from "../bech32";
 
 describe("Test ADR-36 Amino Sign Doc", () => {

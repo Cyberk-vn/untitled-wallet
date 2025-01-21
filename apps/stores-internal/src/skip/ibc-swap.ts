@@ -1,9 +1,9 @@
-import { HasMapStore, IChainInfoImpl } from "@keplr-wallet/stores";
-import { AppCurrency, Currency, ERC20Currency } from "@keplr-wallet/types";
+import { HasMapStore, IChainInfoImpl } from "@titan-wallet/stores";
+import { AppCurrency, Currency, ERC20Currency } from "@titan-wallet/types";
 import { ObservableQueryAssets } from "./assets";
 import { computed, makeObservable } from "mobx";
 import { ObservableQueryChains } from "./chains";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import { ObservableQueryRoute, ObservableQueryRouteInner } from "./route";
 import {
   ObservableQueryMsgsDirect,
@@ -12,7 +12,7 @@ import {
 import { computedFn } from "mobx-utils";
 import { ObservableQueryIbcPfmTransfer } from "./ibc-pfm-transfer";
 import { ObservableQueryAssetsFromSource } from "./assets-from-source";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { InternalChainStore } from "../internal";
 
 export class ObservableQueryIBCSwapInner {

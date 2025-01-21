@@ -1,8 +1,8 @@
 import { AmountConfig, ISenderConfig } from "../tx";
-import { ChainGetter, IQueriesStore } from "@keplr-wallet/stores";
-import { AppCurrency } from "@keplr-wallet/types";
+import { ChainGetter, IQueriesStore } from "@titan-wallet/stores";
+import { AppCurrency } from "@titan-wallet/types";
 import { action, makeObservable, observable } from "mobx";
-import { DenomHelper } from "@keplr-wallet/common";
+import { DenomHelper } from "@titan-wallet/common";
 import { useState } from "react";
 import { IIBCChannelConfig } from "./types";
 

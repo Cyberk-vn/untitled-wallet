@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useEffect, useMemo, useState} from 'react';
-import {SignEthereumInteractionStore} from '@keplr-wallet/stores-core';
+import {SignEthereumInteractionStore} from '@titan-wallet/stores-core';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../stores';
 import {FormattedMessage, useIntl} from 'react-intl';
@@ -9,7 +9,7 @@ import {
   useFeeConfig,
   useGasConfig,
   useSenderConfig,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {BaseModalHeader} from '../../components/modal';
 import {Column, Columns} from '../../components/column';
 import {Text} from 'react-native';
@@ -23,10 +23,10 @@ import {SpecialButton} from '../../components/special-button';
 import {ScrollView} from '../../components/scroll-view/common-scroll-view';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import {FeeSummary} from './components/fee-summary';
-import {EthSignType} from '@keplr-wallet/types';
+import {EthSignType} from '@titan-wallet/types';
 import {defaultRegistry} from './components/eth-tx/registry';
 import {UnsignedTransaction} from '@ethersproject/transactions';
-import {CoinPretty, Dec} from '@keplr-wallet/unit';
+import {CoinPretty, Dec} from '@titan-wallet/unit';
 import {Buffer} from 'buffer/';
 
 export const SignEthereumModal = registerCardModal(

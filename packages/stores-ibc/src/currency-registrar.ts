@@ -6,7 +6,7 @@ import {
   runInAction,
   toJS,
 } from "mobx";
-import { AppCurrency, ChainInfo } from "@keplr-wallet/types";
+import { AppCurrency, ChainInfo } from "@titan-wallet/types";
 import {
   IChainInfoImpl,
   ChainStore,
@@ -14,10 +14,10 @@ import {
   CosmwasmQueries,
   IQueriesStore,
   SecretQueries,
-} from "@keplr-wallet/stores";
-import { DenomHelper, KVStore } from "@keplr-wallet/common";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
-import { EthereumQueries } from "@keplr-wallet/stores-eth";
+} from "@titan-wallet/stores";
+import { DenomHelper, KVStore } from "@titan-wallet/common";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
+import { EthereumQueries } from "@titan-wallet/stores-eth";
 
 type CacheIBCDenomData = {
   denomTrace: {

@@ -8,7 +8,7 @@ import {
   QuerySharedContext,
 } from "../common";
 import { ChainGetter } from "../chain";
-import { KVStore, MultiGet } from "@keplr-wallet/common";
+import { KVStore, MultiGet } from "@titan-wallet/common";
 import { ObservableSimpleQuery } from "./simple";
 
 export interface QueriesSetBase {

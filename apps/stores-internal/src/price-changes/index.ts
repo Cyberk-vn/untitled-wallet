@@ -1,9 +1,9 @@
-import { ObservableQuery, QuerySharedContext } from "@keplr-wallet/stores";
+import { ObservableQuery, QuerySharedContext } from "@titan-wallet/stores";
 import { ResPrice24hChanges } from "./types";
-import { KVStore } from "@keplr-wallet/common";
+import { KVStore } from "@titan-wallet/common";
 import { autorun, makeObservable } from "mobx";
-import { makeURL } from "@keplr-wallet/simple-fetch";
-import { Dec, RatePretty } from "@keplr-wallet/unit";
+import { makeURL } from "@titan-wallet/simple-fetch";
+import { Dec, RatePretty } from "@titan-wallet/unit";
 import { computedFn } from "mobx-utils";
 
 class Throttler {

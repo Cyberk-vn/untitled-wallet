@@ -7,18 +7,18 @@ import {
   useGasSimulator,
   useIBCTransferConfig,
   useTxConfigsValidate,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { useStore } from "../../stores";
 import { IBCTransferSelectChannelView } from "./select-channel";
 import { IBCTransferAmountView } from "./amount";
-import { ExtensionKVStore } from "@keplr-wallet/common";
+import { ExtensionKVStore } from "@titan-wallet/common";
 import { ArrowLeftIcon } from "../../components/icon";
 import { Box } from "../../components/box";
 import { useNotification } from "../../hooks/notification";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { SendTxAndRecordMsg } from "@keplr-wallet/background";
-import { DecUtils } from "@keplr-wallet/unit";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { SendTxAndRecordMsg } from "@titan-wallet/background";
+import { DecUtils } from "@titan-wallet/unit";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 import { useIntl } from "react-intl";
 import { useTxConfigsQueryString } from "../../hooks/use-tx-config-query-string";
 import { useIBCChannelConfigQueryString } from "../../hooks/use-ibc-channel-config-query-string";

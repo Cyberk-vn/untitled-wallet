@@ -4,7 +4,7 @@ import {useStore} from '../../../stores';
 import {Box} from '../../../components/box';
 import {useStyle} from '../../../styles';
 import {XAxis, YAxis} from '../../../components/axis';
-import {Dec} from '@keplr-wallet/unit';
+import {Dec} from '@titan-wallet/unit';
 import {Text} from 'react-native';
 import {Gutter} from '../../../components/gutter';
 import {useNavigation} from '@react-navigation/native';

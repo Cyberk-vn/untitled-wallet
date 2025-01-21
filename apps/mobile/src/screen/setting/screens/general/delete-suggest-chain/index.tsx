@@ -1,7 +1,7 @@
 import {observer} from 'mobx-react-lite';
 import React, {FunctionComponent} from 'react';
 
-import {ChainInfo} from '@keplr-wallet/types';
+import {ChainInfo} from '@titan-wallet/types';
 
 import {useIntl} from 'react-intl';
 import {Text} from 'react-native';

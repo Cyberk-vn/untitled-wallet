@@ -1,9 +1,9 @@
 import { ChainsService } from "../chains";
-import { TendermintTxTracer } from "@keplr-wallet/cosmos";
+import { TendermintTxTracer } from "@titan-wallet/cosmos";
 import { Notification } from "./types";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import { Buffer } from "buffer/";
-import { retry } from "@keplr-wallet/common";
+import { retry } from "@titan-wallet/common";
 import { GetTransactionReceiptResponse, RpcProvider } from "starknet";
 
 interface CosmosSdkError {

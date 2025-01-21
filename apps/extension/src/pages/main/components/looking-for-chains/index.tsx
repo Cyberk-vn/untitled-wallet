@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { Box } from "../../../../components/box";
 import { TokenTitleView } from "../token";
 import { ColorPalette } from "../../../../styles";
-import { ChainInfo, ModularChainInfo } from "@keplr-wallet/types";
+import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 import { Gutter } from "../../../../components/gutter";
 import { ChainImageFallback } from "../../../../components/image";
 import { Column, Columns } from "../../../../components/column";
@@ -115,14 +115,14 @@ export const LookingForChainItem: FunctionComponent<{
             // add the chain internally and refresh the store.
             if (!embedded && !stored) {
               try {
-                await window.keplr?.experimentalSuggestChain(
+                await window.titan?.experimentalSuggestChain(
                   chainInfo as ChainInfo
                 );
                 await keyRingStore.refreshKeyRingStatus();
                 await chainStore.updateChainInfosFromBackground();
                 await chainStore.updateEnabledChainIdentifiersFromBackground();
 
-                dispatchGlobalEventExceptSelf("keplr_suggested_chain_added");
+                dispatchGlobalEventExceptSelf("titan_suggested_chain_added");
               } catch {
                 return;
               }

@@ -1,4 +1,4 @@
-import { Message } from "@keplr-wallet/router";
+import { Message } from "@titan-wallet/router";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const bip39 = require("bip39");
 import { ROUTE } from "./constants";

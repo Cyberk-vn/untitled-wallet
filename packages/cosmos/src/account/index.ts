@@ -1,5 +1,5 @@
-import { Int } from "@keplr-wallet/unit";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { Int } from "@titan-wallet/unit";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 
 export interface Account {
   getType(): string;

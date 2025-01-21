@@ -1,6 +1,6 @@
-import { PubKey, StdSignature, StdSignDoc } from "@keplr-wallet/types";
+import { PubKey, StdSignature, StdSignDoc } from "@titan-wallet/types";
 import { Buffer } from "buffer/";
-import { escapeHTML, sortedJsonByKeyStringify } from "@keplr-wallet/common";
+import { escapeHTML, sortedJsonByKeyStringify } from "@titan-wallet/common";
 
 export function encodeSecp256k1Pubkey(pubkey: Uint8Array): PubKey {
   if (pubkey.length !== 33 || (pubkey[0] !== 0x02 && pubkey[0] !== 0x03)) {

@@ -2,9 +2,9 @@ import {
   HasMapStore,
   ObservableQuery,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { computed, makeObservable } from "mobx";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 
 export type SwapUsageResponse = string[];
 

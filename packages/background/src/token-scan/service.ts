@@ -3,12 +3,12 @@ import { KeyRingCosmosService } from "../keyring-cosmos";
 import { KeyRingService } from "../keyring";
 import { ChainsUIService } from "../chains-ui";
 import { autorun, makeObservable, observable, runInAction, toJS } from "mobx";
-import { AppCurrency } from "@keplr-wallet/types";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
-import { Dec } from "@keplr-wallet/unit";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { AppCurrency } from "@titan-wallet/types";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
+import { Dec } from "@titan-wallet/unit";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { VaultService } from "../vault";
-import { KVStore } from "@keplr-wallet/common";
+import { KVStore } from "@titan-wallet/common";
 import { KeyRingStarknetService } from "../keyring-starknet";
 import { CairoUint256 } from "starknet";
 

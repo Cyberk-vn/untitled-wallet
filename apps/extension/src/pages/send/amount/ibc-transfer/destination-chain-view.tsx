@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Box } from "../../../../components/box";
-import { IIBCChannelConfig } from "@keplr-wallet/hooks";
+import { IIBCChannelConfig } from "@titan-wallet/hooks";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
 import { Subtitle2 } from "../../../../components/typography";

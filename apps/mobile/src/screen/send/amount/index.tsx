@@ -12,12 +12,12 @@ import {
   useGasSimulator,
   useSendMixedIBCTransferConfig,
   useTxConfigsValidate,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {ICNSInfo} from '../../../config.ui';
-import {DenomHelper} from '@keplr-wallet/common';
+import {DenomHelper} from '@titan-wallet/common';
 import {AsyncKVStore} from '../../../common';
 import {TokenItem} from '../../../components/token-view';
-import {CoinPretty, DecUtils} from '@keplr-wallet/unit';
+import {CoinPretty, DecUtils} from '@titan-wallet/unit';
 import {Label} from '../../../components/input/label';
 import {RecipientInput} from '../../../components/input/reciepient-input';
 import {AmountInput} from '../../../components/input/amount-input';
@@ -29,11 +29,11 @@ import {useStyle} from '../../../styles';
 import {Button} from '../../../components/button';
 import {FeeControl} from '../../../components/input/fee-control';
 import {Gutter} from '../../../components/gutter';
-import {BACKGROUND_PORT, Message} from '@keplr-wallet/router';
+import {BACKGROUND_PORT, Message} from '@titan-wallet/router';
 import {
   LogAnalyticsEventMsg,
   SendTxAndRecordMsg,
-} from '@keplr-wallet/background';
+} from '@titan-wallet/background';
 import {RNMessageRequesterInternal} from '../../../router';
 import {RootStackParamList, StackNavProp} from '../../../navigation';
 import {useNotification} from '../../../hooks/notification';
@@ -44,11 +44,11 @@ import {
   DestinationChainView,
   IBCTransferSelectDestinationModal,
 } from './ibc-transfer';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
 import {amountToAmbiguousAverage} from '../../../utils';
 import {GuideBox} from '../../../components/guide-box';
 import {Text} from 'react-native';
-import {EthTxStatus} from '@keplr-wallet/types';
+import {EthTxStatus} from '@titan-wallet/types';
 
 export const SendAmountScreen: FunctionComponent = observer(() => {
   const {

@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { SignEthereumInteractionStore } from "@keplr-wallet/stores-core";
+import { SignEthereumInteractionStore } from "@titan-wallet/stores-core";
 import { Box } from "../../../components/box";
 import { XAxis, YAxis } from "../../../components/axis";
 import { Body2, Body3, H5 } from "../../../components/typography";
@@ -15,12 +15,12 @@ import { useStore } from "../../../stores";
 import { BackButton } from "../../../layouts/header/components";
 import { HeaderLayout } from "../../../layouts/header";
 import { useInteractionInfo } from "../../../hooks";
-import { KeplrError } from "@keplr-wallet/router";
+import { TitanError } from "@titan-wallet/router";
 import { ErrModuleLedgerSign } from "../utils/ledger-types";
 import { Buffer } from "buffer/";
 import { LedgerGuideBox } from "../components/ledger-guide-box";
 import { KeystoneUSBBox } from "../components/keystone-usb-box";
-import { EthSignType } from "@keplr-wallet/types";
+import { EthSignType } from "@titan-wallet/types";
 import {
   handleEthereumPreSignByKeystone,
   handleEthereumPreSignByLedger,
@@ -44,11 +44,11 @@ import {
   useGasSimulator,
   useSenderConfig,
   useZeroAllowedGasConfig,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { handleExternalInteractionWithNoProceedNext } from "../../../utils";
 import { EthTxBase } from "../components/eth-tx/render/tx-base";
-import { MemoryKVStore } from "@keplr-wallet/common";
-import { CoinPretty, Dec, Int } from "@keplr-wallet/unit";
+import { MemoryKVStore } from "@titan-wallet/common";
+import { CoinPretty, Dec, Int } from "@titan-wallet/unit";
 import { Image } from "../../../components/image";
 import { Column, Columns } from "../../../components/column";
 import { useNavigate } from "react-router";
@@ -486,7 +486,7 @@ export const EthereumSigningView: FunctionComponent<{
             } catch (e) {
               console.log(e);
 
-              if (e instanceof KeplrError) {
+              if (e instanceof TitanError) {
                 if (e.module === ErrModuleLedgerSign) {
                   setLedgerInteractingError(e);
                 } else if (e.module === ErrModuleKeystoneSign) {

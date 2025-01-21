@@ -1,4 +1,4 @@
-import { KVStore } from "@keplr-wallet/common";
+import { KVStore } from "@titan-wallet/common";
 import { PermissionKeyHelper } from "../helper";
 
 export type LegacyGlobalPermissionMap = {

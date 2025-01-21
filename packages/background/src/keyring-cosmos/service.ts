@@ -5,12 +5,12 @@ import {
   ChainInfo,
   DirectAuxSignResponse,
   DirectSignResponse,
-  KeplrSignOptions,
+  TitanSignOptions,
   Key,
   StdSignature,
   StdSignDoc,
-} from "@keplr-wallet/types";
-import { APP_PORT, Env, KeplrError } from "@keplr-wallet/router";
+} from "@titan-wallet/types";
+import { APP_PORT, Env, TitanError } from "@titan-wallet/router";
 import {
   Bech32Address,
   checkAndValidateADR36AminoSignDoc,
@@ -20,8 +20,8 @@ import {
   serializeSignDoc,
   TendermintTxTracer,
   verifyADR36AminoSignDoc,
-} from "@keplr-wallet/cosmos";
-import { escapeHTML, sortObjectByKey } from "@keplr-wallet/common";
+} from "@titan-wallet/cosmos";
+import { escapeHTML, sortObjectByKey } from "@titan-wallet/common";
 import { trimAminoSignDoc } from "./amino-sign-doc";
 import { InteractionService } from "../interaction";
 import { Buffer } from "buffer/";
@@ -30,9 +30,9 @@ import {
   SignDoc,
   SignDocDirectAux,
   TxBody,
-} from "@keplr-wallet/proto-types/cosmos/tx/v1beta1/tx";
+} from "@titan-wallet/proto-types/cosmos/tx/v1beta1/tx";
 import Long from "long";
-import { PubKeySecp256k1 } from "@keplr-wallet/crypto";
+import { PubKeySecp256k1 } from "@titan-wallet/crypto";
 import { AnalyticsService } from "../analytics";
 import { ChainsUIService } from "../chains-ui";
 
@@ -204,7 +204,7 @@ export class KeyRingCosmosService {
     chainId: string,
     signer: string,
     signDoc: StdSignDoc,
-    signOptions: KeplrSignOptions
+    signOptions: TitanSignOptions
   ): Promise<AminoSignResponse> {
     return await this.signAmino(
       env,
@@ -224,7 +224,7 @@ export class KeyRingCosmosService {
     chainId: string,
     signer: string,
     signDoc: StdSignDoc,
-    signOptions: KeplrSignOptions
+    signOptions: TitanSignOptions
   ): Promise<AminoSignResponse> {
     const chainInfo = this.chainsService.getChainInfoOrThrow(chainId);
     if (chainInfo.hideInUI) {
@@ -693,7 +693,7 @@ export class KeyRingCosmosService {
     chainId: string,
     signer: string,
     signDoc: SignDoc,
-    signOptions: KeplrSignOptions
+    signOptions: TitanSignOptions
   ): Promise<DirectSignResponse> {
     const chainInfo = this.chainsService.getChainInfoOrThrow(chainId);
     if (chainInfo.hideInUI) {
@@ -809,7 +809,7 @@ export class KeyRingCosmosService {
     chainId: string,
     signer: string,
     signDoc: SignDoc,
-    signOptions: KeplrSignOptions
+    signOptions: TitanSignOptions
   ): Promise<DirectSignResponse> {
     return await this.signDirect(
       env,
@@ -831,7 +831,7 @@ export class KeyRingCosmosService {
     signDoc: SignDocDirectAux,
     // preferNoSetMemo 빼고는 다 무시됨
     signOptions: Exclude<
-      KeplrSignOptions,
+      TitanSignOptions,
       "preferNoSetFee" | "disableBalanceCheck"
     >
   ): Promise<DirectAuxSignResponse> {
@@ -939,7 +939,7 @@ export class KeyRingCosmosService {
     signDoc: SignDocDirectAux,
     // preferNoSetMemo 빼고는 다 무시됨
     signOptions: Exclude<
-      KeplrSignOptions,
+      TitanSignOptions,
       "preferNoSetFee" | "disableBalanceCheck"
     >
   ): Promise<DirectAuxSignResponse> {
@@ -1016,7 +1016,7 @@ export class KeyRingCosmosService {
       primaryType: string;
     },
     signDoc: StdSignDoc,
-    signOptions: KeplrSignOptions
+    signOptions: TitanSignOptions
   ): Promise<AminoSignResponse> {
     return this.requestSignEIP712CosmosTx_v0(
       env,
@@ -1042,7 +1042,7 @@ export class KeyRingCosmosService {
       primaryType: string;
     },
     signDoc: StdSignDoc,
-    signOptions: KeplrSignOptions
+    signOptions: TitanSignOptions
   ): Promise<AminoSignResponse> {
     const chainInfo = this.chainsService.getChainInfoOrThrow(chainId);
     if (chainInfo.hideInUI) {
@@ -1517,7 +1517,7 @@ Salt: ${salt}`;
       !chainId.startsWith("zetachain_") &&
       !chainId.startsWith("eip155:")
     ) {
-      throw new KeplrError(
+      throw new TitanError(
         "keyring",
         152,
         "Ledger is unsupported for this chain"

@@ -2,7 +2,7 @@ import {
   QueriesSetBase,
   ChainGetter,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { ObservableQueryEthAccountBalanceRegistry } from "./balance";
 import { DeepReadonly } from "utility-types";
 import { ObservableQueryEthereumBlock } from "./block";

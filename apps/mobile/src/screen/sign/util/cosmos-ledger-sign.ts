@@ -1,9 +1,9 @@
-import {StdSignDoc} from '@keplr-wallet/types';
-import {KeplrError} from '@keplr-wallet/router';
-import {CosmosApp} from '@keplr-wallet/ledger-cosmos';
-import {PubKeySecp256k1} from '@keplr-wallet/crypto';
+import {StdSignDoc} from '@titan-wallet/types';
+import {TitanError} from '@titan-wallet/router';
+import {CosmosApp} from '@titan-wallet/ledger-cosmos';
+import {PubKeySecp256k1} from '@titan-wallet/crypto';
 import {Buffer} from 'buffer';
-import {serializeSignDoc} from '@keplr-wallet/cosmos';
+import {serializeSignDoc} from '@titan-wallet/cosmos';
 import {signatureImport} from 'secp256k1';
 import {
   ErrCodeDeviceLocked,
@@ -21,7 +21,7 @@ import {
   domainHash,
   EIP712MessageValidator,
   messageHash,
-} from '@keplr-wallet/background';
+} from '@titan-wallet/background';
 import Eth from '@ledgerhq/hw-app-eth';
 
 export const connectAndSignEIP712WithLedger = async (
@@ -43,7 +43,7 @@ export const connectAndSignEIP712WithLedger = async (
   try {
     transport = await getTransport();
   } catch (e) {
-    throw new KeplrError(
+    throw new TitanError(
       ErrModuleLedgerSign,
       ErrFailedInit,
       'Failed to init transport',
@@ -52,7 +52,7 @@ export const connectAndSignEIP712WithLedger = async (
 
   let ethApp = new Eth(transport);
 
-  // Ensure that the keplr can connect to ethereum app on ledger.
+  // Ensure that the titan can connect to ethereum app on ledger.
   // getAppConfiguration() works even if the ledger is on screen saver mode.
   // To detect the screen saver mode, we should request the address before using.
   try {
@@ -60,7 +60,7 @@ export const connectAndSignEIP712WithLedger = async (
   } catch (e) {
     // Device is locked
     if (e?.message.includes('(0x6b0c)')) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrCodeDeviceLocked,
         'Device is locked',
@@ -90,7 +90,7 @@ export const connectAndSignEIP712WithLedger = async (
 
       pubKey = new PubKeySecp256k1(Buffer.from(res.publicKey, 'hex'));
     } catch (e) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrFailedGetPublicKey,
         e.message || e.toString(),
@@ -102,7 +102,7 @@ export const connectAndSignEIP712WithLedger = async (
         'hex',
       ) !== Buffer.from(pubKey.toBytes()).toString('hex')
     ) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrPublicKeyUnmatched,
         'Public key unmatched',
@@ -127,7 +127,7 @@ export const connectAndSignEIP712WithLedger = async (
     } catch (e) {
       console.log(e);
 
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrFailedSign,
         e.message || e.toString(),
@@ -145,14 +145,14 @@ export const connectAndSignEIP712WithLedger = async (
       );
     } catch (e) {
       if (e?.message.includes('(0x6985)')) {
-        throw new KeplrError(
+        throw new TitanError(
           ErrModuleLedgerSign,
           ErrSignRejected,
           'User rejected signing',
         );
       }
 
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrFailedSign,
         e.message || e.toString(),
@@ -175,7 +175,7 @@ export const connectAndSignWithLedger = async (
   signDoc: StdSignDoc,
 ): Promise<Uint8Array> => {
   if (propApp !== 'Cosmos' && propApp !== 'Terra' && propApp !== 'Secret') {
-    throw new KeplrError(
+    throw new TitanError(
       ErrModuleLedgerSign,
       ErrCodeUnsupportedApp,
       `Unsupported app: ${propApp}`,
@@ -187,7 +187,7 @@ export const connectAndSignWithLedger = async (
   try {
     transport = await getTransport();
   } catch (e) {
-    throw new KeplrError(
+    throw new TitanError(
       ErrModuleLedgerSign,
       ErrFailedInit,
       'Failed to init transport',
@@ -203,7 +203,7 @@ export const connectAndSignWithLedger = async (
       version.return_code === 21781 ||
       version.return_code === 65535
     ) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrCodeDeviceLocked,
         'Device is locked',
@@ -231,7 +231,7 @@ export const connectAndSignWithLedger = async (
         Buffer.from(pubKey.toBytes()).toString() !==
         Buffer.from(expected.toBytes()).toString()
       ) {
-        throw new KeplrError(
+        throw new TitanError(
           ErrModuleLedgerSign,
           ErrPublicKeyUnmatched,
           'Public key unmatched',
@@ -249,21 +249,21 @@ export const connectAndSignWithLedger = async (
         return signatureImport(signResponse.signature);
       } else {
         if (signResponse.error_message === 'Transaction rejected') {
-          throw new KeplrError(
+          throw new TitanError(
             ErrModuleLedgerSign,
             ErrSignRejected,
             signResponse.error_message,
           );
         }
 
-        throw new KeplrError(
+        throw new TitanError(
           ErrModuleLedgerSign,
           ErrFailedSign,
           signResponse.error_message,
         );
       }
     } else {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrFailedGetPublicKey,
         res.error_message,

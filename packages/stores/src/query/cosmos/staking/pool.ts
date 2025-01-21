@@ -2,7 +2,7 @@ import { ObservableChainQuery } from "../../chain-query";
 import { StakingPool } from "./types";
 import { ChainGetter } from "../../../chain";
 import { computed, makeObservable } from "mobx";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import { QuerySharedContext } from "../../../common";
 
 export class ObservableQueryStakingPool extends ObservableChainQuery<StakingPool> {

@@ -2,7 +2,7 @@ import {
   QueriesSetBase,
   ChainGetter,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { DeepReadonly } from "utility-types";
 import { ObservableQueryERC20Metadata } from "./erc20";
 import { ObservableQueryEVMTokenInfo } from "./axelar";
@@ -11,11 +11,11 @@ import {
   ObservableQueryTaxRate,
 } from "./terra-classic/treasury";
 
-export interface KeplrETCQueries {
-  keplrETC: KeplrETCQueriesImpl;
+export interface TitanETCQueries {
+  titanETC: TitanETCQueriesImpl;
 }
 
-export const KeplrETCQueries = {
+export const TitanETCQueries = {
   use(options: {
     ethereumURL: string;
   }): (
@@ -23,7 +23,7 @@ export const KeplrETCQueries = {
     sharedContext: QuerySharedContext,
     chainId: string,
     chainGetter: ChainGetter
-  ) => KeplrETCQueries {
+  ) => TitanETCQueries {
     return (
       queriesSetBase: QueriesSetBase,
       sharedContext: QuerySharedContext,
@@ -31,7 +31,7 @@ export const KeplrETCQueries = {
       chainGetter: ChainGetter
     ) => {
       return {
-        keplrETC: new KeplrETCQueriesImpl(
+        titanETC: new TitanETCQueriesImpl(
           queriesSetBase,
           sharedContext,
           chainId,
@@ -43,7 +43,7 @@ export const KeplrETCQueries = {
   },
 };
 
-export class KeplrETCQueriesImpl {
+export class TitanETCQueriesImpl {
   public readonly queryERC20Metadata: DeepReadonly<ObservableQueryERC20Metadata>;
   public readonly queryEVMTokenInfo: DeepReadonly<ObservableQueryEVMTokenInfo>;
 

@@ -17,7 +17,7 @@ import { Gutter } from "../../../../components/gutter";
 import { SearchTextInput } from "../../../../components/input";
 import SimpleBar from "simplebar-react";
 import { ChainImageFallback } from "../../../../components/image";
-import { Bech32Address, ChainIdHelper } from "@keplr-wallet/cosmos";
+import { Bech32Address, ChainIdHelper } from "@titan-wallet/cosmos";
 import {
   CheckToggleIcon,
   CopyOutlineIcon,
@@ -30,7 +30,7 @@ import {
   useSceneEvents,
   useSceneTransition,
 } from "../../../../components/transition";
-import { ChainInfo, ModularChainInfo } from "@keplr-wallet/types";
+import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 import { dispatchGlobalEventExceptSelf } from "../../../../utils/global-events";
 import { isRunningInSidePanel } from "../../../../utils";
 import { IconProps } from "../../../../components/icon/types";
@@ -764,14 +764,14 @@ const EnableChainItem: FunctionComponent<{
           // add the chain internally and refresh the store.
           if (!embedded && !stored) {
             try {
-              await window.keplr?.experimentalSuggestChain(
+              await window.titan?.experimentalSuggestChain(
                 chainInfo as ChainInfo
               );
               await keyRingStore.refreshKeyRingStatus();
               await chainStore.updateChainInfosFromBackground();
               await chainStore.updateEnabledChainIdentifiersFromBackground();
 
-              dispatchGlobalEventExceptSelf("keplr_suggested_chain_added");
+              dispatchGlobalEventExceptSelf("titan_suggested_chain_added");
             } catch {
               return;
             }

@@ -1,10 +1,10 @@
 import { IMemoConfig, UIProperties } from "./types";
 import { action, computed, makeObservable, observable } from "mobx";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { TxChainSetter } from "./chain";
 import { useState } from "react";
 import { MemoSuspectMnemonicInclusion } from "./errors";
-import { isMnemonicWord } from "@keplr-wallet/common";
+import { isMnemonicWord } from "@titan-wallet/common";
 
 export class MemoConfig extends TxChainSetter implements IMemoConfig {
   @observable

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from "react";
-import { SignStarknetMessageInteractionStore } from "@keplr-wallet/stores-core";
+import { SignStarknetMessageInteractionStore } from "@titan-wallet/stores-core";
 import { handleExternalInteractionWithNoProceedNext } from "../../../../utils";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
@@ -18,7 +18,7 @@ import { Image } from "../../../../components/image";
 import SimpleBar from "simplebar-react";
 import { connectAndSignMessageWithLedger } from "../../../sign/utils/handle-starknet-sign";
 import { ErrModuleLedgerSign } from "../../../sign/utils/ledger-types";
-import { KeplrError } from "@keplr-wallet/router";
+import { TitanError } from "@titan-wallet/router";
 import { LedgerGuideBox } from "../../../sign/components/ledger-guide-box";
 import { useNavigate } from "react-router";
 import { ApproveIcon, CancelIcon } from "../../../../components/button";
@@ -123,7 +123,7 @@ export const SignStarknetMessageView: FunctionComponent<{
     } catch (e) {
       console.log(e);
 
-      if (e instanceof KeplrError) {
+      if (e instanceof TitanError) {
         if (e.module === ErrModuleLedgerSign) {
           setLedgerInteractingError(e);
         } else {

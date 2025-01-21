@@ -1,5 +1,5 @@
-import { ChainGetter } from "@keplr-wallet/stores";
-import { ERC20Currency, Keplr } from "@keplr-wallet/types";
+import { ChainGetter } from "@titan-wallet/stores";
+import { ERC20Currency, Titan } from "@titan-wallet/types";
 import { action, makeObservable, observable } from "mobx";
 import {
   uint256,
@@ -10,7 +10,7 @@ import {
   DeployAccountSignerDetails,
 } from "starknet";
 import { StoreAccount } from "./internal";
-import { Dec, DecUtils, Int } from "@keplr-wallet/unit";
+import { Dec, DecUtils, Int } from "@titan-wallet/unit";
 
 export class StarknetAccountBase {
   @observable
@@ -22,7 +22,7 @@ export class StarknetAccountBase {
   constructor(
     protected readonly chainGetter: ChainGetter,
     protected readonly chainId: string,
-    protected readonly getKeplr: () => Promise<Keplr | undefined>
+    protected readonly getTitan: () => Promise<Titan | undefined>
   ) {
     makeObservable(this);
   }
@@ -61,7 +61,7 @@ export class StarknetAccountBase {
       modularChainInfo.starknet.rpc,
       sender,
       this.chainId,
-      this.getKeplr
+      this.getTitan
     );
 
     return await walletAccount.estimateAccountDeployFee(
@@ -99,7 +99,7 @@ export class StarknetAccountBase {
       modularChainInfo.starknet.rpc,
       sender,
       this.chainId,
-      this.getKeplr
+      this.getTitan
     );
 
     try {
@@ -149,7 +149,7 @@ export class StarknetAccountBase {
       modularChainInfo.starknet.rpc,
       sender,
       this.chainId,
-      this.getKeplr
+      this.getTitan
     );
 
     try {
@@ -182,7 +182,7 @@ export class StarknetAccountBase {
       modularChainInfo.starknet.rpc,
       sender,
       this.chainId,
-      this.getKeplr
+      this.getTitan
     );
 
     return await walletAccount.estimateInvokeFee(calls, {
@@ -249,7 +249,7 @@ export class StarknetAccountBase {
       modularChainInfo.starknet.rpc,
       sender,
       this.chainId,
-      this.getKeplr
+      this.getTitan
     );
 
     return await walletAccount.executeWithFee(calls, fee);
@@ -301,7 +301,7 @@ export class StarknetAccountBase {
       modularChainInfo.starknet.rpc,
       sender,
       this.chainId,
-      this.getKeplr
+      this.getTitan
     );
 
     return new Int(num.toBigInt(await walletAccount.getNonce()));

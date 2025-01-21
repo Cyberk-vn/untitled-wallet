@@ -5,7 +5,7 @@ import {
   Mnemonic,
   PrivKeySecp256k1,
   PubKeySecp256k1,
-} from "@keplr-wallet/crypto";
+} from "@titan-wallet/crypto";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const bip39 = require("bip39");
 

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { observer } from "mobx-react-lite";
 import { useLocation } from "react-router-dom";
-import { AuthZ } from "@keplr-wallet/stores";
+import { AuthZ } from "@titan-wallet/stores";
 import { useStore } from "../../../../../stores";
 import { BackButton } from "../../../../../layouts/header/components";
 import { HeaderLayout } from "../../../../../layouts/header";

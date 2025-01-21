@@ -6,11 +6,11 @@ import {
   IGasSimulator,
   InsufficientFeeError,
   ISenderConfig,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { autorun } from "mobx";
-import { Dec, IntPretty, PricePretty } from "@keplr-wallet/unit";
+import { Dec, IntPretty, PricePretty } from "@titan-wallet/unit";
 import { useStore } from "../../../../stores";
-import { IBCSwapAmountConfig } from "@keplr-wallet/hooks-internal";
+import { IBCSwapAmountConfig } from "@titan-wallet/hooks-internal";
 import { Box } from "../../../../components/box";
 import { ColorPalette } from "../../../../styles";
 import { Gutter } from "../../../../components/gutter";

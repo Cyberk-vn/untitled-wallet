@@ -25,17 +25,17 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { Gutter } from "../../../components/gutter";
 import { Button } from "../../../components/button";
 import { getActiveTabOrigin } from "../../../utils/browser-api";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 import {
   GetCurrentChainIdForEVMMsg,
   UpdateCurrentChainIdForEVMMsg,
   GetCurrentChainIdForStarknetMsg,
   UpdateCurrentChainIdForStarknetMsg,
-} from "@keplr-wallet/background";
+} from "@titan-wallet/background";
 import { autoUpdate, offset, shift, useFloating } from "@floating-ui/react-dom";
 import SimpleBar from "simplebar-react";
-import { ExtensionKVStore } from "@keplr-wallet/common";
+import { ExtensionKVStore } from "@titan-wallet/common";
 
 export interface MainHeaderLayoutRef {
   toggleSideMenu: () => void;
@@ -253,7 +253,7 @@ export const MainHeaderLayout = observer<
     return (
       <HeaderLayout
         title={(() => {
-          const name = keyRingStore.selectedKeyInfo?.name || "Keplr Account";
+          const name = keyRingStore.selectedKeyInfo?.name || "Titan Account";
 
           if (icnsPrimaryName !== "") {
             return (

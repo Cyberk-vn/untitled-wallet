@@ -1,8 +1,8 @@
-import { DenomHelper } from "@keplr-wallet/common";
+import { DenomHelper } from "@titan-wallet/common";
 import { ChainGetter } from "../chain";
 import { computed, makeObservable, observable, runInAction } from "mobx";
-import { CoinPretty, Dec, Int } from "@keplr-wallet/unit";
-import { AppCurrency } from "@keplr-wallet/types";
+import { CoinPretty, Dec, Int } from "@titan-wallet/unit";
+import { AppCurrency } from "@titan-wallet/types";
 import { HasMapStore, IObservableQuery, QuerySharedContext } from "../common";
 import { computedFn } from "mobx-utils";
 

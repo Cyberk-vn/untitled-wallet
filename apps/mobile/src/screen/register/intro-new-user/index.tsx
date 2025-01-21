@@ -19,7 +19,7 @@ import {ScrollViewRegisterContainer} from '../components/scroll-view-register-co
 import {
   isAppleSignInEnabled,
   isGoogleSignInEnabled,
-} from 'keplr-wallet-mobile-private';
+} from 'titan-wallet-mobile-private';
 
 export const RegisterIntroNewUserScreen: FunctionComponent = () => {
   const intl = useIntl();

@@ -16,9 +16,9 @@ import { FormattedMessage, useIntl } from "react-intl";
 import SimpleBar from "simplebar-react";
 import { Tag } from "../../../../components/tag";
 import { Toggle } from "../../../../components/toggle";
-import { SetSidePanelEnabledMsg } from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+import { SetSidePanelEnabledMsg } from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
 
@@ -307,7 +307,7 @@ const CarouselPage: FunctionComponent<{
                     : ColorPalette["gray-300"]
                 }
               >
-                Open Keplr in a sidebar on your screen
+                Open Titan in a sidebar on your screen
               </Body3>
             </YAxis>
 

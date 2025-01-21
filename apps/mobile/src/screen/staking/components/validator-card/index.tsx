@@ -7,10 +7,10 @@ import {Box} from '../../../../components/box';
 import {Gutter} from '../../../../components/gutter';
 import {Column, Columns} from '../../../../components/column';
 import {ValidatorImage} from '../validator-image';
-import {Staking} from '@keplr-wallet/stores';
+import {Staking} from '@titan-wallet/stores';
 import {FormattedMessage} from 'react-intl';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
-import {CoinPretty} from '@keplr-wallet/unit';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
+import {CoinPretty} from '@titan-wallet/unit';
 
 export const ValidatorCard: FunctionComponent<{
   chainId: string;

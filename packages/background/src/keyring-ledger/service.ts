@@ -1,8 +1,8 @@
 import { PlainObject, Vault } from "../vault";
 import { Buffer } from "buffer/";
-import { PubKeySecp256k1, PubKeyStarknet } from "@keplr-wallet/crypto";
-import { KeplrError } from "@keplr-wallet/router";
-import { ModularChainInfo } from "@keplr-wallet/types";
+import { PubKeySecp256k1, PubKeyStarknet } from "@titan-wallet/crypto";
+import { TitanError } from "@titan-wallet/router";
+import { ModularChainInfo } from "@titan-wallet/types";
 import { KeyRingService } from "../keyring";
 
 export class KeyRingLedgerService {
@@ -60,7 +60,7 @@ export class KeyRingLedgerService {
     if (isEthermintLike) {
       app = "Ethereum";
       if (!vault.insensitive[app]) {
-        throw new KeplrError(
+        throw new TitanError(
           "keyring",
           901,
           "No Ethereum public key. Initialize Ethereum app on Ledger by selecting the chain in the extension"
@@ -98,7 +98,7 @@ export class KeyRingLedgerService {
     }
 
     if (!vault.insensitive["Starknet"]) {
-      throw new KeplrError(
+      throw new TitanError(
         "keyring",
         901,
         "No Starknet public key. Initialize Starknet app on Ledger by selecting the chain in the extension"

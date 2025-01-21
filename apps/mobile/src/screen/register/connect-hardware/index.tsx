@@ -10,7 +10,7 @@ import {Bip44PathView, useBIP44PathState} from '../components/bip-path-44';
 import {InteractionManager, Text} from 'react-native';
 import {Gutter} from '../../../components/gutter';
 import {Box} from '../../../components/box';
-import {App} from '@keplr-wallet/ledger-cosmos';
+import {App} from '@titan-wallet/ledger-cosmos';
 import {RectButton} from '../../../components/rect-button';
 import {XAxis} from '../../../components/axis';
 import {ArrowDownFillIcon} from '../../../components/icon/arrow-donw-fill';

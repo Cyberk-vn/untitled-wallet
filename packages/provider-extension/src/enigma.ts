@@ -1,20 +1,20 @@
-import { Keplr, SecretUtils } from "@keplr-wallet/types";
+import { Titan, SecretUtils } from "@titan-wallet/types";
 
 /**
- * KeplrEnigmaUtils duplicates the public methods that are supported on secretjs's EnigmaUtils class.
+ * TitanEnigmaUtils duplicates the public methods that are supported on secretjs's EnigmaUtils class.
  */
-export class KeplrEnigmaUtils implements SecretUtils {
+export class TitanEnigmaUtils implements SecretUtils {
   constructor(
     protected readonly chainId: string,
-    protected readonly keplr: Keplr
+    protected readonly titan: Titan
   ) {}
 
   async getPubkey(): Promise<Uint8Array> {
-    return await this.keplr.getEnigmaPubKey(this.chainId);
+    return await this.titan.getEnigmaPubKey(this.chainId);
   }
 
   async getTxEncryptionKey(nonce: Uint8Array): Promise<Uint8Array> {
-    return await this.keplr.getEnigmaTxEncryptionKey(this.chainId, nonce);
+    return await this.titan.getEnigmaTxEncryptionKey(this.chainId, nonce);
   }
 
   async encrypt(
@@ -22,13 +22,13 @@ export class KeplrEnigmaUtils implements SecretUtils {
     // eslint-disable-next-line @typescript-eslint/ban-types
     msg: object
   ): Promise<Uint8Array> {
-    return await this.keplr.enigmaEncrypt(this.chainId, contractCodeHash, msg);
+    return await this.titan.enigmaEncrypt(this.chainId, contractCodeHash, msg);
   }
 
   async decrypt(
     ciphertext: Uint8Array,
     nonce: Uint8Array
   ): Promise<Uint8Array> {
-    return await this.keplr.enigmaDecrypt(this.chainId, ciphertext, nonce);
+    return await this.titan.enigmaDecrypt(this.chainId, ciphertext, nonce);
   }
 }

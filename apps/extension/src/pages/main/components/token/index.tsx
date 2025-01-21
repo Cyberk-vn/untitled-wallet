@@ -31,19 +31,19 @@ import {
 import styled, { css, useTheme } from "styled-components";
 import { CurrencyImageFallback } from "../../../../components/image";
 import { Tooltip } from "../../../../components/tooltip";
-import { DenomHelper } from "@keplr-wallet/common";
+import { DenomHelper } from "@titan-wallet/common";
 import { XAxis } from "../../../../components/axis";
 import { Gutter } from "../../../../components/gutter";
 import Color from "color";
 import { Skeleton } from "../../../../components/skeleton";
-import { WrongViewingKeyError } from "@keplr-wallet/stores";
+import { WrongViewingKeyError } from "@titan-wallet/stores";
 import { useNavigate } from "react-router";
-import { Secret20Currency } from "@keplr-wallet/types";
+import { Secret20Currency } from "@titan-wallet/types";
 import { FormattedMessage, useIntl } from "react-intl";
 import { animated, useSpringValue, to } from "@react-spring/web";
 import { defaultSpringConfig } from "../../../../styles/spring";
-import { Bech32Address } from "@keplr-wallet/cosmos";
-import { DecUtils, RatePretty } from "@keplr-wallet/unit";
+import { Bech32Address } from "@titan-wallet/cosmos";
+import { DecUtils, RatePretty } from "@titan-wallet/unit";
 
 const Styles = {
   Container: styled.div<{

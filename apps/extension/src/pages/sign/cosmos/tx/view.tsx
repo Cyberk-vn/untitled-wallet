@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
-import { SignInteractionStore } from "@keplr-wallet/stores-core";
+import { SignInteractionStore } from "@titan-wallet/stores-core";
 import { Box } from "../../../../components/box";
 import { Column, Columns } from "../../../../components/column";
 import { XAxis } from "../../../../components/axis";
@@ -17,17 +17,17 @@ import {
   useSignDocHelper,
   useTxConfigsValidate,
   useZeroAllowedGasConfig,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { useStore } from "../../../../stores";
-import { unescapeHTML } from "@keplr-wallet/common";
-import { CoinPretty, Dec, Int } from "@keplr-wallet/unit";
+import { unescapeHTML } from "@titan-wallet/common";
+import { CoinPretty, Dec, Int } from "@titan-wallet/unit";
 import { BackButton } from "../../../../layouts/header/components";
 import { HeaderLayout } from "../../../../layouts/header";
 import { useInteractionInfo } from "../../../../hooks";
 import { defaultRegistry } from "../../components/messages/registry";
 import { useUnmount } from "../../../../hooks/use-unmount";
 import { handleCosmosPreSign } from "../../utils/handle-cosmos-sign";
-import { KeplrError } from "@keplr-wallet/router";
+import { TitanError } from "@titan-wallet/router";
 import { ErrModuleLedgerSign } from "../../utils/ledger-types";
 import { LedgerGuideBox } from "../../components/ledger-guide-box";
 import { KeystoneUSBBox } from "../../components/keystone-usb-box";
@@ -37,11 +37,11 @@ import { FormattedMessage, useIntl } from "react-intl";
 import SimpleBar from "simplebar-react";
 import { KeystoneSign } from "../../components/keystone";
 import { ErrModuleKeystoneSign, KeystoneUR } from "../../utils/keystone";
-import { KeyRingService } from "@keplr-wallet/background";
+import { KeyRingService } from "@titan-wallet/background";
 import { useTheme } from "styled-components";
-import { defaultProtoCodec } from "@keplr-wallet/cosmos";
-import { MsgGrant } from "@keplr-wallet/proto-types/cosmos/authz/v1beta1/tx";
-import { GenericAuthorization } from "@keplr-wallet/stores/build/query/cosmos/authz/types";
+import { defaultProtoCodec } from "@titan-wallet/cosmos";
+import { MsgGrant } from "@titan-wallet/proto-types/cosmos/authz/v1beta1/tx";
+import { GenericAuthorization } from "@titan-wallet/stores/build/query/cosmos/authz/types";
 import { Checkbox } from "../../../../components/checkbox";
 import { FeeSummary } from "../../components/fee-summary";
 import { FeeControl } from "../../../../components/input/fee-control";
@@ -458,7 +458,7 @@ export const CosmosTxView: FunctionComponent<{
       } catch (e) {
         console.log(e);
 
-        if (e instanceof KeplrError) {
+        if (e instanceof TitanError) {
           if (e.module === ErrModuleLedgerSign) {
             setLedgerInteractingError(e);
           } else if (e.module === ErrModuleKeystoneSign) {

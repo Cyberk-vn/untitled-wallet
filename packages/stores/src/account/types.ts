@@ -1,12 +1,12 @@
-import { Any } from "@keplr-wallet/proto-types/google/protobuf/any";
-import { Dec } from "@keplr-wallet/unit";
+import { Any } from "@titan-wallet/proto-types/google/protobuf/any";
+import { Dec } from "@titan-wallet/unit";
 import {
   BroadcastMode,
-  Keplr,
-  KeplrSignOptions,
+  Titan,
+  TitanSignOptions,
   Msg,
   StdFee,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 
 export type ProtoMsgsOrWithAminoMsgs = {
   aminoMsgs?: Msg[];
@@ -23,10 +23,10 @@ export type ProtoMsgsOrWithAminoMsgs = {
   >;
 };
 
-export interface KeplrSignOptionsWithAltSignMethods extends KeplrSignOptions {
-  readonly signAmino?: Keplr["signAmino"];
-  readonly signDirect?: Keplr["signDirect"];
-  readonly experimentalSignEIP712CosmosTx_v0?: Keplr["experimentalSignEIP712CosmosTx_v0"];
+export interface TitanSignOptionsWithAltSignMethods extends TitanSignOptions {
+  readonly signAmino?: Titan["signAmino"];
+  readonly signDirect?: Titan["signDirect"];
+  readonly experimentalSignEIP712CosmosTx_v0?: Titan["experimentalSignEIP712CosmosTx_v0"];
   readonly sendTx?: (
     chainId: string,
     tx: Uint8Array,
@@ -55,7 +55,7 @@ export interface MakeTxResponse {
       };
     },
     memo?: string,
-    signOptions?: KeplrSignOptionsWithAltSignMethods,
+    signOptions?: TitanSignOptionsWithAltSignMethods,
     onTxEvents?:
       | ((tx: any) => void)
       | {
@@ -66,7 +66,7 @@ export interface MakeTxResponse {
   send(
     fee: StdFee,
     memo?: string,
-    signOptions?: KeplrSignOptionsWithAltSignMethods,
+    signOptions?: TitanSignOptionsWithAltSignMethods,
     onTxEvents?:
       | ((tx: any) => void)
       | {
@@ -83,7 +83,7 @@ export interface MakeTxResponse {
       };
     },
     memo?: string,
-    signOptions?: KeplrSignOptionsWithAltSignMethods,
+    signOptions?: TitanSignOptionsWithAltSignMethods,
     onTxEvents?:
       | ((tx: any) => void)
       | {

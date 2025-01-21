@@ -1,4 +1,4 @@
-import { MessageRequester, Router } from "@keplr-wallet/router";
+import { MessageRequester, Router } from "@titan-wallet/router";
 
 import * as KeyRingLegacy from "./keyring/legacy";
 
@@ -54,8 +54,8 @@ export * from "./recent-send-history";
 export * from "./side-panel";
 export * from "./settings";
 
-import { KVStore } from "@keplr-wallet/common";
-import { ChainInfo, ModularChainInfo } from "@keplr-wallet/types";
+import { KVStore } from "@titan-wallet/common";
+import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 import { Notification } from "./tx";
 import { ChainInfoWithCoreTypes } from "./chains";
 

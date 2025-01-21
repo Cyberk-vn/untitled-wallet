@@ -1,5 +1,5 @@
-import { isServiceWorker, KVStore } from "@keplr-wallet/common";
-import { JSONUint8Array } from "@keplr-wallet/router";
+import { isServiceWorker, KVStore } from "@titan-wallet/common";
+import { JSONUint8Array } from "@titan-wallet/router";
 import {
   action,
   autorun,
@@ -12,7 +12,7 @@ import { computedFn } from "mobx-utils";
 import { Buffer } from "buffer/";
 import AES, { Counter } from "aes-js";
 import pbkdf2 from "pbkdf2";
-import { Hash } from "@keplr-wallet/crypto";
+import { Hash } from "@titan-wallet/crypto";
 import { PlainObject, Vault } from "./types";
 
 type VaultRemovedHandler = (type: string, vaultId: string) => void;

@@ -1,6 +1,6 @@
 import React, {FunctionComponent, useMemo, useState} from 'react';
 import {CollapsibleList} from '../../components/collapsible-list';
-import {Dec} from '@keplr-wallet/unit';
+import {Dec} from '@titan-wallet/unit';
 import {ViewToken} from './index';
 import {observer} from 'mobx-react-lite';
 import {Stack} from '../../components/stack';

@@ -1,19 +1,19 @@
-import { WEBPAGE_PORT, Message, BACKGROUND_PORT } from "@keplr-wallet/router";
+import { WEBPAGE_PORT, Message, BACKGROUND_PORT } from "@titan-wallet/router";
 import {
   ContentScriptEnv,
   ContentScriptGuards,
   ExtensionRouter,
   InExtensionMessageRequester,
-} from "@keplr-wallet/router-extension";
-import { Keplr, InjectedKeplr } from "@keplr-wallet/provider";
+} from "@titan-wallet/router-extension";
+import { Titan, InjectedTitan } from "@titan-wallet/provider";
 import { initEvents } from "./events";
 
 import manifest from "../manifest.v2.json";
 
-(window as any).__keplr_content_script = true;
+(window as any).__titan_content_script = true;
 
-InjectedKeplr.startProxy(
-  new Keplr(manifest.version, "core", new InExtensionMessageRequester())
+InjectedTitan.startProxy(
+  new Titan(manifest.version, "core", new InExtensionMessageRequester())
 );
 
 const router = new ExtensionRouter(ContentScriptEnv.produceEnv);
@@ -108,7 +108,7 @@ export class CheckBadTwitterIdMsg extends Message<boolean> {
   }
 }
 
-const blocklistURL = "https://blocklist.keplr.app";
+const blocklistURL = "https://blocklist.titan.app";
 
 const url = new URL(window.location.href);
 // If host is localhost, no need to check validity of domain.
@@ -199,7 +199,7 @@ if (url.hostname === "twitter.com" || url.hostname === "x.com") {
             .then((r) => {
               if (r) {
                 alert(`Phishing Alert
-@${id} is detected as Keplr’s phishing account.
+@${id} is detected as Titan’s phishing account.
 This twitter account has malicious intent so recommend you not to interact with it.`);
               }
             })

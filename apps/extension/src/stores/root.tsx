@@ -20,7 +20,7 @@ import {
   CosmwasmAccount,
   CosmwasmQueries,
   OsmosisQueries,
-  getKeplrFromWindow,
+  getTitanFromWindow,
   QueriesStore,
   SecretAccount,
   SecretQueries,
@@ -28,11 +28,11 @@ import {
   AgoricQueries,
   LSMCurrencyRegistrar,
   TokenFactoryCurrencyRegistrar,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import {
   IBCChannelStore,
   IBCCurrencyRegistrar,
-} from "@keplr-wallet/stores-ibc";
+} from "@titan-wallet/stores-ibc";
 import {
   ChainSuggestStore,
   InteractionStore,
@@ -45,30 +45,30 @@ import {
   SignEthereumInteractionStore,
   SignStarknetTxInteractionStore,
   SignStarknetMessageInteractionStore,
-} from "@keplr-wallet/stores-core";
+} from "@titan-wallet/stores-core";
 import {
-  KeplrETCQueries,
+  TitanETCQueries,
   GravityBridgeCurrencyRegistrar,
   AxelarEVMBridgeCurrencyRegistrar,
-} from "@keplr-wallet/stores-etc";
+} from "@titan-wallet/stores-etc";
 import {
   EthereumQueries,
   EthereumAccountStore,
   ERC20CurrencyRegistrar,
-} from "@keplr-wallet/stores-eth";
-import { ExtensionKVStore } from "@keplr-wallet/common";
+} from "@titan-wallet/stores-eth";
+import { ExtensionKVStore } from "@titan-wallet/common";
 import {
   ContentScriptEnv,
   ContentScriptGuards,
   ExtensionRouter,
   InExtensionMessageRequester,
   InteractionAddon,
-} from "@keplr-wallet/router-extension";
-import { APP_PORT } from "@keplr-wallet/router";
-import { FiatCurrency } from "@keplr-wallet/types";
+} from "@titan-wallet/router-extension";
+import { APP_PORT } from "@titan-wallet/router";
+import { FiatCurrency } from "@titan-wallet/types";
 import { UIConfigStore } from "./ui-config";
-import { AnalyticsStore, NoopAnalyticsClient } from "@keplr-wallet/analytics";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { AnalyticsStore, NoopAnalyticsClient } from "@titan-wallet/analytics";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { HugeQueriesStore } from "./huge-queries";
 import { ExtensionAnalyticsClient } from "../analytics";
 import { TokenContractsQueries } from "./token-contracts";
@@ -76,13 +76,13 @@ import {
   SkipQueries,
   Price24HChangesStore,
   SwapUsageQueries,
-} from "@keplr-wallet/stores-internal";
+} from "@titan-wallet/stores-internal";
 import { setInteractionDataHref } from "../utils";
-import { InteractionPingMsg } from "@keplr-wallet/background";
+import { InteractionPingMsg } from "@titan-wallet/background";
 import {
   StarknetAccountStore,
   StarknetQueriesStore,
-} from "@keplr-wallet/stores-starknet";
+} from "@titan-wallet/stores-starknet";
 
 let _sidePanelWindowId: number | undefined;
 async function getSidePanelWindowId(): Promise<number | undefined> {
@@ -126,7 +126,7 @@ export class RootStore {
       CosmwasmQueries,
       SecretQueries,
       OsmosisQueries,
-      KeplrETCQueries,
+      TitanETCQueries,
       ICNSQueries,
       TokenContractsQueries,
       EthereumQueries
@@ -308,10 +308,10 @@ export class RootStore {
       CosmosQueries.use(),
       CosmwasmQueries.use(),
       SecretQueries.use({
-        apiGetter: getKeplrFromWindow,
+        apiGetter: getTitanFromWindow,
       }),
       OsmosisQueries.use(),
-      KeplrETCQueries.use({
+      TitanETCQueries.use({
         ethereumURL: EthereumEndpoint,
       }),
       ICNSQueries.use(),
@@ -325,7 +325,7 @@ export class RootStore {
     );
     this.swapUsageQueries = new SwapUsageQueries(
       this.queriesStore.sharedContext,
-      process.env["KEPLR_EXT_TX_HISTORY_BASE_URL"]
+      process.env["TITAN_EXT_TX_HISTORY_BASE_URL"]
     );
     this.skipQueriesStore = new SkipQueries(
       this.queriesStore.sharedContext,
@@ -342,7 +342,7 @@ export class RootStore {
     this.accountStore = new AccountStore(
       window,
       this.chainStore,
-      getKeplrFromWindow,
+      getTitanFromWindow,
       () => {
         return {
           suggestChain: false,
@@ -470,11 +470,11 @@ export class RootStore {
 
     this.ethereumAccountStore = new EthereumAccountStore(
       this.chainStore,
-      getKeplrFromWindow
+      getTitanFromWindow
     );
     this.starknetAccountStore = new StarknetAccountStore(
       this.chainStore,
-      getKeplrFromWindow
+      getTitanFromWindow
     );
 
     this.priceStore = new CoinGeckoPriceStore(
@@ -494,7 +494,7 @@ export class RootStore {
     this.price24HChangesStore = new Price24HChangesStore(
       new ExtensionKVStore("store_prices_changes_24h"),
       {
-        baseURL: process.env["KEPLR_EXT_TX_HISTORY_BASE_URL"],
+        baseURL: process.env["TITAN_EXT_TX_HISTORY_BASE_URL"],
         uri: "/price/changes/24h",
       }
     );
@@ -531,8 +531,8 @@ export class RootStore {
     this.tokenFactoryRegistrar = new TokenFactoryCurrencyRegistrar(
       new ExtensionKVStore("store_token_factory_currency_registrar"),
       24 * 3600 * 1000,
-      process.env["KEPLR_EXT_TOKEN_FACTORY_BASE_URL"] || "",
-      process.env["KEPLR_EXT_TOKEN_FACTORY_URI"] || "",
+      process.env["TITAN_EXT_TOKEN_FACTORY_BASE_URL"] || "",
+      process.env["TITAN_EXT_TOKEN_FACTORY_URI"] || "",
       this.chainStore,
       this.queriesStore
     );

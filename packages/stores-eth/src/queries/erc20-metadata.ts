@@ -2,7 +2,7 @@ import {
   ChainGetter,
   HasMapStore,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { computed, makeObservable } from "mobx";
 import { ObservableEvmChainJsonRpcQuery } from "./evm-chain-json-rpc";
 import { erc20ContractInterface } from "../constants";

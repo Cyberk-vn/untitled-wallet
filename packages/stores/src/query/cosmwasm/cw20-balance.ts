@@ -1,12 +1,12 @@
 import { computed } from "mobx";
-import { DenomHelper } from "@keplr-wallet/common";
+import { DenomHelper } from "@titan-wallet/common";
 import { ChainGetter } from "../../chain";
-import { CoinPretty, Int } from "@keplr-wallet/unit";
+import { CoinPretty, Int } from "@titan-wallet/unit";
 import { BalanceRegistry, IObservableQueryBalanceImpl } from "../balances";
 import { Cw20ContractBalance } from "./types";
 import { ObservableCosmwasmContractChainQuery } from "./contract-query";
 import { QuerySharedContext } from "../../common";
-import { AppCurrency } from "@keplr-wallet/types";
+import { AppCurrency } from "@titan-wallet/types";
 
 export class ObservableQueryCw20BalanceImpl
   extends ObservableCosmwasmContractChainQuery<Cw20ContractBalance>

@@ -5,7 +5,7 @@ import {
   ScryptParams,
   CommonCrypto,
 } from "./types";
-import { Hash } from "@keplr-wallet/crypto";
+import { Hash } from "@titan-wallet/crypto";
 import pbkdf2 from "pbkdf2";
 import { Buffer } from "buffer/";
 

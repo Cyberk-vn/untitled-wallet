@@ -1,10 +1,10 @@
 import { ObservableQuery, QueryOptions } from "./query";
 import { QuerySharedContext } from "./context";
 import { action, makeObservable, observable } from "mobx";
-import { Hash } from "@keplr-wallet/crypto";
+import { Hash } from "@titan-wallet/crypto";
 import { Buffer } from "buffer/";
 import { HasMapStore } from "../map";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 
 /**
  * Experimental implementation for json rpc.

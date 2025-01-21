@@ -6,7 +6,7 @@ import { Body3, Subtitle3 } from "../../../../components/typography";
 import { Gutter } from "../../../../components/gutter";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
-import { CoinPretty, Dec, PricePretty } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, PricePretty } from "@titan-wallet/unit";
 import { MsgHistory } from "../types";
 import { useTheme } from "styled-components";
 import { ChainImageFallback } from "../../../../components/image";
@@ -75,7 +75,7 @@ export const MsgItemBase: FunctionComponent<{
     const queryExplorer = queriesStore.simpleQuery.queryGet<{
       link: string;
     }>(
-      process.env["KEPLR_EXT_CONFIG_SERVER"],
+      process.env["TITAN_EXT_CONFIG_SERVER"],
       `/tx-history/explorer/${chainInfo.chainIdentifier}`
     );
 

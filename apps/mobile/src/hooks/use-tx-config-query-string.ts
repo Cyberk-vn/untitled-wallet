@@ -7,7 +7,7 @@ import {
   IGasSimulator,
   IMemoConfig,
   IRecipientConfig,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {useStore} from '../stores';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {RootStackParamList, StackNavProp} from '../navigation.tsx';

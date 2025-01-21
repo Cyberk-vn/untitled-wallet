@@ -1,4 +1,4 @@
-import { QuerySharedContext } from "@keplr-wallet/stores";
+import { QuerySharedContext } from "@titan-wallet/stores";
 import { DeepReadonly } from "utility-types";
 import { ObservableQueryAssetsFromSource } from "./assets-from-source";
 import { ObservableQueryRoute } from "./route";

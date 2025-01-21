@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   GetRecentSendHistoriesMsg,
   AddRecentSendHistoryMsg,
@@ -87,7 +87,7 @@ export const getHandler: (service: RecentSendHistoryService) => Handler = (
           msg as ClearAllSkipHistoryMsg
         );
       default:
-        throw new KeplrError("tx", 110, "Unknown msg type");
+        throw new TitanError("tx", 110, "Unknown msg type");
     }
   };
 };

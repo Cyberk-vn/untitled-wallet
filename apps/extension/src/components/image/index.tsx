@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useLayoutEffect, useState } from "react";
-import { AppCurrency, ChainInfo, ModularChainInfo } from "@keplr-wallet/types";
+import { AppCurrency, ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../stores";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 
 /**
  * 그냥 이미지 컴포넌트인데 오류 났을때 대체 이미지를 보여주는 기능이 있음

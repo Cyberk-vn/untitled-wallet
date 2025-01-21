@@ -3,7 +3,7 @@ import {APR_API_URL, CommunityChainInfoRepo, EmbedChainInfos} from '../config';
 import {
   AccountStore,
   CosmosAccount,
-  getKeplrFromWindow,
+  getTitanFromWindow,
   QueriesStore,
   CosmosQueries,
   CoinGeckoPriceStore,
@@ -17,8 +17,8 @@ import {
   AgoricQueries,
   CosmwasmAccount,
   TokenFactoryCurrencyRegistrar,
-} from '@keplr-wallet/stores';
-import {IBCChannelStore, IBCCurrencyRegistrar} from '@keplr-wallet/stores-ibc';
+} from '@titan-wallet/stores';
+import {IBCChannelStore, IBCCurrencyRegistrar} from '@titan-wallet/stores-ibc';
 import {
   ChainSuggestStore,
   InteractionStore,
@@ -28,14 +28,14 @@ import {
   SignEthereumInteractionStore,
   SignInteractionStore,
   TokensStore,
-} from '@keplr-wallet/stores-core';
+} from '@titan-wallet/stores-core';
 import {AsyncKVStore} from '../common';
 import {RNEnv, RNRouterUI, RNMessageRequesterInternal} from '../router';
-import {APP_PORT} from '@keplr-wallet/router';
+import {APP_PORT} from '@titan-wallet/router';
 import EventEmitter from 'eventemitter3';
 import {HugeQueriesStore} from './huge-queries';
 import {ChainStore} from './chain';
-import {FiatCurrency} from '@keplr-wallet/types';
+import {FiatCurrency} from '@titan-wallet/types';
 import {UIConfigStore} from './ui-config';
 import {
   ICNSInfo,
@@ -56,15 +56,15 @@ import {WalletConnectStore} from './wallet-connect';
 import {
   AxelarEVMBridgeCurrencyRegistrar,
   GravityBridgeCurrencyRegistrar,
-  KeplrETCQueries,
-} from '@keplr-wallet/stores-etc';
+  TitanETCQueries,
+} from '@titan-wallet/stores-etc';
 import {
   SkipQueries,
   SwapUsageQueries,
   Price24HChangesStore,
-} from '@keplr-wallet/stores-internal';
+} from '@titan-wallet/stores-internal';
 import {DeepLinkStore} from './deep-link';
-import {EthereumQueries, EthereumAccountStore} from '@keplr-wallet/stores-eth';
+import {EthereumQueries, EthereumAccountStore} from '@titan-wallet/stores-eth';
 import {WebpageStore} from './webpage';
 
 export class RootStore {
@@ -94,7 +94,7 @@ export class RootStore {
       CosmwasmQueries,
       SecretQueries,
       OsmosisQueries,
-      KeplrETCQueries,
+      TitanETCQueries,
       ICNSQueries,
       TokenContractsQueries,
       AprQueries,
@@ -171,7 +171,7 @@ export class RootStore {
       CommunityChainInfoRepo,
     );
 
-    //FIXME - @keplr-wallet/stores를 최신 버전으로 업데이트를 해야함
+    //FIXME - @titan-wallet/stores를 최신 버전으로 업데이트를 해야함
     this.queriesStore = new QueriesStore(
       new AsyncKVStore('store_queries'),
       this.chainStore,
@@ -182,10 +182,10 @@ export class RootStore {
       CosmosQueries.use(),
       CosmwasmQueries.use(),
       SecretQueries.use({
-        apiGetter: getKeplrFromWindow,
+        apiGetter: getTitanFromWindow,
       }),
       OsmosisQueries.use(),
-      KeplrETCQueries.use({
+      TitanETCQueries.use({
         ethereumURL: EthereumEndpoint,
       }),
       ICNSQueries.use(),
@@ -202,7 +202,7 @@ export class RootStore {
 
     this.swapUsageQueries = new SwapUsageQueries(
       this.queriesStore.sharedContext,
-      process.env['KEPLR_EXT_TX_HISTORY_BASE_URL'] || '',
+      process.env['TITAN_EXT_TX_HISTORY_BASE_URL'] || '',
     );
     this.skipQueriesStore = new SkipQueries(
       this.queriesStore.sharedContext,
@@ -221,7 +221,7 @@ export class RootStore {
         },
       },
       this.chainStore,
-      getKeplrFromWindow,
+      getTitanFromWindow,
       () => {
         return {
           suggestChain: false,
@@ -348,7 +348,7 @@ export class RootStore {
 
     this.ethereumAccountStore = new EthereumAccountStore(
       this.chainStore,
-      getKeplrFromWindow,
+      getTitanFromWindow,
     );
 
     this.priceStore = new CoinGeckoPriceStore(
@@ -368,7 +368,7 @@ export class RootStore {
     this.price24HChangesStore = new Price24HChangesStore(
       new AsyncKVStore('store_prices_changes_24h'),
       {
-        baseURL: process.env['KEPLR_EXT_TX_HISTORY_BASE_URL'] || '',
+        baseURL: process.env['TITAN_EXT_TX_HISTORY_BASE_URL'] || '',
         uri: '/price/changes/24h',
       },
     );
@@ -383,8 +383,8 @@ export class RootStore {
     this.tokenFactoryRegistrar = new TokenFactoryCurrencyRegistrar(
       new AsyncKVStore('store_token_factory_currency_registrar'),
       7 * 24 * 3600 * 1000,
-      process.env['KEPLR_EXT_TOKEN_FACTORY_BASE_URL'] || '',
-      process.env['KEPLR_EXT_TOKEN_FACTORY_URI'] || '',
+      process.env['TITAN_EXT_TOKEN_FACTORY_BASE_URL'] || '',
+      process.env['TITAN_EXT_TOKEN_FACTORY_URI'] || '',
       this.chainStore,
       this.queriesStore,
     );

@@ -1,23 +1,23 @@
-import { KeplrError, Message } from "@keplr-wallet/router";
+import { TitanError, Message } from "@titan-wallet/router";
 import {
   AminoSignResponse,
-  KeplrSignOptions,
+  TitanSignOptions,
   Key,
   SettledResponses,
   StdSignature,
   StdSignDoc,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 import { ROUTE } from "./constants";
 import {
   Bech32Address,
   checkAndValidateADR36AminoSignDoc,
   EthermintChainIdHelper,
-} from "@keplr-wallet/cosmos";
+} from "@titan-wallet/cosmos";
 import {
   SignDoc,
   SignDocDirectAux,
-} from "@keplr-wallet/proto-types/cosmos/tx/v1beta1/tx";
-import { Int } from "@keplr-wallet/unit";
+} from "@titan-wallet/proto-types/cosmos/tx/v1beta1/tx";
+import { Int } from "@titan-wallet/unit";
 import bigInteger from "big-integer";
 
 export class GetCosmosKeyMsg extends Message<Key> {
@@ -95,18 +95,18 @@ export class RequestCosmosSignAminoMsg extends Message<AminoSignResponse> {
     public readonly chainId: string,
     public readonly signer: string,
     public readonly signDoc: StdSignDoc,
-    public readonly signOptions: KeplrSignOptions
+    public readonly signOptions: TitanSignOptions
   ) {
     super();
   }
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("keyring", 270, "chain id not set");
+      throw new TitanError("keyring", 270, "chain id not set");
     }
 
     if (!this.signer) {
-      throw new KeplrError("keyring", 230, "signer not set");
+      throw new TitanError("keyring", 230, "signer not set");
     }
 
     // Validate bech32 address.
@@ -116,7 +116,7 @@ export class RequestCosmosSignAminoMsg extends Message<AminoSignResponse> {
     // ADR-36 sign doc doesn't have the chain id
     if (!checkAndValidateADR36AminoSignDoc(this.signDoc)) {
       if (this.signDoc.chain_id !== this.chainId) {
-        throw new KeplrError(
+        throw new TitanError(
           "keyring",
           234,
           "Chain id in the message is not matched with the requested chain id"
@@ -124,12 +124,12 @@ export class RequestCosmosSignAminoMsg extends Message<AminoSignResponse> {
       }
     } else {
       if (this.signDoc.msgs[0].value.signer !== this.signer) {
-        throw new KeplrError("keyring", 233, "Unmatched signer in sign doc");
+        throw new TitanError("keyring", 233, "Unmatched signer in sign doc");
       }
     }
 
     if (!this.signOptions) {
-      throw new KeplrError("keyring", 235, "Sign options are null");
+      throw new TitanError("keyring", 235, "Sign options are null");
     }
   }
 
@@ -168,18 +168,18 @@ export class RequestCosmosSignDirectMsg extends Message<{
       chainId?: string;
       accountNumber?: string;
     },
-    public readonly signOptions: KeplrSignOptions = {}
+    public readonly signOptions: TitanSignOptions = {}
   ) {
     super();
   }
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("keyring", 270, "chain id not set");
+      throw new TitanError("keyring", 270, "chain id not set");
     }
 
     if (!this.signer) {
-      throw new KeplrError("keyring", 230, "signer not set");
+      throw new TitanError("keyring", 230, "signer not set");
     }
 
     // Validate bech32 address.
@@ -193,7 +193,7 @@ export class RequestCosmosSignDirectMsg extends Message<{
     });
 
     if (signDoc.chainId !== this.chainId) {
-      throw new KeplrError(
+      throw new TitanError(
         "keyring",
         234,
         "Chain id in the message is not matched with the requested chain id"
@@ -201,7 +201,7 @@ export class RequestCosmosSignDirectMsg extends Message<{
     }
 
     if (!this.signOptions) {
-      throw new KeplrError("keyring", 235, "Sign options are null");
+      throw new TitanError("keyring", 235, "Sign options are null");
     }
   }
 
@@ -253,7 +253,7 @@ export class RequestCosmosSignDirectAuxMsg extends Message<{
       sequence: string;
     },
     public readonly signOptions: Exclude<
-      KeplrSignOptions,
+      TitanSignOptions,
       "preferNoSetFee" | "disableBalanceCheck"
     > = {}
   ) {
@@ -262,11 +262,11 @@ export class RequestCosmosSignDirectAuxMsg extends Message<{
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("keyring", 270, "chain id not set");
+      throw new TitanError("keyring", 270, "chain id not set");
     }
 
     if (!this.signer) {
-      throw new KeplrError("keyring", 230, "signer not set");
+      throw new TitanError("keyring", 230, "signer not set");
     }
 
     // Validate bech32 address.
@@ -281,7 +281,7 @@ export class RequestCosmosSignDirectAuxMsg extends Message<{
     });
 
     if (signDoc.chainId !== this.chainId) {
-      throw new KeplrError(
+      throw new TitanError(
         "keyring",
         234,
         "Chain id in the message is not matched with the requested chain id"
@@ -289,7 +289,7 @@ export class RequestCosmosSignDirectAuxMsg extends Message<{
     }
 
     if (!this.signOptions) {
-      throw new KeplrError("keyring", 235, "Sign options are null");
+      throw new TitanError("keyring", 235, "Sign options are null");
     }
   }
 
@@ -321,11 +321,11 @@ export class PrivilegeCosmosSignAminoWithdrawRewardsMsg extends Message<AminoSig
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("keyring", 270, "chain id not set");
+      throw new TitanError("keyring", 270, "chain id not set");
     }
 
     if (!this.signer) {
-      throw new KeplrError("keyring", 230, "signer not set");
+      throw new TitanError("keyring", 230, "signer not set");
     }
 
     // Validate bech32 address.
@@ -335,7 +335,7 @@ export class PrivilegeCosmosSignAminoWithdrawRewardsMsg extends Message<AminoSig
     // ADR-36 sign doc doesn't have the chain id
     if (!checkAndValidateADR36AminoSignDoc(this.signDoc)) {
       if (this.signDoc.chain_id !== this.chainId) {
-        throw new KeplrError(
+        throw new TitanError(
           "keyring",
           234,
           "Chain id in the message is not matched with the requested chain id"
@@ -374,11 +374,11 @@ export class PrivilegeCosmosSignAminoDelegateMsg extends Message<AminoSignRespon
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("keyring", 270, "chain id not set");
+      throw new TitanError("keyring", 270, "chain id not set");
     }
 
     if (!this.signer) {
-      throw new KeplrError("keyring", 230, "signer not set");
+      throw new TitanError("keyring", 230, "signer not set");
     }
 
     // Validate bech32 address.
@@ -388,7 +388,7 @@ export class PrivilegeCosmosSignAminoDelegateMsg extends Message<AminoSignRespon
     // ADR-36 sign doc doesn't have the chain id
     if (!checkAndValidateADR36AminoSignDoc(this.signDoc)) {
       if (this.signDoc.chain_id !== this.chainId) {
-        throw new KeplrError(
+        throw new TitanError(
           "keyring",
           234,
           "Chain id in the message is not matched with the requested chain id"
@@ -431,15 +431,15 @@ export class RequestCosmosSignAminoADR36Msg extends Message<StdSignature> {
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("keyring", 270, "chain id not set");
+      throw new TitanError("keyring", 270, "chain id not set");
     }
 
     if (!this.signer) {
-      throw new KeplrError("keyring", 230, "signer not set");
+      throw new TitanError("keyring", 230, "signer not set");
     }
 
     if (!this.signOptions) {
-      throw new KeplrError("keyring", 235, "Sign options are null");
+      throw new TitanError("keyring", 235, "Sign options are null");
     }
   }
 
@@ -472,15 +472,15 @@ export class VerifyCosmosSignAminoADR36Msg extends Message<boolean> {
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("keyring", 270, "chain id not set");
+      throw new TitanError("keyring", 270, "chain id not set");
     }
 
     if (!this.signer) {
-      throw new KeplrError("keyring", 230, "signer not set");
+      throw new TitanError("keyring", 230, "signer not set");
     }
 
     if (!this.signature) {
-      throw new KeplrError("keyring", 271, "Signature not set");
+      throw new TitanError("keyring", 271, "Signature not set");
     }
 
     // Validate bech32 address.
@@ -646,18 +646,18 @@ export class RequestSignEIP712CosmosTxMsg_v0 extends Message<AminoSignResponse> 
       primaryType: string;
     },
     public readonly signDoc: StdSignDoc,
-    public readonly signOptions: KeplrSignOptions
+    public readonly signOptions: TitanSignOptions
   ) {
     super();
   }
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("keyring", 270, "chain id not set");
+      throw new TitanError("keyring", 270, "chain id not set");
     }
 
     if (!this.signer) {
-      throw new KeplrError("keyring", 230, "signer not set");
+      throw new TitanError("keyring", 230, "signer not set");
     }
 
     // Validate bech32 address.
@@ -667,7 +667,7 @@ export class RequestSignEIP712CosmosTxMsg_v0 extends Message<AminoSignResponse> 
     // ADR-36 sign doc doesn't have the chain id
     if (!checkAndValidateADR36AminoSignDoc(this.signDoc)) {
       if (this.signDoc.chain_id !== this.chainId) {
-        throw new KeplrError(
+        throw new TitanError(
           "keyring",
           234,
           "Chain id in the message is not matched with the requested chain id"
@@ -693,7 +693,7 @@ export class RequestSignEIP712CosmosTxMsg_v0 extends Message<AminoSignResponse> 
     }
 
     if (!this.signOptions) {
-      throw new KeplrError("keyring", 235, "Sign options are null");
+      throw new TitanError("keyring", 235, "Sign options are null");
     }
   }
 

@@ -1,7 +1,7 @@
-import { DenomHelper } from "@keplr-wallet/common";
+import { DenomHelper } from "@titan-wallet/common";
 import { computed, makeObservable } from "mobx";
-import { CoinPretty, Int } from "@keplr-wallet/unit";
-import { AppCurrency } from "@keplr-wallet/types";
+import { CoinPretty, Int } from "@titan-wallet/unit";
+import { AppCurrency } from "@titan-wallet/types";
 import {
   BalanceRegistry,
   ChainGetter,
@@ -10,7 +10,7 @@ import {
   QueryError,
   QueryResponse,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { EthereumAccountBase } from "../account";
 
 const thirdparySupportedChainIdMap: Record<string, string> = {
@@ -51,7 +51,7 @@ export class ObservableQueryThirdpartyERC20BalancesImplParent extends Observable
     const tokenAPIURL = `https://evm-${chainId.replace(
       "eip155:",
       ""
-    )}.keplr.app/api`;
+    )}.titan.app/api`;
     super(sharedContext, tokenAPIURL, "", "alchemy_getTokenBalances", [
       ethereumHexAddress,
       "erc20",

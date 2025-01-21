@@ -1,4 +1,4 @@
-import { BACKGROUND_PORT, MessageRequester } from "@keplr-wallet/router";
+import { BACKGROUND_PORT, MessageRequester } from "@titan-wallet/router";
 import {
   autorun,
   computed,
@@ -7,7 +7,7 @@ import {
   observable,
   runInAction,
 } from "mobx";
-import { toGenerator } from "@keplr-wallet/common";
+import { toGenerator } from "@titan-wallet/common";
 import {
   AppendLedgerKeyAppMsg,
   BIP44HDPath,
@@ -32,10 +32,10 @@ import {
   SelectKeyRingMsg,
   ShowSensitiveKeyRingDataMsg,
   UnlockKeyRingMsg,
-} from "@keplr-wallet/background";
-import type { MultiAccounts } from "@keplr-wallet/background";
-import { ChainInfo } from "@keplr-wallet/types";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+} from "@titan-wallet/background";
+import type { MultiAccounts } from "@titan-wallet/background";
+import { ChainInfo } from "@titan-wallet/types";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 
 export class KeyRingStore {
   @observable
@@ -146,7 +146,7 @@ export class KeyRingStore {
     this._status = result.status;
     this._keyInfos = result.keyInfos;
 
-    this.eventDispatcher.dispatchEvent("keplr_keystorechange");
+    this.eventDispatcher.dispatchEvent("titan_keystorechange");
   }
 
   needKeyCoinTypeFinalize(vaultId: string, chainInfo: ChainInfo): boolean {
@@ -194,7 +194,7 @@ export class KeyRingStore {
     this._status = result.status;
     this._keyInfos = result.keyInfos;
 
-    this.eventDispatcher.dispatchEvent("keplr_keystorechange");
+    this.eventDispatcher.dispatchEvent("titan_keystorechange");
   }
 
   @flow
@@ -218,7 +218,7 @@ export class KeyRingStore {
     this._status = result.status;
     this._keyInfos = result.keyInfos;
 
-    this.eventDispatcher.dispatchEvent("keplr_keystorechange");
+    this.eventDispatcher.dispatchEvent("titan_keystorechange");
 
     return result.vaultId;
   }
@@ -238,7 +238,7 @@ export class KeyRingStore {
     this._status = result.status;
     this._keyInfos = result.keyInfos;
 
-    this.eventDispatcher.dispatchEvent("keplr_keystorechange");
+    this.eventDispatcher.dispatchEvent("titan_keystorechange");
 
     return result.vaultId;
   }
@@ -252,7 +252,7 @@ export class KeyRingStore {
     this._status = result.status;
     this._keyInfos = result.keyInfos;
 
-    this.eventDispatcher.dispatchEvent("keplr_keystorechange");
+    this.eventDispatcher.dispatchEvent("titan_keystorechange");
   }
 
   @flow
@@ -268,7 +268,7 @@ export class KeyRingStore {
     this._status = result.status;
     this._keyInfos = result.keyInfos;
 
-    this.eventDispatcher.dispatchEvent("keplr_keystorechange");
+    this.eventDispatcher.dispatchEvent("titan_keystorechange");
 
     return result.vaultId;
   }
@@ -287,7 +287,7 @@ export class KeyRingStore {
     this._status = result.status;
     this._keyInfos = result.keyInfos;
 
-    this.eventDispatcher.dispatchEvent("keplr_keystorechange");
+    this.eventDispatcher.dispatchEvent("titan_keystorechange");
 
     return result.vaultId;
   }
@@ -351,7 +351,7 @@ export class KeyRingStore {
     this._status = result.status;
     this._keyInfos = result.keyInfos;
 
-    this.eventDispatcher.dispatchEvent("keplr_keystorechange");
+    this.eventDispatcher.dispatchEvent("titan_keystorechange");
   }
 
   @flow
@@ -364,7 +364,7 @@ export class KeyRingStore {
     this._keyInfos = result.keyInfos;
 
     if (result.wasSelected && result.status === "unlocked") {
-      this.eventDispatcher.dispatchEvent("keplr_keystorechange");
+      this.eventDispatcher.dispatchEvent("titan_keystorechange");
     }
   }
 

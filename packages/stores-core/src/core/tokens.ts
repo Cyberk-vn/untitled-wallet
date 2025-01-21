@@ -1,4 +1,4 @@
-import { BACKGROUND_PORT, MessageRequester } from "@keplr-wallet/router";
+import { BACKGROUND_PORT, MessageRequester } from "@titan-wallet/router";
 import {
   AddERC20TokenMsg,
   AddTokenMsg,
@@ -8,12 +8,12 @@ import {
   RemoveERC20TokenMsg,
   TokenInfo,
   InteractionWaitingData,
-} from "@keplr-wallet/background";
+} from "@titan-wallet/background";
 import { action, autorun, makeObservable, observable, runInAction } from "mobx";
-import { AppCurrency } from "@keplr-wallet/types";
-import { IChainStore, IAccountStore } from "@keplr-wallet/stores";
+import { AppCurrency } from "@titan-wallet/types";
+import { IChainStore, IAccountStore } from "@titan-wallet/stores";
 import { InteractionStore } from "./interaction";
-import { Bech32Address, ChainIdHelper } from "@keplr-wallet/cosmos";
+import { Bech32Address, ChainIdHelper } from "@titan-wallet/cosmos";
 import { Buffer } from "buffer/";
 import { KeyRingStore } from "./keyring";
 
@@ -45,9 +45,9 @@ export class TokensStore {
   async init(): Promise<void> {
     await this.refreshTokens();
 
-    // If key store in the keplr extension is changed, this event will be dispatched.
+    // If key store in the titan extension is changed, this event will be dispatched.
     // This is needed becuase the token such as secret20 exists according to the account.
-    this.eventListener.addEventListener("keplr_keystorechange", () => {
+    this.eventListener.addEventListener("titan_keystorechange", () => {
       this.clearTokensFromChainInfos();
       this.refreshTokens();
     });

@@ -1,7 +1,7 @@
 import { IMessageRenderer } from "../types";
 import React, { FunctionComponent } from "react";
-import { MsgVote } from "@keplr-wallet/proto-types/cosmos/gov/v1beta1/tx";
-import { VoteOption } from "@keplr-wallet/proto-types/cosmos/gov/v1beta1/gov";
+import { MsgVote } from "@titan-wallet/proto-types/cosmos/gov/v1beta1/tx";
+import { VoteOption } from "@titan-wallet/proto-types/cosmos/gov/v1beta1/gov";
 import { FormattedMessage, useIntl } from "react-intl";
 import { MessageVoteIcon } from "../../../../../components/icon";
 import { ItemLogo } from "../../../../main/token-detail/msg-items/logo";

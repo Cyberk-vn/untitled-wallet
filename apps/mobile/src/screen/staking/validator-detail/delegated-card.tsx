@@ -10,8 +10,8 @@ import {Column, Columns} from '../../../components/column';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavProp} from '../../../navigation';
 import {FormattedMessage, useIntl} from 'react-intl';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
-import {CoinPretty} from '@keplr-wallet/unit';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
+import {CoinPretty} from '@titan-wallet/unit';
 
 export const DelegatedCard: FunctionComponent<{
   chainId: string;

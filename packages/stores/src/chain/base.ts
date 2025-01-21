@@ -17,16 +17,16 @@ import {
   FeeCurrency,
   ModularChainInfo,
   ChainInfoModule,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 import {
   IChainInfoImpl,
   IChainStore,
   CurrencyRegistrar,
   IModularChainInfoImpl,
 } from "./types";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { keepAlive } from "mobx-utils";
-import { sortedJsonByKeyStringify } from "@keplr-wallet/common";
+import { sortedJsonByKeyStringify } from "@titan-wallet/common";
 
 export class ChainInfoImpl<C extends ChainInfo = ChainInfo>
   implements IChainInfoImpl<C>

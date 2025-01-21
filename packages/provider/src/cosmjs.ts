@@ -1,5 +1,5 @@
 import {
-  Keplr,
+  Titan,
   OfflineDirectSigner,
   OfflineAminoSigner,
   AccountData,
@@ -7,18 +7,18 @@ import {
   StdSignDoc,
   DirectSignResponse,
   SignDoc,
-  KeplrSignOptions,
-} from "@keplr-wallet/types";
+  TitanSignOptions,
+} from "@titan-wallet/types";
 
 export class CosmJSOfflineSignerOnlyAmino implements OfflineAminoSigner {
   constructor(
     protected readonly chainId: string,
-    protected readonly keplr: Keplr,
-    protected readonly signOptions?: KeplrSignOptions
+    protected readonly titan: Titan,
+    protected readonly signOptions?: TitanSignOptions
   ) {}
 
   async getAccounts(): Promise<AccountData[]> {
-    const key = await this.keplr.getKey(this.chainId);
+    const key = await this.titan.getKey(this.chainId);
 
     return [
       {
@@ -38,13 +38,13 @@ export class CosmJSOfflineSignerOnlyAmino implements OfflineAminoSigner {
       throw new Error("Unmatched chain id with the offline signer");
     }
 
-    const key = await this.keplr.getKey(signDoc.chain_id);
+    const key = await this.titan.getKey(signDoc.chain_id);
 
     if (key.bech32Address !== signerAddress) {
       throw new Error("Unknown signer address");
     }
 
-    return await this.keplr.signAmino(
+    return await this.titan.signAmino(
       this.chainId,
       signerAddress,
       signDoc,
@@ -65,8 +65,8 @@ export class CosmJSOfflineSigner
   extends CosmJSOfflineSignerOnlyAmino
   implements OfflineAminoSigner, OfflineDirectSigner
 {
-  constructor(chainId: string, keplr: Keplr, signOptions?: KeplrSignOptions) {
-    super(chainId, keplr, signOptions);
+  constructor(chainId: string, titan: Titan, signOptions?: TitanSignOptions) {
+    super(chainId, titan, signOptions);
   }
 
   async signDirect(
@@ -77,13 +77,13 @@ export class CosmJSOfflineSigner
       throw new Error("Unmatched chain id with the offline signer");
     }
 
-    const key = await this.keplr.getKey(signDoc.chainId);
+    const key = await this.titan.getKey(signDoc.chainId);
 
     if (key.bech32Address !== signerAddress) {
       throw new Error("Unknown signer address");
     }
 
-    return await this.keplr.signDirect(
+    return await this.titan.signDirect(
       this.chainId,
       signerAddress,
       signDoc,

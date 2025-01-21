@@ -9,20 +9,20 @@ import {ViewToken} from '../../index';
 
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../../../stores';
-import {CoinPretty, Dec, Int, PricePretty} from '@keplr-wallet/unit';
+import {CoinPretty, Dec, Int, PricePretty} from '@titan-wallet/unit';
 import {
   AminoSignResponse,
   BroadcastMode,
   FeeCurrency,
   StdSignDoc,
-} from '@keplr-wallet/types';
-import {BACKGROUND_PORT} from '@keplr-wallet/router';
+} from '@titan-wallet/types';
+import {BACKGROUND_PORT} from '@titan-wallet/router';
 import {
   PrivilegeCosmosSignAminoWithdrawRewardsMsg,
   SendTxMsg,
-} from '@keplr-wallet/background';
+} from '@titan-wallet/background';
 import {action, makeObservable, observable} from 'mobx';
-import {isSimpleFetchError} from '@keplr-wallet/simple-fetch';
+import {isSimpleFetchError} from '@titan-wallet/simple-fetch';
 import {Skeleton} from '../../../../components/skeleton';
 import {YAxis} from '../../../../components/axis';
 import {Gutter} from '../../../../components/gutter';
@@ -38,7 +38,7 @@ import {StackNavProp} from '../../../../navigation';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import {RNMessageRequesterInternal} from '../../../../router';
-import {DefaultGasPriceStep} from '@keplr-wallet/hooks';
+import {DefaultGasPriceStep} from '@titan-wallet/hooks';
 
 // XXX: 좀 이상하긴 한데 상위/하위 컴포넌트가 state를 공유하기 쉽게하려고 이렇게 한다...
 class ClaimAllEachState {

@@ -1,4 +1,4 @@
-import {KVStore, PrefixKVStore} from '@keplr-wallet/common';
+import {KVStore, PrefixKVStore} from '@titan-wallet/common';
 import {autorun, makeObservable, observable, runInAction} from 'mobx';
 import {ChainStore} from '../chain';
 

@@ -133,7 +133,7 @@ export const UnlockPage: FunctionComponent = observer(() => {
       for (const view of browser.extension.getViews()) {
         view.postMessage(
           {
-            type: "__keplr_unlocked_from_view",
+            type: "__titan_unlocked_from_view",
             viewId: viewPostMessageId,
           },
           window.location.origin
@@ -163,7 +163,7 @@ export const UnlockPage: FunctionComponent = observer(() => {
   // 한 곳에서 unlock이 완료되면 다른 view에서도 적절하게 처리해준다.
   useEffect(() => {
     const handler = async (e: MessageEvent) => {
-      if (e.data?.type === "__keplr_unlocked_from_view") {
+      if (e.data?.type === "__titan_unlocked_from_view") {
         if (e.data.viewId !== viewPostMessageId) {
           let closeWindowAfterProceedNext = false;
 
@@ -359,7 +359,7 @@ export const UnlockPage: FunctionComponent = observer(() => {
             color="faint"
             onClick={() => {
               browser.tabs.create({
-                url: `https://help.keplr.app/faq?tab=3&topic=5`,
+                url: `https://help.titan.app/faq?tab=3&topic=5`,
               });
             }}
             style={{ width: "100%", color: ColorPalette["gray-300"] }}
@@ -395,7 +395,7 @@ const ParagraphSection: FunctionComponent<{
                   : ColorPalette["white"]
               }
             >
-              <FormattedMessage id="page.unlock.paragraph-section.keplr-here" />
+              <FormattedMessage id="page.unlock.paragraph-section.titan-here" />
             </H1>
             <Gutter size="0.75rem" />
             <Subtitle4

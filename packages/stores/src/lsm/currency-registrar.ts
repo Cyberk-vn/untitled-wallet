@@ -1,9 +1,9 @@
 import { autorun, makeObservable, observable, runInAction, toJS } from "mobx";
-import { AppCurrency } from "@keplr-wallet/types";
+import { AppCurrency } from "@titan-wallet/types";
 import { ChainStore } from "../chain";
 import { CosmosQueries, IQueriesStore } from "../query";
-import { DenomHelper, KVStore } from "@keplr-wallet/common";
-import { Bech32Address, ChainIdHelper } from "@keplr-wallet/cosmos";
+import { DenomHelper, KVStore } from "@titan-wallet/common";
+import { Bech32Address, ChainIdHelper } from "@titan-wallet/cosmos";
 import { BondStatus } from "../query/cosmos/staking/types";
 
 type LSMDenomCacheData = {

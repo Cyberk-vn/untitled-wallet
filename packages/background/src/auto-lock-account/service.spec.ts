@@ -1,6 +1,6 @@
 import { KeyRingStatus } from "../keyring";
 import { AutoLockAccountService } from "./service";
-import { MemoryKVStore } from "@keplr-wallet/common";
+import { MemoryKVStore } from "@titan-wallet/common";
 import EventEmitter from "events";
 
 class MockKeyRingService {

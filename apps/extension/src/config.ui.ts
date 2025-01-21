@@ -1,16 +1,16 @@
 // Seperate shared config from UI config to prevent code mixup between UI and background process code.
-import { FiatCurrency } from "@keplr-wallet/types";
+import { FiatCurrency } from "@titan-wallet/types";
 
-export const HelpDeskUrl = "https://help.keplr.app";
-export const TermsOfUseUrl = "https://terms-of-use.keplr.app";
+export const HelpDeskUrl = "https://help.titan.app";
+export const TermsOfUseUrl = "https://terms-of-use.titan.app";
 
 export const CoinGeckoAPIEndPoint =
-  process.env["KEPLR_EXT_COINGECKO_ENDPOINT"] ||
+  process.env["TITAN_EXT_COINGECKO_ENDPOINT"] ||
   "https://api.coingecko.com/api/v3";
 export const CoinGeckoGetPrice =
-  process.env["KEPLR_EXT_COINGECKO_GETPRICE"] || "/simple/price";
+  process.env["TITAN_EXT_COINGECKO_GETPRICE"] || "/simple/price";
 export const CoinGeckoCoinDataByTokenAddress =
-  process.env["KEPLR_EXT_COINGECKO_COIN_DATA_BY_TOKEN_ADDRESS"] ||
+  process.env["TITAN_EXT_COINGECKO_COIN_DATA_BY_TOKEN_ADDRESS"] ||
   "/coins/{coingeckoChainId}/contract/{contractAddress}";
 
 export const AutoFetchingFiatValueInterval = 300 * 1000; // 5min
@@ -22,12 +22,12 @@ export const DefaultGasMsgWithdrawRewards = 240000; // Gas per messages.
 // Endpoint for Ethereum node.
 // This is used for ENS.
 export const EthereumEndpoint =
-  process.env["KEPLR_EXT_ETHEREUM_ENDPOINT"] || "";
+  process.env["TITAN_EXT_ETHEREUM_ENDPOINT"] || "";
 
 export const TokenContractListURL =
   "https://opbaqquqruxn7fdsgcncrtfrwa0qxnoj.lambda-url.us-west-2.on.aws/";
 export const TokenContractListRepoURL =
-  "https://github.com/chainapsis/keplr-contract-registry";
+  "https://github.com/chainapsis/titan-contract-registry";
 
 export const FiatCurrencies: FiatCurrency[] = [
   {
@@ -111,9 +111,9 @@ export const FiatCurrencies: FiatCurrency[] = [
 ];
 
 export const GoogleMeasurementId =
-  process.env["KEPLR_EXT_GOOGLE_MEASUREMENT_ID"] || "";
+  process.env["TITAN_EXT_GOOGLE_MEASUREMENT_ID"] || "";
 export const GoogleAPIKeyForMeasurement =
-  process.env["KEPLR_EXT_GOOGLE_API_KEY_FOR_MEASUREMENT"] || "";
+  process.env["TITAN_EXT_GOOGLE_API_KEY_FOR_MEASUREMENT"] || "";
 
 export const ICNSInfo = {
   chainId: "osmosis-1",

@@ -1,12 +1,12 @@
 import {IMessageRenderer} from './types';
-import {MsgWithdrawDelegatorReward} from '@keplr-wallet/proto-types/cosmos/distribution/v1beta1/tx';
+import {MsgWithdrawDelegatorReward} from '@titan-wallet/proto-types/cosmos/distribution/v1beta1/tx';
 import React, {FunctionComponent} from 'react';
 import * as ExpoImage from 'expo-image';
 import {FormattedMessage} from 'react-intl';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../stores';
-import {Staking} from '@keplr-wallet/stores';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {Staking} from '@titan-wallet/stores';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {Text} from 'react-native';
 import {useStyle} from '../../styles';
 

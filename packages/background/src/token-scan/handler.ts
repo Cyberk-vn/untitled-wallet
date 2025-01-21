@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { GetTokenScansMsg, RevalidateTokenScansMsg } from "./messages";
 import { TokenScanService } from "./service";
 
@@ -21,7 +21,7 @@ export const getHandler: (service: TokenScanService) => Handler = (
           msg as RevalidateTokenScansMsg
         );
       default:
-        throw new KeplrError("tx", 110, "Unknown msg type");
+        throw new TitanError("tx", 110, "Unknown msg type");
     }
   };
 };

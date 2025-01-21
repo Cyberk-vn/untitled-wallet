@@ -1,8 +1,8 @@
 import { useEffect, useState, useMemo } from "react";
 import { useStore } from "../stores";
-import { ChainInfo, ModularChainInfo } from "@keplr-wallet/types";
+import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 import { autorun } from "mobx";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 
 type SearchOption = "all" | "cosmos" | "evm";
 type FilterOption = "all" | "chain" | "token" | "chainNameAndToken";

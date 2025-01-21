@@ -9,7 +9,7 @@ import {Gutter} from '../gutter';
 import {TextInput} from '../input';
 import {Button} from '../button';
 import {XAxis} from '../axis';
-import {AppCurrency} from '@keplr-wallet/types';
+import {AppCurrency} from '@titan-wallet/types';
 
 export const AddTokenModal = registerCardModal(
   observer(() => {

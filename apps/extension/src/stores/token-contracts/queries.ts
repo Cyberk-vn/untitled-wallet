@@ -1,4 +1,4 @@
-import { QueriesSetBase, QuerySharedContext } from "@keplr-wallet/stores";
+import { QueriesSetBase, QuerySharedContext } from "@titan-wallet/stores";
 import { DeepReadonly } from "utility-types";
 import { ObservableQueryTokenContracts } from "./contracts";
 

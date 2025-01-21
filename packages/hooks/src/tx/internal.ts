@@ -2,9 +2,9 @@ import {
   CosmosQueriesImpl,
   IQueriesStore,
   OsmosisQueries,
-} from "@keplr-wallet/stores";
-import { KeplrETCQueriesImpl } from "@keplr-wallet/stores-etc";
-import { EthereumQueries } from "@keplr-wallet/stores-eth";
+} from "@titan-wallet/stores";
+import { TitanETCQueriesImpl } from "@titan-wallet/stores-etc";
+import { EthereumQueries } from "@titan-wallet/stores-eth";
 
 export type QueriesStore = IQueriesStore<
   Partial<OsmosisQueries> &
@@ -14,8 +14,8 @@ export type QueriesStore = IQueriesStore<
         "queryDelegations" | "queryFeeMarketGasPrices"
       >;
     } & {
-      keplrETC?: Pick<
-        KeplrETCQueriesImpl,
+      titanETC?: Pick<
+        TitanETCQueriesImpl,
         "queryTerraClassicTaxRate" | "queryTerraClassicTaxCaps"
       >;
     }

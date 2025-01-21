@@ -62,29 +62,29 @@ export class DeepLinkStore {
     try {
       const url = new URL(_url);
 
-      if (url.protocol === 'keplrwallet:' && url.host === 'wcV2') {
+      if (url.protocol === 'titanwallet:' && url.host === 'wcV2') {
         await this.walletConnectStore.processDeepLinkURL(url);
       }
 
-      // url.host === 'staking' is from Deeplink keplrwallet://staking?
-      // url.host === 'deeplink.keplr.app' is from applink or universal link https://deeplink.keplr.app/staking
+      // url.host === 'staking' is from Deeplink titanwallet://staking?
+      // url.host === 'deeplink.titan.app' is from applink or universal link https://deeplink.titan.app/staking
       if (
-        (url.protocol === 'keplrwallet:' && url.host === 'staking') ||
-        (url.host === 'deeplink.keplr.app' && url.pathname === '/staking')
+        (url.protocol === 'titanwallet:' && url.host === 'staking') ||
+        (url.host === 'deeplink.titan.app' && url.pathname === '/staking')
       ) {
         this.processStakingLinkURL(url);
       }
 
       if (
-        (url.protocol === 'keplrwallet:' && url.host === 'web-browser') ||
-        (url.host === 'deeplink.keplr.app' && url.pathname === '/web-browser')
+        (url.protocol === 'titanwallet:' && url.host === 'web-browser') ||
+        (url.host === 'deeplink.titan.app' && url.pathname === '/web-browser')
       ) {
         this.processWebBrowserLinkURL(url);
       }
 
       if (
-        (url.protocol === 'keplrwallet:' && url.host === 'show-address') ||
-        (url.host === 'deeplink.keplr.app' && url.pathname === '/show-address')
+        (url.protocol === 'titanwallet:' && url.host === 'show-address') ||
+        (url.host === 'deeplink.titan.app' && url.pathname === '/show-address')
       ) {
         this.processShowAddressLinkURL(url);
       }

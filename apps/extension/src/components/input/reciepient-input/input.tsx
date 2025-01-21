@@ -7,7 +7,7 @@ import {
   IRecipientConfig,
   IRecipientConfigWithENS,
   IRecipientConfigWithICNS,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { ProfileIcon } from "../../icon";
 import { Box } from "../../box";
 import { AddressBookModal } from "../../address-book-modal";
@@ -16,7 +16,7 @@ import { ColorPalette } from "../../../styles";
 import { useStore } from "../../../stores";
 import { useIntl } from "react-intl";
 import { useTheme } from "styled-components";
-import { AppCurrency } from "@keplr-wallet/types";
+import { AppCurrency } from "@titan-wallet/types";
 
 export interface RecipientInputWithAddressBookProps {
   historyType: string;

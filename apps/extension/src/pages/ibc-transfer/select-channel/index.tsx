@@ -10,13 +10,13 @@ import {
   IIBCChannelConfig,
   IMemoConfig,
   IRecipientConfig,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { GuideBox } from "../../../components/guide-box";
 import { Dropdown, DropdownItemProps } from "../../../components/dropdown";
 import { Modal } from "../../../components/modal";
 import { IBCAddChannelModal } from "../add-channel-modal";
 import { Columns } from "../../../components/column";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import { useNavigate } from "react-router";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useTheme } from "styled-components";

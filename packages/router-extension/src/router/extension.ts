@@ -3,12 +3,12 @@ import {
   MessageSender,
   Result,
   EnvProducer,
-  KeplrError,
+  TitanError,
   EthereumProviderRpcError,
   Message,
   JSONUint8Array,
-} from "@keplr-wallet/router";
-import { getKeplrExtensionRouterId } from "../utils";
+} from "@titan-wallet/router";
+import { getTitanExtensionRouterId } from "../utils";
 
 export class ExtensionRouter extends Router {
   constructor(
@@ -55,7 +55,7 @@ export class ExtensionRouter extends Router {
     // If this value exists, it compares this value with the current router id and processes them only if they are the same.
     if (
       message.msg?.routerMeta?.receiverRouterId &&
-      message.msg.routerMeta.receiverRouterId !== getKeplrExtensionRouterId()
+      message.msg.routerMeta.receiverRouterId !== getTitanExtensionRouterId()
     ) {
       return;
     }
@@ -118,7 +118,7 @@ export class ExtensionRouter extends Router {
       console.log(
         `Failed to process msg ${message.type}: ${e?.message || e?.toString()}`
       );
-      if (e instanceof KeplrError) {
+      if (e instanceof TitanError) {
         return Promise.resolve({
           error: {
             code: e.code,

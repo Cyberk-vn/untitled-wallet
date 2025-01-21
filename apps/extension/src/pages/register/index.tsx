@@ -33,7 +33,7 @@ import { EnableChainsScene } from "./enable-chains";
 import { SelectDerivationPathScene } from "./select-derivation-path";
 import { useStore } from "../../stores";
 import { useSearchParams } from "react-router-dom";
-import * as KeplrWalletPrivate from "keplr-wallet-private";
+import * as TitanWalletPrivate from "titan-wallet-private";
 import { BackUpPrivateKeyScene } from "./back-up-private-key";
 import {
   ConnectKeystoneQRScene,
@@ -313,7 +313,7 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
               element: SelectDerivationPathScene,
               width: "40rem",
             },
-            ...KeplrWalletPrivate.RegisterScenes,
+            ...TitanWalletPrivate.RegisterScenes,
           ]}
           initialSceneProps={initials.scene}
           transitionAlign="center"

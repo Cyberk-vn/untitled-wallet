@@ -1,5 +1,5 @@
-import {SignInteractionStore} from '@keplr-wallet/stores-core';
-import {SignDocWrapper} from '@keplr-wallet/cosmos';
+import {SignInteractionStore} from '@titan-wallet/stores-core';
+import {SignDocWrapper} from '@titan-wallet/cosmos';
 import {
   connectAndSignEIP712WithLedger,
   connectAndSignWithLedger,

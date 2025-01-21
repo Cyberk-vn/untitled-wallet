@@ -4,7 +4,7 @@ import { useStore } from "../../../stores";
 import { useInteractionInfo } from "../../../hooks";
 import { HeaderLayout } from "../../../layouts/header";
 import { BackButton } from "../../../layouts/header/components";
-import { checkAndValidateADR36AminoSignDoc } from "@keplr-wallet/cosmos";
+import { checkAndValidateADR36AminoSignDoc } from "@titan-wallet/cosmos";
 import { Box } from "../../../components/box";
 import { XAxis, YAxis } from "../../../components/axis";
 import { Gutter } from "../../../components/gutter";
@@ -12,7 +12,7 @@ import { Body2, Body3, H5, Subtitle3 } from "../../../components/typography";
 import { ColorPalette } from "../../../styles";
 import { ViewDataButton } from "../components/view-data-button";
 import { handleCosmosPreSign } from "../utils/handle-cosmos-sign";
-import { KeplrError } from "@keplr-wallet/router";
+import { TitanError } from "@titan-wallet/router";
 import { ErrModuleLedgerSign } from "../utils/ledger-types";
 import { LedgerGuideBox } from "../components/ledger-guide-box";
 import { GuideBox } from "../../../components/guide-box";
@@ -20,7 +20,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { ErrModuleKeystoneSign, KeystoneUR } from "../utils/keystone";
 import { KeystoneSign } from "../components/keystone";
 import { useTheme } from "styled-components";
-import { KeyRingService } from "@keplr-wallet/background";
+import { KeyRingService } from "@titan-wallet/background";
 import { handleExternalInteractionWithNoProceedNext } from "../../../utils";
 import { MessageAdr36Icon } from "../../../components/icon";
 import { ItemLogo } from "../../main/token-detail/msg-items/logo";
@@ -271,7 +271,7 @@ export const SignCosmosADR36Page: FunctionComponent = observer(() => {
               } catch (e) {
                 console.log(e);
 
-                if (e instanceof KeplrError) {
+                if (e instanceof TitanError) {
                   if (e.module === ErrModuleLedgerSign) {
                     setLedgerInteractingError(e);
                   } else if (e.module === ErrModuleKeystoneSign) {

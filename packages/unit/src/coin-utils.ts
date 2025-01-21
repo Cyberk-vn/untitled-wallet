@@ -2,7 +2,7 @@ import { Coin } from "./coin";
 import { Int } from "./int";
 import { Dec } from "./decimal";
 import { DecUtils } from "./dec-utils";
-import { Currency } from "@keplr-wallet/types";
+import { Currency } from "@titan-wallet/types";
 import { integerStringToUSLocaleString } from "./utils";
 
 export class CoinUtils {

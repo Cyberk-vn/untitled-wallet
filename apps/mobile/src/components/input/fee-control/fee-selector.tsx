@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {IFeeConfig} from '@keplr-wallet/hooks';
+import {IFeeConfig} from '@titan-wallet/hooks';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../../stores';
 import {Column, Columns} from '../../column';

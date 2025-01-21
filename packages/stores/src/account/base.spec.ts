@@ -1,7 +1,7 @@
 import { AccountSetBase, WalletStatus } from "./base";
 import { ChainStore } from "../chain";
-import { AppCurrency, ChainInfo } from "@keplr-wallet/types";
-import { MockKeplr } from "@keplr-wallet/provider-mock";
+import { AppCurrency, ChainInfo } from "@titan-wallet/types";
+import { MockTitan } from "@titan-wallet/provider-mock";
 import { AccountSharedContext } from "./context";
 
 describe("Test Account set base", () => {
@@ -32,7 +32,7 @@ describe("Test Account set base", () => {
       chainStore,
       "test",
       new AccountSharedContext(async () => {
-        return new MockKeplr(
+        return new MockTitan(
           async () => {
             return new Uint8Array(0);
           },
@@ -48,7 +48,7 @@ describe("Test Account set base", () => {
 
     expect(accountSetBase.walletStatus).toBe(WalletStatus.Loading);
 
-    // Need wait some time to get the Keplr.
+    // Need wait some time to get the Titan.
     await (() => {
       return new Promise<void>((resolve) => {
         setTimeout(resolve, 1000);
@@ -89,7 +89,7 @@ describe("Test Account set base", () => {
       chainStore,
       "test",
       new AccountSharedContext(async () => {
-        return new MockKeplr(
+        return new MockTitan(
           async () => {
             return new Uint8Array(0);
           },
@@ -105,7 +105,7 @@ describe("Test Account set base", () => {
 
     expect(accountSetBase.walletStatus).toBe(WalletStatus.NotInit);
 
-    // Need wait some time to get the Keplr.
+    // Need wait some time to get the Titan.
     await (() => {
       return new Promise<void>((resolve) => {
         setTimeout(resolve, 1000);

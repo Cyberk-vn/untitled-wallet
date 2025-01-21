@@ -15,22 +15,22 @@ import {
 } from "../../../../components/icon";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
-import { CoinPretty, Dec, Int, PricePretty } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, Int, PricePretty } from "@titan-wallet/unit";
 import {
   AminoSignResponse,
   BroadcastMode,
   FeeCurrency,
   StdSignDoc,
-} from "@keplr-wallet/types";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+} from "@titan-wallet/types";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 import {
   PrivilegeCosmosSignAminoWithdrawRewardsMsg,
   SendTxMsg,
-} from "@keplr-wallet/background";
+} from "@titan-wallet/background";
 import { action, makeObservable, observable } from "mobx";
 import { Tooltip } from "../../../../components/tooltip";
-import { isSimpleFetchError } from "@keplr-wallet/simple-fetch";
+import { isSimpleFetchError } from "@titan-wallet/simple-fetch";
 import { useNotification } from "../../../../hooks/notification";
 import { useNavigate } from "react-router";
 import { Skeleton } from "../../../../components/skeleton";
@@ -40,7 +40,7 @@ import { SpecialButton } from "../../../../components/special-button";
 import { Gutter } from "../../../../components/gutter";
 import { FormattedMessage, useIntl } from "react-intl";
 import { CurrencyImageFallback } from "../../../../components/image";
-import { DefaultGasPriceStep } from "@keplr-wallet/hooks";
+import { DefaultGasPriceStep } from "@titan-wallet/hooks";
 
 const Styles = {
   Container: styled.div<{ isNotReady?: boolean }>`

@@ -1,4 +1,4 @@
-import { Message, Router } from "@keplr-wallet/router";
+import { Message, Router } from "@titan-wallet/router";
 
 class PushEventDataMsg<D = unknown> extends Message<void> {
   public static type() {
@@ -37,10 +37,10 @@ export function initEvents(router: Router) {
       case PushEventDataMsg:
         switch ((msg as PushEventDataMsg).data.type) {
           case "keystore-changed":
-            return window.dispatchEvent(new Event("keplr_keystorechange"));
-          case "keplr_chainChanged":
+            return window.dispatchEvent(new Event("titan_keystorechange"));
+          case "titan_chainChanged":
             return window.dispatchEvent(
-              new CustomEvent("keplr_chainChanged", {
+              new CustomEvent("titan_chainChanged", {
                 detail: {
                   ...(
                     msg as PushEventDataMsg<{
@@ -51,9 +51,9 @@ export function initEvents(router: Router) {
                 },
               })
             );
-          case "keplr_starknetChainChanged":
+          case "titan_starknetChainChanged":
             return window.dispatchEvent(
-              new CustomEvent("keplr_starknetChainChanged", {
+              new CustomEvent("titan_starknetChainChanged", {
                 detail: {
                   ...(
                     msg as PushEventDataMsg<{
@@ -64,9 +64,9 @@ export function initEvents(router: Router) {
                 },
               })
             );
-          case "keplr_ethSubscription":
+          case "titan_ethSubscription":
             return window.dispatchEvent(
-              new CustomEvent("keplr_ethSubscription", {
+              new CustomEvent("titan_ethSubscription", {
                 detail: {
                   ...(
                     msg as PushEventDataMsg<{

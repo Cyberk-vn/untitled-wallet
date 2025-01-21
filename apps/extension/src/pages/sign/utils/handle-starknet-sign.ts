@@ -24,7 +24,7 @@ import {
 import Transport from "@ledgerhq/hw-transport";
 import TransportWebHID from "@ledgerhq/hw-transport-webhid";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
-import { KeplrError } from "@keplr-wallet/router";
+import { TitanError } from "@titan-wallet/router";
 import {
   DeployAccountFields,
   DeployAccountV1Fields,
@@ -36,7 +36,7 @@ import {
   TxFields,
   TxV1Fields,
 } from "@ledgerhq/hw-app-starknet";
-import { PubKeyStarknet } from "@keplr-wallet/crypto";
+import { PubKeyStarknet } from "@titan-wallet/crypto";
 
 export const STARKNET_LEDGER_DERIVATION_PATH =
   "m/2645'/1195502025'/1148870696'/0'/0'/0";
@@ -74,7 +74,7 @@ export const connectAndSignDeployAccountTxWithLedger = async (
       : await TransportWebUSB.create();
   } catch (e) {
     console.error(e);
-    throw new KeplrError(
+    throw new TitanError(
       ErrModuleLedgerSign,
       ErrFailedInit,
       "Failed to init transport"
@@ -219,13 +219,13 @@ export const connectAndSignDeployAccountTxWithLedger = async (
     });
   } catch (e) {
     if (e.message?.includes("0x5515")) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrCodeDeviceLocked,
         "Device is locked"
       );
     } else {
-      throw new KeplrError(ErrModuleLedgerSign, 9999, e.message);
+      throw new TitanError(ErrModuleLedgerSign, 9999, e.message);
     }
   } finally {
     await transport.close();
@@ -247,7 +247,7 @@ export const connectAndSignInvokeTxWithLedger = async (
       : await TransportWebUSB.create();
   } catch (e) {
     console.error(e);
-    throw new KeplrError(
+    throw new TitanError(
       ErrModuleLedgerSign,
       ErrFailedInit,
       "Failed to init transport"
@@ -301,13 +301,13 @@ export const connectAndSignInvokeTxWithLedger = async (
     });
   } catch (e) {
     if (e.message?.includes("0x5515")) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrCodeDeviceLocked,
         "Device is locked"
       );
     } else {
-      throw new KeplrError(ErrModuleLedgerSign, 9999, e.message);
+      throw new TitanError(ErrModuleLedgerSign, 9999, e.message);
     }
   } finally {
     await transport.close();
@@ -329,7 +329,7 @@ export const connectAndSignMessageWithLedger = async (
       : await TransportWebUSB.create();
   } catch (e) {
     console.error(e);
-    throw new KeplrError(
+    throw new TitanError(
       ErrModuleLedgerSign,
       ErrFailedInit,
       "Failed to init transport"
@@ -350,13 +350,13 @@ export const connectAndSignMessageWithLedger = async (
     });
   } catch (e) {
     if (e.message?.includes("0x5515")) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrCodeDeviceLocked,
         "Device is locked"
       );
     } else {
-      throw new KeplrError(ErrModuleLedgerSign, 9999, e.message);
+      throw new TitanError(ErrModuleLedgerSign, 9999, e.message);
     }
   } finally {
     await transport.close();
@@ -383,13 +383,13 @@ function handleLedgerResponse<R>(
   switch (res.returnCode) {
     case LedgerError.BadCla:
     case LedgerError.BadIns:
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrFailedGetPublicKey,
         "Failed to get public key"
       );
     case LedgerError.UserRejected:
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrSignRejected,
         "User rejected signing"
@@ -397,7 +397,7 @@ function handleLedgerResponse<R>(
     case LedgerError.NoError:
       return onNoError();
     default:
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrFailedSign,
         res.errorMessage ?? "Failed to sign"
@@ -415,7 +415,7 @@ async function checkStarknetPubKey(
       ? await TransportWebHID.create()
       : await TransportWebUSB.create();
   } catch (e) {
-    throw new KeplrError(
+    throw new TitanError(
       ErrModuleLedgerSign,
       ErrFailedInit,
       "Failed to init transport"
@@ -439,7 +439,7 @@ async function checkStarknetPubKey(
         ) !==
         Buffer.from(new PubKeyStarknet(publicKey).toBytes()).toString("hex")
       ) {
-        throw new KeplrError(
+        throw new TitanError(
           ErrModuleLedgerSign,
           ErrPublicKeyUnmatched,
           "Public key unmatched"
@@ -450,13 +450,13 @@ async function checkStarknetPubKey(
     });
   } catch (e) {
     if (e.message?.includes("0x5515")) {
-      throw new KeplrError(
+      throw new TitanError(
         ErrModuleLedgerSign,
         ErrCodeDeviceLocked,
         "Device is locked"
       );
     } else {
-      throw new KeplrError(ErrModuleLedgerSign, 9999, e.message);
+      throw new TitanError(ErrModuleLedgerSign, 9999, e.message);
     }
   } finally {
     await transport.close();

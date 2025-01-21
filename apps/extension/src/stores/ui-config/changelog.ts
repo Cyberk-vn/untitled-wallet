@@ -6,12 +6,12 @@ import {
   runInAction,
   toJS,
 } from "mobx";
-import { KVStore, PrefixKVStore } from "@keplr-wallet/common";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { KVStore, PrefixKVStore } from "@titan-wallet/common";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import Joi from "joi";
-import { GetSidePanelIsSupportedMsg } from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+import { GetSidePanelIsSupportedMsg } from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 
 interface VersionHistory {
   version: string;
@@ -106,7 +106,7 @@ export class ChangelogConfig {
       const res = await simpleFetch<{
         versions: VersionHistory[];
       }>(
-        process.env["KEPLR_EXT_CONFIG_SERVER"],
+        process.env["TITAN_EXT_CONFIG_SERVER"],
         `/changelog/${lastVersion}/${currentVersion}`
       );
 

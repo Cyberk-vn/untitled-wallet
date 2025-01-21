@@ -4,8 +4,8 @@ import {
   UIProperties,
 } from "./types";
 import { TxChainSetter } from "./chain";
-import { ChainGetter } from "@keplr-wallet/stores";
-import { EthereumAccountBase } from "@keplr-wallet/stores-eth";
+import { ChainGetter } from "@titan-wallet/stores";
+import { EthereumAccountBase } from "@titan-wallet/stores-eth";
 import {
   action,
   computed,
@@ -19,10 +19,10 @@ import {
   InvalidBech32Error,
   InvalidHexError,
 } from "./errors";
-import { Bech32Address, ChainIdHelper } from "@keplr-wallet/cosmos";
+import { Bech32Address, ChainIdHelper } from "@titan-wallet/cosmos";
 import { useState } from "react";
 import { Buffer } from "buffer/";
-import { validateICNSName } from "@keplr-wallet/common";
+import { validateICNSName } from "@titan-wallet/common";
 import { JsonRpcProvider } from "@ethersproject/providers";
 
 interface ICNSFetchData {

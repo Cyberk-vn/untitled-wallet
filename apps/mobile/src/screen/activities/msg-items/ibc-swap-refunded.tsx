@@ -1,8 +1,8 @@
 import React, {FunctionComponent, useMemo} from 'react';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../../stores';
-import {isValidCoinStr, parseCoinStr} from '@keplr-wallet/common';
-import {CoinPretty} from '@keplr-wallet/unit';
+import {isValidCoinStr, parseCoinStr} from '@titan-wallet/common';
+import {CoinPretty} from '@titan-wallet/unit';
 import {MsgItemBase} from './base.tsx';
 import {useStyle} from '../../../styles';
 import {MsgHistory} from '../types.ts';

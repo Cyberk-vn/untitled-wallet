@@ -1,12 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 import { ColorPalette } from "./colors";
-import * as KeplrWalletPrivate from "keplr-wallet-private";
+import * as TitanWalletPrivate from "titan-wallet-private";
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
   
-  ${KeplrWalletPrivate.GlobalStyles}
+  ${TitanWalletPrivate.GlobalStyles}
   
   html {
     // TODO: Change the scheme according to theme after theme feature is implemented.

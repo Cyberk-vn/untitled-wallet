@@ -1,7 +1,7 @@
 {
   "applications": {
     "gecko": {
-      "id": "keplr-extension@keplr.app",
+      "id": "titan-extension@titan.app",
       "strict_min_version": "89.0"
     }
   },
@@ -15,7 +15,7 @@
     "assets/Inter-SemiBold.ttf",
     "assets/icon-128.png",
     "assets/megaphone.svg",
-    "assets/locked-keplr-logo-128.png",
+    "assets/locked-titan-logo-128.png",
     "assets/icon-click-cursor.png"
   ]
 }

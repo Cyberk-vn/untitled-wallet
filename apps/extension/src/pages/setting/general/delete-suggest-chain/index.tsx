@@ -8,7 +8,7 @@ import { CloseIcon, PlusIcon, QuestionIcon } from "../../../../components/icon";
 import { ColorPalette } from "../../../../styles";
 import { Stack } from "../../../../components/stack";
 import { Body1, Body3, Subtitle3 } from "../../../../components/typography";
-import { ChainInfo } from "@keplr-wallet/types";
+import { ChainInfo } from "@titan-wallet/types";
 import { Column, Columns } from "../../../../components/column";
 import { ChainImageFallback } from "../../../../components/image";
 import { EmptyView } from "../../../../components/empty-view";
@@ -33,7 +33,7 @@ export const SettingGeneralDeleteSuggestChainPage: FunctionComponent = observer(
         })}
         left={<BackButton />}
         right={
-          <a href="https://chains.keplr.app/" target="_blank" rel="noreferrer">
+          <a href="https://chains.titan.app/" target="_blank" rel="noreferrer">
             <Box paddingRight="1rem" cursor="pointer">
               <PlusIcon color={ColorPalette["gray-300"]} />
             </Box>
@@ -54,7 +54,7 @@ export const SettingGeneralDeleteSuggestChainPage: FunctionComponent = observer(
                       );
 
                       dispatchGlobalEventExceptSelf(
-                        "keplr_suggested_chain_removed"
+                        "titan_suggested_chain_removed"
                       );
                     }}
                   />

@@ -7,7 +7,7 @@ import {Columns} from '../column';
 import {XAxis, YAxis} from '../axis';
 import {Gutter} from '../gutter';
 import {UserIcon} from '../icon/user';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 export const AddressItem: FunctionComponent<{

@@ -6,7 +6,7 @@ import {
   ChainGetter,
   ObservableChainQuery,
   QuerySharedContext,
-} from '@keplr-wallet/stores';
+} from '@titan-wallet/stores';
 
 export class ObservableQueryProposal extends ObservableChainQuery<ProposalTally> {
   constructor(

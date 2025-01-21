@@ -12,7 +12,7 @@ import { Body1, H2, Subtitle2 } from "../../../components/typography";
 import { ColorPalette } from "../../../styles";
 import { Stack } from "../../../components/stack";
 import { Button } from "../../../components/button";
-import { App, AppHRP, CosmosApp } from "@keplr-wallet/ledger-cosmos";
+import { App, AppHRP, CosmosApp } from "@titan-wallet/ledger-cosmos";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 import { observer } from "mobx-react-lite";
 import Transport from "@ledgerhq/hw-transport";
@@ -21,7 +21,7 @@ import { useNavigate } from "react-router";
 import Eth from "@ledgerhq/hw-app-eth";
 import { LedgerError, StarknetClient } from "@ledgerhq/hw-app-starknet";
 import { Buffer } from "buffer/";
-import { PubKeySecp256k1, PubKeyStarknet } from "@keplr-wallet/crypto";
+import { PubKeySecp256k1, PubKeyStarknet } from "@titan-wallet/crypto";
 import { LedgerUtils } from "../../../utils";
 import { Checkbox } from "../../../components/checkbox";
 import TransportWebHID from "@ledgerhq/hw-transport-webhid";
@@ -224,7 +224,7 @@ export const ConnectLedgerScene: FunctionComponent<{
 
           let ethApp = new Eth(transport);
 
-          // Ensure that the keplr can connect to ethereum app on ledger.
+          // Ensure that the titan can connect to ethereum app on ledger.
           // getAppConfiguration() works even if the ledger is on screen saver mode.
           // To detect the screen saver mode, we should request the address before using.
           try {

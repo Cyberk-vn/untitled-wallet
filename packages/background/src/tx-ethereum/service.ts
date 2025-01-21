@@ -1,8 +1,8 @@
 import { ChainsService } from "../chains";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import { Notification } from "../tx/types";
-import { EthTxReceipt } from "@keplr-wallet/types";
-import { retry } from "@keplr-wallet/common";
+import { EthTxReceipt } from "@titan-wallet/types";
+import { retry } from "@titan-wallet/common";
 
 export class BackgroundTxEthereumService {
   constructor(

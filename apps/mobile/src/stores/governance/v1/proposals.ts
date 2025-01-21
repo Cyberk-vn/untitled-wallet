@@ -6,7 +6,7 @@ import {
   ObservableQueryGovV1ParamVoting,
 } from './params';
 import {DeepReadonly} from 'utility-types';
-import {Dec, DecUtils, Int, IntPretty} from '@keplr-wallet/unit';
+import {Dec, DecUtils, Int, IntPretty} from '@titan-wallet/unit';
 import {computedFn} from 'mobx-utils';
 import {ObservableQueryProposalV1} from './proposal';
 import {
@@ -15,7 +15,7 @@ import {
   ObservableChainQueryMap,
   ObservableQueryStakingPool,
   QuerySharedContext,
-} from '@keplr-wallet/stores';
+} from '@titan-wallet/stores';
 import {GovQueryParams, ViewProposal} from '../types';
 
 export class ObservableQueryGovernanceV1 extends ObservableChainQueryMap<GovV1Proposals> {

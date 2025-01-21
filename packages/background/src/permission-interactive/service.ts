@@ -1,8 +1,8 @@
 import { BIP44HDPath, KeyRingService } from "../keyring";
-import { Env } from "@keplr-wallet/router";
+import { Env } from "@titan-wallet/router";
 import { PermissionService } from "../permission";
 import { ChainsService } from "../chains";
-import { KVStore } from "@keplr-wallet/common";
+import { KVStore } from "@titan-wallet/common";
 import { autorun, makeObservable, observable, runInAction } from "mobx";
 
 export class PermissionInteractiveService {

@@ -3,12 +3,12 @@ import {
   EmptyAmountError,
   IAmountConfig,
   ZeroAmountError,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {observer} from 'mobx-react-lite';
 import {TextInput} from '../text-input/text-input';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {useStore} from '../../../stores';
-import {CoinPretty, Dec, DecUtils} from '@keplr-wallet/unit';
+import {CoinPretty, Dec, DecUtils} from '@titan-wallet/unit';
 import {Text} from 'react-native';
 import {useStyle} from '../../../styles';
 import {Box} from '../../box';

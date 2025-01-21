@@ -1,4 +1,4 @@
-import {IntPretty} from '@keplr-wallet/unit';
+import {IntPretty} from '@titan-wallet/unit';
 
 export interface AprItem {
   chainId: string;

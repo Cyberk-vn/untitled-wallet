@@ -12,7 +12,7 @@ import {ScrollViewRegisterContainer} from '../components/scroll-view-register-co
 import {
   isAppleSignInEnabled,
   isGoogleSignInEnabled,
-} from 'keplr-wallet-mobile-private';
+} from 'titan-wallet-mobile-private';
 
 export const RegisterIntroExistingUserScene: FunctionComponent = () => {
   const intl = useIntl();
@@ -55,7 +55,7 @@ export const RegisterIntroExistingUserScene: FunctionComponent = () => {
 
         <Button
           text={intl.formatMessage({
-            id: 'pages.register.intro-existing-user.import-from-keplr-extension-button',
+            id: 'pages.register.intro-existing-user.import-fromextension-button',
           })}
           size="large"
           onPress={() => {

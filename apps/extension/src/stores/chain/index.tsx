@@ -7,12 +7,12 @@ import {
   runInAction,
 } from "mobx";
 
-import { ChainInfo, ModularChainInfo } from "@keplr-wallet/types";
+import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 import {
   ChainStore as BaseChainStore,
   IChainInfoImpl,
-} from "@keplr-wallet/stores";
-import { KeyRingStore } from "@keplr-wallet/stores-core";
+} from "@titan-wallet/stores";
+import { KeyRingStore } from "@titan-wallet/stores-core";
 
 import {
   ChainInfoWithCoreTypes,
@@ -31,10 +31,10 @@ import {
   ToggleChainsMsg,
   TokenScan,
   TryUpdateEnabledChainInfosMsg,
-} from "@keplr-wallet/background";
-import { BACKGROUND_PORT, MessageRequester } from "@keplr-wallet/router";
-import { toGenerator } from "@keplr-wallet/common";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+} from "@titan-wallet/background";
+import { BACKGROUND_PORT, MessageRequester } from "@titan-wallet/router";
+import { toGenerator } from "@titan-wallet/common";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 
 export class ChainStore extends BaseChainStore<ChainInfoWithCoreTypes> {
   @observable

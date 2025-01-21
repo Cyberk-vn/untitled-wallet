@@ -8,9 +8,9 @@ import {
   runInAction,
   toJS,
 } from "mobx";
-import { KVStore } from "@keplr-wallet/common";
-import { ChainInfo, ModularChainInfo } from "@keplr-wallet/types";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { KVStore } from "@titan-wallet/common";
+import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { computedFn } from "mobx-utils";
 import { VaultService } from "../vault";
 

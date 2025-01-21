@@ -1,7 +1,7 @@
 import { ObservableQueryAssetsFromSource } from "./assets-from-source";
 import { ObservableQueryChains } from "./chains";
 import { computedFn } from "mobx-utils";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { InternalChainStore } from "../internal";
 
 export class ObservableQueryIbcPfmTransfer {
@@ -253,7 +253,7 @@ export class ObservableQueryIbcPfmTransfer {
 
       return res
         .filter((r) => {
-          // In evmos the ibc token is automatically wrapped in erc20 and currently Keplr cannot handle erc20. For now, block sending to evmos
+          // In evmos the ibc token is automatically wrapped in erc20 and currently Titan cannot handle erc20. For now, block sending to evmos
           if (
             r.destinationChainId.startsWith("evmos_") &&
             r.originDenom !== "aevmos"

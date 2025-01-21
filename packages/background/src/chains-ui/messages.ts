@@ -1,4 +1,4 @@
-import { Message } from "@keplr-wallet/router";
+import { Message } from "@titan-wallet/router";
 import { ROUTE } from "./constants";
 
 export class GetEnabledChainIdentifiersMsg extends Message<string[]> {

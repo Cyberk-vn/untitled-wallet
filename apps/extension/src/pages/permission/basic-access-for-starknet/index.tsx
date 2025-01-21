@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
-import { PermissionData } from "@keplr-wallet/background";
+import { PermissionData } from "@titan-wallet/background";
 import { useStore } from "../../../stores";
 import { useInteractionInfo } from "../../../hooks";
 import { HeaderLayout } from "../../../layouts/header";
@@ -122,7 +122,7 @@ export const PermissionBasicAccessForStarknetPage: FunctionComponent<{
       <Box height="100%" padding="0.75rem" paddingBottom="0">
         <Box alignX="center">
           <Image
-            alt="Keplr Logo Image"
+            alt="Titan Logo Image"
             src={require("../../../public/assets/logo-256.png")}
             style={{ width: "4.625rem", height: "4.625rem" }}
           />

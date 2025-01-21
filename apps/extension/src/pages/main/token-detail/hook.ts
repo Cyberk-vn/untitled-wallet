@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 
 export const usePaginatedCursorQuery = <R>(
   baseURL: string,

@@ -1,4 +1,4 @@
-import {IntPretty} from '@keplr-wallet/unit';
+import {IntPretty} from '@titan-wallet/unit';
 
 export const formatAprString = (apr?: IntPretty, maxDecimals?: number) => {
   if (apr === undefined) {

@@ -21,10 +21,10 @@ import {
   IGasConfig,
   IGasSimulator,
   ISenderConfig,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { useStore } from "../../../stores";
 import { GuideBox } from "../../guide-box";
-import { Dec, PricePretty } from "@keplr-wallet/unit";
+import { Dec, PricePretty } from "@titan-wallet/unit";
 import { Box } from "../../box";
 import { FormattedMessage, useIntl } from "react-intl";
 import { XAxis } from "../../axis";

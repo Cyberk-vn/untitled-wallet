@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {BaseModalHeader} from '../../modal';
-import {IMemoConfig, IRecipientConfig} from '@keplr-wallet/hooks';
+import {IMemoConfig, IRecipientConfig} from '@titan-wallet/hooks';
 import {observer} from 'mobx-react-lite';
 import {Box} from '../../box';
 import {FormattedMessage, useIntl} from 'react-intl';
-import {RecentSendHistory} from '@keplr-wallet/background';
-import {AppCurrency, Key} from '@keplr-wallet/types';
+import {RecentSendHistory} from '@titan-wallet/background';
+import {AppCurrency, Key} from '@titan-wallet/types';
 import {useStore} from '../../../stores';
 import {HorizontalRadioGroup} from '../../radio-group';
 import {YAxis} from '../../axis';
@@ -16,8 +16,8 @@ import {EmptyView, EmptyViewText} from '../../empty-view';
 import {registerCardModal} from '../../modal/card';
 import {ScrollView} from '../../scroll-view/common-scroll-view';
 import {useStyle} from '../../../styles';
-import {DenomHelper} from '@keplr-wallet/common';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {DenomHelper} from '@titan-wallet/common';
+import {Bech32Address} from '@titan-wallet/cosmos';
 
 type Type = 'recent' | 'contacts' | 'accounts';
 

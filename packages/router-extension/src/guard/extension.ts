@@ -1,4 +1,4 @@
-import { Env, Guard, MessageSender, Message } from "@keplr-wallet/router";
+import { Env, Guard, MessageSender, Message } from "@titan-wallet/router";
 
 export class ExtensionGuards {
   static readonly checkOriginIsValid: Guard = (

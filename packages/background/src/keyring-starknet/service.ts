@@ -1,9 +1,9 @@
-import { Env } from "@keplr-wallet/router";
+import { Env } from "@titan-wallet/router";
 import { ChainsService } from "../chains";
 import { KeyRingService } from "../keyring";
 import { Buffer } from "buffer/";
 import { TokenERC20Service } from "../token-erc20";
-import { WatchAssetParameters } from "@keplr-wallet/types";
+import { WatchAssetParameters } from "@titan-wallet/types";
 import { getBasicAccessPermissionType, PermissionService } from "../permission";
 import {
   CairoUint256,
@@ -30,11 +30,11 @@ import {
   shortString,
 } from "starknet";
 import { InteractionService } from "../interaction";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import { AccountImpl } from "./account-impl";
 import { BackgroundTxService } from "../tx";
 import { VaultService } from "../vault";
-import { Hash } from "@keplr-wallet/crypto";
+import { Hash } from "@titan-wallet/crypto";
 
 const EthAccountUpgradeableClassHash =
   "06cc43e9a4a0036cd09d8a997c61df18d7e4fa9459c907a4664b4e56b679d187";
@@ -236,7 +236,7 @@ export class KeyRingStarknetService {
       this.permissionService.getCurrentChainIdForStarknet(origin) ?? chainId;
 
     if (currentChainId == null) {
-      if (type === "keplr_initStarknetProviderState") {
+      if (type === "titan_initStarknetProviderState") {
         return {
           currentChainId: null,
           selectedAddress: null,
@@ -263,8 +263,8 @@ export class KeyRingStarknetService {
 
     const result = (await (async () => {
       switch (type) {
-        case "keplr_initStarknetProviderState":
-        case "keplr_enableStarknetProvider": {
+        case "titan_initStarknetProviderState":
+        case "titan_enableStarknetProvider": {
           return {
             currentChainId,
             selectedAddress,

@@ -246,7 +246,7 @@ export const AutoLockUnlockModal = registerModal(
               {keyRingStore.needMigration ? (
                 <React.Fragment>
                   <Text style={style.flatten(['h1', 'color-text-high'])}>
-                    <FormattedMessage id="page.unlock.paragraph-section.keplr-here" />
+                    <FormattedMessage id="page.unlock.paragraph-section.titan-here" />
                   </Text>
 
                   <Gutter size={12} />

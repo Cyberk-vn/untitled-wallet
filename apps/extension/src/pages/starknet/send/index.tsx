@@ -23,7 +23,7 @@ import {
   useSendTxConfig,
   useTxConfigsValidate,
   ZeroAmountError,
-} from "@keplr-wallet/hooks-starknet";
+} from "@titan-wallet/hooks-starknet";
 import { useNavigate } from "react-router";
 import { AmountInput } from "../components/input/amount-input";
 import { RecipientInput } from "../components/input/reciepient-input";
@@ -34,19 +34,19 @@ import { Box } from "../../../components/box";
 import { YAxis } from "../../../components/axis";
 import { Gutter } from "../../../components/gutter";
 import { useNotification } from "../../../hooks/notification";
-import { ExtensionKVStore } from "@keplr-wallet/common";
-import { CoinPretty, Dec } from "@keplr-wallet/unit";
+import { ExtensionKVStore } from "@titan-wallet/common";
+import { CoinPretty, Dec } from "@titan-wallet/unit";
 import { ColorPalette } from "../../../styles";
-import { openPopupWindow } from "@keplr-wallet/popup";
+import { openPopupWindow } from "@titan-wallet/popup";
 import { FormattedMessage, useIntl } from "react-intl";
 import { isRunningInSidePanel } from "../../../utils";
 import { num } from "starknet";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 import {
   AddRecentSendHistoryMsg,
   SubmitStarknetTxHashMsg,
-} from "@keplr-wallet/background";
+} from "@titan-wallet/background";
 import { useStarknetTxConfigsQueryString } from "../../../hooks/starknet/use-tx-configs-query-string";
 import { Modal } from "../../../components/modal";
 import { AccountActivationModal } from "../components/account-activation-modal";

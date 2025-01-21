@@ -1,6 +1,6 @@
 import { VaultService, PlainObject, Vault } from "../vault";
 import { Buffer } from "buffer/";
-import { Hash, PrivKeySecp256k1, PubKeySecp256k1 } from "@keplr-wallet/crypto";
+import { Hash, PrivKeySecp256k1, PubKeySecp256k1 } from "@titan-wallet/crypto";
 
 export class KeyRingPrivateKeyService {
   constructor(protected readonly vaultService: VaultService) {}

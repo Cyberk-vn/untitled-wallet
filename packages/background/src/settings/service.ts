@@ -1,4 +1,4 @@
-import { KVStore } from "@keplr-wallet/common";
+import { KVStore } from "@titan-wallet/common";
 import { autorun, makeObservable, observable, runInAction } from "mobx";
 
 export class SettingsService {

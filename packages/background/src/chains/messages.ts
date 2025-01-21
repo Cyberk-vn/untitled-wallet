@@ -1,15 +1,15 @@
-import { KeplrError, Message } from "@keplr-wallet/router";
+import { TitanError, Message } from "@titan-wallet/router";
 import {
   ChainInfo,
   ChainInfoWithoutEndpoints,
   ModularChainInfo,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 import { ROUTE } from "./constants";
 import { ChainInfoWithCoreTypes } from "./types";
 
 export class PingMsg extends Message<void> {
   public static type() {
-    return "keplr-ping";
+    return "titan-ping";
   }
 
   validateBasic(): void {
@@ -87,7 +87,7 @@ export class GetChainInfoWithoutEndpointsMsg extends Message<{
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("chains", 101, "Chain id not set");
+      throw new TitanError("chains", 101, "Chain id not set");
     }
   }
 
@@ -115,7 +115,7 @@ export class SuggestChainInfoMsg extends Message<void> {
 
   validateBasic(): void {
     if (!this.chainInfo) {
-      throw new KeplrError("chains", 100, "Chain info not set");
+      throw new TitanError("chains", 100, "Chain info not set");
     }
   }
 
@@ -143,7 +143,7 @@ export class NeedSuggestChainInfoInteractionMsg extends Message<boolean> {
 
   validateBasic(): void {
     if (!this.chainInfo) {
-      throw new KeplrError("chains", 100, "Chain info not set");
+      throw new TitanError("chains", 100, "Chain info not set");
     }
   }
 
@@ -174,7 +174,7 @@ export class RemoveSuggestedChainInfoMsg extends Message<{
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("chains", 101, "Chain id not set");
+      throw new TitanError("chains", 101, "Chain id not set");
     }
   }
 

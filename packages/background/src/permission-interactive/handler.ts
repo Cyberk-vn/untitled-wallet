@@ -1,5 +1,5 @@
 import { PermissionInteractiveService } from "./service";
-import { Env, Handler, InternalHandler, Message } from "@keplr-wallet/router";
+import { Env, Handler, InternalHandler, Message } from "@titan-wallet/router";
 import {
   DisableAccessMsg,
   EnableAccessForEVMMsg,

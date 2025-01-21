@@ -1,12 +1,12 @@
 import { IMessageRenderer } from "../types";
 import React, { FunctionComponent } from "react";
-import { Coin } from "@keplr-wallet/types";
+import { Coin } from "@titan-wallet/types";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../../stores";
-import { CoinPretty } from "@keplr-wallet/unit";
-import { Bech32Address } from "@keplr-wallet/cosmos";
-import { MsgExecuteContract } from "@keplr-wallet/proto-types/cosmwasm/wasm/v1/tx";
-import { MsgExecuteContract as MsgExecuteSecretContract } from "@keplr-wallet/proto-types/secret/compute/v1beta1/msg";
+import { CoinPretty } from "@titan-wallet/unit";
+import { Bech32Address } from "@titan-wallet/cosmos";
+import { MsgExecuteContract } from "@titan-wallet/proto-types/cosmwasm/wasm/v1/tx";
+import { MsgExecuteContract as MsgExecuteSecretContract } from "@titan-wallet/proto-types/secret/compute/v1beta1/msg";
 import { Buffer } from "buffer/";
 import { WasmMessageView } from "./wasm-message-view";
 import { Gutter } from "../../../../../components/gutter";

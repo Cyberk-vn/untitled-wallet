@@ -12,7 +12,7 @@ require("./public/assets/icon/icon-beta-16.png");
 require("./public/assets/icon/icon-beta-48.png");
 require("./public/assets/icon/icon-beta-128.png");
 require("./public/assets/svg/megaphone.svg");
-require("./public/assets/img/locked-keplr-logo-128.png");
+require("./public/assets/img/locked-titan-logo-128.png");
 require("./public/assets/icon-click-cursor.png");
 
 import React, {
@@ -34,10 +34,10 @@ import {
 } from "./styles";
 import { configure } from "mobx";
 import { observer } from "mobx-react-lite";
-import { Keplr } from "@keplr-wallet/provider";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
+import { Titan } from "@titan-wallet/provider";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
 import manifest from "./manifest.v2.json";
-import { WalletStatus } from "@keplr-wallet/stores";
+import { WalletStatus } from "@titan-wallet/stores";
 import { UnlockPage } from "./pages/unlock";
 import { MainPage } from "./pages/main";
 import { SettingPage } from "./pages/setting";
@@ -56,7 +56,7 @@ import { SettingTokenListPage } from "./pages/setting/token/manage";
 import { SettingTokenAddPage } from "./pages/setting/token/add";
 import { SettingGeneralLanguagePage } from "./pages/setting/general/language";
 import { SettingAdvancedEndpointPage } from "./pages/setting/advanced/endpoint";
-import { SettingGeneralLinkKeplrMobilePage } from "./pages/setting/general/link-keplr-mobile";
+import { SettingGeneralLinkTitanMobilePage } from "./pages/setting/general/link-titan-mobile";
 import { SettingContactsList } from "./pages/setting/contacts/list";
 import { SettingContactsAdd } from "./pages/setting/contacts/add";
 import { SendAmountPage } from "./pages/send/amount";
@@ -107,7 +107,7 @@ configure({
   enforceActions: "always", // Make mobx to strict mode.
 });
 
-window.keplr = new Keplr(
+window.titan = new Titan(
   manifest.version,
   "core",
   new InExtensionMessageRequester()
@@ -411,8 +411,8 @@ const RoutesAfterReady: FunctionComponent = observer(() => {
                 element={<SettingGeneralAuthZRevokePage />}
               />
               <Route
-                path="/setting/general/link-keplr-mobile"
-                element={<SettingGeneralLinkKeplrMobilePage />}
+                path="/setting/general/link-titan-mobile"
+                element={<SettingGeneralLinkTitanMobilePage />}
               />
               <Route
                 path="setting/general/delete-suggest-chain"

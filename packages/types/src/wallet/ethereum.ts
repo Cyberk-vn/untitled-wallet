@@ -8,7 +8,7 @@ export interface IEthereumProvider extends EventEmitter {
 
   readonly selectedAddress: string | null;
 
-  readonly isKeplr: boolean;
+  readonly isTitan: boolean;
   readonly isMetaMask: boolean;
 
   isConnected(): boolean;

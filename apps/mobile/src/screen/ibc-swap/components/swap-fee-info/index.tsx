@@ -13,10 +13,10 @@ import {
   IGasSimulator,
   InsufficientFeeError,
   ISenderConfig,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {autorun} from 'mobx';
-import {Dec, PricePretty} from '@keplr-wallet/unit';
-import {IBCSwapAmountConfig} from '@keplr-wallet/hooks-internal';
+import {Dec, PricePretty} from '@titan-wallet/unit';
+import {IBCSwapAmountConfig} from '@titan-wallet/hooks-internal';
 import {TransactionFeeModal} from '../../../../components/input/fee-control/transaction-fee-modal.tsx';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import {SVGLoadingIcon} from '../../../../components/spinner';
@@ -393,13 +393,13 @@ export const SwapFeeInfo: FunctionComponent<{
           isOpen={isInfoModalOpen}
           setIsOpen={setIsInfoModalOpen}
           title={intl.formatMessage({
-            id: 'page.ibc-swap.components.swap-fee-info.keplr-swap-fee-information.title',
+            id: 'page.ibc-swap.components.swap-fee-info.titan-swap-fee-information.title',
           })}
           paragraph={
             amountConfig.swapFeeBps === 10
               ? intl.formatMessage(
                   {
-                    id: 'page.ibc-swap.components.swap-fee-info.keplr-swap-fee-stable-coin-information.paragraph',
+                    id: 'page.ibc-swap.components.swap-fee-info.titan-swap-fee-stable-coin-information.paragraph',
                   },
                   {
                     swapFeePercent: `${amountConfig.swapFeeBps / 100}%`,
@@ -407,7 +407,7 @@ export const SwapFeeInfo: FunctionComponent<{
                 )
               : intl.formatMessage(
                   {
-                    id: 'page.ibc-swap.components.swap-fee-info.keplr-swap-fee-information.paragraph',
+                    id: 'page.ibc-swap.components.swap-fee-info.titan-swap-fee-information.paragraph',
                   },
                   {
                     swapFeePercent: `${amountConfig.swapFeeBps / 100}%`,

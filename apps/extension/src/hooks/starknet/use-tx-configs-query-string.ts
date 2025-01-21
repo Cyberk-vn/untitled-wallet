@@ -4,7 +4,7 @@ import {
   IGasConfig,
   IGasSimulator,
   IRecipientConfig,
-} from "@keplr-wallet/hooks-starknet";
+} from "@titan-wallet/hooks-starknet";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 

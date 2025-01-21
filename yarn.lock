@@ -8656,750 +8656,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@keplr-wallet/analytics@0.12.175, @keplr-wallet/analytics@workspace:packages/analytics":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/analytics@workspace:packages/analytics"
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/background@0.12.175, @keplr-wallet/background@workspace:packages/background":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/background@workspace:packages/background"
-  dependencies:
-    "@ethereumjs/common": ^2.6.5
-    "@ethereumjs/tx": ^3.5.2
-    "@ethersproject/address": ^5.7.0
-    "@ethersproject/hash": ^5.7.0
-    "@ethersproject/transactions": ^5.7.0
-    "@ethersproject/wallet": ^5.7.0
-    "@keplr-wallet/chain-validator": 0.12.175
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/crypto": 0.12.175
-    "@keplr-wallet/ledger-cosmos": 0.12.175
-    "@keplr-wallet/popup": 0.12.175
-    "@keplr-wallet/proto-types": 0.12.175
-    "@keplr-wallet/router": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-    "@ledgerhq/hw-app-eth": ^6.40.3
-    "@ledgerhq/hw-app-starknet": ^2.4.0
-    "@ledgerhq/hw-transport": ^6.31.4
-    "@ledgerhq/hw-transport-webhid": ^6.29.4
-    "@ledgerhq/hw-transport-webusb": ^6.29.4
-    "@noble/hashes": 1.0.0
-    "@types/aes-js": ^3.1.0
-    "@types/secp256k1": ^4.0.1
-    "@types/w3c-web-hid": ^1.0.2
-    "@types/w3c-web-usb": ^1.0.5
-    aes-js: ^3.1.2
-    big-integer: ^1.6.48
-    bip39: ^3.0.2
-    buffer: ^6.0.3
-    curve25519-js: 0.0.4
-    delay: ^4.4.0
-    joi: ^17.5.0
-    long: ^4.0.0
-    miscreant: 0.3.2
-    pbkdf2: ^3.1.2
-    utility-types: ^3.10.0
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/chain-validator@0.12.175, @keplr-wallet/chain-validator@workspace:packages/chain-validator":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/chain-validator@workspace:packages/chain-validator"
-  dependencies:
-    "@ethersproject/abi": ^5.7.0
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    joi: ^17.5.0
-    utility-types: ^3.10.0
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/common@0.12.175, @keplr-wallet/common@workspace:packages/common":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/common@workspace:packages/common"
-  dependencies:
-    "@keplr-wallet/crypto": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    buffer: ^6.0.3
-    delay: ^4.4.0
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/cosmos@0.12.175, @keplr-wallet/cosmos@workspace:packages/cosmos":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/cosmos@workspace:packages/cosmos"
-  dependencies:
-    "@ethersproject/address": ^5.6.0
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/crypto": 0.12.175
-    "@keplr-wallet/proto-types": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-    bech32: ^1.1.4
-    buffer: ^6.0.3
-    long: ^4.0.0
-    protobufjs: ^6.11.2
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/crypto@0.12.175, @keplr-wallet/crypto@workspace:packages/crypto":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/crypto@workspace:packages/crypto"
-  dependencies:
-    "@noble/curves": ^1.4.2
-    "@noble/hashes": ^1.4.0
-    bip32: ^2.0.6
-    bip39: ^3.0.3
-    bs58check: ^2.1.2
-    buffer: ^6.0.3
-  peerDependencies:
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/extension@workspace:apps/extension":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/extension@workspace:apps/extension"
-  dependencies:
-    "@amplitude/analytics-browser": ^1.10.3
-    "@babel/core": ^7.19.3
-    "@babel/preset-env": ^7.24.5
-    "@babel/preset-react": ^7.24.1
-    "@babel/preset-typescript": ^7.24.1
-    "@ethersproject/bignumber": ^5.7.0
-    "@ethersproject/transactions": ^5.7.0
-    "@floating-ui/react": ^0.23.0
-    "@floating-ui/react-dom": ^1.3.0
-    "@keplr-wallet/analytics": 0.12.175
-    "@keplr-wallet/background": 0.12.175
-    "@keplr-wallet/chain-validator": 0.12.175
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/crypto": 0.12.175
-    "@keplr-wallet/hooks": 0.12.175
-    "@keplr-wallet/hooks-internal": 0.12.175
-    "@keplr-wallet/hooks-starknet": 0.12.175
-    "@keplr-wallet/ledger-cosmos": 0.12.175
-    "@keplr-wallet/popup": 0.12.175
-    "@keplr-wallet/proto-types": 0.12.175
-    "@keplr-wallet/provider": 0.12.175
-    "@keplr-wallet/router": 0.12.175
-    "@keplr-wallet/router-extension": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/stores-core": 0.12.175
-    "@keplr-wallet/stores-etc": 0.12.175
-    "@keplr-wallet/stores-eth": 0.12.175
-    "@keplr-wallet/stores-ibc": 0.12.175
-    "@keplr-wallet/stores-internal": 0.12.175
-    "@keplr-wallet/stores-starknet": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-    "@keystonehq/animated-qr": ^0.8.6
-    "@keystonehq/hw-app-base": 0.1.1
-    "@keystonehq/hw-transport-webusb": 0.4.0
-    "@keystonehq/keystone-sdk": ^0.2.3
-    "@ledgerhq/devices": ^6.20.0
-    "@react-spring/web": ^9.6.1
-    "@storybook/addon-actions": ^7.6.18
-    "@storybook/addon-essentials": ^7.6.18
-    "@storybook/addon-interactions": ^7.6.18
-    "@storybook/addon-links": ^7.6.18
-    "@storybook/react": ^7.6.18
-    "@storybook/react-webpack5": ^7.6.18
-    "@storybook/testing-library": ^0.2.2
-    "@toruslabs/fetch-node-details": =14.2.0
-    "@toruslabs/torus.js": =15.1.1
-    "@types/babel__preset-env": ^7
-    "@types/chrome": 0.0.268
-    "@types/classnames": ^2.3.1
-    "@types/color": ^3.0.3
-    "@types/firefox-webext-browser": ^120.0.3
-    "@types/js-yaml": ^4
-    "@types/react-is": ^16.7.2
-    "@types/react-window": ^1
-    "@types/resize-observer-browser": ^0.1.7
-    "@types/secp256k1": ^4.0.1
-    "@types/semver": ^7
-    "@types/sha.js": ^2.4.0
-    "@types/styled-components": ^5.1.26
-    "@walletconnect/sign-client": =2.10.5
-    aes-js: ^3.1.2
-    babel-loader: ^8.2.5
-    bip39: ^3.0.2
-    browserify-zlib: ^0.2.0
-    buffer: ^6.0.3
-    chromatic: ^11.3.0
-    classnames: ^2.3.2
-    color: ^4.2.3
-    copy-webpack-plugin: ^11.0.0
-    crypto-browserify: ^3.12.0
-    css-loader: ^6.7.4
-    deepmerge: ^4.2.2
-    delay: ^4.4.0
-    fork-ts-checker-webpack-plugin: ^7.2.13
-    html-webpack-plugin: ^5.5.0
-    https-browserify: ^1.0.0
-    identity-obj-proxy: ^3.0.0
-    joi: ^17.5.0
-    js-yaml: ^4.1.0
-    keplr-wallet-private: "file:./noop-keplr-wallet-private"
-    lottie-web: ^5.10.2
-    os-browserify: ^0.3.0
-    process: ^0.11.10
-    qrcode.react: ^3.1.0
-    query-string: ^6.8.3
-    react-hook-form: ^7.43.1
-    react-intl: ^6.2.8
-    react-is: ^18.2.0
-    react-router: ^6.8.1
-    react-router-dom: ^6.8.1
-    react-virtualized-auto-sizer: ^1.0.24
-    react-window: ^1.8.10
-    scrypt-js: ^3.0.1
-    secp256k1: ^5.0.0
-    semver: ^7.6.0
-    serialize-javascript: ">=3.1.0"
-    setimmediate: ^1.0.5
-    sha.js: ^2.4.11
-    simplebar-core: ^1.2.4
-    simplebar-react: ^3.2.4
-    storybook: ^7.6.18
-    stream-browserify: ^3.0.0
-    stream-http: ^3.2.0
-    style-loader: ^3.3.3
-    styled-components: ^5.3.5
-    styled-normalize: ^8.0.7
-    swiper: ^8.4.4
-    ts-loader: ^9.4.2
-    utility-types: ^3.10.0
-    webextension-polyfill: ^0.10.0
-    webpack: ^5.74.0
-    webpack-bundle-analyzer: ^4.5.0
-    webpack-cli: ^5.0.1
-  peerDependencies:
-    "@ledgerhq/hw-app-eth": ^6
-    "@ledgerhq/hw-app-starknet": ^2
-    "@ledgerhq/hw-transport": ^6
-    "@ledgerhq/hw-transport-webhid": ^6
-    "@ledgerhq/hw-transport-webusb": ^6
-    mobx: ^6
-    mobx-react-lite: ^3
-    mobx-utils: ^6
-    react: ^16.8.0 || ^17 || ^18
-    react-dom: ^16.8.0 || ^17 || ^18
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/hooks-internal@0.12.175, @keplr-wallet/hooks-internal@workspace:apps/hooks-internal":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/hooks-internal@workspace:apps/hooks-internal"
-  dependencies:
-    "@keplr-wallet/hooks": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/stores-eth": 0.12.175
-    "@keplr-wallet/stores-internal": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-    react: ^16.8.0 || ^17 || ^18
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/hooks-starknet@0.12.175, @keplr-wallet/hooks-starknet@workspace:packages/hooks-starknet":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/hooks-starknet@workspace:packages/hooks-starknet"
-  dependencies:
-    "@ethersproject/address": ^5.7.0
-    "@ethersproject/providers": ^5.7.0
-    "@keplr-wallet/background": 0.12.175
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/crypto": 0.12.175
-    "@keplr-wallet/proto-types": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/stores-etc": 0.12.175
-    "@keplr-wallet/stores-eth": 0.12.175
-    "@keplr-wallet/stores-starknet": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-    buffer: ^6.0.3
-    long: ^4.0.0
-    utility-types: ^3.10.0
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-    react: ^16.8.0 || ^17 || ^18
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/hooks@0.12.175, @keplr-wallet/hooks@workspace:packages/hooks":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/hooks@workspace:packages/hooks"
-  dependencies:
-    "@ethersproject/address": ^5.7.0
-    "@ethersproject/providers": ^5.7.0
-    "@keplr-wallet/background": 0.12.175
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/crypto": 0.12.175
-    "@keplr-wallet/proto-types": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/stores-etc": 0.12.175
-    "@keplr-wallet/stores-eth": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-    buffer: ^6.0.3
-    long: ^4.0.0
-    utility-types: ^3.10.0
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-    react: ^16.8.0 || ^17 || ^18
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/ledger-cosmos@0.12.175, @keplr-wallet/ledger-cosmos@workspace:packages/ledger-cosmos":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/ledger-cosmos@workspace:packages/ledger-cosmos"
-  dependencies:
-    buffer: ^6.0.3
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/mobile@workspace:apps/mobile":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/mobile@workspace:apps/mobile"
-  dependencies:
-    "@babel/core": ^7.20.0
-    "@babel/preset-env": ^7.20.0
-    "@babel/runtime": ^7.20.0
-    "@bugsnag/cli": ^2.0.0
-    "@bugsnag/plugin-react-navigation": ^7.19.0
-    "@bugsnag/react-native": ^7.22.5
-    "@bugsnag/react-native-cli": ^7.22.3
-    "@bugsnag/source-maps": ^2.3.1
-    "@formatjs/intl-datetimeformat": ^6.12.0
-    "@formatjs/intl-getcanonicallocales": ^2.2.1
-    "@formatjs/intl-locale": ^3.3.4
-    "@formatjs/intl-numberformat": ^8.7.2
-    "@formatjs/intl-pluralrules": ^5.2.6
-    "@formatjs/intl-relativetimeformat": ^11.2.6
-    "@ledgerhq/hw-app-eth": ^6.29.3
-    "@ledgerhq/react-native-hw-transport-ble": =6.20.0
-    "@react-native-async-storage/async-storage": ^1.19.3
-    "@react-native-camera-roll/camera-roll": ^7.6.1
-    "@react-native-community/blur": ^4.3.2
-    "@react-native-community/netinfo": ^11.2.1
-    "@react-native/babel-preset": 0.73.21
-    "@react-native/eslint-config": 0.73.2
-    "@react-native/metro-config": 0.73.5
-    "@react-native/typescript-config": 0.73.1
-    "@react-navigation/bottom-tabs": ^6.5.12
-    "@react-navigation/drawer": ^6.6.7
-    "@react-navigation/native": ^6.1.10
-    "@react-navigation/stack": ^6.3.21
-    "@toruslabs/fetch-node-details": =11.0.1
-    "@toruslabs/torus.js": =6.4.1
-    "@types/color": ^3.0.3
-    "@types/react-test-renderer": ^18.0.0
-    "@types/semver": ^7
-    "@types/setimmediate": ^1
-    "@types/text-encoding": ^0
-    "@walletconnect/react-native-compat": ^2.13.3
-    "@walletconnect/sign-client": ^2.13.3
-    appcenter: ^5.0.1
-    appcenter-analytics: ^5.0.1
-    appcenter-cli: ^2.14.0
-    babel-jest: ^29.2.1
-    babel-plugin-module-resolver: ^5.0.0
-    babel-plugin-transform-inline-environment-variables: ^0.4.4
-    browserify: ^17.0.0
-    buffer: ^6.0.3
-    color: ^4.2.3
-    delay: ^6.0.0
-    expo: ^50.0.7
-    expo-apple-authentication: ^6.3.0
-    expo-clipboard: ^5.0.1
-    expo-crypto: ^12.8.1
-    expo-image: ^1.10.6
-    expo-local-authentication: ^13.8.0
-    expo-standard-web-crypto: "file:./crypto-polyfill"
-    expo-web-browser: ^12.8.2
-    http-browserify: ^1.7.0
-    https-browserify: ^1.0.0
-    jsc-android: next
-    keplr-wallet-mobile-private: "file:./noop-keplr-wallet-mobile-private"
-    lottie-react-native: ^6.6.0
-    mobx: ^6.10.0
-    mobx-react-lite: ^3.4.3
-    mobx-utils: ^6.0.8
-    os-browserify: ^0.3.0
-    path-browserify: ^1.0.1
-    pod-install: ^0.2.0
-    react: 18.2.0
-    react-hook-form: ^7.45.4
-    react-intl: ^6.2.8
-    react-native: 0.73.6
-    react-native-ble-plx: ^2.0.3
-    react-native-code-push: ^8.2.1
-    react-native-device-info: ^10.11.0
-    react-native-draggable-flatlist: ^4.0.1
-    react-native-exception-handler: ^2.10.10
-    react-native-fs: ^2.20.0
-    react-native-gesture-handler: 2.16.0
-    react-native-keyboard-aware-scroll-view: ^0.9.5
-    react-native-keychain: ^8.1.2
-    react-native-linear-gradient: ^2.8.3
-    react-native-navigation-bar-color: ^2.0.2
-    react-native-qrcode-svg: ^6.2.0
-    react-native-reanimated: 3.8.1
-    react-native-safe-area-context: 4.8.2
-    react-native-screens: ^3.29.0
-    react-native-svg: 14.1.0
-    react-native-url-polyfill: ^2.0.0
-    react-native-vision-camera: ^3.9.0
-    react-native-webview: ^13.8.1
-    react-test-renderer: 18.2.0
-    rn-fetch-blob: 0.13.0-beta.2
-    semver: ^7.6.0
-    setimmediate: ^1.0.5
-    stream-browserify: ^3.0.0
-    string_decoder: ^1.3.0
-    text-encoding: ^0.7.0
-    tinyify: ^4.0.0
-    utility-types: ^3.10.0
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/mobx-utils@0.12.175, @keplr-wallet/mobx-utils@workspace:packages/mobx-utils":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/mobx-utils@workspace:packages/mobx-utils"
-  dependencies:
-    "@keplr-wallet/types": 0.12.175
-  peerDependencies:
-    mobx: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/popup@0.12.175, @keplr-wallet/popup@workspace:packages/popup":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/popup@workspace:packages/popup"
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/proto-types@0.12.175, @keplr-wallet/proto-types@workspace:packages/proto-types":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/proto-types@workspace:packages/proto-types"
-  dependencies:
-    long: ^4.0.0
-    protobufjs: ^6.11.2
-    ts-proto: ^1.106.2
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/provider-extension@workspace:packages/provider-extension":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/provider-extension@workspace:packages/provider-extension"
-  dependencies:
-    "@keplr-wallet/types": 0.12.175
-    deepmerge: ^4.2.2
-    long: ^4.0.0
-  peerDependencies:
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/provider-mock@0.12.175, @keplr-wallet/provider-mock@workspace:packages/provider-mock":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/provider-mock@workspace:packages/provider-mock"
-  dependencies:
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/crypto": 0.12.175
-    "@keplr-wallet/proto-types": 0.12.175
-    "@keplr-wallet/provider": 0.12.175
-    "@keplr-wallet/router": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    buffer: ^6.0.3
-    deepmerge: ^4.2.2
-    long: ^4.0.0
-  peerDependencies:
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/provider@0.12.175, @keplr-wallet/provider@workspace:packages/provider":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/provider@workspace:packages/provider"
-  dependencies:
-    "@keplr-wallet/router": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    buffer: ^6.0.3
-    deepmerge: ^4.2.2
-    long: ^4.0.0
-  peerDependencies:
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/router-extension@0.12.175, @keplr-wallet/router-extension@workspace:packages/router-extension":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/router-extension@workspace:packages/router-extension"
-  dependencies:
-    "@keplr-wallet/popup": 0.12.175
-    "@keplr-wallet/router": 0.12.175
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/router-mock@workspace:packages/router-mock":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/router-mock@workspace:packages/router-mock"
-  dependencies:
-    "@keplr-wallet/router": 0.12.175
-    "@keplr-wallet/router-extension": 0.12.175
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/router@0.12.175, @keplr-wallet/router@workspace:packages/router":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/router@workspace:packages/router"
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/simple-fetch@0.12.175, @keplr-wallet/simple-fetch@workspace:packages/simple-fetch":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/simple-fetch@workspace:packages/simple-fetch"
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/stores-core@0.12.175, @keplr-wallet/stores-core@workspace:packages/stores-core":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/stores-core@workspace:packages/stores-core"
-  dependencies:
-    "@keplr-wallet/background": 0.12.175
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/router": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    buffer: ^6.0.3
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/stores-etc@0.12.175, @keplr-wallet/stores-etc@workspace:packages/stores-etc":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/stores-etc@workspace:packages/stores-etc"
-  dependencies:
-    "@ethersproject/abi": ^5.6.0
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-    utility-types: ^3.10.0
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/stores-eth@0.12.175, @keplr-wallet/stores-eth@workspace:packages/stores-eth":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/stores-eth@workspace:packages/stores-eth"
-  dependencies:
-    "@ethersproject/abi": ^5.7.0
-    "@ethersproject/address": ^5.7.0
-    "@ethersproject/bytes": ^5.7.0
-    "@ethersproject/transactions": ^5.7.0
-    "@ethersproject/units": ^5.7.0
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-    big-integer: ^1.6.48
-    utility-types: ^3.10.0
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/stores-ibc@0.12.175, @keplr-wallet/stores-ibc@workspace:packages/stores-ibc":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/stores-ibc@workspace:packages/stores-ibc"
-  dependencies:
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/stores-eth": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/stores-internal@0.12.175, @keplr-wallet/stores-internal@workspace:apps/stores-internal":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/stores-internal@workspace:apps/stores-internal"
-  dependencies:
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-    joi: ^17.5.0
-    utility-types: ^3.10.0
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/stores-starknet@0.12.175, @keplr-wallet/stores-starknet@workspace:packages/stores-starknet":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/stores-starknet@workspace:packages/stores-starknet"
-  dependencies:
-    "@ethersproject/abi": ^5.7.0
-    "@ethersproject/address": ^5.7.0
-    "@ethersproject/bytes": ^5.7.0
-    "@ethersproject/transactions": ^5.7.0
-    "@ethersproject/units": ^5.7.0
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-    big-integer: ^1.6.48
-    utility-types: ^3.10.0
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/stores@0.12.175, @keplr-wallet/stores@workspace:packages/stores":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/stores@workspace:packages/stores"
-  dependencies:
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/crypto": 0.12.175
-    "@keplr-wallet/mobx-utils": 0.12.175
-    "@keplr-wallet/proto-types": 0.12.175
-    "@keplr-wallet/provider-mock": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/unit": 0.12.175
-    buffer: ^6.0.3
-    deepmerge: ^4.2.2
-    eventemitter3: ^4.0.7
-    long: ^4.0.0
-    p-queue: ^6.6.2
-    utility-types: ^3.10.0
-  peerDependencies:
-    mobx: ^6
-    mobx-utils: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/types@0.12.175, @keplr-wallet/types@workspace:packages/types":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/types@workspace:packages/types"
-  dependencies:
-    long: ^4.0.0
-  peerDependencies:
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/unit@0.12.175, @keplr-wallet/unit@workspace:packages/unit":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/unit@workspace:packages/unit"
-  dependencies:
-    "@keplr-wallet/types": 0.12.175
-    big-integer: ^1.6.48
-    utility-types: ^3.10.0
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/wc-client-example@workspace:packages/wc-client-example":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/wc-client-example@workspace:packages/wc-client-example"
-  dependencies:
-    "@keplr-wallet/common": 0.12.175
-    "@keplr-wallet/cosmos": 0.12.175
-    "@keplr-wallet/simple-fetch": 0.12.175
-    "@keplr-wallet/stores": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    "@keplr-wallet/wc-client": 0.12.175
-    "@keplr-wallet/wc-qrcode-modal": 0.12.175
-    "@walletconnect/sign-client": ^2.13.3
-    "@walletconnect/types": ^2.13.3
-    buffer: ^6.0.3
-    parcel-bundler: ^1.12.5
-  peerDependencies:
-    mobx-react-lite: ^3
-    react: ^16.8.0 || ^17 || ^18
-    react-dom: ^16.8.0 || ^17 || ^18
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/wc-client@0.12.175, @keplr-wallet/wc-client@workspace:packages/wc-client":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/wc-client@workspace:packages/wc-client"
-  dependencies:
-    "@keplr-wallet/provider": 0.12.175
-    "@keplr-wallet/types": 0.12.175
-    buffer: ^6.0.3
-    deepmerge: ^4.2.2
-    long: ^3 || ^4 || ^5
-  peerDependencies:
-    "@walletconnect/sign-client": ^2
-    "@walletconnect/types": ^2
-    starknet: ^6
-  languageName: unknown
-  linkType: soft
-
-"@keplr-wallet/wc-qrcode-modal@0.12.175, @keplr-wallet/wc-qrcode-modal@workspace:packages/wc-qrcode-modal":
-  version: 0.0.0-use.local
-  resolution: "@keplr-wallet/wc-qrcode-modal@workspace:packages/wc-qrcode-modal"
-  dependencies:
-    detect-browser: ^5.3.0
-    qrcode.react: ^3.1.0
-  peerDependencies:
-    "@walletconnect/sign-client": ^2
-    "@walletconnect/types": ^2
-    react: ^16.8.0 || ^17 || ^18
-    react-dom: ^16.8.0 || ^17 || ^18
-  languageName: unknown
-  linkType: soft
-
 "@keystonehq/animated-qr@npm:^0.8.6":
   version: 0.8.6
   resolution: "@keystonehq/animated-qr@npm:0.8.6"
@@ -14210,6 +13466,751 @@ __metadata:
   checksum: d76937dffcf0082fbf3bb89eb2b81a31bf5448048dd61c33928c5f10e33a58e035321d39145cefd469bb5a499c68a5b4086b22f1a44e3e7c7e817dc5f6782867
   languageName: node
   linkType: hard
+
+"@titan-wallet/analytics@*, @titan-wallet/analytics@workspace:packages/analytics":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/analytics@workspace:packages/analytics"
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/background@*, @titan-wallet/background@workspace:packages/background":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/background@workspace:packages/background"
+  dependencies:
+    "@ethereumjs/common": ^2.6.5
+    "@ethereumjs/tx": ^3.5.2
+    "@ethersproject/address": ^5.7.0
+    "@ethersproject/hash": ^5.7.0
+    "@ethersproject/transactions": ^5.7.0
+    "@ethersproject/wallet": ^5.7.0
+    "@ledgerhq/hw-app-eth": ^6.40.3
+    "@ledgerhq/hw-app-starknet": ^2.4.0
+    "@ledgerhq/hw-transport": ^6.31.4
+    "@ledgerhq/hw-transport-webhid": ^6.29.4
+    "@ledgerhq/hw-transport-webusb": ^6.29.4
+    "@noble/hashes": 1.0.0
+    "@titan-wallet/chain-validator": "*"
+    "@titan-wallet/common": "*"
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/crypto": "*"
+    "@titan-wallet/ledger-cosmos": "*"
+    "@titan-wallet/popup": "*"
+    "@titan-wallet/proto-types": "*"
+    "@titan-wallet/router": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+    "@types/aes-js": ^3.1.0
+    "@types/secp256k1": ^4.0.1
+    "@types/w3c-web-hid": ^1.0.2
+    "@types/w3c-web-usb": ^1.0.5
+    aes-js: ^3.1.2
+    big-integer: ^1.6.48
+    bip39: ^3.0.2
+    buffer: ^6.0.3
+    curve25519-js: 0.0.4
+    delay: ^4.4.0
+    joi: ^17.5.0
+    long: ^4.0.0
+    miscreant: 0.3.2
+    pbkdf2: ^3.1.2
+    utility-types: ^3.10.0
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/chain-validator@*, @titan-wallet/chain-validator@workspace:packages/chain-validator":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/chain-validator@workspace:packages/chain-validator"
+  dependencies:
+    "@ethersproject/abi": ^5.7.0
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/types": "*"
+    joi: ^17.5.0
+    utility-types: ^3.10.0
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/common@*, @titan-wallet/common@workspace:packages/common":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/common@workspace:packages/common"
+  dependencies:
+    "@titan-wallet/crypto": "*"
+    "@titan-wallet/types": "*"
+    buffer: ^6.0.3
+    delay: ^4.4.0
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/cosmos@*, @titan-wallet/cosmos@workspace:packages/cosmos":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/cosmos@workspace:packages/cosmos"
+  dependencies:
+    "@ethersproject/address": ^5.6.0
+    "@titan-wallet/common": "*"
+    "@titan-wallet/crypto": "*"
+    "@titan-wallet/proto-types": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+    bech32: ^1.1.4
+    buffer: ^6.0.3
+    long: ^4.0.0
+    protobufjs: ^6.11.2
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/crypto@*, @titan-wallet/crypto@workspace:packages/crypto":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/crypto@workspace:packages/crypto"
+  dependencies:
+    "@noble/curves": ^1.4.2
+    "@noble/hashes": ^1.4.0
+    bip32: ^2.0.6
+    bip39: ^3.0.3
+    bs58check: ^2.1.2
+    buffer: ^6.0.3
+  peerDependencies:
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/extension@workspace:apps/extension":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/extension@workspace:apps/extension"
+  dependencies:
+    "@amplitude/analytics-browser": ^1.10.3
+    "@babel/core": ^7.19.3
+    "@babel/preset-env": ^7.24.5
+    "@babel/preset-react": ^7.24.1
+    "@babel/preset-typescript": ^7.24.1
+    "@ethersproject/bignumber": ^5.7.0
+    "@ethersproject/transactions": ^5.7.0
+    "@floating-ui/react": ^0.23.0
+    "@floating-ui/react-dom": ^1.3.0
+    "@keystonehq/animated-qr": ^0.8.6
+    "@keystonehq/hw-app-base": 0.1.1
+    "@keystonehq/hw-transport-webusb": 0.4.0
+    "@keystonehq/keystone-sdk": ^0.2.3
+    "@ledgerhq/devices": ^6.20.0
+    "@react-spring/web": ^9.6.1
+    "@storybook/addon-actions": ^7.6.18
+    "@storybook/addon-essentials": ^7.6.18
+    "@storybook/addon-interactions": ^7.6.18
+    "@storybook/addon-links": ^7.6.18
+    "@storybook/react": ^7.6.18
+    "@storybook/react-webpack5": ^7.6.18
+    "@storybook/testing-library": ^0.2.2
+    "@titan-wallet/analytics": "*"
+    "@titan-wallet/background": "*"
+    "@titan-wallet/chain-validator": "*"
+    "@titan-wallet/common": "*"
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/crypto": "*"
+    "@titan-wallet/hooks": "*"
+    "@titan-wallet/hooks-internal": "*"
+    "@titan-wallet/hooks-starknet": "*"
+    "@titan-wallet/ledger-cosmos": "*"
+    "@titan-wallet/popup": "*"
+    "@titan-wallet/proto-types": "*"
+    "@titan-wallet/provider": "*"
+    "@titan-wallet/router": "*"
+    "@titan-wallet/router-extension": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/stores-core": "*"
+    "@titan-wallet/stores-etc": "*"
+    "@titan-wallet/stores-eth": "*"
+    "@titan-wallet/stores-ibc": "*"
+    "@titan-wallet/stores-internal": "*"
+    "@titan-wallet/stores-starknet": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+    "@toruslabs/fetch-node-details": =14.2.0
+    "@toruslabs/torus.js": =15.1.1
+    "@types/babel__preset-env": ^7
+    "@types/chrome": 0.0.268
+    "@types/classnames": ^2.3.1
+    "@types/color": ^3.0.3
+    "@types/firefox-webext-browser": ^120.0.3
+    "@types/js-yaml": ^4
+    "@types/react-is": ^16.7.2
+    "@types/react-window": ^1
+    "@types/resize-observer-browser": ^0.1.7
+    "@types/secp256k1": ^4.0.1
+    "@types/semver": ^7
+    "@types/sha.js": ^2.4.0
+    "@types/styled-components": ^5.1.26
+    "@walletconnect/sign-client": =2.10.5
+    aes-js: ^3.1.2
+    babel-loader: ^8.2.5
+    bip39: ^3.0.2
+    browserify-zlib: ^0.2.0
+    buffer: ^6.0.3
+    chromatic: ^11.3.0
+    classnames: ^2.3.2
+    color: ^4.2.3
+    copy-webpack-plugin: ^11.0.0
+    cross-env: ^7.0.3
+    crypto-browserify: ^3.12.0
+    css-loader: ^6.7.4
+    deepmerge: ^4.2.2
+    delay: ^4.4.0
+    fork-ts-checker-webpack-plugin: ^7.2.13
+    html-webpack-plugin: ^5.5.0
+    https-browserify: ^1.0.0
+    identity-obj-proxy: ^3.0.0
+    joi: ^17.5.0
+    js-yaml: ^4.1.0
+    lottie-web: ^5.10.2
+    os-browserify: ^0.3.0
+    process: ^0.11.10
+    qrcode.react: ^3.1.0
+    query-string: ^6.8.3
+    react-hook-form: ^7.43.1
+    react-intl: ^6.2.8
+    react-is: ^18.2.0
+    react-router: ^6.8.1
+    react-router-dom: ^6.8.1
+    react-virtualized-auto-sizer: ^1.0.24
+    react-window: ^1.8.10
+    scrypt-js: ^3.0.1
+    secp256k1: ^5.0.0
+    semver: ^7.6.0
+    serialize-javascript: ">=3.1.0"
+    setimmediate: ^1.0.5
+    sha.js: ^2.4.11
+    simplebar-core: ^1.2.4
+    simplebar-react: ^3.2.4
+    storybook: ^7.6.18
+    stream-browserify: ^3.0.0
+    stream-http: ^3.2.0
+    style-loader: ^3.3.3
+    styled-components: ^5.3.5
+    styled-normalize: ^8.0.7
+    swiper: ^8.4.4
+    titan-wallet-private: "file:./noop-titan-wallet-private"
+    ts-loader: ^9.4.2
+    utility-types: ^3.10.0
+    webextension-polyfill: ^0.10.0
+    webpack: ^5.74.0
+    webpack-bundle-analyzer: ^4.5.0
+    webpack-cli: ^5.0.1
+  peerDependencies:
+    "@ledgerhq/hw-app-eth": ^6
+    "@ledgerhq/hw-app-starknet": ^2
+    "@ledgerhq/hw-transport": ^6
+    "@ledgerhq/hw-transport-webhid": ^6
+    "@ledgerhq/hw-transport-webusb": ^6
+    mobx: ^6
+    mobx-react-lite: ^3
+    mobx-utils: ^6
+    react: ^16.8.0 || ^17 || ^18
+    react-dom: ^16.8.0 || ^17 || ^18
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/hooks-internal@*, @titan-wallet/hooks-internal@workspace:apps/hooks-internal":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/hooks-internal@workspace:apps/hooks-internal"
+  dependencies:
+    "@titan-wallet/hooks": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/stores-eth": "*"
+    "@titan-wallet/stores-internal": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+    react: ^16.8.0 || ^17 || ^18
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/hooks-starknet@*, @titan-wallet/hooks-starknet@workspace:packages/hooks-starknet":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/hooks-starknet@workspace:packages/hooks-starknet"
+  dependencies:
+    "@ethersproject/address": ^5.7.0
+    "@ethersproject/providers": ^5.7.0
+    "@titan-wallet/background": "*"
+    "@titan-wallet/common": "*"
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/crypto": "*"
+    "@titan-wallet/proto-types": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/stores-etc": "*"
+    "@titan-wallet/stores-eth": "*"
+    "@titan-wallet/stores-starknet": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+    buffer: ^6.0.3
+    long: ^4.0.0
+    utility-types: ^3.10.0
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+    react: ^16.8.0 || ^17 || ^18
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/hooks@*, @titan-wallet/hooks@workspace:packages/hooks":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/hooks@workspace:packages/hooks"
+  dependencies:
+    "@ethersproject/address": ^5.7.0
+    "@ethersproject/providers": ^5.7.0
+    "@titan-wallet/background": "*"
+    "@titan-wallet/common": "*"
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/crypto": "*"
+    "@titan-wallet/proto-types": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/stores-etc": "*"
+    "@titan-wallet/stores-eth": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+    buffer: ^6.0.3
+    long: ^4.0.0
+    utility-types: ^3.10.0
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+    react: ^16.8.0 || ^17 || ^18
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/ledger-cosmos@*, @titan-wallet/ledger-cosmos@workspace:packages/ledger-cosmos":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/ledger-cosmos@workspace:packages/ledger-cosmos"
+  dependencies:
+    buffer: ^6.0.3
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/mobile@workspace:apps/mobile":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/mobile@workspace:apps/mobile"
+  dependencies:
+    "@babel/core": ^7.20.0
+    "@babel/preset-env": ^7.20.0
+    "@babel/runtime": ^7.20.0
+    "@bugsnag/cli": ^2.0.0
+    "@bugsnag/plugin-react-navigation": ^7.19.0
+    "@bugsnag/react-native": ^7.22.5
+    "@bugsnag/react-native-cli": ^7.22.3
+    "@bugsnag/source-maps": ^2.3.1
+    "@formatjs/intl-datetimeformat": ^6.12.0
+    "@formatjs/intl-getcanonicallocales": ^2.2.1
+    "@formatjs/intl-locale": ^3.3.4
+    "@formatjs/intl-numberformat": ^8.7.2
+    "@formatjs/intl-pluralrules": ^5.2.6
+    "@formatjs/intl-relativetimeformat": ^11.2.6
+    "@ledgerhq/hw-app-eth": ^6.29.3
+    "@ledgerhq/react-native-hw-transport-ble": =6.20.0
+    "@react-native-async-storage/async-storage": ^1.19.3
+    "@react-native-camera-roll/camera-roll": ^7.6.1
+    "@react-native-community/blur": ^4.3.2
+    "@react-native-community/netinfo": ^11.2.1
+    "@react-native/babel-preset": 0.73.21
+    "@react-native/eslint-config": 0.73.2
+    "@react-native/metro-config": 0.73.5
+    "@react-native/typescript-config": 0.73.1
+    "@react-navigation/bottom-tabs": ^6.5.12
+    "@react-navigation/drawer": ^6.6.7
+    "@react-navigation/native": ^6.1.10
+    "@react-navigation/stack": ^6.3.21
+    "@toruslabs/fetch-node-details": =11.0.1
+    "@toruslabs/torus.js": =6.4.1
+    "@types/color": ^3.0.3
+    "@types/react-test-renderer": ^18.0.0
+    "@types/semver": ^7
+    "@types/setimmediate": ^1
+    "@types/text-encoding": ^0
+    "@walletconnect/react-native-compat": ^2.13.3
+    "@walletconnect/sign-client": ^2.13.3
+    appcenter: ^5.0.1
+    appcenter-analytics: ^5.0.1
+    appcenter-cli: ^2.14.0
+    babel-jest: ^29.2.1
+    babel-plugin-module-resolver: ^5.0.0
+    babel-plugin-transform-inline-environment-variables: ^0.4.4
+    browserify: ^17.0.0
+    buffer: ^6.0.3
+    color: ^4.2.3
+    delay: ^6.0.0
+    expo: ^50.0.7
+    expo-apple-authentication: ^6.3.0
+    expo-clipboard: ^5.0.1
+    expo-crypto: ^12.8.1
+    expo-image: ^1.10.6
+    expo-local-authentication: ^13.8.0
+    expo-standard-web-crypto: "file:./crypto-polyfill"
+    expo-web-browser: ^12.8.2
+    http-browserify: ^1.7.0
+    https-browserify: ^1.0.0
+    jsc-android: next
+    lottie-react-native: ^6.6.0
+    mobx: ^6.10.0
+    mobx-react-lite: ^3.4.3
+    mobx-utils: ^6.0.8
+    os-browserify: ^0.3.0
+    path-browserify: ^1.0.1
+    pod-install: ^0.2.0
+    react: 18.2.0
+    react-hook-form: ^7.45.4
+    react-intl: ^6.2.8
+    react-native: 0.73.6
+    react-native-ble-plx: ^2.0.3
+    react-native-code-push: ^8.2.1
+    react-native-device-info: ^10.11.0
+    react-native-draggable-flatlist: ^4.0.1
+    react-native-exception-handler: ^2.10.10
+    react-native-fs: ^2.20.0
+    react-native-gesture-handler: 2.16.0
+    react-native-keyboard-aware-scroll-view: ^0.9.5
+    react-native-keychain: ^8.1.2
+    react-native-linear-gradient: ^2.8.3
+    react-native-navigation-bar-color: ^2.0.2
+    react-native-qrcode-svg: ^6.2.0
+    react-native-reanimated: 3.8.1
+    react-native-safe-area-context: 4.8.2
+    react-native-screens: ^3.29.0
+    react-native-svg: 14.1.0
+    react-native-url-polyfill: ^2.0.0
+    react-native-vision-camera: ^3.9.0
+    react-native-webview: ^13.8.1
+    react-test-renderer: 18.2.0
+    rn-fetch-blob: 0.13.0-beta.2
+    semver: ^7.6.0
+    setimmediate: ^1.0.5
+    stream-browserify: ^3.0.0
+    string_decoder: ^1.3.0
+    text-encoding: ^0.7.0
+    tinyify: ^4.0.0
+    titan-wallet-mobile-private: "file:./noop-titan-wallet-mobile-private"
+    utility-types: ^3.10.0
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/mobx-utils@*, @titan-wallet/mobx-utils@workspace:packages/mobx-utils":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/mobx-utils@workspace:packages/mobx-utils"
+  dependencies:
+    "@titan-wallet/types": "*"
+  peerDependencies:
+    mobx: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/popup@*, @titan-wallet/popup@workspace:packages/popup":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/popup@workspace:packages/popup"
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/proto-types@*, @titan-wallet/proto-types@workspace:packages/proto-types":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/proto-types@workspace:packages/proto-types"
+  dependencies:
+    long: ^4.0.0
+    protobufjs: ^6.11.2
+    ts-proto: ^1.106.2
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/provider-extension@workspace:packages/provider-extension":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/provider-extension@workspace:packages/provider-extension"
+  dependencies:
+    "@titan-wallet/types": "*"
+    deepmerge: ^4.2.2
+    long: ^4.0.0
+  peerDependencies:
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/provider-mock@*, @titan-wallet/provider-mock@workspace:packages/provider-mock":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/provider-mock@workspace:packages/provider-mock"
+  dependencies:
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/crypto": "*"
+    "@titan-wallet/proto-types": "*"
+    "@titan-wallet/provider": "*"
+    "@titan-wallet/router": "*"
+    "@titan-wallet/types": "*"
+    buffer: ^6.0.3
+    deepmerge: ^4.2.2
+    long: ^4.0.0
+  peerDependencies:
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/provider@*, @titan-wallet/provider@workspace:packages/provider":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/provider@workspace:packages/provider"
+  dependencies:
+    "@titan-wallet/router": "*"
+    "@titan-wallet/types": "*"
+    buffer: ^6.0.3
+    deepmerge: ^4.2.2
+    long: ^4.0.0
+  peerDependencies:
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/router-extension@*, @titan-wallet/router-extension@workspace:packages/router-extension":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/router-extension@workspace:packages/router-extension"
+  dependencies:
+    "@titan-wallet/popup": "*"
+    "@titan-wallet/router": "*"
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/router-mock@workspace:packages/router-mock":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/router-mock@workspace:packages/router-mock"
+  dependencies:
+    "@titan-wallet/router": "*"
+    "@titan-wallet/router-extension": "*"
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/router@*, @titan-wallet/router@workspace:packages/router":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/router@workspace:packages/router"
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/simple-fetch@*, @titan-wallet/simple-fetch@workspace:packages/simple-fetch":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/simple-fetch@workspace:packages/simple-fetch"
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/stores-core@*, @titan-wallet/stores-core@workspace:packages/stores-core":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/stores-core@workspace:packages/stores-core"
+  dependencies:
+    "@titan-wallet/background": "*"
+    "@titan-wallet/common": "*"
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/router": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/types": "*"
+    buffer: ^6.0.3
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/stores-etc@*, @titan-wallet/stores-etc@workspace:packages/stores-etc":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/stores-etc@workspace:packages/stores-etc"
+  dependencies:
+    "@ethersproject/abi": ^5.6.0
+    "@titan-wallet/common": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+    utility-types: ^3.10.0
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/stores-eth@*, @titan-wallet/stores-eth@workspace:packages/stores-eth":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/stores-eth@workspace:packages/stores-eth"
+  dependencies:
+    "@ethersproject/abi": ^5.7.0
+    "@ethersproject/address": ^5.7.0
+    "@ethersproject/bytes": ^5.7.0
+    "@ethersproject/transactions": ^5.7.0
+    "@ethersproject/units": ^5.7.0
+    "@titan-wallet/common": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+    big-integer: ^1.6.48
+    utility-types: ^3.10.0
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/stores-ibc@*, @titan-wallet/stores-ibc@workspace:packages/stores-ibc":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/stores-ibc@workspace:packages/stores-ibc"
+  dependencies:
+    "@titan-wallet/common": "*"
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/stores-eth": "*"
+    "@titan-wallet/types": "*"
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/stores-internal@*, @titan-wallet/stores-internal@workspace:apps/stores-internal":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/stores-internal@workspace:apps/stores-internal"
+  dependencies:
+    "@titan-wallet/common": "*"
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+    joi: ^17.5.0
+    utility-types: ^3.10.0
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/stores-starknet@*, @titan-wallet/stores-starknet@workspace:packages/stores-starknet":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/stores-starknet@workspace:packages/stores-starknet"
+  dependencies:
+    "@ethersproject/abi": ^5.7.0
+    "@ethersproject/address": ^5.7.0
+    "@ethersproject/bytes": ^5.7.0
+    "@ethersproject/transactions": ^5.7.0
+    "@ethersproject/units": ^5.7.0
+    "@titan-wallet/common": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+    big-integer: ^1.6.48
+    utility-types: ^3.10.0
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/stores@*, @titan-wallet/stores@workspace:packages/stores":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/stores@workspace:packages/stores"
+  dependencies:
+    "@titan-wallet/common": "*"
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/crypto": "*"
+    "@titan-wallet/mobx-utils": "*"
+    "@titan-wallet/proto-types": "*"
+    "@titan-wallet/provider-mock": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/unit": "*"
+    buffer: ^6.0.3
+    deepmerge: ^4.2.2
+    eventemitter3: ^4.0.7
+    long: ^4.0.0
+    p-queue: ^6.6.2
+    utility-types: ^3.10.0
+  peerDependencies:
+    mobx: ^6
+    mobx-utils: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/types@*, @titan-wallet/types@workspace:packages/types":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/types@workspace:packages/types"
+  dependencies:
+    long: ^4.0.0
+  peerDependencies:
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/unit@*, @titan-wallet/unit@workspace:packages/unit":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/unit@workspace:packages/unit"
+  dependencies:
+    "@titan-wallet/types": "*"
+    big-integer: ^1.6.48
+    utility-types: ^3.10.0
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/wc-client-example@workspace:packages/wc-client-example":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/wc-client-example@workspace:packages/wc-client-example"
+  dependencies:
+    "@titan-wallet/common": "*"
+    "@titan-wallet/cosmos": "*"
+    "@titan-wallet/simple-fetch": "*"
+    "@titan-wallet/stores": "*"
+    "@titan-wallet/types": "*"
+    "@titan-wallet/wc-client": "*"
+    "@titan-wallet/wc-qrcode-modal": "*"
+    "@walletconnect/sign-client": ^2.13.3
+    "@walletconnect/types": ^2.13.3
+    buffer: ^6.0.3
+    parcel-bundler: ^1.12.5
+  peerDependencies:
+    mobx-react-lite: ^3
+    react: ^16.8.0 || ^17 || ^18
+    react-dom: ^16.8.0 || ^17 || ^18
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/wc-client@*, @titan-wallet/wc-client@workspace:packages/wc-client":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/wc-client@workspace:packages/wc-client"
+  dependencies:
+    "@titan-wallet/provider": "*"
+    "@titan-wallet/types": "*"
+    buffer: ^6.0.3
+    deepmerge: ^4.2.2
+    long: ^3 || ^4 || ^5
+  peerDependencies:
+    "@walletconnect/sign-client": ^2
+    "@walletconnect/types": ^2
+    starknet: ^6
+  languageName: unknown
+  linkType: soft
+
+"@titan-wallet/wc-qrcode-modal@*, @titan-wallet/wc-qrcode-modal@workspace:packages/wc-qrcode-modal":
+  version: 0.0.0-use.local
+  resolution: "@titan-wallet/wc-qrcode-modal@workspace:packages/wc-qrcode-modal"
+  dependencies:
+    detect-browser: ^5.3.0
+    qrcode.react: ^3.1.0
+  peerDependencies:
+    "@walletconnect/sign-client": ^2
+    "@walletconnect/types": ^2
+    react: ^16.8.0 || ^17 || ^18
+    react-dom: ^16.8.0 || ^17 || ^18
+  languageName: unknown
+  linkType: soft
 
 "@tootallnate/once@npm:2":
   version: 2.0.0
@@ -20886,7 +20887,7 @@ __metadata:
   resolution: "cosmjs-test@workspace:packages/cosmjs-test"
   dependencies:
     "@cosmjs/stargate": ^0.29.3
-    "@keplr-wallet/provider-mock": 0.12.175
+    "@titan-wallet/provider-mock": "*"
     secretjs: ^1.6.0
   languageName: unknown
   linkType: soft
@@ -20975,6 +20976,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cross-env@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "cross-env@npm:7.0.3"
+  dependencies:
+    cross-spawn: ^7.0.1
+  bin:
+    cross-env: src/bin/cross-env.js
+    cross-env-shell: src/bin/cross-env-shell.js
+  checksum: 26f2f3ea2ab32617f57effb70d329c2070d2f5630adc800985d8b30b56e8bf7f5f439dd3a0358b79cee6f930afc23cf8e23515f17ccfb30092c6b62c6b630a79
+  languageName: node
+  linkType: hard
+
 "cross-fetch@npm:3.1.5":
   version: 3.1.5
   resolution: "cross-fetch@npm:3.1.5"
@@ -21025,6 +21038,17 @@ __metadata:
     shebang-command: ^2.0.0
     which: ^2.0.1
   checksum: 671cc7c7288c3a8406f3c69a3ae2fc85555c04169e9d611def9a675635472614f1c0ed0ef80955d5b6d4e724f6ced67f0ad1bb006c2ea643488fcfef994d7f52
+  languageName: node
+  linkType: hard
+
+"cross-spawn@npm:^7.0.1":
+  version: 7.0.6
+  resolution: "cross-spawn@npm:7.0.6"
+  dependencies:
+    path-key: ^3.1.0
+    shebang-command: ^2.0.0
+    which: ^2.0.1
+  checksum: 8d306efacaf6f3f60e0224c287664093fa9185680b2d195852ba9a863f85d02dcc737094c6e512175f8ee0161f9b87c73c6826034c2422e39de7d6569cf4503b
   languageName: node
   linkType: hard
 
@@ -24328,15 +24352,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-standard-web-crypto@file:./crypto-polyfill::locator=%40keplr-wallet%2Fmobile%40workspace%3Aapps%2Fmobile":
+"expo-standard-web-crypto@file:./crypto-polyfill::locator=%40titan-wallet%2Fmobile%40workspace%3Aapps%2Fmobile":
   version: 0.0.1
-  resolution: "expo-standard-web-crypto@file:./crypto-polyfill#./crypto-polyfill::hash=b2305a&locator=%40keplr-wallet%2Fmobile%40workspace%3Aapps%2Fmobile"
+  resolution: "expo-standard-web-crypto@file:./crypto-polyfill#./crypto-polyfill::hash=ca1e76&locator=%40titan-wallet%2Fmobile%40workspace%3Aapps%2Fmobile"
   dependencies:
     browserify-cipher: ^1.0.1
     create-hash: ^1.2.0
     create-hmac: ^1.1.7
     expo-crypto: ^12.8.0
-  checksum: a160ed19d5cb70a02c57e0ca2cceb26a4dd687bb7fd738df553ad244ee8ac2de0cd5258be1ffc47a27347d9747b06fcdb02aba2638149ed4e7ef826ea09fcdf5
+  checksum: 9a24fadaa714e287e3394c847db8bf79f9bcee87850d75a93de52c09b273470319b2f376c784726928ccd393993fb6e5c2894cc4399b638b6c088ca21384adcc
   languageName: node
   linkType: hard
 
@@ -29860,68 +29884,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"keplr-wallet-mobile-private@file:./noop-keplr-wallet-mobile-private::locator=%40keplr-wallet%2Fmobile%40workspace%3Aapps%2Fmobile":
-  version: 0.0.1
-  resolution: "keplr-wallet-mobile-private@file:./noop-keplr-wallet-mobile-private#./noop-keplr-wallet-mobile-private::hash=d65a79&locator=%40keplr-wallet%2Fmobile%40workspace%3Aapps%2Fmobile"
-  checksum: cb1ddbf5e4fde8235addae46d7203c7f61dc9b23de6bd4ff476a1b295d61642ff274706dffcc507e0a201f45e85a0de8487c85d1e5af49daf5c3a36314ea5ef6
-  languageName: node
-  linkType: hard
-
-"keplr-wallet-private@file:./noop-keplr-wallet-private::locator=%40keplr-wallet%2Fextension%40workspace%3Aapps%2Fextension":
-  version: 0.0.1
-  resolution: "keplr-wallet-private@file:./noop-keplr-wallet-private#./noop-keplr-wallet-private::hash=62d7fb&locator=%40keplr-wallet%2Fextension%40workspace%3Aapps%2Fextension"
-  peerDependencies:
-    react: ^16.8.0 || ^17 || ^18
-    styled-components: "*"
-  checksum: efd06473d052f24c1e5896d480d810e43c3237c0aa8acfe3b05a89ab03a8e3cb42171821189965a241bb91a064c3bfee7bf384b14083bdfe4be0cf40af8b0636
-  languageName: node
-  linkType: hard
-
-"keplr@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "keplr@workspace:."
-  dependencies:
-    "@1stg/remark-preset": ^2.0.0
-    "@octokit/core": ^3.5.1
-    "@types/filesystem": ^0.0.32
-    "@types/jest": ^29.4.0
-    "@types/node": ^18.13.0
-    "@types/react": ^18.2.19
-    "@types/react-dom": ^18.2.7
-    "@types/react-is": ^18.2.1
-    "@typescript-eslint/eslint-plugin": ^5.52.0
-    "@typescript-eslint/parser": ^5.52.0
-    cross-env: ^5.2.0
-    eslint: ^8.34.0
-    eslint-config-prettier: ^8.6.0
-    eslint-plugin-import: ^2.27.5
-    eslint-plugin-mdx: ^2.0.5
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.32.2
-    eslint-plugin-react-hooks: ^4.6.0
-    eslint-plugin-unicorn: ^45.0.2
-    eslint-plugin-unused-imports: ^2.0.0
-    folder-hash: ^4.0.2
-    jest: ^29.4.3
-    lerna: ^3.22.1
-    lint-staged: ^10.5.4
-    mobx: ^6.10.0
-    mobx-react-lite: ^3.4.3
-    mobx-utils: ^6.0.8
-    node-gyp: ^9.3.1
-    pre-commit: ^1.2.2
-    prettier: ^2.8.4
-    react: 18.2.0
-    react-dom: 18.2.0
-    react-is: 18.2.0
-    semver: ^7.6.0
-    starknet: =6.11.0
-    ts-jest: ^29.0.5
-    typescript: 5.0.4
-    zx: ^4.2.0
-  languageName: unknown
-  linkType: soft
-
 "keyv@npm:^4.5.3":
   version: 4.5.4
   resolution: "keyv@npm:4.5.4"
@@ -30078,9 +30040,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libsodium-wrappers@file:./etc/noop::locator=keplr%40workspace%3A.":
+"libsodium-wrappers@file:./etc/noop::locator=titan%40workspace%3A.":
   version: 0.0.1
-  resolution: "libsodium-wrappers@file:./etc/noop#./etc/noop::hash=e4bfa9&locator=keplr%40workspace%3A."
+  resolution: "libsodium-wrappers@file:./etc/noop#./etc/noop::hash=e4bfa9&locator=titan%40workspace%3A."
   checksum: 3574db90e4e6b9fd6000ee62fbdd689bb10f633c4101687c14daafed1547bfc7cb6281406a1ab08a04d6a65c892fa90cbae81a845d1ef5ac2a9d8fdb85c6fb8c
   languageName: node
   linkType: hard
@@ -42048,6 +42010,68 @@ __metadata:
   checksum: 549fe0b7be6fd4cca351b2de3670ea0c8564db1573f11841e3cbf2e2a2b5778c029f08b6f6b9c87cb72674e427de4cbc90f60ac11bce350495716a033884d1a4
   languageName: node
   linkType: hard
+
+"titan-wallet-mobile-private@file:./noop-titan-wallet-mobile-private::locator=%40titan-wallet%2Fmobile%40workspace%3Aapps%2Fmobile":
+  version: 0.0.1
+  resolution: "titan-wallet-mobile-private@file:./noop-titan-wallet-mobile-private#./noop-titan-wallet-mobile-private::hash=4162e7&locator=%40titan-wallet%2Fmobile%40workspace%3Aapps%2Fmobile"
+  checksum: 98e12e5d4e0ab2a910dbf901747225c11f7a845b976d18258f9da0c4797763d7d913fb5cc6cb2a1dc5708834213ce99f35ffa08a47d4dbc04025b207ee4d62ab
+  languageName: node
+  linkType: hard
+
+"titan-wallet-private@file:./noop-titan-wallet-private::locator=%40titan-wallet%2Fextension%40workspace%3Aapps%2Fextension":
+  version: 0.0.1
+  resolution: "titan-wallet-private@file:./noop-titan-wallet-private#./noop-titan-wallet-private::hash=302e5e&locator=%40titan-wallet%2Fextension%40workspace%3Aapps%2Fextension"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+    styled-components: "*"
+  checksum: 6c0a1497e05338c7289de58a34c86506cab4eae202917f8b6037e8a4f294cbd26a35212487cc67ed9c1a9dd75eb417614e543e296ca90687259a0cd0a0932fd3
+  languageName: node
+  linkType: hard
+
+"titan@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "titan@workspace:."
+  dependencies:
+    "@1stg/remark-preset": ^2.0.0
+    "@octokit/core": ^3.5.1
+    "@types/filesystem": ^0.0.32
+    "@types/jest": ^29.4.0
+    "@types/node": ^18.13.0
+    "@types/react": ^18.2.19
+    "@types/react-dom": ^18.2.7
+    "@types/react-is": ^18.2.1
+    "@typescript-eslint/eslint-plugin": ^5.52.0
+    "@typescript-eslint/parser": ^5.52.0
+    cross-env: ^5.2.0
+    eslint: ^8.34.0
+    eslint-config-prettier: ^8.6.0
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-mdx: ^2.0.5
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.32.2
+    eslint-plugin-react-hooks: ^4.6.0
+    eslint-plugin-unicorn: ^45.0.2
+    eslint-plugin-unused-imports: ^2.0.0
+    folder-hash: ^4.0.2
+    jest: ^29.4.3
+    lerna: ^3.22.1
+    lint-staged: ^10.5.4
+    mobx: ^6.10.0
+    mobx-react-lite: ^3.4.3
+    mobx-utils: ^6.0.8
+    node-gyp: ^9.3.1
+    pre-commit: ^1.2.2
+    prettier: ^2.8.4
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-is: 18.2.0
+    semver: ^7.6.0
+    starknet: =6.11.0
+    ts-jest: ^29.0.5
+    typescript: 5.0.4
+    zx: ^4.2.0
+  languageName: unknown
+  linkType: soft
 
 "tmp@npm:^0.0.33":
   version: 0.0.33

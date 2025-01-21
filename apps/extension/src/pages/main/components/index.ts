@@ -7,6 +7,6 @@ export * from "./copy-address";
 export * from "./empty-view";
 export * from "./ibc-transfer-view";
 export * from "./token-found-modal";
-export * from "./stake-with-keplr-dashboard-button";
+export * from "./stake-with-titan-dashboard-button";
 export * from "./looking-for-chains";
 export * from "./update-note-modal";

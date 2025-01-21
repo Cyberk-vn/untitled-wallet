@@ -1,11 +1,11 @@
 import {
   MessageRequester,
   Message,
-  KeplrError,
+  TitanError,
   JSONUint8Array,
   EthereumProviderRpcError,
-} from "@keplr-wallet/router";
-import { getKeplrExtensionRouterId } from "../utils";
+} from "@titan-wallet/router";
+import { getTitanExtensionRouterId } from "../utils";
 
 export class InExtensionMessageRequester implements MessageRequester {
   async sendMessage<M extends Message<unknown>>(
@@ -20,7 +20,7 @@ export class InExtensionMessageRequester implements MessageRequester {
     msg["origin"] = globalThis.location.origin;
     msg.routerMeta = {
       ...msg.routerMeta,
-      routerId: getKeplrExtensionRouterId(),
+      routerId: getTitanExtensionRouterId(),
     };
 
     const result = JSONUint8Array.unwrap(
@@ -40,7 +40,7 @@ export class InExtensionMessageRequester implements MessageRequester {
         throw new Error(result.error);
       } else {
         if (typeof result.error.module === "string") {
-          throw new KeplrError(
+          throw new TitanError(
             result.error.module,
             result.error.code,
             result.error.message
@@ -71,7 +71,7 @@ export class InExtensionMessageRequester implements MessageRequester {
     msg["origin"] = globalThis.location.origin;
     msg.routerMeta = {
       ...msg.routerMeta,
-      routerId: getKeplrExtensionRouterId(),
+      routerId: getTitanExtensionRouterId(),
     };
 
     const result = JSONUint8Array.unwrap(
@@ -91,7 +91,7 @@ export class InExtensionMessageRequester implements MessageRequester {
         throw new Error(result.error);
       } else {
         if (typeof result.error.module === "string") {
-          throw new KeplrError(
+          throw new TitanError(
             result.error.module,
             result.error.code,
             result.error.message

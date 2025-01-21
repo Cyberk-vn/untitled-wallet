@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   GetPubkeyMsg,
   GetTxEncryptionKeyMsg,
@@ -41,7 +41,7 @@ export const getHandler: (
           permissionInteractionService
         )(env, msg as GetTxEncryptionKeyMsg);
       default:
-        throw new KeplrError("secret-wasm", 120, "Unknown msg type");
+        throw new TitanError("secret-wasm", 120, "Unknown msg type");
     }
   };
 };

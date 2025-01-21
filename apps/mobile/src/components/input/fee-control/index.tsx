@@ -5,12 +5,12 @@ import {
   IGasSimulator,
   InsufficientFeeError,
   ISenderConfig,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {observer} from 'mobx-react-lite';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {useStore} from '../../../stores';
 import {autorun} from 'mobx';
-import {CoinPretty, Dec, PricePretty} from '@keplr-wallet/unit';
+import {CoinPretty, Dec, PricePretty} from '@titan-wallet/unit';
 import {Columns} from '../../column';
 import {Box} from '../../box';
 import {Text} from 'react-native';
@@ -21,7 +21,7 @@ import {AdjustmentsHorizontalIcon} from '../../icon/adjustments-horizontal';
 import {TransactionFeeModal} from './transaction-fee-modal';
 import {GuideBox} from '../../guide-box';
 import {UIConfigStore} from '../../../stores/ui-config';
-import {IChainStore, IQueriesStore} from '@keplr-wallet/stores';
+import {IChainStore, IQueriesStore} from '@titan-wallet/stores';
 import {SVGLoadingIcon} from '../../spinner';
 import {InformationModal} from '../../modal/infoModal';
 import {InformationOutlinedIcon} from '../../icon/information-outlined';

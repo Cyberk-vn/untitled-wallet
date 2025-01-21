@@ -1,13 +1,13 @@
 import { InteractionStore } from "./interaction";
-import { ChainInfo } from "@keplr-wallet/types";
+import { ChainInfo } from "@titan-wallet/types";
 import {
   ChainInfoWithSuggestedOptions,
   SuggestChainInfoMsg,
-} from "@keplr-wallet/background";
+} from "@titan-wallet/background";
 import { flow, makeObservable, observable } from "mobx";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
-import { toGenerator } from "@keplr-wallet/common";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
+import { toGenerator } from "@titan-wallet/common";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 
 export class ChainSuggestStore {
   @observable.shallow

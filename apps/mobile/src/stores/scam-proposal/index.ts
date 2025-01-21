@@ -1,5 +1,5 @@
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
-import {ObservableQuery, QuerySharedContext} from '@keplr-wallet/stores';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
+import {ObservableQuery, QuerySharedContext} from '@titan-wallet/stores';
 import {SCAMPORPOSAL_API_URL} from '../../config';
 
 type ScamProposal = Record<string, string[] | undefined>;

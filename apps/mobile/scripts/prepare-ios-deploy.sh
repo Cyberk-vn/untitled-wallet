@@ -14,7 +14,7 @@ fi
 if [ -z ${2+x} ]; then
   echo "codepush api unset"
 else
-  cd $DIR/../ios/keplrmobile
+  cd $DIR/../ios/titanmobile
   sed -i'.bak' "s/y_oh1EPXmQ7mMKNB13bAw3cxE9cvw2wY6YlUG/${2}/g" Info.plist
   rm Info.plist.bak
 fi
@@ -22,7 +22,7 @@ fi
 if [ -z ${3+x} ]; then
   echo "bugsnag api unset"
 else
-  cd $DIR/../ios/keplrmobile
+  cd $DIR/../ios/titanmobile
   sed -i'.bak' "s/fba0f81f121c1a15f7195bb269428911/${3}/g" Info.plist
   rm Info.plist.bak
 fi

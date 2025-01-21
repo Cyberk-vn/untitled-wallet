@@ -9,7 +9,7 @@ import {
   FeeCurrency,
   Secret20Currency,
   WithGasPriceStep,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 import { SupportedChainFeatures } from "./feature";
 
 import Joi, { ObjectSchema } from "joi";

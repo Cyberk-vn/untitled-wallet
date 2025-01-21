@@ -12,12 +12,12 @@ import {StackNavProp, StakeNavigation} from '../../../navigation';
 import {UnbondingCard} from './unbonding-card';
 import {DelegatedCard} from './delegated-card';
 import {useStore} from '../../../stores';
-import {Staking} from '@keplr-wallet/stores';
+import {Staking} from '@titan-wallet/stores';
 import {Box} from '../../../components/box';
 import {Column, Columns} from '../../../components/column';
 import {ValidatorImage} from '../components/validator-image';
 import {StyleSheet, Text} from 'react-native';
-import {CoinPretty, Dec, RatePretty} from '@keplr-wallet/unit';
+import {CoinPretty, Dec, RatePretty} from '@titan-wallet/unit';
 import {Button} from '../../../components/button';
 import {FormattedMessage, useIntl} from 'react-intl';
 

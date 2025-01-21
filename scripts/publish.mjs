@@ -56,13 +56,13 @@ const lerna = JSON.parse(lernaFile);
       if (semantic) {
         const isPrelease = semantic.prerelease.length > 0;
 
-        await $`cd apps/extension/build/manifest-v2 && zip -r keplr-extension-manifest-v2-${foundedVersion}.zip .`;
-        await $`cd apps/extension/build/manifest-v3 && zip -r keplr-extension-manifest-v3-${foundedVersion}.zip .`;
-        await $`cd apps/extension/build/firefox && zip -r keplr-extension-${foundedVersion}.firefox.zip .`;
+        await $`cd apps/extension/build/manifest-v2 && zip -r titan-extension-manifest-v2-${foundedVersion}.zip .`;
+        await $`cd apps/extension/build/manifest-v3 && zip -r titan-extension-manifest-v3-${foundedVersion}.zip .`;
+        await $`cd apps/extension/build/firefox && zip -r titan-extension-${foundedVersion}.firefox.zip .`;
         if (isPrelease) {
-          await $`gh release create ${foundedVersion} apps/extension/build/manifest-v2/keplr-extension-manifest-v2-${foundedVersion}.zip apps/extension/build/manifest-v3/keplr-extension-manifest-v3-${foundedVersion}.zip apps/extension/build/firefox/keplr-extension-${foundedVersion}.firefox.zip -t ${foundedVersion} --prerelease`;
+          await $`gh release create ${foundedVersion} apps/extension/build/manifest-v2/titan-extension-manifest-v2-${foundedVersion}.zip apps/extension/build/manifest-v3/titan-extension-manifest-v3-${foundedVersion}.zip apps/extension/build/firefox/titan-extension-${foundedVersion}.firefox.zip -t ${foundedVersion} --prerelease`;
         } else {
-          await $`gh release create ${foundedVersion} apps/extension/build/manifest-v2/keplr-extension-manifest-v2-${foundedVersion}.zip apps/extension/build/manifest-v3/keplr-extension-manifest-v3-${foundedVersion}.zip apps/extension/build/firefox/keplr-extension-${foundedVersion}.firefox.zip -t ${foundedVersion}`;
+          await $`gh release create ${foundedVersion} apps/extension/build/manifest-v2/titan-extension-manifest-v2-${foundedVersion}.zip apps/extension/build/manifest-v3/titan-extension-manifest-v3-${foundedVersion}.zip apps/extension/build/firefox/titan-extension-${foundedVersion}.firefox.zip -t ${foundedVersion}`;
         }
 
         console.log("Release created");

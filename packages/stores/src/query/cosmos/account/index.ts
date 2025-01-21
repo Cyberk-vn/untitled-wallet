@@ -5,7 +5,7 @@ import {
 import { ChainGetter } from "../../../chain";
 import { AuthAccount } from "./types";
 import { computed, makeObservable } from "mobx";
-import { BaseAccount } from "@keplr-wallet/cosmos";
+import { BaseAccount } from "@titan-wallet/cosmos";
 import { QuerySharedContext } from "../../../common";
 
 export class ObservableQueryAccountInner extends ObservableChainQuery<AuthAccount> {

@@ -1,11 +1,11 @@
 import assert from "assert";
 
 import { ExtensionEnv } from "./extension";
-import { MessageSender } from "@keplr-wallet/router";
+import { MessageSender } from "@titan-wallet/router";
 
 describe("Test extension env producer", () => {
   const extensionId = "id";
-  const extensionUrl = "https://wallet.keplr.app";
+  const extensionUrl = "https://wallet.titan.app";
   const validSender: MessageSender = {
     id: extensionId,
     url: extensionUrl,
@@ -60,7 +60,7 @@ describe("Test extension env producer", () => {
 
   it("should throw an error if the sender is invalid", () => {
     assert.throws(() => {
-      ExtensionEnv.checkIsInternalMessage({}, "id", "https://wallet.keplr.app");
+      ExtensionEnv.checkIsInternalMessage({}, "id", "https://wallet.titan.app");
     });
 
     assert.throws(() => {
@@ -70,7 +70,7 @@ describe("Test extension env producer", () => {
           url: "invalid://test.com",
         },
         "id",
-        "https://wallet.keplr.app"
+        "https://wallet.titan.app"
       );
     });
   });

@@ -1,5 +1,5 @@
 import { action, computed, makeObservable, observable } from "mobx";
-import { ChainGetter, IChainInfoImpl } from "@keplr-wallet/stores";
+import { ChainGetter, IChainInfoImpl } from "@titan-wallet/stores";
 import { ITxChainSetter } from "./types";
 
 export class TxChainSetter implements ITxChainSetter {

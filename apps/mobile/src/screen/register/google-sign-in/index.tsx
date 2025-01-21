@@ -8,7 +8,7 @@ import {ScrollViewRegisterContainer} from '../components/scroll-view-register-co
 import {NamePasswordInput} from '../components/name-password-input';
 import {Box} from '../../../components/box';
 import {SVGLoadingIcon} from '../../../components/spinner';
-import {getGoogleSignInPrivateKey} from 'keplr-wallet-mobile-private';
+import {getGoogleSignInPrivateKey} from 'titan-wallet-mobile-private';
 import {Buffer} from 'buffer/';
 import {Platform} from 'react-native';
 import {observer} from 'mobx-react-lite';

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { observer } from "mobx-react-lite";
-import { InteractionWaitingData } from "@keplr-wallet/background";
-import { ChainInfo } from "@keplr-wallet/types";
+import { InteractionWaitingData } from "@titan-wallet/background";
+import { ChainInfo } from "@titan-wallet/types";
 import { useIntl } from "react-intl";
 import styled, { useTheme } from "styled-components";
 import { Box } from "../../../../components/box";

@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { SidePanelService } from "./service";
 import {
   GetSidePanelIsSupportedMsg,
@@ -33,7 +33,7 @@ export const getHandler: (service: SidePanelService) => Handler = (
           msg as SetSidePanelEnabledMsg
         );
       default:
-        throw new KeplrError("sidePanll", 221, "Unknown msg type");
+        throw new TitanError("sidePanll", 221, "Unknown msg type");
     }
   };
 };

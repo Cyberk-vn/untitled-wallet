@@ -17,9 +17,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { PermissionService } from "./service";
 
 export const getHandler: (service: PermissionService) => Handler = (
@@ -93,7 +93,7 @@ export const getHandler: (service: PermissionService) => Handler = (
           msg as UpdateCurrentChainIdForStarknetMsg
         );
       default:
-        throw new KeplrError("permission", 120, "Unknown msg type");
+        throw new TitanError("permission", 120, "Unknown msg type");
     }
   };
 };

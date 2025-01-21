@@ -2,11 +2,11 @@ import {
   ObservableQuery,
   QueriesSetBase,
   QuerySharedContext,
-} from '@keplr-wallet/stores';
+} from '@titan-wallet/stores';
 import {DeepReadonly} from 'utility-types';
 import {AprItem, AprItemInner} from './types';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
-import {Dec, IntPretty} from '@keplr-wallet/unit';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
+import {Dec, IntPretty} from '@titan-wallet/unit';
 import {computed} from 'mobx';
 
 export interface AprQueries {

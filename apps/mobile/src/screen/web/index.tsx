@@ -29,7 +29,7 @@ export const WebScreen: FunctionComponent = observer(() => {
   const navigation = useNavigation<StackNavProp>();
   const intl = useIntl();
 
-  const dAppPageUrl = 'https://explore.keplr.app';
+  const dAppPageUrl = 'https://explore.titan.app';
   const safeAreaInsets = useSafeAreaInsets();
 
   const [isOpenMenuModal, setIsOpenMenuModal] = useState(false);

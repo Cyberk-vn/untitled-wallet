@@ -3,7 +3,7 @@ import {
   ObservableChainQuery,
   ObservableChainQueryMap,
   QuerySharedContext,
-} from '@keplr-wallet/stores';
+} from '@titan-wallet/stores';
 import {ProposalVoter} from './types';
 
 export class ObservableQueryProposalVoteInner extends ObservableChainQuery<ProposalVoter> {

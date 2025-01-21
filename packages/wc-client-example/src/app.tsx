@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { observer } from "mobx-react-lite";
 import { useStore } from "./stores";
-import { EthSignType } from "@keplr-wallet/types";
+import { EthSignType } from "@titan-wallet/types";
 
 const IBCChannel = "channel-141";
 const CounterpartyIBCChannel = "channel-0";
@@ -32,7 +32,7 @@ export const App: FunctionComponent = observer(() => {
       })}
       <button
         onClick={() => {
-          (window as any).keplr.enable(["cosmoshub-4", "osmosis-1"]);
+          (window as any).titan.enable(["cosmoshub-4", "osmosis-1"]);
 
           const chainInfo = chainStore.chainInfos[0];
           const account = accountStore.getAccount(chainInfo.chainId);
@@ -85,8 +85,8 @@ export const App: FunctionComponent = observer(() => {
           const data =
             "NDk2NDAxNmVkMWM4MDI1NjAxZWUzMDA5NjU2MGI3YzI4NTRmMGFjNjdiODA4ZjNm";
 
-          account.getKeplr().then((keplr) => {
-            keplr?.signArbitrary(
+          account.getTitan().then((titan) => {
+            titan?.signArbitrary(
               chainInfo.chainId,
               account.bech32Address,
               data
@@ -113,8 +113,8 @@ export const App: FunctionComponent = observer(() => {
             data: "0xa9059cbb0000000000000000000000007f7ec812297f74c80fc8bcaf11ac881dc88eb216000000000000000000000000000000000000000000000000002386f26fc10000",
           };
 
-          account.getKeplr().then((keplr) => {
-            keplr
+          account.getTitan().then((titan) => {
+            titan
               ?.signEthereum(
                 evmosChainInfo.chainId,
                 account.ethereumHexAddress,
@@ -134,15 +134,15 @@ export const App: FunctionComponent = observer(() => {
         onClick={() => {
           accountStore
             .getAccount(chainStore.chainInfos[0].chainId)
-            .getKeplr()
-            .then((keplr) => {
-              keplr?.experimentalSuggestChain({
+            .getTitan()
+            .then((titan) => {
+              titan?.experimentalSuggestChain({
                 rpc: "https://rpc.testnet.osmosis.zone",
                 rest: "https://lcd.testnet.osmosis.zone",
                 chainId: "osmo-test-5",
                 chainName: "Osmosis Testnet",
                 chainSymbolImageUrl:
-                  "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
+                  "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/osmosis/chain.png",
                 bip44: {
                   coinType: 118,
                 },
@@ -159,7 +159,7 @@ export const App: FunctionComponent = observer(() => {
                   coinMinimalDenom: "uosmo",
                   coinDecimals: 6,
                   coinImageUrl:
-                    "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+                    "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/osmosis/uosmo.png",
                 },
                 currencies: [
                   {
@@ -167,14 +167,14 @@ export const App: FunctionComponent = observer(() => {
                     coinMinimalDenom: "uosmo",
                     coinDecimals: 6,
                     coinImageUrl:
-                      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+                      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/osmosis/uosmo.png",
                   },
                   {
                     coinDenom: "ION",
                     coinMinimalDenom: "uion",
                     coinDecimals: 6,
                     coinImageUrl:
-                      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uion.png",
+                      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/osmosis/uion.png",
                   },
                 ],
                 feeCurrencies: [
@@ -183,7 +183,7 @@ export const App: FunctionComponent = observer(() => {
                     coinMinimalDenom: "uosmo",
                     coinDecimals: 6,
                     coinImageUrl:
-                      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+                      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/osmosis/uosmo.png",
                     gasPriceStep: {
                       low: 0.0025,
                       average: 0.025,
@@ -203,9 +203,9 @@ export const App: FunctionComponent = observer(() => {
         onClick={() => {
           accountStore
             .getAccount(chainStore.chainInfos[0].chainId)
-            .getKeplr()
-            .then((keplr) => {
-              keplr?.suggestToken(
+            .getTitan()
+            .then((titan) => {
+              titan?.suggestToken(
                 "juno-1",
                 "juno10vgf2u03ufcf25tspgn05l7j3tfg0j63ljgpffy98t697m5r5hmqaw95ux"
               );

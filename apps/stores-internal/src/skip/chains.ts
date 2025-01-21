@@ -2,14 +2,14 @@ import {
   IChainInfoImpl,
   ObservableQuery,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { ChainsResponse } from "./types";
 import { computed, makeObservable } from "mobx";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { computedFn } from "mobx-utils";
 import Joi from "joi";
 import { InternalChainStore } from "../internal";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 
 const Schema = Joi.object<ChainsResponse>({
   chains: Joi.array().items(

@@ -18,24 +18,24 @@ import {WarningGuideBox} from './components/warning-guide-box';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {RootStackParamList, StackNavProp} from '../../navigation.tsx';
 import {SlippageModal} from './components/slippage-modal';
-import {useIBCSwapConfig} from '@keplr-wallet/hooks-internal';
+import {useIBCSwapConfig} from '@titan-wallet/hooks-internal';
 import {useStore} from '../../stores';
 import {SwapFeeBps, TermsOfUseUrl} from '../../config.ui.ts';
-import {useGasSimulator, useTxConfigsValidate} from '@keplr-wallet/hooks';
+import {useGasSimulator, useTxConfigsValidate} from '@titan-wallet/hooks';
 import {AsyncKVStore} from '../../common';
 import {autorun} from 'mobx';
 import {useEffectOnce} from '../../hooks';
 import {useTxConfigsQueryString} from '../../hooks/use-tx-config-query-string.ts';
-import {Dec, DecUtils, Int} from '@keplr-wallet/unit';
-import {MakeTxResponse, WalletStatus} from '@keplr-wallet/stores';
-import {BACKGROUND_PORT, Message} from '@keplr-wallet/router';
+import {Dec, DecUtils, Int} from '@titan-wallet/unit';
+import {MakeTxResponse, WalletStatus} from '@titan-wallet/stores';
+import {BACKGROUND_PORT, Message} from '@titan-wallet/router';
 import {
   LogAnalyticsEventMsg,
   SendTxAndRecordMsg,
   SendTxAndRecordWithIBCSwapMsg,
-} from '@keplr-wallet/background';
+} from '@titan-wallet/background';
 import {RNMessageRequesterInternal} from '../../router';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
 import {amountToAmbiguousAverage, amountToAmbiguousString} from '../../utils';
 import {useNotification} from '../../hooks/notification';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
@@ -116,7 +116,7 @@ export const IBCSwapScreen: FunctionComponent = observer(() => {
       [key: string]: number | undefined;
     };
     swapFeeBps?: 50;
-  }>(process.env['KEPLR_EXT_CONFIG_SERVER'] || '', '/swap-fee/info.json');
+  }>(process.env['TITAN_EXT_CONFIG_SERVER'] || '', '/swap-fee/info.json');
   useEffect(() => {
     const defaultSwapFeeBps = SwapFeeBps.value;
     if (querySwapFeeBps.response) {

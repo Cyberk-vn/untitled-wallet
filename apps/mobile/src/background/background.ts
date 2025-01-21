@@ -1,5 +1,5 @@
-import {BACKGROUND_PORT} from '@keplr-wallet/router';
-import {init} from '@keplr-wallet/background';
+import {BACKGROUND_PORT} from '@titan-wallet/router';
+import {init} from '@titan-wallet/background';
 import scrypt from 'scrypt-js';
 import {Buffer} from 'buffer/';
 import {
@@ -40,7 +40,7 @@ const {initFn} = init(
   () => {
     // TODO
   },
-  'https://blocklist.keplr.app',
+  'https://blocklist.titan.app',
   {
     commonCrypto: {
       scrypt: async (
@@ -80,9 +80,9 @@ const {initFn} = init(
           chainId: 'gitopia',
           chainName: 'Gitopia',
           chainSymbolImageUrl:
-            'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gitopia/chain.png',
-          rpc: 'https://rpc-gitopia.keplr.app',
-          rest: 'https://lcd-gitopia.keplr.app',
+            'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gitopia/chain.png',
+          rpc: 'https://rpc-gitopia.titan.app',
+          rest: 'https://lcd-gitopia.titan.app',
           bip44: {
             coinType: 118,
           },
@@ -107,7 +107,7 @@ const {initFn} = init(
               coinGeckoId: 'gitopia',
               coinDecimals: 6,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gitopia/chain.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gitopia/chain.png',
             },
           ],
           feeCurrencies: [
@@ -129,22 +129,22 @@ const {initFn} = init(
 
       if (lastEmbedChainInfos.find(c => c.chainId === 'shentu-2.2')) {
         await chainsService.addSuggestedChainInfo({
-          rpc: 'https://rpc-certik.keplr.app',
-          rest: 'https://lcd-certik.keplr.app',
+          rpc: 'https://rpc-certik.titan.app',
+          rest: 'https://lcd-certik.titan.app',
           chainId: 'shentu-2.2',
           chainName: 'Shentu',
           chainSymbolImageUrl:
-            'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/shentu-2.2/chain.png',
+            'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/shentu-2.2/chain.png',
           stakeCurrency: {
             coinDenom: 'CTK',
             coinMinimalDenom: 'uctk',
             coinDecimals: 6,
             coinGeckoId: 'certik',
             coinImageUrl:
-              'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/shentu-2.2/uctk.png',
+              'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/shentu-2.2/uctk.png',
           },
-          walletUrl: 'https://wallet.keplr.app/chains/shentu',
-          walletUrlForStaking: 'https://wallet.keplr.app/chains/shentu',
+          walletUrl: 'https://wallet.titan.app/chains/shentu',
+          walletUrlForStaking: 'https://wallet.titan.app/chains/shentu',
           bip44: {
             coinType: 118,
           },
@@ -163,7 +163,7 @@ const {initFn} = init(
               coinDecimals: 6,
               coinGeckoId: 'certik',
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/shentu-2.2/uctk.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/shentu-2.2/uctk.png',
             },
           ],
           feeCurrencies: [
@@ -173,7 +173,7 @@ const {initFn} = init(
               coinDecimals: 6,
               coinGeckoId: 'certik',
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/shentu-2.2/uctk.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/shentu-2.2/uctk.png',
             },
           ],
           features: [],
@@ -182,22 +182,22 @@ const {initFn} = init(
 
       if (lastEmbedChainInfos.find(c => c.chainId === 'sifchain-1')) {
         await chainsService.addSuggestedChainInfo({
-          rpc: 'https://rpc-sifchain.keplr.app',
-          rest: 'https://lcd-sifchain.keplr.app',
+          rpc: 'https://rpc-sifchain.titan.app',
+          rest: 'https://lcd-sifchain.titan.app',
           chainId: 'sifchain-1',
           chainName: 'Sifchain',
           chainSymbolImageUrl:
-            'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/sifchain/chain.png',
+            'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/sifchain/chain.png',
           stakeCurrency: {
             coinDenom: 'ROWAN',
             coinMinimalDenom: 'rowan',
             coinDecimals: 18,
             coinGeckoId: 'sifchain',
             coinImageUrl:
-              'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/sifchain/rowan.png',
+              'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/sifchain/rowan.png',
           },
-          walletUrl: 'https://wallet.keplr.app/chains/sifchain',
-          walletUrlForStaking: 'https://wallet.keplr.app/chains/sifchain',
+          walletUrl: 'https://wallet.titan.app/chains/sifchain',
+          walletUrlForStaking: 'https://wallet.titan.app/chains/sifchain',
           bip44: {
             coinType: 118,
           },
@@ -216,7 +216,7 @@ const {initFn} = init(
               coinDecimals: 18,
               coinGeckoId: 'sifchain',
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/sifchain/rowan.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/sifchain/rowan.png',
             },
             {
               coinDenom: 'Tether USDT',
@@ -646,7 +646,7 @@ const {initFn} = init(
               coinDecimals: 18,
               coinGeckoId: 'sifchain',
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/sifchain/rowan.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/sifchain/rowan.png',
               gasPriceStep: {
                 low: 1000000000000,
                 average: 1500000000000,
@@ -660,22 +660,22 @@ const {initFn} = init(
 
       if (lastEmbedChainInfos.find(c => c.chainId === 'gravity-bridge-3')) {
         await chainsService.addSuggestedChainInfo({
-          rpc: 'https://rpc-gravity-bridge.keplr.app',
-          rest: 'https://lcd-gravity-bridge.keplr.app',
+          rpc: 'https://rpc-gravity-bridge.titan.app',
+          rest: 'https://lcd-gravity-bridge.titan.app',
           chainId: 'gravity-bridge-3',
           chainName: 'Gravity Bridge',
           chainSymbolImageUrl:
-            'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/chain.png',
+            'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/chain.png',
           stakeCurrency: {
             coinDenom: 'GRAV',
             coinMinimalDenom: 'ugraviton',
             coinDecimals: 6,
             coinGeckoId: 'graviton',
             coinImageUrl:
-              'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/ugraviton.png',
+              'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/ugraviton.png',
           },
-          walletUrl: 'https://wallet.keplr.app/chains/gravity-bridge',
-          walletUrlForStaking: 'https://wallet.keplr.app/chains/gravity-bridge',
+          walletUrl: 'https://wallet.titan.app/chains/gravity-bridge',
+          walletUrlForStaking: 'https://wallet.titan.app/chains/gravity-bridge',
           bip44: {
             coinType: 118,
           },
@@ -694,7 +694,7 @@ const {initFn} = init(
               coinDecimals: 6,
               coinGeckoId: 'graviton',
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/ugraviton.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/ugraviton.png',
             },
             {
               coinDenom: 'PSTAKE',
@@ -703,7 +703,7 @@ const {initFn} = init(
               coinDecimals: 18,
               coinGeckoId: 'pstake-finance',
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xfB5c6815cA3AC72Ce9F5006869AE67f18bF77006.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xfB5c6815cA3AC72Ce9F5006869AE67f18bF77006.png',
             },
             {
               coinDenom: 'USDC',
@@ -712,7 +712,7 @@ const {initFn} = init(
               coinDecimals: 6,
               coinGeckoId: 'usd-coin',
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48.png',
             },
             {
               coinDenom: 'USDT',
@@ -720,7 +720,7 @@ const {initFn} = init(
                 'gravity0xdAC17F958D2ee523a2206206994597C13D831ec7',
               coinDecimals: 6,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xdAC17F958D2ee523a2206206994597C13D831ec7.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xdAC17F958D2ee523a2206206994597C13D831ec7.png',
             },
             {
               coinDenom: 'GTON',
@@ -746,7 +746,7 @@ const {initFn} = init(
                 'gravity0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984.png',
             },
             {
               coinDenom: 'WBTC',
@@ -754,7 +754,7 @@ const {initFn} = init(
                 'gravity0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
               coinDecimals: 8,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599.png',
             },
             {
               coinDenom: 'WSCRT',
@@ -786,7 +786,7 @@ const {initFn} = init(
                 'gravity0x45804880De22913dAFE09f4980848ECE6EcbAf78',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x45804880De22913dAFE09f4980848ECE6EcbAf78.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x45804880De22913dAFE09f4980848ECE6EcbAf78.png',
             },
             {
               coinDenom: 'AXL',
@@ -818,7 +818,7 @@ const {initFn} = init(
                 'gravity0x6B175474E89094C44Da98b954EedeAC495271d0F',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x6B175474E89094C44Da98b954EedeAC495271d0F.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x6B175474E89094C44Da98b954EedeAC495271d0F.png',
             },
             {
               coinDenom: 'MATIC',
@@ -826,7 +826,7 @@ const {initFn} = init(
                 'gravity0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0.png',
             },
             {
               coinDenom: 'CUDOS',
@@ -840,7 +840,7 @@ const {initFn} = init(
                 'gravity0x853d955aCEf822Db058eb8505911ED77F175b99e',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x853d955aCEf822Db058eb8505911ED77F175b99e.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x853d955aCEf822Db058eb8505911ED77F175b99e.png',
             },
             {
               coinDenom: 'xFUND',
@@ -866,7 +866,7 @@ const {initFn} = init(
                 'gravity0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE.png',
             },
             {
               coinDenom: 'CRO',
@@ -874,7 +874,7 @@ const {initFn} = init(
                 'gravity0xA0b73E1Ff0B80914AB6fe0444E65848C4C34450b',
               coinDecimals: 8,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xA0b73E1Ff0B80914AB6fe0444E65848C4C34450b.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xA0b73E1Ff0B80914AB6fe0444E65848C4C34450b.png',
             },
             {
               coinDenom: 'STORJ',
@@ -882,7 +882,7 @@ const {initFn} = init(
                 'gravity0xB64ef51C888972c908CFacf59B47C1AfBC0Ab8aC',
               coinDecimals: 8,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xB64ef51C888972c908CFacf59B47C1AfBC0Ab8aC.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xB64ef51C888972c908CFacf59B47C1AfBC0Ab8aC.png',
             },
             {
               coinDenom: 'BAND',
@@ -920,7 +920,7 @@ const {initFn} = init(
                 'gravity0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84.png',
             },
             {
               coinDenom: 'FET',
@@ -942,7 +942,7 @@ const {initFn} = init(
               coinDecimals: 6,
               coinGeckoId: 'graviton',
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/ugraviton.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/ugraviton.png',
             },
             {
               coinDenom: 'USDC',
@@ -950,7 +950,7 @@ const {initFn} = init(
                 'gravity0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
               coinDecimals: 6,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48.png',
               gasPriceStep: {
                 low: 0.0002,
                 average: 0.0005,
@@ -968,7 +968,7 @@ const {initFn} = init(
                 high: 0.0008,
               },
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xdAC17F958D2ee523a2206206994597C13D831ec7.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xdAC17F958D2ee523a2206206994597C13D831ec7.png',
             },
             {
               coinDenom: 'FUND',
@@ -1042,7 +1042,7 @@ const {initFn} = init(
                 'gravity0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984.png',
             },
             {
               coinDenom: 'WBTC',
@@ -1050,7 +1050,7 @@ const {initFn} = init(
                 'gravity0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
               coinDecimals: 8,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599.png',
             },
             {
               coinDenom: 'WSCRT',
@@ -1082,7 +1082,7 @@ const {initFn} = init(
                 'gravity0x45804880De22913dAFE09f4980848ECE6EcbAf78',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x45804880De22913dAFE09f4980848ECE6EcbAf78.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x45804880De22913dAFE09f4980848ECE6EcbAf78.png',
             },
             {
               coinDenom: 'AXL',
@@ -1114,7 +1114,7 @@ const {initFn} = init(
                 'gravity0x6B175474E89094C44Da98b954EedeAC495271d0F',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x6B175474E89094C44Da98b954EedeAC495271d0F.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x6B175474E89094C44Da98b954EedeAC495271d0F.png',
             },
             {
               coinDenom: 'MATIC',
@@ -1122,7 +1122,7 @@ const {initFn} = init(
                 'gravity0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0.png',
             },
             {
               coinDenom: 'CUDOS',
@@ -1136,7 +1136,7 @@ const {initFn} = init(
                 'gravity0x853d955aCEf822Db058eb8505911ED77F175b99e',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x853d955aCEf822Db058eb8505911ED77F175b99e.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x853d955aCEf822Db058eb8505911ED77F175b99e.png',
             },
             {
               coinDenom: 'xFUND',
@@ -1162,7 +1162,7 @@ const {initFn} = init(
                 'gravity0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE.png',
             },
             {
               coinDenom: 'CRO',
@@ -1170,7 +1170,7 @@ const {initFn} = init(
                 'gravity0xA0b73E1Ff0B80914AB6fe0444E65848C4C34450b',
               coinDecimals: 8,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xA0b73E1Ff0B80914AB6fe0444E65848C4C34450b.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xA0b73E1Ff0B80914AB6fe0444E65848C4C34450b.png',
             },
             {
               coinDenom: 'STORJ',
@@ -1178,7 +1178,7 @@ const {initFn} = init(
                 'gravity0xB64ef51C888972c908CFacf59B47C1AfBC0Ab8aC',
               coinDecimals: 8,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xB64ef51C888972c908CFacf59B47C1AfBC0Ab8aC.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xB64ef51C888972c908CFacf59B47C1AfBC0Ab8aC.png',
             },
             {
               coinDenom: 'BAND',
@@ -1216,7 +1216,7 @@ const {initFn} = init(
                 'gravity0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84',
               coinDecimals: 18,
               coinImageUrl:
-                'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/gravity-bridge/gravity0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84.png',
+                'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/gravity0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84.png',
             },
             {
               coinDenom: 'FET',

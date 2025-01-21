@@ -6,8 +6,8 @@ import { Subtitle4 } from "../../../../components/typography";
 import { GuideBox } from "../../../../components/guide-box";
 import styled, { useTheme } from "styled-components";
 import { observer } from "mobx-react-lite";
-import { ChainInfo } from "@keplr-wallet/types";
-import { InteractionWaitingData } from "@keplr-wallet/background";
+import { ChainInfo } from "@titan-wallet/types";
+import { InteractionWaitingData } from "@titan-wallet/background";
 import { FormattedMessage, useIntl } from "react-intl";
 
 const Styles = {

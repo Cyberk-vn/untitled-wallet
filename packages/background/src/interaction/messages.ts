@@ -1,4 +1,4 @@
-import { Message } from "@keplr-wallet/router";
+import { Message } from "@titan-wallet/router";
 import { ROUTE } from "./constants";
 import { InteractionWaitingData } from "./types";
 

@@ -1,9 +1,9 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { MsgHistory } from "../types";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import { MsgItemBase } from "./base";
 import { ItemLogo } from "./logo";
 import { MessageReceiveIcon } from "../../../../components/icon";

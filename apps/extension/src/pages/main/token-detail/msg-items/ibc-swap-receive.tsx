@@ -2,11 +2,11 @@ import React, { FunctionComponent, useMemo } from "react";
 import { MsgHistory } from "../types";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
-import { CoinPretty } from "@keplr-wallet/unit";
+import { CoinPretty } from "@titan-wallet/unit";
 import { MsgItemBase } from "./base";
 import { ItemLogo } from "./logo";
-import { ChainInfo } from "@keplr-wallet/types";
-import { isValidCoinStr, parseCoinStr } from "@keplr-wallet/common";
+import { ChainInfo } from "@titan-wallet/types";
+import { isValidCoinStr, parseCoinStr } from "@titan-wallet/common";
 import { Buffer } from "buffer/";
 import { MessageSwapIcon } from "../../../../components/icon";
 import { SwapVenues } from "../../../../config.ui";
@@ -215,7 +215,7 @@ export const MsgRelationIBCSwapReceive: FunctionComponent<{
         // 문제는 packet은 receive에 대한 정보만 주기 때문에 찾을수가 없다...;;
         // 따로 query를 사용해서 origin message를 찾는수밖에 없다;
         const queryOriginMsg = queriesStore.simpleQuery.queryGet(
-          process.env["KEPLR_EXT_TX_HISTORY_BASE_URL"],
+          process.env["TITAN_EXT_TX_HISTORY_BASE_URL"],
           `/block/msg/${msg.ibcTracking.chainIdentifier}/${Buffer.from(
             msg.ibcTracking.txHash,
             "base64"

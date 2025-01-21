@@ -1,4 +1,4 @@
-import { DenomHelper } from "@keplr-wallet/common";
+import { DenomHelper } from "@titan-wallet/common";
 import {
   QueryError,
   QueryResponse,
@@ -7,12 +7,12 @@ import {
 } from "../../../common";
 import { ChainGetter } from "../../../chain";
 import { computed, makeObservable } from "mobx";
-import { CoinPretty, Int } from "@keplr-wallet/unit";
+import { CoinPretty, Int } from "@titan-wallet/unit";
 import { BalanceRegistry, IObservableQueryBalanceImpl } from "../../balances";
 import { ObservableChainQuery } from "../../chain-query";
 import { Balances } from "./types";
-import { AppCurrency } from "@keplr-wallet/types";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { AppCurrency } from "@titan-wallet/types";
+import { Bech32Address } from "@titan-wallet/cosmos";
 
 export class ObservableQueryCosmosBalancesImplParent extends ObservableChainQuery<Balances> {
   // XXX: See comments below.

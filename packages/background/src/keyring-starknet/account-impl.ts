@@ -12,7 +12,7 @@ import {
   InvocationsSignerDetails,
 } from "starknet";
 import { KeyRingStarknetService } from "./service";
-import { Env } from "@keplr-wallet/router";
+import { Env } from "@titan-wallet/router";
 
 export class AccountImpl extends Account {
   constructor(
@@ -34,7 +34,7 @@ export class AccountImpl extends Account {
   async executeWithSignUI(
     env: Env,
     origin: string,
-    keplrChainId: string,
+    titanChainId: string,
     service: KeyRingStarknetService,
     transactions: Call[]
   ): Promise<InvokeFunctionResponse> {
@@ -75,7 +75,7 @@ export class AccountImpl extends Account {
     } = await service.signStarknetTransactionSelected(
       env,
       origin,
-      keplrChainId,
+      titanChainId,
       transactions,
       signerDetails,
       false

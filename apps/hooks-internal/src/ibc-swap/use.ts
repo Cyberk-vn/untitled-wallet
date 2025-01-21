@@ -4,17 +4,17 @@ import {
   CosmwasmAccount,
   IAccountStoreWithInjects,
   IQueriesStore,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import {
   useFeeConfig,
   useGasConfig,
   useMemoConfig,
   useSenderConfig,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { useIBCSwapAmountConfig } from "./amount";
-import { SkipQueries } from "@keplr-wallet/stores-internal";
-import { AppCurrency } from "@keplr-wallet/types";
-import { EthereumAccountStore } from "@keplr-wallet/stores-eth";
+import { SkipQueries } from "@titan-wallet/stores-internal";
+import { AppCurrency } from "@titan-wallet/types";
+import { EthereumAccountStore } from "@titan-wallet/stores-eth";
 
 export const useIBCSwapConfig = (
   chainGetter: ChainGetter,

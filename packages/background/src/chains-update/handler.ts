@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { ChainsUpdateService } from "./service";
 import {
   TryUpdateAllChainInfosMsg,
@@ -27,7 +27,7 @@ export const getHandler: (service: ChainsUpdateService) => Handler = (
           msg as TryUpdateEnabledChainInfosMsg
         );
       default:
-        throw new KeplrError("chains-update", 110, "Unknown msg type");
+        throw new TitanError("chains-update", 110, "Unknown msg type");
     }
   };
 };

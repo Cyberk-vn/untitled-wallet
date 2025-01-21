@@ -1,10 +1,10 @@
 import {
-  Keplr,
+  Titan,
   Key,
   SettledResponse,
   SettledResponses,
-} from "@keplr-wallet/types";
-import { DebounceActionTimer } from "@keplr-wallet/mobx-utils";
+} from "@titan-wallet/types";
+import { DebounceActionTimer } from "@titan-wallet/mobx-utils";
 
 export class AccountSharedContext {
   protected suggestChainDebounceTimer = new DebounceActionTimer<
@@ -33,13 +33,13 @@ export class AccountSharedContext {
     [chainId: string],
     void
   >(0, async (requests) => {
-    const keplr = await this.getKeplr();
+    const titan = await this.getTitan();
 
-    if (!keplr) {
+    if (!titan) {
       return requests.map(() => {
         return {
           status: "rejected",
-          reason: new Error("Keplr is not installed"),
+          reason: new Error("Titan is not installed"),
         };
       });
     }
@@ -47,7 +47,7 @@ export class AccountSharedContext {
     const chainIdSet = new Set<string>(requests.map((req) => req.args[0]));
     const chainIds = Array.from(chainIdSet);
     try {
-      await keplr.enable(chainIds);
+      await titan.enable(chainIds);
 
       return requests.map(() => {
         return {
@@ -68,13 +68,13 @@ export class AccountSharedContext {
     [chainId: string],
     Key
   >(0, async (requests) => {
-    const keplr = await this.getKeplr();
+    const titan = await this.getTitan();
 
-    if (!keplr) {
+    if (!titan) {
       return requests.map(() => {
         return {
           status: "rejected",
-          reason: new Error("Keplr is not installed"),
+          reason: new Error("Titan is not installed"),
         };
       });
     }
@@ -82,7 +82,7 @@ export class AccountSharedContext {
     const chainIdSet = new Set<string>(requests.map((req) => req.args[0]));
     const chainIds = Array.from(chainIdSet);
 
-    const settled = await keplr.getKeysSettled(chainIds);
+    const settled = await titan.getKeysSettled(chainIds);
 
     const settledMap = new Map<string, SettledResponse<Key>>();
     for (let i = 0; i < chainIds.length; i++) {
@@ -104,13 +104,13 @@ export class AccountSharedContext {
         isNanoLedger: boolean;
       }
   >(0, async (requests) => {
-    const keplr = await this.getKeplr();
+    const titan = await this.getTitan();
 
-    if (!keplr) {
+    if (!titan) {
       return requests.map(() => {
         return {
           status: "rejected",
-          reason: new Error("Keplr is not installed"),
+          reason: new Error("Titan is not installed"),
         };
       });
     }
@@ -141,7 +141,7 @@ export class AccountSharedContext {
     >();
 
     if (cosmosChainIds.length > 0) {
-      const cosmosSettled = await keplr.getKeysSettled(cosmosChainIds);
+      const cosmosSettled = await titan.getKeysSettled(cosmosChainIds);
       for (let i = 0; i < cosmosChainIds.length; i++) {
         const chainId = cosmosChainIds[i];
         const res = cosmosSettled[i];
@@ -150,7 +150,7 @@ export class AccountSharedContext {
     }
 
     if (starknetChainIds.length > 0) {
-      const starknetSettled = await keplr.getStarknetKeysSettled(
+      const starknetSettled = await titan.getStarknetKeysSettled(
         starknetChainIds
       );
       for (let i = 0; i < starknetChainIds.length; i++) {
@@ -163,27 +163,27 @@ export class AccountSharedContext {
     return requests.map((req) => settledMap.get(req.args[0])!);
   });
 
-  protected promiseGetKeplr?: Promise<Keplr | undefined>;
+  protected promiseGetTitan?: Promise<Titan | undefined>;
 
-  constructor(protected readonly _getKeplr: () => Promise<Keplr | undefined>) {}
+  constructor(protected readonly _getTitan: () => Promise<Titan | undefined>) {}
 
-  async getKeplr(): Promise<Keplr | undefined> {
-    if (this.promiseGetKeplr) {
-      return this.promiseGetKeplr;
+  async getTitan(): Promise<Titan | undefined> {
+    if (this.promiseGetTitan) {
+      return this.promiseGetTitan;
     }
 
-    const promise = new Promise<Keplr | undefined>((resolve, reject) => {
-      this._getKeplr()
-        .then((keplr) => {
-          this.promiseGetKeplr = undefined;
-          resolve(keplr);
+    const promise = new Promise<Titan | undefined>((resolve, reject) => {
+      this._getTitan()
+        .then((titan) => {
+          this.promiseGetTitan = undefined;
+          resolve(titan);
         })
         .catch((e) => {
-          this.promiseGetKeplr = undefined;
+          this.promiseGetTitan = undefined;
           reject(e);
         });
     });
-    return (this.promiseGetKeplr = promise);
+    return (this.promiseGetTitan = promise);
   }
 
   suggestChain(fn: () => Promise<void>): Promise<void> {

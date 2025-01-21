@@ -1,17 +1,17 @@
-import { Env, KeplrError } from "@keplr-wallet/router";
+import { Env, TitanError } from "@titan-wallet/router";
 import {
   AppCurrency,
   ChainInfo,
   CW20Currency,
   Secret20Currency,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 import {
   CW20CurrencySchema,
   Secret20CurrencySchema,
-} from "@keplr-wallet/chain-validator";
-import { Bech32Address, ChainIdHelper } from "@keplr-wallet/cosmos";
+} from "@titan-wallet/chain-validator";
+import { Bech32Address, ChainIdHelper } from "@titan-wallet/cosmos";
 import { ChainsService } from "../chains";
-import { KVStore, PrefixKVStore } from "@keplr-wallet/common";
+import { KVStore, PrefixKVStore } from "@titan-wallet/common";
 import { InteractionService } from "../interaction";
 import {
   action,
@@ -351,7 +351,7 @@ export class TokenCW20Service {
       }
     }
 
-    throw new KeplrError("token-cw20", 111, "There is no matched secret20");
+    throw new TitanError("token-cw20", 111, "There is no matched secret20");
   }
 
   static async validateCurrency(
@@ -374,7 +374,7 @@ export class TokenCW20Service {
           );
           break;
         default:
-          throw new KeplrError("tokens", 110, "Unknown type of currency");
+          throw new TitanError("tokens", 110, "Unknown type of currency");
       }
     } else {
       throw new Error("Unknown type of currency");

@@ -4,40 +4,40 @@ import {
   AppCurrency,
   BroadcastMode,
   Coin,
-  Keplr,
-  KeplrSignOptions,
+  Titan,
+  TitanSignOptions,
   Msg,
   SignDoc,
   StdFee,
   StdSignDoc,
-} from "@keplr-wallet/types";
-import { DenomHelper, escapeHTML, sortObjectByKey } from "@keplr-wallet/common";
-import { Dec, DecUtils, Int } from "@keplr-wallet/unit";
-import { Any } from "@keplr-wallet/proto-types/google/protobuf/any";
+} from "@titan-wallet/types";
+import { DenomHelper, escapeHTML, sortObjectByKey } from "@titan-wallet/common";
+import { Dec, DecUtils, Int } from "@titan-wallet/unit";
+import { Any } from "@titan-wallet/proto-types/google/protobuf/any";
 import {
   AuthInfo,
   Fee,
   SignerInfo,
   TxBody,
   TxRaw,
-} from "@keplr-wallet/proto-types/cosmos/tx/v1beta1/tx";
-import { SignMode } from "@keplr-wallet/proto-types/cosmos/tx/signing/v1beta1/signing";
-import { PubKey } from "@keplr-wallet/proto-types/cosmos/crypto/secp256k1/keys";
-import { MsgSend } from "@keplr-wallet/proto-types/cosmos/bank/v1beta1/tx";
-import { MsgTransfer } from "@keplr-wallet/proto-types/ibc/applications/transfer/v1/tx";
+} from "@titan-wallet/proto-types/cosmos/tx/v1beta1/tx";
+import { SignMode } from "@titan-wallet/proto-types/cosmos/tx/signing/v1beta1/signing";
+import { PubKey } from "@titan-wallet/proto-types/cosmos/crypto/secp256k1/keys";
+import { MsgSend } from "@titan-wallet/proto-types/cosmos/bank/v1beta1/tx";
+import { MsgTransfer } from "@titan-wallet/proto-types/ibc/applications/transfer/v1/tx";
 import {
   MsgBeginRedelegate,
   MsgDelegate,
   MsgUndelegate,
-} from "@keplr-wallet/proto-types/cosmos/staking/v1beta1/tx";
-import { MsgWithdrawDelegatorReward } from "@keplr-wallet/proto-types/cosmos/distribution/v1beta1/tx";
+} from "@titan-wallet/proto-types/cosmos/staking/v1beta1/tx";
+import { MsgWithdrawDelegatorReward } from "@titan-wallet/proto-types/cosmos/distribution/v1beta1/tx";
 import {
   BaseAccount,
   Bech32Address,
   ChainIdHelper,
   EthermintChainIdHelper,
   TendermintTxTracer,
-} from "@keplr-wallet/cosmos";
+} from "@titan-wallet/cosmos";
 import { BondStatus } from "../query/cosmos/staking/types";
 import { CosmosQueries, IQueriesStore, QueriesSetBase } from "../query";
 import { DeepPartial, DeepReadonly, Mutable } from "utility-types";
@@ -45,7 +45,7 @@ import { ChainGetter } from "../chain";
 import deepmerge from "deepmerge";
 import { Buffer } from "buffer/";
 import {
-  KeplrSignOptionsWithAltSignMethods,
+  TitanSignOptionsWithAltSignMethods,
   MakeTxResponse,
   ProtoMsgsOrWithAminoMsgs,
 } from "./types";
@@ -53,14 +53,14 @@ import {
   getEip712TypedDataBasedOnChainId,
   txEventsWithPreOnFulfill,
 } from "./utils";
-import { ExtensionOptionsWeb3Tx } from "@keplr-wallet/proto-types/ethermint/types/v1/web3";
-import { MsgRevoke } from "@keplr-wallet/proto-types/cosmos/authz/v1beta1/tx";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { ExtensionOptionsWeb3Tx } from "@titan-wallet/proto-types/ethermint/types/v1/web3";
+import { MsgRevoke } from "@titan-wallet/proto-types/cosmos/authz/v1beta1/tx";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import Long from "long";
 import { IAccountStore } from "./store";
 import { autorun } from "mobx";
-import { MsgDepositForBurnWithCaller } from "@keplr-wallet/proto-types/circle/cctp/v1/tx";
-import { MsgSend as ThorMsgSend } from "@keplr-wallet/proto-types/thorchain/v1/types/msg_send";
+import { MsgDepositForBurnWithCaller } from "@titan-wallet/proto-types/circle/cctp/v1/tx";
+import { MsgSend as ThorMsgSend } from "@titan-wallet/proto-types/thorchain/v1/types/msg_send";
 
 export interface CosmosAccount {
   cosmos: CosmosAccountImpl;
@@ -284,7 +284,7 @@ export class CosmosAccountImpl {
       | (() => Promise<ProtoMsgsOrWithAminoMsgs> | ProtoMsgsOrWithAminoMsgs),
     memo: string = "",
     fee: StdFee,
-    signOptions?: KeplrSignOptionsWithAltSignMethods,
+    signOptions?: TitanSignOptionsWithAltSignMethods,
     onTxEvents?:
       | ((tx: any) => void)
       | {
@@ -395,7 +395,7 @@ export class CosmosAccountImpl {
     msgs: ProtoMsgsOrWithAminoMsgs,
     fee: StdFee,
     memo: string = "",
-    signOptions?: KeplrSignOptionsWithAltSignMethods
+    signOptions?: TitanSignOptionsWithAltSignMethods
   ): Promise<{
     txHash: Uint8Array;
     signDoc: StdSignDoc | SignDoc;
@@ -443,12 +443,12 @@ export class CosmosAccountImpl {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const keplr = (await this.base.getKeplr())!;
+    const titan = (await this.base.getTitan())!;
 
     const signedTx = await (async () => {
       if (isDirectSign) {
         return await this.createSignedTxWithDirectSign(
-          keplr,
+          titan,
           account,
           msgs.protoMsgs,
           fee,
@@ -471,7 +471,7 @@ export class CosmosAccountImpl {
         if (eip712Signing) {
           if (chainIsInjective) {
             // Due to injective's problem, it should exist if injective with ledger.
-            // There is currently no effective way to handle this in keplr. Just set a very large number.
+            // There is currently no effective way to handle this in titan. Just set a very large number.
             (signDocRaw as Mutable<StdSignDoc>).timeout_height =
               Number.MAX_SAFE_INTEGER.toString();
           } else {
@@ -488,14 +488,14 @@ export class CosmosAccountImpl {
         const signDoc = sortObjectByKey(signDocRaw);
 
         // Should use bind to avoid "this" problem
-        let signAmino = keplr.signAmino.bind(keplr);
+        let signAmino = titan.signAmino.bind(titan);
         if (signOptions?.signAmino) {
           signAmino = signOptions.signAmino;
         }
 
         // Should use bind to avoid "this" problem
         let experimentalSignEIP712CosmosTx_v0 =
-          keplr.experimentalSignEIP712CosmosTx_v0.bind(keplr);
+          titan.experimentalSignEIP712CosmosTx_v0.bind(titan);
         if (signOptions?.experimentalSignEIP712CosmosTx_v0) {
           experimentalSignEIP712CosmosTx_v0 =
             signOptions.experimentalSignEIP712CosmosTx_v0;
@@ -615,7 +615,7 @@ export class CosmosAccountImpl {
     })();
 
     // Should use bind to avoid "this" problem
-    let sendTx = keplr.sendTx.bind(keplr);
+    let sendTx = titan.sendTx.bind(titan);
     if (signOptions?.sendTx) {
       sendTx = signOptions.sendTx;
     }
@@ -627,12 +627,12 @@ export class CosmosAccountImpl {
   }
 
   protected async createSignedTxWithDirectSign(
-    keplr: Keplr,
+    titan: Titan,
     account: BaseAccount,
     protoMsgs: Any[],
     fee: StdFee,
     memo: string,
-    signOptions: KeplrSignOptionsWithAltSignMethods | undefined
+    signOptions: TitanSignOptionsWithAltSignMethods | undefined
   ): Promise<{
     tx: Uint8Array;
     signDoc: SignDoc;
@@ -646,7 +646,7 @@ export class CosmosAccountImpl {
     const chainIsStratos = this.chainId.startsWith("stratos");
 
     // Should use bind to avoid "this" problem
-    let signDirect = keplr.signDirect.bind(keplr);
+    let signDirect = titan.signDirect.bind(titan);
     if (signOptions?.signDirect) {
       signDirect = signOptions.signDirect;
     }
@@ -848,7 +848,7 @@ export class CosmosAccountImpl {
         };
       },
       memo: string = "",
-      signOptions?: KeplrSignOptionsWithAltSignMethods,
+      signOptions?: TitanSignOptionsWithAltSignMethods,
       onTxEvents?:
         | ((tx: any) => void)
         | {
@@ -908,7 +908,7 @@ export class CosmosAccountImpl {
           };
         },
         memo: string = "",
-        signOptions?: KeplrSignOptionsWithAltSignMethods,
+        signOptions?: TitanSignOptionsWithAltSignMethods,
         onTxEvents?:
           | ((tx: any) => void)
           | {
@@ -944,7 +944,7 @@ export class CosmosAccountImpl {
       send: async (
         fee: StdFee,
         memo: string = "",
-        signOptions?: KeplrSignOptionsWithAltSignMethods,
+        signOptions?: TitanSignOptionsWithAltSignMethods,
         onTxEvents?:
           | ((tx: any) => void)
           | {
@@ -1370,7 +1370,7 @@ export class CosmosAccountImpl {
     recipient: string,
     memo: string = "",
     stdFee: Partial<StdFee> = {},
-    signOptions?: KeplrSignOptions,
+    signOptions?: TitanSignOptions,
     onTxEvents?:
       | ((tx: any) => void)
       | {
@@ -1629,7 +1629,7 @@ export class CosmosAccountImpl {
     validatorAddress: string,
     memo: string = "",
     stdFee: Partial<StdFee> = {},
-    signOptions?: KeplrSignOptions,
+    signOptions?: TitanSignOptions,
     onTxEvents?:
       | ((tx: any) => void)
       | {

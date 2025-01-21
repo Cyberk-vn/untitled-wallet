@@ -1,10 +1,10 @@
-import {Bech32Address} from '@keplr-wallet/cosmos';
-import {ChainInfo} from '@keplr-wallet/types';
+import {Bech32Address} from '@titan-wallet/cosmos';
+import {ChainInfo} from '@titan-wallet/types';
 
 export const EmbedChainInfos: ChainInfo[] = [
   {
-    rpc: 'https://rpc-cosmoshub.keplr.app',
-    rest: 'https://lcd-cosmoshub.keplr.app',
+    rpc: 'https://rpc-cosmoshub.titan.app',
+    rest: 'https://lcd-cosmoshub.titan.app',
     chainId: 'cosmoshub-4',
     chainName: 'Cosmos Hub',
     stakeCurrency: {
@@ -15,11 +15,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/cosmos-hub'
+        ? 'https://wallet.titan.app/chains/cosmos-hub'
         : 'http://localhost:8080/chains/cosmos-hub',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/cosmos-hub'
+        ? 'https://wallet.titan.app/chains/cosmos-hub'
         : 'http://localhost:8080/chains/cosmos-hub',
     bip44: {
       coinType: 118,
@@ -44,8 +44,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'ibc-go'],
   },
   {
-    rpc: 'https://rpc-osmosis.keplr.app',
-    rest: 'https://lcd-osmosis.keplr.app',
+    rpc: 'https://rpc-osmosis.titan.app',
+    rest: 'https://lcd-osmosis.titan.app',
     chainId: 'osmosis-1',
     chainName: 'Osmosis',
     stakeCurrency: {
@@ -60,7 +60,7 @@ export const EmbedChainInfos: ChainInfo[] = [
         : 'https://app.osmosis.zone',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/osmosis'
+        ? 'https://wallet.titan.app/chains/osmosis'
         : 'http://localhost:8080/chains/osmosis',
     bip44: {coinType: 118},
     bech32Config: Bech32Address.defaultBech32Config('osmo'),
@@ -100,8 +100,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     ],
   },
   {
-    rpc: 'https://rpc-secret.keplr.app',
-    rest: 'https://lcd-secret.keplr.app',
+    rpc: 'https://rpc-secret.titan.app',
+    rest: 'https://lcd-secret.titan.app',
     chainId: 'secret-4',
     chainName: 'Secret Network',
     stakeCurrency: {
@@ -112,11 +112,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/secret-network'
+        ? 'https://wallet.titan.app/chains/secret-network'
         : 'http://localhost:8080/chains/secret-network',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/secret-network'
+        ? 'https://wallet.titan.app/chains/secret-network'
         : 'http://localhost:8080/chains/secret-network',
     bip44: {
       coinType: 529,
@@ -151,8 +151,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['secretwasm', 'ibc-go', 'ibc-transfer'],
   },
   {
-    rpc: 'https://rpc-akash.keplr.app',
-    rest: 'https://lcd-akash.keplr.app',
+    rpc: 'https://rpc-akash.titan.app',
+    rest: 'https://lcd-akash.titan.app',
     chainId: 'akashnet-2',
     chainName: 'Akash',
     stakeCurrency: {
@@ -163,11 +163,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/akash'
+        ? 'https://wallet.titan.app/chains/akash'
         : 'http://localhost:8080/chains/akash',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/akash'
+        ? 'https://wallet.titan.app/chains/akash'
         : 'http://localhost:8080/chains/akash',
     bip44: {
       coinType: 118,
@@ -192,8 +192,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer'],
   },
   {
-    rpc: 'https://rpc-mars.keplr.app',
-    rest: 'https://lcd-mars.keplr.app',
+    rpc: 'https://rpc-mars.titan.app',
+    rest: 'https://lcd-mars.titan.app',
     chainId: 'mars-1',
     chainName: 'Mars Hub',
     stakeCurrency: {
@@ -203,11 +203,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/mars'
+        ? 'https://wallet.titan.app/chains/mars'
         : 'http://localhost:8080/chains/mars',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/mars'
+        ? 'https://wallet.titan.app/chains/mars'
         : 'http://localhost:8080/chains/mars',
     bip44: {
       coinType: 118,
@@ -240,8 +240,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-crypto-org.keplr.app',
-    rest: 'https://lcd-crypto-org.keplr.app',
+    rpc: 'https://rpc-crypto-org.titan.app',
+    rest: 'https://lcd-crypto-org.titan.app',
     chainId: 'crypto-org-chain-mainnet-1',
     chainName: 'Crypto.org',
     stakeCurrency: {
@@ -252,11 +252,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/crypto-org'
+        ? 'https://wallet.titan.app/chains/crypto-org'
         : 'http://localhost:8080/chains/crypto-org',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/crypto-org'
+        ? 'https://wallet.titan.app/chains/crypto-org'
         : 'http://localhost:8080/chains/crypto-org',
     bip44: {
       coinType: 394,
@@ -293,8 +293,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer'],
   },
   {
-    rpc: 'https://rpc-iris.keplr.app',
-    rest: 'https://lcd-iris.keplr.app',
+    rpc: 'https://rpc-iris.titan.app',
+    rest: 'https://lcd-iris.titan.app',
     chainId: 'irishub-1',
     chainName: 'IRISnet',
     stakeCurrency: {
@@ -305,11 +305,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/irisnet'
+        ? 'https://wallet.titan.app/chains/irisnet'
         : 'http://localhost:8080/chains/irisnet',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/irisnet'
+        ? 'https://wallet.titan.app/chains/irisnet'
         : 'http://localhost:8080/chains/irisnet',
     bip44: {
       coinType: 118,
@@ -351,8 +351,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'ibc-go'],
   },
   {
-    rpc: 'https://rpc-regen.keplr.app',
-    rest: 'https://lcd-regen.keplr.app',
+    rpc: 'https://rpc-regen.titan.app',
+    rest: 'https://lcd-regen.titan.app',
     chainId: 'regen-1',
     chainName: 'Regen',
     stakeCurrency: {
@@ -363,11 +363,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/regen'
+        ? 'https://wallet.titan.app/chains/regen'
         : 'http://localhost:8080/chains/regen',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/regen'
+        ? 'https://wallet.titan.app/chains/regen'
         : 'http://localhost:8080/chains/regen',
     bip44: {
       coinType: 118,
@@ -397,8 +397,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-go', 'ibc-transfer'],
   },
   {
-    rpc: 'https://rpc-persistence.keplr.app',
-    rest: 'https://lcd-persistence.keplr.app',
+    rpc: 'https://rpc-persistence.titan.app',
+    rest: 'https://lcd-persistence.titan.app',
     chainId: 'core-1',
     chainName: 'Persistence',
     stakeCurrency: {
@@ -409,11 +409,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/persistence'
+        ? 'https://wallet.titan.app/chains/persistence'
         : 'http://localhost:8080/chains/persistence',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/persistence'
+        ? 'https://wallet.titan.app/chains/persistence'
         : 'http://localhost:8080/chains/persistence',
     bip44: {
       coinType: 118,
@@ -453,8 +453,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'ibc-go'],
   },
   {
-    rpc: 'https://rpc-sentinel.keplr.app',
-    rest: 'https://lcd-sentinel.keplr.app',
+    rpc: 'https://rpc-sentinel.titan.app',
+    rest: 'https://lcd-sentinel.titan.app',
     chainId: 'sentinelhub-2',
     chainName: 'Sentinel',
     stakeCurrency: {
@@ -465,11 +465,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/sentinel'
+        ? 'https://wallet.titan.app/chains/sentinel'
         : 'http://localhost:8080/chains/sentinel',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/sentinel'
+        ? 'https://wallet.titan.app/chains/sentinel'
         : 'http://localhost:8080/chains/sentinel',
     bip44: {
       coinType: 118,
@@ -499,8 +499,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer'],
   },
   {
-    rpc: 'https://rpc-agoric.keplr.app',
-    rest: 'https://lcd-agoric.keplr.app',
+    rpc: 'https://rpc-agoric.titan.app',
+    rest: 'https://lcd-agoric.titan.app',
     chainId: 'agoric-3',
     chainName: 'Agoric',
     stakeCurrency: {
@@ -511,11 +511,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/agoric'
+        ? 'https://wallet.titan.app/chains/agoric'
         : 'http://localhost:8080/chains/agoric',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/agoric'
+        ? 'https://wallet.titan.app/chains/agoric'
         : 'http://localhost:8080/chains/agoric',
     bip44: {
       coinType: 564,
@@ -560,8 +560,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-go'],
   },
   {
-    rpc: 'https://rpc-cyber.keplr.app',
-    rest: 'https://lcd-cyber.keplr.app',
+    rpc: 'https://rpc-cyber.titan.app',
+    rest: 'https://lcd-cyber.titan.app',
     chainId: 'bostrom',
     chainName: 'Bostrom',
     stakeCurrency: {
@@ -571,11 +571,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/bostrom'
+        ? 'https://wallet.titan.app/chains/bostrom'
         : 'http://localhost:8080/chains/bostrom',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/bostrom'
+        ? 'https://wallet.titan.app/chains/bostrom'
         : 'http://localhost:8080/chains/bostrom',
     bip44: {
       coinType: 118,
@@ -623,8 +623,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'cosmwasm', 'ibc-go'],
   },
   {
-    rpc: 'https://rpc-juno.keplr.app',
-    rest: 'https://lcd-juno.keplr.app',
+    rpc: 'https://rpc-juno.titan.app',
+    rest: 'https://lcd-juno.titan.app',
     chainId: 'juno-1',
     chainName: 'Juno',
     stakeCurrency: {
@@ -635,11 +635,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/juno'
+        ? 'https://wallet.titan.app/chains/juno'
         : 'http://localhost:8080/chains/juno',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/juno'
+        ? 'https://wallet.titan.app/chains/juno'
         : 'http://localhost:8080/chains/juno',
     bip44: {
       coinType: 118,
@@ -680,8 +680,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['cosmwasm', 'ibc-transfer', 'ibc-go', 'wasmd_0.24+'],
   },
   {
-    rpc: 'https://rpc-stargaze.keplr.app',
-    rest: 'https://lcd-stargaze.keplr.app',
+    rpc: 'https://rpc-stargaze.titan.app',
+    rest: 'https://lcd-stargaze.titan.app',
     chainId: 'stargaze-1',
     chainName: 'Stargaze',
     stakeCurrency: {
@@ -692,11 +692,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/stargaze'
+        ? 'https://wallet.titan.app/chains/stargaze'
         : 'http://localhost:8080/chains/stargaze',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/stargaze'
+        ? 'https://wallet.titan.app/chains/stargaze'
         : 'http://localhost:8080/chains/stargaze',
     bip44: {
       coinType: 118,
@@ -721,8 +721,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'ibc-go'],
   },
   {
-    rpc: 'https://rpc-axelar.keplr.app',
-    rest: 'https://lcd-axelar.keplr.app',
+    rpc: 'https://rpc-axelar.titan.app',
+    rest: 'https://lcd-axelar.titan.app',
     chainId: 'axelar-dojo-1',
     chainName: 'Axelar',
     stakeCurrency: {
@@ -733,11 +733,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/axelar'
+        ? 'https://wallet.titan.app/chains/axelar'
         : 'http://localhost:8080/chains/axelar',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/axelar'
+        ? 'https://wallet.titan.app/chains/axelar'
         : 'http://localhost:8080/chains/axelar',
     bip44: {
       coinType: 118,
@@ -875,8 +875,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'ibc-go', 'axelar-evm-bridge'],
   },
   {
-    rpc: 'https://rpc-sommelier.keplr.app',
-    rest: 'https://lcd-sommelier.keplr.app',
+    rpc: 'https://rpc-sommelier.titan.app',
+    rest: 'https://lcd-sommelier.titan.app',
     chainId: 'sommelier-3',
     chainName: 'Sommelier',
     stakeCurrency: {
@@ -887,11 +887,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/sommelier'
+        ? 'https://wallet.titan.app/chains/sommelier'
         : 'http://localhost:8080/chains/sommelier',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/sommelier'
+        ? 'https://wallet.titan.app/chains/sommelier'
         : 'http://localhost:8080/chains/sommelier',
     bip44: {
       coinType: 118,
@@ -916,8 +916,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'ibc-go'],
   },
   {
-    rpc: 'https://rpc-umee.keplr.app',
-    rest: 'https://lcd-umee.keplr.app',
+    rpc: 'https://rpc-umee.titan.app',
+    rest: 'https://lcd-umee.titan.app',
     chainId: 'umee-1',
     chainName: 'Umee',
     stakeCurrency: {
@@ -927,11 +927,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/umee'
+        ? 'https://wallet.titan.app/chains/umee'
         : 'http://localhost:8080/chains/umee',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/umee'
+        ? 'https://wallet.titan.app/chains/umee'
         : 'http://localhost:8080/chains/umee',
     bip44: {
       coinType: 118,
@@ -959,8 +959,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'ibc-go'],
   },
   {
-    rpc: 'https://rpc-stride.keplr.app',
-    rest: 'https://lcd-stride.keplr.app',
+    rpc: 'https://rpc-stride.titan.app',
+    rest: 'https://lcd-stride.titan.app',
     chainId: 'stride-1',
     chainName: 'Stride',
     stakeCurrency: {
@@ -971,11 +971,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/stride'
+        ? 'https://wallet.titan.app/chains/stride'
         : 'http://localhost:8080/chains/stride',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/stride'
+        ? 'https://wallet.titan.app/chains/stride'
         : 'http://localhost:8080/chains/stride',
     bip44: {
       coinType: 118,
@@ -1025,8 +1025,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'ibc-go'],
   },
   {
-    rpc: 'https://rpc-evmos.keplr.app',
-    rest: 'https://lcd-evmos.keplr.app',
+    rpc: 'https://rpc-evmos.titan.app',
+    rest: 'https://lcd-evmos.titan.app',
     chainId: 'evmos_9001-2',
     chainName: 'Evmos',
     stakeCurrency: {
@@ -1037,11 +1037,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/evmos'
+        ? 'https://wallet.titan.app/chains/evmos'
         : 'http://localhost:8080/chains/evmos',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/evmos'
+        ? 'https://wallet.titan.app/chains/evmos'
         : 'http://localhost:8080/chains/evmos',
     bip44: {
       coinType: 60,
@@ -1071,8 +1071,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'ibc-go', 'eth-address-gen', 'eth-key-sign'],
   },
   {
-    rpc: 'https://rpc-injective.keplr.app',
-    rest: 'https://lcd-injective.keplr.app',
+    rpc: 'https://rpc-injective.titan.app',
+    rest: 'https://lcd-injective.titan.app',
     chainId: 'injective-1',
     chainName: 'Injective',
     stakeCurrency: {
@@ -1083,11 +1083,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/injective'
+        ? 'https://wallet.titan.app/chains/injective'
         : 'http://localhost:8080/chains/injective',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/injective'
+        ? 'https://wallet.titan.app/chains/injective'
         : 'http://localhost:8080/chains/injective',
     bip44: {
       coinType: 60,
@@ -1117,8 +1117,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer', 'ibc-go', 'eth-address-gen', 'eth-key-sign'],
   },
   {
-    rpc: 'https://rpc-kava.keplr.app',
-    rest: 'https://lcd-kava.keplr.app',
+    rpc: 'https://rpc-kava.titan.app',
+    rest: 'https://lcd-kava.titan.app',
     chainId: 'kava_2222-10',
     chainName: 'Kava',
     stakeCurrency: {
@@ -1129,11 +1129,11 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrl:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/kava'
+        ? 'https://wallet.titan.app/chains/kava'
         : 'http://localhost:8080/chains/kava',
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/kava'
+        ? 'https://wallet.titan.app/chains/kava'
         : 'http://localhost:8080/chains/kava',
     bip44: {coinType: 459},
     alternativeBIP44s: [{coinType: 118}],
@@ -1198,8 +1198,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     ],
   },
   {
-    rpc: 'https://rpc-quicksilver.keplr.app',
-    rest: 'https://lcd-quicksilver.keplr.app',
+    rpc: 'https://rpc-quicksilver.titan.app',
+    rest: 'https://lcd-quicksilver.titan.app',
     chainId: 'quicksilver-1',
     chainName: 'Quicksilver',
     stakeCurrency: {
@@ -1209,7 +1209,7 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/quicksilver'
+        ? 'https://wallet.titan.app/chains/quicksilver'
         : 'http://localhost:8080/chains/quicksilver',
     bip44: {
       coinType: 118,
@@ -1244,8 +1244,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-phoenix.keplr.app',
-    rest: 'https://lcd-phoenix.keplr.app',
+    rpc: 'https://rpc-phoenix.titan.app',
+    rest: 'https://lcd-phoenix.titan.app',
     chainId: 'phoenix-1',
     chainName: 'Terra',
     stakeCurrency: {
@@ -1256,7 +1256,7 @@ export const EmbedChainInfos: ChainInfo[] = [
     },
     walletUrlForStaking:
       process.env.NODE_ENV === 'production'
-        ? 'https://wallet.keplr.app/chains/terra'
+        ? 'https://wallet.titan.app/chains/terra'
         : 'http://localhost:8080/chains/terra',
     bip44: {
       coinType: 330,
@@ -1293,8 +1293,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-columbus.keplr.app',
-    rest: 'https://lcd-columbus.keplr.app',
+    rpc: 'https://rpc-columbus.titan.app',
+    rest: 'https://lcd-columbus.titan.app',
     chainId: 'columbus-5',
     chainName: 'Terra Classic',
     stakeCurrency: {
@@ -1355,8 +1355,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['terra-classic-fee'],
   },
   {
-    rpc: 'https://rpc-quasar.keplr.app',
-    rest: 'https://lcd-quasar.keplr.app',
+    rpc: 'https://rpc-quasar.titan.app',
+    rest: 'https://lcd-quasar.titan.app',
     chainId: 'quasar-1',
     chainName: 'Quasar',
     stakeCurrency: {
@@ -1420,8 +1420,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-noble.keplr.app',
-    rest: 'https://lcd-noble.keplr.app',
+    rpc: 'https://rpc-noble.titan.app',
+    rest: 'https://lcd-noble.titan.app',
     chainId: 'noble-1',
     chainName: 'Noble',
     stakeCurrency: {
@@ -1473,8 +1473,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-omniflixhub.keplr.app',
-    rest: 'https://lcd-omniflixhub.keplr.app',
+    rpc: 'https://rpc-omniflixhub.titan.app',
+    rest: 'https://lcd-omniflixhub.titan.app',
     chainId: 'omniflixhub-1',
     chainName: 'OmniFlix',
     stakeCurrency: {
@@ -1515,8 +1515,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-kyve.keplr.app',
-    rest: 'https://lcd-kyve.keplr.app',
+    rpc: 'https://rpc-kyve.titan.app',
+    rest: 'https://lcd-kyve.titan.app',
     chainId: 'kyve-1',
     chainName: 'KYVE',
     stakeCurrency: {
@@ -1557,8 +1557,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-neutron.keplr.app',
-    rest: 'https://lcd-neutron.keplr.app',
+    rpc: 'https://rpc-neutron.titan.app',
+    rest: 'https://lcd-neutron.titan.app',
     chainId: 'neutron-1',
     chainName: 'Neutron',
     stakeCurrency: {
@@ -1599,8 +1599,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-likecoin.keplr.app',
-    rest: 'https://lcd-likecoin.keplr.app',
+    rpc: 'https://rpc-likecoin.titan.app',
+    rest: 'https://lcd-likecoin.titan.app',
     chainId: 'likecoin-mainnet-2',
     chainName: 'Likecoin',
     stakeCurrency: {
@@ -1644,8 +1644,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-dydx.keplr.app',
-    rest: 'https://lcd-dydx.keplr.app',
+    rpc: 'https://rpc-dydx.titan.app',
+    rest: 'https://lcd-dydx.titan.app',
     chainId: 'dydx-mainnet-1',
     chainName: 'dYdX',
     stakeCurrency: {
@@ -1681,8 +1681,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-celestia.keplr.app',
-    rest: 'https://lcd-celestia.keplr.app',
+    rpc: 'https://rpc-celestia.titan.app',
+    rest: 'https://lcd-celestia.titan.app',
     chainId: 'celestia',
     chainName: 'Celestia',
     stakeCurrency: {
@@ -1711,8 +1711,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: [],
   },
   {
-    rpc: 'https://rpc-passage.keplr.app',
-    rest: 'https://lcd-passage.keplr.app',
+    rpc: 'https://rpc-passage.titan.app',
+    rest: 'https://lcd-passage.titan.app',
     chainId: 'passage-2',
     chainName: 'Passage',
     stakeCurrency: {
@@ -1746,15 +1746,15 @@ export const EmbedChainInfos: ChainInfo[] = [
   {
     chainId: 'dymension_1100-1',
     chainName: 'Dymension',
-    rpc: 'https://rpc-dymension.keplr.app',
-    rest: 'https://lcd-dymension.keplr.app',
+    rpc: 'https://rpc-dymension.titan.app',
+    rest: 'https://lcd-dymension.titan.app',
     currencies: [
       {
         coinMinimalDenom: 'adym',
         coinDenom: 'DYM',
         coinDecimals: 18,
         coinImageUrl:
-          'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/dymension_1100/chain.png',
+          'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/dymension_1100/chain.png',
       },
     ],
     bip44: {
@@ -1791,16 +1791,16 @@ export const EmbedChainInfos: ChainInfo[] = [
     chainId: 'chihuahua-1',
     chainName: 'Chihuahua',
     chainSymbolImageUrl:
-      'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png',
-    rpc: 'https://rpc-chihuahua.keplr.app',
-    rest: 'https://lcd-chihuahua.keplr.app',
+      'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/chihuahua/chain.png',
+    rpc: 'https://rpc-chihuahua.titan.app',
+    rest: 'https://lcd-chihuahua.titan.app',
     stakeCurrency: {
       coinDenom: 'HUAHUA',
       coinMinimalDenom: 'uhuahua',
       coinDecimals: 6,
       coinGeckoId: 'chihuahua-token',
       coinImageUrl:
-        'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png',
+        'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/chihuahua/chain.png',
     },
     bip44: {
       coinType: 118,
@@ -1820,7 +1820,7 @@ export const EmbedChainInfos: ChainInfo[] = [
         coinDecimals: 6,
         coinGeckoId: 'chihuahua-token',
         coinImageUrl:
-          'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png',
+          'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/chihuahua/chain.png',
       },
       {
         coinDenom: 'BADDOG',
@@ -1828,7 +1828,7 @@ export const EmbedChainInfos: ChainInfo[] = [
           'factory/chihuahua1x4q2vkrz4dfgd9hcw0p5m2f2nuv2uqmt9xr8k2/achihuahuawifhat',
         coinDecimals: 6,
         coinImageUrl:
-          'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/factory/chihuahua1x4q2vkrz4dfgd9hcw0p5m2f2nuv2uqmt9xr8k2/achihuahuawifhat.png',
+          'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/chihuahua/factory/chihuahua1x4q2vkrz4dfgd9hcw0p5m2f2nuv2uqmt9xr8k2/achihuahuawifhat.png',
       },
       {
         coinDenom: 'WOOF',
@@ -1836,7 +1836,7 @@ export const EmbedChainInfos: ChainInfo[] = [
           'factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/uwoof',
         coinDecimals: 6,
         coinImageUrl:
-          'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/woof.png',
+          'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/chihuahua/factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/woof.png',
       },
       {
         coinDenom: 'TACOS',
@@ -1844,7 +1844,7 @@ export const EmbedChainInfos: ChainInfo[] = [
           'factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/utacos',
         coinDecimals: 6,
         coinImageUrl:
-          'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/tacos.png',
+          'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/chihuahua/factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/tacos.png',
       },
       {
         coinDenom: 'WEED',
@@ -1852,7 +1852,7 @@ export const EmbedChainInfos: ChainInfo[] = [
           'factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/uweed',
         coinDecimals: 6,
         coinImageUrl:
-          'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/weed.png',
+          'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/chihuahua/factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/weed.png',
       },
       {
         coinDenom: 'BDOG',
@@ -1860,7 +1860,7 @@ export const EmbedChainInfos: ChainInfo[] = [
           'factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/ubdog',
         coinDecimals: 6,
         coinImageUrl:
-          'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/bdog.png',
+          'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/chihuahua/factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/bdog.png',
       },
       {
         coinDenom: 'CORSO',
@@ -1868,7 +1868,7 @@ export const EmbedChainInfos: ChainInfo[] = [
           'factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/ucorso',
         coinDecimals: 6,
         coinImageUrl:
-          'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/corso.png',
+          'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/chihuahua/factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/corso.png',
       },
     ],
     feeCurrencies: [
@@ -1878,7 +1878,7 @@ export const EmbedChainInfos: ChainInfo[] = [
         coinDecimals: 6,
         coinGeckoId: 'chihuahua-token',
         coinImageUrl:
-          'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png',
+          'https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/chihuahua/chain.png',
         gasPriceStep: {
           low: 500,
           average: 1250,
@@ -1887,13 +1887,13 @@ export const EmbedChainInfos: ChainInfo[] = [
       },
     ],
     features: ['cosmwasm'],
-    walletUrlForStaking: 'https://wallet.keplr.app/chains/chihuahua',
+    walletUrlForStaking: 'https://wallet.titan.app/chains/chihuahua',
   },
   {
     chainId: 'ssc-1',
     chainName: 'Saga',
-    rpc: 'https://rpc-saga.keplr.app',
-    rest: 'https://lcd-saga.keplr.app',
+    rpc: 'https://rpc-saga.titan.app',
+    rest: 'https://lcd-saga.titan.app',
     stakeCurrency: {
       coinDenom: 'SAGA',
       coinMinimalDenom: 'usaga',
@@ -1933,8 +1933,8 @@ export const EmbedChainInfos: ChainInfo[] = [
   {
     chainId: 'seda-1',
     chainName: 'SEDA',
-    rpc: 'https://rpc-seda.keplr.app',
-    rest: 'https://lcd-seda.keplr.app',
+    rpc: 'https://rpc-seda.titan.app',
+    rest: 'https://lcd-seda.titan.app',
     stakeCurrency: {
       coinDenom: 'SEDA',
       coinMinimalDenom: 'aseda',
@@ -1973,8 +1973,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['cosmwasm'],
   },
   {
-    rpc: 'https://rpc-dimension.keplr.app',
-    rest: 'https://lcd-dimension.keplr.app',
+    rpc: 'https://rpc-dimension.titan.app',
+    rest: 'https://lcd-dimension.titan.app',
     chainId: 'dimension_37-1',
     chainName: 'XPLA',
     stakeCurrency: {
@@ -2018,8 +2018,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['eth-address-gen', 'eth-key-sign', 'cosmwasm'],
   },
   {
-    rpc: 'https://rpc-pryzm.keplr.app',
-    rest: 'https://lcd-pryzm.keplr.app',
+    rpc: 'https://rpc-pryzm.titan.app',
+    rest: 'https://lcd-pryzm.titan.app',
     chainId: 'pryzm-1',
     chainName: 'Pryzm',
     stakeCurrency: {
@@ -2055,8 +2055,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['cosmwasm'],
   },
   {
-    rpc: 'https://rpc-zetachain.keplr.app',
-    rest: 'https://lcd-zetachain.keplr.app',
+    rpc: 'https://rpc-zetachain.titan.app',
+    rest: 'https://lcd-zetachain.titan.app',
     chainId: 'zetachain_7000-1',
     chainName: 'ZetaChain',
     stakeCurrency: {
@@ -2097,8 +2097,8 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['eth-address-gen', 'eth-key-sign'],
   },
   {
-    rpc: 'https://rpc-lava.keplr.app',
-    rest: 'https://lcd-lava.keplr.app',
+    rpc: 'https://rpc-lava.titan.app',
+    rest: 'https://lcd-lava.titan.app',
     chainId: 'lava-mainnet-1',
     chainName: 'Lava',
     stakeCurrency: {
@@ -2288,17 +2288,17 @@ export const ChainIdentifierToTxExplorerMap: Record<
 
 // The origins that are able to pass any permission that external webpages can have.
 export const PrivilegedOrigins: string[] = [
-  'https://wallet.keplr.app',
-  'https://validator.keplr.app',
-  'https://chains.keplr.app',
+  'https://wallet.titan.app',
+  'https://validator.titan.app',
+  'https://chains.titan.app',
 ];
 
 export const CommunityChainInfoRepo = {
   organizationName: 'chainapsis',
-  repoName: 'keplr-chain-registry',
+  repoName: 'titan-chain-registry',
   branchName: 'main',
-  alternativeURL: process.env['KEPLR_EXT_CHAIN_REGISTRY_URL']
-    ? process.env['KEPLR_EXT_CHAIN_REGISTRY_URL']
+  alternativeURL: process.env['TITAN_EXT_CHAIN_REGISTRY_URL']
+    ? process.env['TITAN_EXT_CHAIN_REGISTRY_URL']
     : undefined,
 };
 
@@ -2308,7 +2308,7 @@ export const APR_API_URL =
 export const SCAMPORPOSAL_API_URL =
   'https://phishing-block-list-chainapsis.vercel.app';
 
-export const COMMUNITY_CHAIN_URL = 'https://chains.keplr.app';
+export const COMMUNITY_CHAIN_URL = 'https://chains.titan.app';
 
 export const APP_STORE_URL = 'https://itunes.apple.com';
 export const PLAY_STORE_URL = 'https://play.google.com';
@@ -2330,4 +2330,4 @@ export const GovernanceV1ChainIdentifiers = [
 ];
 
 export const NoDashboardLinkIdentifiers = ['tgrade-mainnet', 'emoney'];
-export const DASHBOARD_URL = 'https://wallet.keplr.app';
+export const DASHBOARD_URL = 'https://wallet.titan.app';

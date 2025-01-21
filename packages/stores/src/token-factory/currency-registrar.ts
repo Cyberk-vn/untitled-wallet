@@ -1,6 +1,6 @@
-import { AppCurrency, Currency } from "@keplr-wallet/types";
+import { AppCurrency, Currency } from "@titan-wallet/types";
 import { ChainStore } from "../chain";
-import { DenomHelper, KVStore } from "@keplr-wallet/common";
+import { DenomHelper, KVStore } from "@titan-wallet/common";
 import { autorun, makeObservable, observable, runInAction, toJS } from "mobx";
 import { IQueriesStore } from "../query";
 

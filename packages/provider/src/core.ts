@@ -1,10 +1,10 @@
 import {
   ChainInfo,
   EthSignType,
-  Keplr as IKeplr,
-  KeplrIntereactionOptions,
-  KeplrMode,
-  KeplrSignOptions,
+  Titan as ITitan,
+  TitanIntereactionOptions,
+  TitanMode,
+  TitanSignOptions,
   Key,
   BroadcastMode,
   AminoSignResponse,
@@ -22,20 +22,20 @@ import {
   IEthereumProvider,
   IStarknetProvider,
   WalletEvents,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 import {
   BACKGROUND_PORT,
   MessageRequester,
   sendSimpleMessage,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 
-import { KeplrEnigmaUtils } from "./enigma";
+import { TitanEnigmaUtils } from "./enigma";
 
 import { CosmJSOfflineSigner, CosmJSOfflineSignerOnlyAmino } from "./cosmjs";
 import deepmerge from "deepmerge";
 import Long from "long";
 import { Buffer } from "buffer/";
-import { KeplrCoreTypes } from "./core-types";
+import { TitanCoreTypes } from "./core-types";
 import EventEmitter from "events";
 import {
   AccountInterface,
@@ -45,14 +45,14 @@ import {
   ProviderInterface,
 } from "starknet";
 
-export class Keplr implements IKeplr, KeplrCoreTypes {
+export class Titan implements ITitan, TitanCoreTypes {
   protected enigmaUtils: Map<string, SecretUtils> = new Map();
 
-  public defaultOptions: KeplrIntereactionOptions = {};
+  public defaultOptions: TitanIntereactionOptions = {};
 
   constructor(
     public readonly version: string,
-    public readonly mode: KeplrMode,
+    public readonly mode: TitanMode,
     protected readonly requester: MessageRequester
   ) {}
 
@@ -61,7 +61,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
       this.requester,
       BACKGROUND_PORT,
       "chains",
-      "keplr-ping",
+      "titan-ping",
       {}
     );
   }
@@ -94,7 +94,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
     });
   }
 
-  // TODO: 웹페이지에서도 필요할수도 있을 것 같으니 나중에 keplr의 API로 추가해준다.
+  // TODO: 웹페이지에서도 필요할수도 있을 것 같으니 나중에 titan의 API로 추가해준다.
   async isEnabled(chainIds: string | string[]): Promise<boolean> {
     if (typeof chainIds === "string") {
       chainIds = [chainIds];
@@ -345,7 +345,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
     chainId: string,
     signer: string,
     signDoc: StdSignDoc,
-    signOptions: KeplrSignOptions = {}
+    signOptions: TitanSignOptions = {}
   ): Promise<AminoSignResponse> {
     return new Promise((resolve, reject) => {
       let f = false;
@@ -382,7 +382,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
       chainId?: string | null;
       accountNumber?: Long | null;
     },
-    signOptions: KeplrSignOptions = {}
+    signOptions: TitanSignOptions = {}
   ): Promise<DirectSignResponse> {
     return new Promise((resolve, reject) => {
       let f = false;
@@ -441,7 +441,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
       sequence?: Long | null;
     },
     signOptions: Exclude<
-      KeplrSignOptions,
+      TitanSignOptions,
       "preferNoSetFee" | "disableBalanceCheck"
     > = {}
   ): Promise<DirectAuxSignResponse> {
@@ -632,21 +632,21 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
 
   getOfflineSigner(
     chainId: string,
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): OfflineAminoSigner & OfflineDirectSigner {
     return new CosmJSOfflineSigner(chainId, this, signOptions);
   }
 
   getOfflineSignerOnlyAmino(
     chainId: string,
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): OfflineAminoSigner {
     return new CosmJSOfflineSignerOnlyAmino(chainId, this, signOptions);
   }
 
   async getOfflineSignerAuto(
     chainId: string,
-    signOptions?: KeplrSignOptions
+    signOptions?: TitanSignOptions
   ): Promise<OfflineAminoSigner | OfflineDirectSigner> {
     const key = await this.getKey(chainId);
     if (key.isNanoLedger) {
@@ -836,7 +836,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
       return this.enigmaUtils.get(chainId)!;
     }
 
-    const enigmaUtils = new KeplrEnigmaUtils(chainId, this);
+    const enigmaUtils = new TitanEnigmaUtils(chainId, this);
     this.enigmaUtils.set(chainId, enigmaUtils);
     return enigmaUtils;
   }
@@ -850,7 +850,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
       primaryType: string;
     },
     signDoc: StdSignDoc,
-    signOptions: KeplrSignOptions = {}
+    signOptions: TitanSignOptions = {}
   ): Promise<AminoSignResponse> {
     return new Promise((resolve, reject) => {
       let f = false;
@@ -1136,8 +1136,8 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
     });
   }
 
-  // IMPORTANT: protected로 시작하는 method는 InjectedKeplr.startProxy()에서 injected 쪽에서 event system으로도 호출할 수 없도록 막혀있다.
-  //            protected로 시작하지 않는 method는 injected keplr에 없어도 event system을 통하면 호출 할 수 있다.
+  // IMPORTANT: protected로 시작하는 method는 InjectedTitan.startProxy()에서 injected 쪽에서 event system으로도 호출할 수 없도록 막혀있다.
+  //            protected로 시작하지 않는 method는 injected titan에 없어도 event system을 통하면 호출 할 수 있다.
   //            이를 막기 위해서 method 이름을 protected로 시작하게 한다.
   async protectedTryOpenSidePanelIfEnabled(
     ignoreGestureFailure: boolean = false
@@ -1146,10 +1146,10 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
     // 이 provider가 content script 위에서 동작하고 있는지 아닌지 구분해야한다.
     // content script일때만 side panel을 열도록 시도해볼 가치가 있다.
     // 근데 js 자체적으로 api등을 통해서는 이를 알아낼 방법이 없다.
-    // extension 상에서 content script에서 keplr provider proxy를 시작하기 전에 window에 밑의 field를 알아서 주입하는 방식으로 처리한다.
+    // extension 상에서 content script에서 titan provider proxy를 시작하기 전에 window에 밑의 field를 알아서 주입하는 방식으로 처리한다.
     if (
       typeof window !== "undefined" &&
-      (window as any).__keplr_content_script === true
+      (window as any).__titan_content_script === true
     ) {
       isInContentScript = true;
     }
@@ -1184,7 +1184,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
             e.message &&
             e.message.includes("in response to a user gesture")
           ) {
-            if (!document.getElementById("__open_keplr_side_panel__")) {
+            if (!document.getElementById("__open_titan_side_panel__")) {
               const sidePanelPing = await sendSimpleMessage<boolean>(
                 this.requester,
                 BACKGROUND_PORT,
@@ -1199,7 +1199,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
                 return;
               }
 
-              const isKeplrLocked = await sendSimpleMessage<boolean>(
+              const isTitanLocked = await sendSimpleMessage<boolean>(
                 this.requester,
                 BACKGROUND_PORT,
                 "keyring",
@@ -1207,7 +1207,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
                 {}
               );
 
-              const keplrThemeOption = await sendSimpleMessage<
+              const titanThemeOption = await sendSimpleMessage<
                 "light" | "dark" | "auto"
               >(
                 this.requester,
@@ -1223,7 +1223,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
               );
               const fontFaceAndKeyFrames = `
                 @font-face {
-                  font-family: 'Inter-SemiBold-Keplr';
+                  font-family: 'Inter-SemiBold-Titan';
                   src: url('${fontUrl}') format('truetype');
                   font-weight: 600;
                   font-style: normal;
@@ -1259,9 +1259,9 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
             `;
 
               const isLightMode =
-                keplrThemeOption === "auto"
+                titanThemeOption === "auto"
                   ? !window.matchMedia("(prefers-color-scheme: dark)").matches
-                  : keplrThemeOption === "light";
+                  : titanThemeOption === "light";
 
               // 폰트와 애니메이션을 위한 스타일 요소를 head에 추가
               const styleElement = document.createElement("style");
@@ -1271,7 +1271,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
               document.head.appendChild(styleElement);
 
               const button = document.createElement("div");
-              button.id = "__open_keplr_side_panel__";
+              button.id = "__open_titan_side_panel__";
               button.style.boxSizing = "border-box";
               button.style.animation = "slide-left 0.5s forwards";
               button.style.position = "fixed";
@@ -1283,7 +1283,7 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
               button.style.display = "flex";
               button.style.alignItems = "center";
 
-              button.style.fontFamily = "Inter-SemiBold-Keplr";
+              button.style.fontFamily = "Inter-SemiBold-Titan";
               button.style.fontWeight = "600";
 
               // button.style.cursor = "pointer";
@@ -1331,21 +1331,21 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
                 </svg>
               `;
 
-              const keplrLogoWrap = document.createElement("div");
-              keplrLogoWrap.style.boxSizing = "border-box";
-              keplrLogoWrap.style.position = "relative";
-              keplrLogoWrap.style.marginRight = "1rem";
-              const keplrLogo = document.createElement("img");
-              const keplrLogoUrl = chrome.runtime.getURL(
+              const titanLogoWrap = document.createElement("div");
+              titanLogoWrap.style.boxSizing = "border-box";
+              titanLogoWrap.style.position = "relative";
+              titanLogoWrap.style.marginRight = "1rem";
+              const titanLogo = document.createElement("img");
+              const titanLogoUrl = chrome.runtime.getURL(
                 `/assets/${
-                  isKeplrLocked ? "locked-keplr-logo" : "icon"
+                  isTitanLocked ? "locked-titan-logo" : "icon"
                 }-128.png`
               );
-              keplrLogo.src = keplrLogoUrl;
-              keplrLogo.style.boxSizing = "border-box";
-              keplrLogo.style.width = "3rem";
-              keplrLogo.style.height = "3rem";
-              keplrLogoWrap.appendChild(keplrLogo);
+              titanLogo.src = titanLogoUrl;
+              titanLogo.style.boxSizing = "border-box";
+              titanLogo.style.width = "3rem";
+              titanLogo.style.height = "3rem";
+              titanLogoWrap.appendChild(titanLogo);
 
               const logoClickCursor = document.createElement("img");
               const logoClickCursorUrl = chrome.runtime.getURL(
@@ -1358,16 +1358,16 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
               logoClickCursor.style.bottom = "-0.2rem";
               logoClickCursor.style.aspectRatio = "78/98";
               logoClickCursor.style.height = "1.375rem";
-              keplrLogoWrap.appendChild(logoClickCursor);
+              titanLogoWrap.appendChild(logoClickCursor);
 
               const mainText = document.createElement("span");
               mainText.style.boxSizing = "border-box";
               // mainText.style.maxWidth = "9.125rem";
               mainText.style.fontSize = "1rem";
               mainText.style.color = isLightMode ? "#020202" : "#FEFEFE";
-              mainText.textContent = isKeplrLocked
-                ? "Unlock Keplr to proceed"
-                : "Open Keplr to approve request(s)";
+              mainText.textContent = isTitanLocked
+                ? "Unlock Titan to proceed"
+                : "Open Titan to approve request(s)";
 
               // const arrowLeftOpenWrapper = document.createElement("div");
               // arrowLeftOpenWrapper.style.boxSizing = "border-box";
@@ -1395,13 +1395,13 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
 
               // button.appendChild(megaphoneWrapper);
               button.appendChild(arrowTop);
-              button.appendChild(keplrLogoWrap);
+              button.appendChild(titanLogoWrap);
               button.appendChild(mainText);
               // button.appendChild(arrowLeftOpenWrapper);
 
               // 버튼을 추가하기 전에 한 번 더 이미 추가된 버튼이 있는지 확인
               const hasAlready = document.getElementById(
-                "__open_keplr_side_panel__"
+                "__open_titan_side_panel__"
               );
 
               if (!hasAlready) {
@@ -1469,11 +1469,11 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
   selectedAddress: string | null = null;
   networkVersion: string | null = null;
 
-  isKeplr: boolean = true;
+  isTitan: boolean = true;
   isMetaMask: boolean = true;
 
   constructor(
-    protected readonly keplr: Keplr,
+    protected readonly titan: Titan,
     protected readonly requester: MessageRequester
   ) {
     super();
@@ -1496,7 +1496,7 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
 
       setTimeout(() => {
         if (!f) {
-          this.keplr.protectedTryOpenSidePanelIfEnabled();
+          this.titan.protectedTryOpenSidePanelIfEnabled();
         }
       }, 100);
     });
@@ -1524,7 +1524,7 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
     // XXX: 원래 enable을 미리하지 않아도 백그라운드에서 알아서 처리해주는 시스템이였는데...
     //      side panel에서는 불가능하기 때문에 이젠 provider에서 permission도 관리해줘야한다...
     //      request의 경우는 일종의 쿼리이기 때문에 언제 결과가 올지 알 수 없다. 그러므로 미리 권한 처리를 해야한다.
-    if (method !== "keplr_initProviderState") {
+    if (method !== "titan_initProviderState") {
       await this.protectedEnableAccess();
     }
 
@@ -1548,7 +1548,7 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
 
       setTimeout(() => {
         if (!f && sidePanelOpenNeededJSONRPCMethods.includes(method)) {
-          this.keplr.protectedTryOpenSidePanelIfEnabled();
+          this.titan.protectedTryOpenSidePanelIfEnabled();
         }
       }, 100);
     });
@@ -1593,7 +1593,7 @@ class StarknetProvider implements IStarknetProvider {
   provider?: ProviderInterface;
 
   constructor(
-    protected readonly keplr: Keplr,
+    protected readonly titan: Titan,
     protected readonly requester: MessageRequester
   ) {}
 
@@ -1614,7 +1614,7 @@ class StarknetProvider implements IStarknetProvider {
 
       setTimeout(() => {
         if (!f) {
-          this.keplr.protectedTryOpenSidePanelIfEnabled();
+          this.titan.protectedTryOpenSidePanelIfEnabled();
         }
       }, 100);
     });
@@ -1635,7 +1635,7 @@ class StarknetProvider implements IStarknetProvider {
     //      side panel에서는 불가능하기 때문에 이젠 provider에서 permission도 관리해줘야한다...
     //      request의 경우는 일종의 쿼리이기 때문에 언제 결과가 올지 알 수 없다. 그러므로 미리 권한 처리를 해야한다.
     let skipEnable = false;
-    if (type === "keplr_initStarknetProviderState") {
+    if (type === "titan_initStarknetProviderState") {
       skipEnable = true;
     }
     if (type === "wallet_getPermissions") {
@@ -1670,7 +1670,7 @@ class StarknetProvider implements IStarknetProvider {
 
       setTimeout(() => {
         if (!f && sidePanelOpenNeededStarknetJSONRPCMethods.includes(type)) {
-          this.keplr.protectedTryOpenSidePanelIfEnabled();
+          this.titan.protectedTryOpenSidePanelIfEnabled();
         }
       }, 100);
     });

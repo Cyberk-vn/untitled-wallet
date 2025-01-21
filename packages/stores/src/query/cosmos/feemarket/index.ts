@@ -3,7 +3,7 @@ import { GasPrices } from "./types";
 import { QuerySharedContext } from "../../../common";
 import { ChainGetter } from "../../../chain";
 import { makeObservable } from "mobx";
-import { Dec } from "@keplr-wallet/unit";
+import { Dec } from "@titan-wallet/unit";
 
 export class ObservableQueryFeeMarketGasPrices extends ObservableChainQuery<GasPrices> {
   constructor(

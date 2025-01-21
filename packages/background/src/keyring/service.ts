@@ -6,14 +6,14 @@ import {
   KeyRing,
   KeyRingStatus,
 } from "./types";
-import { Env, WEBPAGE_PORT } from "@keplr-wallet/router";
-import { PubKeySecp256k1, PubKeyStarknet } from "@keplr-wallet/crypto";
+import { Env, WEBPAGE_PORT } from "@titan-wallet/router";
+import { PubKeySecp256k1, PubKeyStarknet } from "@titan-wallet/crypto";
 import { ChainsService } from "../chains";
 import { action, autorun, makeObservable, observable, runInAction } from "mobx";
-import { KVStore } from "@keplr-wallet/common";
-import { Bech32Address, ChainIdHelper } from "@keplr-wallet/cosmos";
+import { KVStore } from "@titan-wallet/common";
+import { Bech32Address, ChainIdHelper } from "@titan-wallet/cosmos";
 import { InteractionService } from "../interaction";
-import { ChainInfo, ModularChainInfo } from "@keplr-wallet/types";
+import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 import { Buffer } from "buffer/";
 import * as Legacy from "./legacy";
 import { ChainsUIService } from "../chains-ui";
@@ -285,7 +285,7 @@ export class KeyRingService {
               change: 0,
               addressIndex: 0,
             },
-            keyStore.meta?.["name"] ?? "Keplr Account",
+            keyStore.meta?.["name"] ?? "Titan Account",
             password
           );
           if (keyStore.coinTypeForChain) {
@@ -375,7 +375,7 @@ export class KeyRingService {
           const vaultId = await this.createPrivateKeyKeyRing(
             privateKey,
             meta,
-            keyStore.meta?.["name"] ?? "Keplr Account",
+            keyStore.meta?.["name"] ?? "Titan Account",
             password
           );
 
@@ -435,7 +435,7 @@ export class KeyRingService {
                   change: 0,
                   addressIndex: 0,
                 },
-                keyStore.meta?.["name"] ?? "Keplr Account",
+                keyStore.meta?.["name"] ?? "Titan Account",
                 password
               );
 
@@ -486,7 +486,7 @@ export class KeyRingService {
                 change: 0,
                 addressIndex: 0,
               },
-              keyStore.meta?.["name"] ?? "Keplr Account",
+              keyStore.meta?.["name"] ?? "Titan Account",
               password
             );
 
@@ -909,7 +909,7 @@ export class KeyRingService {
       throw new Error("Vault is null");
     }
 
-    return (vault.insensitive["keyRingName"] as string) || "Keplr Account";
+    return (vault.insensitive["keyRingName"] as string) || "Titan Account";
   }
 
   @action
@@ -1386,7 +1386,7 @@ export class KeyRingService {
               meta["socialType"] = web3Auth["type"];
               meta["email"] = web3Auth["email"] as string;
             } else {
-              // Keplr mobile only supports google web3Auth.
+              // Titan mobile only supports google web3Auth.
               continue;
             }
           }

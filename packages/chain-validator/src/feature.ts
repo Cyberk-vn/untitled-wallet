@@ -1,8 +1,8 @@
-import { ChainInfo } from "@keplr-wallet/types";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { ChainInfo } from "@titan-wallet/types";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 
 /**
- * Indicate the features which keplr supports.
+ * Indicate the features which titan supports.
  */
 export const SupportedChainFeatures = [
   "stargate",
@@ -169,7 +169,7 @@ export const RecognizableChainFeaturesMethod: {
 ];
 
 /**
- * Indicate the features which keplr can know whether that feature is needed.
+ * Indicate the features which titan can know whether that feature is needed.
  */
 export const RecognizableChainFeatures = RecognizableChainFeaturesMethod.map(
   (method) => method.feature

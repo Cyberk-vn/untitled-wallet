@@ -66,7 +66,7 @@ const fetchRequiredAccountsFromKeystone = async (
       DerivationAlgorithm.slip10
     );
     const sdk = new KeystoneSDK({
-      origin: "Keplr Extension",
+      origin: "Titan Extension",
     });
     const account = sdk.parseMultiAccounts(res.toUR());
     keys.push(account.keys[0]);

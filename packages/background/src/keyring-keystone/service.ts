@@ -1,6 +1,6 @@
 import { PlainObject, Vault } from "../vault";
 import { Buffer } from "buffer/";
-import { PubKeySecp256k1 } from "@keplr-wallet/crypto";
+import { PubKeySecp256k1 } from "@titan-wallet/crypto";
 import { KeyRingService } from "../keyring";
 import { MultiAccounts } from "./types";
 

@@ -1,6 +1,6 @@
-import { AmountConfig, ISenderConfig, UIProperties } from "@keplr-wallet/hooks";
-import { AppCurrency } from "@keplr-wallet/types";
-import { CoinPretty, Dec, Int, RatePretty } from "@keplr-wallet/unit";
+import { AmountConfig, ISenderConfig, UIProperties } from "@titan-wallet/hooks";
+import { AppCurrency } from "@titan-wallet/types";
+import { CoinPretty, Dec, Int, RatePretty } from "@titan-wallet/unit";
 import {
   ChainGetter,
   CosmosAccount,
@@ -9,7 +9,7 @@ import {
   IQueriesStore,
   MakeTxResponse,
   WalletStatus,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { useState } from "react";
 import { action, makeObservable, observable, override } from "mobx";
 import {
@@ -17,11 +17,11 @@ import {
   RouteResponse,
   SkipQueries,
   ObservableQueryIBCSwapInner,
-} from "@keplr-wallet/stores-internal";
+} from "@titan-wallet/stores-internal";
 import {
   EthereumAccountStore,
   UnsignedEVMTransactionWithErc20Approvals,
-} from "@keplr-wallet/stores-eth";
+} from "@titan-wallet/stores-eth";
 
 export class IBCSwapAmountConfig extends AmountConfig {
   @observable
@@ -254,7 +254,7 @@ export class IBCSwapAmountConfig extends AmountConfig {
               swapVenueChainInfo.evm != null)
           ) {
             throw new Error(
-              "Please connect Ethereum app on Ledger with Keplr to get the address"
+              "Please connect Ethereum app on Ledger with Titan to get the address"
             );
           }
 

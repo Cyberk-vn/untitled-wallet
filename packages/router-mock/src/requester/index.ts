@@ -2,10 +2,10 @@ import {
   MessageRequester,
   Message,
   Result,
-  KeplrError,
+  TitanError,
   JSONUint8Array,
   EthereumProviderRpcError,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import { MockRouter } from "../router";
 
 export class MockMessageRequester implements MessageRequester {
@@ -49,7 +49,7 @@ export class MockMessageRequester implements MessageRequester {
       } else {
         if ("module" in result.error) {
           if (typeof result.error.module === "string") {
-            throw new KeplrError(
+            throw new TitanError(
               result.error.module,
               result.error.code,
               result.error.message

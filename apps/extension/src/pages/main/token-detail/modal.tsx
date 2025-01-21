@@ -19,7 +19,7 @@ import { RenderMessages } from "./messages";
 import { Modal } from "../../../components/modal";
 import { BuyCryptoModal } from "../components";
 import { useBuy } from "../../../hooks/use-buy";
-import { CoinPretty, Dec, DecUtils } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, DecUtils } from "@titan-wallet/unit";
 import { CircleButton } from "./circle-button";
 import { AddressChip, QRCodeChip } from "./address-chip";
 import { ReceiveModal } from "./receive-modal";
@@ -27,8 +27,8 @@ import { StakedBalance } from "./staked-balance";
 import { MsgItemSkeleton } from "./msg-items/skeleton";
 import { Stack } from "../../../components/stack";
 import { EmptyView } from "../../../components/empty-view";
-import { DenomHelper } from "@keplr-wallet/common";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { DenomHelper } from "@titan-wallet/common";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 
 const Styles = {
   Container: styled.div`
@@ -152,7 +152,7 @@ export const TokenDetailModal: FunctionComponent<{
   const navigate = useNavigate();
 
   const querySupported = queriesStore.simpleQuery.queryGet<string[]>(
-    process.env["KEPLR_EXT_CONFIG_SERVER"],
+    process.env["TITAN_EXT_CONFIG_SERVER"],
     "/tx-history/supports"
   );
 
@@ -290,7 +290,7 @@ export const TokenDetailModal: FunctionComponent<{
   ];
 
   const msgHistory = usePaginatedCursorQuery<ResMsgsHistory>(
-    process.env["KEPLR_EXT_TX_HISTORY_BASE_URL"],
+    process.env["TITAN_EXT_TX_HISTORY_BASE_URL"],
     () => {
       return `/history/msgs/${
         ChainIdHelper.parse(chainId).identifier

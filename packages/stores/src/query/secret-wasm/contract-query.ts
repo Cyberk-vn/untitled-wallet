@@ -1,19 +1,19 @@
 import { ObservableChainQuery } from "../chain-query";
-import { toGenerator } from "@keplr-wallet/common";
+import { toGenerator } from "@titan-wallet/common";
 import { ChainGetter } from "../../chain";
 import { ObservableQuerySecretContractCodeHash } from "./contract-hash";
 import { computed, flow, makeObservable, observable } from "mobx";
-import { Keplr } from "@keplr-wallet/types";
+import { Titan } from "@titan-wallet/types";
 import { QuerySharedContext } from "../../common";
 
 import { Buffer } from "buffer/";
-import { makeURL } from "@keplr-wallet/simple-fetch";
+import { makeURL } from "@titan-wallet/simple-fetch";
 
 export class ObservableSecretContractChainQuery<
   T
 > extends ObservableChainQuery<T> {
   @observable.ref
-  protected keplr?: Keplr = undefined;
+  protected titan?: Titan = undefined;
 
   protected nonce?: Uint8Array;
 
@@ -24,7 +24,7 @@ export class ObservableSecretContractChainQuery<
     sharedContext: QuerySharedContext,
     chainId: string,
     chainGetter: ChainGetter,
-    protected readonly apiGetter: () => Promise<Keplr | undefined>,
+    protected readonly apiGetter: () => Promise<Titan | undefined>,
     protected readonly contractAddress: string,
     // eslint-disable-next-line @typescript-eslint/ban-types
     protected obj: object,
@@ -38,12 +38,12 @@ export class ObservableSecretContractChainQuery<
   protected override async onStart() {
     super.onStart();
 
-    if (!this.keplr) {
-      await this.initKeplr();
+    if (!this.titan) {
+      await this.initTitan();
     }
 
-    if (!this.keplr) {
-      throw new Error("Failed to get keplr");
+    if (!this.titan) {
+      throw new Error("Failed to get titan");
     }
 
     await this.querySecretContractCodeHash
@@ -57,7 +57,7 @@ export class ObservableSecretContractChainQuery<
     return (
       this.querySecretContractCodeHash.getQueryContract(this.contractAddress)
         .isFetching ||
-      this.keplr == null ||
+      this.titan == null ||
       this._isIniting ||
       super.isFetching
     );
@@ -75,16 +75,16 @@ export class ObservableSecretContractChainQuery<
   }
 
   @flow
-  protected *initKeplr() {
-    this.keplr = yield* toGenerator(this.apiGetter());
+  protected *initTitan() {
+    this.titan = yield* toGenerator(this.apiGetter());
   }
 
   @flow
   protected *init() {
     this._isIniting = true;
 
-    if (this.keplr && this.contractCodeHash) {
-      const enigmaUtils = this.keplr.getEnigmaUtils(this.chainId);
+    if (this.titan && this.contractCodeHash) {
+      const enigmaUtils = this.titan.getEnigmaUtils(this.chainId);
       const encrypted = yield* toGenerator(
         enigmaUtils.encrypt(this.contractCodeHash, this.obj)
       );
@@ -118,8 +118,8 @@ export class ObservableSecretContractChainQuery<
           const errorCipherB64 = rgxMatches[2];
           const errorCipherBz = Buffer.from(errorCipherB64, "base64");
 
-          if (this.keplr && this.nonce) {
-            const decrypted = await this.keplr
+          if (this.titan && this.nonce) {
+            const decrypted = await this.titan
               .getEnigmaUtils(this.chainId)
               .decrypt(errorCipherBz, this.nonce);
 
@@ -139,8 +139,8 @@ export class ObservableSecretContractChainQuery<
         }
       | undefined;
 
-    if (!this.keplr) {
-      throw new Error("Keplr API not initialized");
+    if (!this.titan) {
+      throw new Error("Titan API not initialized");
     }
 
     if (!this.nonce) {
@@ -151,7 +151,7 @@ export class ObservableSecretContractChainQuery<
       throw new Error("Failed to get the response from the contract");
     }
 
-    const decrypted = await this.keplr
+    const decrypted = await this.titan
       .getEnigmaUtils(this.chainId)
       .decrypt(Buffer.from(encResult.data, "base64"), this.nonce);
 

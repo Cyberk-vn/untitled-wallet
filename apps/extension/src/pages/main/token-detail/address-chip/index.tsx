@@ -5,7 +5,7 @@ import { ColorPalette } from "../../../../styles";
 import { Body3 } from "../../../../components/typography";
 import { useStore } from "../../../../stores";
 import { XAxis } from "../../../../components/axis";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import Lottie from "lottie-web";
 import { Gutter } from "../../../../components/gutter";
 import { useTheme } from "styled-components";

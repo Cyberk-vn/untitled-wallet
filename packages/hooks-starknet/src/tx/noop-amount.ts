@@ -1,9 +1,9 @@
 import { IAmountConfig, ISenderConfig, UIProperties } from "./types";
 import { TxChainSetter } from "./chain";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { action, computed, makeObservable, observable } from "mobx";
-import { ERC20Currency } from "@keplr-wallet/types";
-import { CoinPretty, Dec, DecUtils } from "@keplr-wallet/unit";
+import { ERC20Currency } from "@titan-wallet/types";
+import { CoinPretty, Dec, DecUtils } from "@titan-wallet/unit";
 import { useState } from "react";
 
 export class NoopAmountConfig extends TxChainSetter implements IAmountConfig {

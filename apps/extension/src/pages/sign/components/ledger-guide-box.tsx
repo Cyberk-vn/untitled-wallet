@@ -2,7 +2,7 @@ import React, { FunctionComponent, useLayoutEffect, useState } from "react";
 import { VerticalCollapseTransition } from "../../../components/transition/vertical-collapse";
 import { Gutter } from "../../../components/gutter";
 import { GuideBox } from "../../../components/guide-box";
-import { KeplrError } from "@keplr-wallet/router";
+import { TitanError } from "@titan-wallet/router";
 import {
   ErrCodeDeviceLocked,
   ErrFailedGetPublicKey,
@@ -12,7 +12,7 @@ import {
   ErrPublicKeyUnmatched,
   ErrSignRejected,
 } from "../utils/ledger-types";
-import { PlainObject } from "@keplr-wallet/background";
+import { PlainObject } from "@titan-wallet/background";
 import { FormattedMessage, useIntl } from "react-intl";
 
 export const LedgerGuideBox: FunctionComponent<{
@@ -38,7 +38,7 @@ export const LedgerGuideBox: FunctionComponent<{
   useLayoutEffect(() => {
     if (ledgerInteractingError) {
       if (
-        ledgerInteractingError instanceof KeplrError &&
+        ledgerInteractingError instanceof TitanError &&
         ledgerInteractingError.module === ErrModuleLedgerSign
       ) {
         switch (ledgerInteractingError.code) {
@@ -61,7 +61,7 @@ export const LedgerGuideBox: FunctionComponent<{
       {(() => {
         if (ledgerInteractingError) {
           if (
-            ledgerInteractingError instanceof KeplrError &&
+            ledgerInteractingError instanceof TitanError &&
             ledgerInteractingError.module === ErrModuleLedgerSign
           ) {
             if (ledgerInteractingError.code === ErrFailedSign) {
@@ -80,7 +80,7 @@ export const LedgerGuideBox: FunctionComponent<{
                       title={intl.formatMessage({
                         id: "page.sign.components.ledger-guide.box.error-title",
                       })}
-                      paragraph="Tx size too large for Ledger device (This is a Ledger limitation Keplr can't fix)"
+                      paragraph="Tx size too large for Ledger device (This is a Ledger limitation Titan can't fix)"
                     />
                   );
                 }

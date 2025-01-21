@@ -1,4 +1,4 @@
-import { ChainGetter, IQueriesStore } from "@keplr-wallet/stores";
+import { ChainGetter, IQueriesStore } from "@titan-wallet/stores";
 import {
   useFeeConfig,
   useGasConfig,

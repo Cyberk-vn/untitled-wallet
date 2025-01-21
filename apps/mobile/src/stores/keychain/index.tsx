@@ -1,8 +1,8 @@
 import {flow, makeObservable, observable} from 'mobx';
 import * as Keychain from 'react-native-keychain';
 import {SECURITY_RULES} from 'react-native-keychain';
-import {KVStore, toGenerator} from '@keplr-wallet/common';
-import {KeyRingStore} from '@keplr-wallet/stores-core';
+import {KVStore, toGenerator} from '@titan-wallet/common';
+import {KeyRingStore} from '@titan-wallet/stores-core';
 import * as LocalAuthentication from 'expo-local-authentication';
 import {Platform} from 'react-native';
 
@@ -100,7 +100,7 @@ export class KeychainStore {
     if (valid) {
       const result = yield* toGenerator(
         Keychain.setGenericPassword(
-          'keplr',
+          'titan',
           password,
           KeychainStore.defaultOptions,
         ),

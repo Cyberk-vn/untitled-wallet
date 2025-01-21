@@ -2,7 +2,7 @@ import {
   Router,
   MessageRequester,
   BACKGROUND_PORT,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   InteractionForegroundHandler,
   interactionForegroundInit,
@@ -13,7 +13,7 @@ import {
   RejectInteractionMsg,
   RejectInteractionV2Msg,
   GetInteractionWaitingDataArrayMsg,
-} from "@keplr-wallet/background";
+} from "@titan-wallet/background";
 import {
   action,
   observable,

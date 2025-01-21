@@ -3,9 +3,9 @@ import { useLayoutEffect } from "react";
 import {
   GetAutoLockStateMsg,
   StartAutoLockMonitoringMsg,
-} from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+} from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 
 // CONTRACT: Use with `observer`
 export const useAutoLockMonitoring = () => {

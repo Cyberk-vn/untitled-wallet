@@ -1,7 +1,7 @@
 import './src/background/background';
 
-import {Keplr} from '@keplr-wallet/provider';
+import {Titan} from '@titan-wallet/provider';
 import {RNMessageRequesterInternal} from './src/router';
 
 // @ts-ignore
-window.keplr = new Keplr('', 'core', new RNMessageRequesterInternal());
+window.titan = new Titan('', 'core', new RNMessageRequesterInternal());

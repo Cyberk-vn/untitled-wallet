@@ -3,7 +3,7 @@ import {
   ChainGetter,
   ObservableChainQueryMap,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { TokenInfo } from "./types";
 
 export class ObservableQueryEVMTokenInfoInner extends ObservableChainQuery<TokenInfo> {

@@ -18,12 +18,12 @@ import {
   checkRPCConnectivity,
   checkStarknetRpcConnectivity,
   DifferentChainVersionError,
-} from "@keplr-wallet/chain-validator";
+} from "@titan-wallet/chain-validator";
 import { useNotification } from "../../../../hooks/notification";
 import { useConfirm } from "../../../../hooks/confirm";
-import { GetChainOriginalEndpointsMsg } from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+import { GetChainOriginalEndpointsMsg } from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Gutter } from "../../../../components/gutter";
 

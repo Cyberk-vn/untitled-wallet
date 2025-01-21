@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../stores";
 import { PermissionBasicAccessPage } from "./basic-access";
-import { GlobalPermissionData, PermissionData } from "@keplr-wallet/background";
+import { GlobalPermissionData, PermissionData } from "@titan-wallet/background";
 import { Splash } from "../../components/splash";
 import { GlobalPermissionGetChainInfosPage } from "./get-chain-infos";
 import { useInteractionInfo } from "../../hooks";

@@ -1,4 +1,4 @@
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import {
   useAmountConfig,
   useFeeConfig,

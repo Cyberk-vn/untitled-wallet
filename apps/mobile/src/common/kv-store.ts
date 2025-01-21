@@ -1,4 +1,4 @@
-import {KVStore, MultiGet} from '@keplr-wallet/common';
+import {KVStore, MultiGet} from '@titan-wallet/common';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export class AsyncKVStore implements KVStore, MultiGet {

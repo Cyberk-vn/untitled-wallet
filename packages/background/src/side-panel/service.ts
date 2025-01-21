@@ -1,5 +1,5 @@
 import { action, autorun, makeObservable, observable, runInAction } from "mobx";
-import { isServiceWorker, KVStore } from "@keplr-wallet/common";
+import { isServiceWorker, KVStore } from "@titan-wallet/common";
 import { AnalyticsService } from "../analytics";
 
 export class SidePanelService {

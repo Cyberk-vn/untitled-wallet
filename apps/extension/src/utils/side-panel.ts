@@ -1,6 +1,6 @@
-import { SetSidePanelEnabledMsg } from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+import { SetSidePanelEnabledMsg } from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 
 export const isRunningInSidePanel = (): boolean => {
   // webpack과 manifest를 참조해보면

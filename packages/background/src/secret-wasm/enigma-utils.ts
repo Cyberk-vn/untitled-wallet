@@ -2,9 +2,9 @@ import { generateKeyPair, sharedKey as x25519 } from "curve25519-js";
 import { hkdf } from "@noble/hashes/hkdf";
 import { sha256 } from "@noble/hashes/sha256";
 import * as miscreant from "miscreant";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import { Buffer } from "buffer/";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 
 const cryptoProvider = new miscreant.PolyfillCryptoProvider();
 

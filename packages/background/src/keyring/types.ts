@@ -1,6 +1,6 @@
 import { PlainObject, Vault } from "../vault";
-import { PubKeySecp256k1, PubKeyStarknet } from "@keplr-wallet/crypto";
-import { ModularChainInfo } from "@keplr-wallet/types";
+import { PubKeySecp256k1, PubKeyStarknet } from "@titan-wallet/crypto";
+import { ModularChainInfo } from "@titan-wallet/types";
 
 export type KeyRingStatus = "empty" | "locked" | "unlocked";
 

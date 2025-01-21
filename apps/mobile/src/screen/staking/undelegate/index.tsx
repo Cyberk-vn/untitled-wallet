@@ -7,7 +7,7 @@ import {
   useGasSimulator,
   useTxConfigsValidate,
   useUndelegateTxConfig,
-} from '@keplr-wallet/hooks';
+} from '@titan-wallet/hooks';
 import {AsyncKVStore} from '../../../common';
 import {AmountInput} from '../../../components/input/amount-input';
 import {MemoInput} from '../../../components/input/memo-input';

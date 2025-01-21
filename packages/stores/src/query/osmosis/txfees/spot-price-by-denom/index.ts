@@ -5,7 +5,7 @@ import {
 import { ChainGetter } from "../../../../chain";
 import { computed, makeObservable } from "mobx";
 import { SpotPriceByDenom } from "./types";
-import { Dec } from "@keplr-wallet/unit";
+import { Dec } from "@titan-wallet/unit";
 import { QuerySharedContext } from "../../../../common";
 
 export class ObservableQueryTxFeesSpotPriceByDenomInner extends ObservableChainQuery<SpotPriceByDenom> {

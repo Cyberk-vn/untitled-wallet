@@ -1,4 +1,4 @@
-import { InteractionWaitingData } from "@keplr-wallet/background";
+import { InteractionWaitingData } from "@titan-wallet/background";
 import { isRunningInSidePanel } from "./side-panel";
 
 export const setInteractionDataHref = (

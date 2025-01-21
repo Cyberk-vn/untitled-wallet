@@ -1,13 +1,13 @@
 import { computed, makeObservable } from "mobx";
-import { DenomHelper } from "@keplr-wallet/common";
+import { DenomHelper } from "@titan-wallet/common";
 import { QuerySharedContext } from "../../common";
 import { ChainGetter } from "../../chain";
 import { ObservableQuerySecretContractCodeHash } from "./contract-hash";
-import { CoinPretty, Int } from "@keplr-wallet/unit";
+import { CoinPretty, Int } from "@titan-wallet/unit";
 import { BalanceRegistry, IObservableQueryBalanceImpl } from "../balances";
 import { ObservableSecretContractChainQuery } from "./contract-query";
 import { WrongViewingKeyError } from "./errors";
-import { AppCurrency, Keplr } from "@keplr-wallet/types";
+import { AppCurrency, Titan } from "@titan-wallet/types";
 
 export class ObservableQuerySecret20BalanceImpl
   extends ObservableSecretContractChainQuery<{
@@ -24,7 +24,7 @@ export class ObservableQuerySecret20BalanceImpl
     sharedContext: QuerySharedContext,
     chainId: string,
     chainGetter: ChainGetter,
-    apiGetter: () => Promise<Keplr | undefined>,
+    apiGetter: () => Promise<Titan | undefined>,
     protected readonly denomHelper: DenomHelper,
     protected readonly bech32Address: string,
     querySecretContractCodeHash: ObservableQuerySecretContractCodeHash
@@ -119,7 +119,7 @@ export class ObservableQuerySecret20BalanceImpl
 export class ObservableQuerySecret20BalanceRegistry implements BalanceRegistry {
   constructor(
     protected readonly sharedContext: QuerySharedContext,
-    protected readonly apiGetter: () => Promise<Keplr | undefined>,
+    protected readonly apiGetter: () => Promise<Titan | undefined>,
     protected readonly querySecretContractCodeHash: ObservableQuerySecretContractCodeHash
   ) {}
 

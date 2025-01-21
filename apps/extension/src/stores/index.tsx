@@ -6,13 +6,13 @@ import React, {
 } from "react";
 
 import { createRootStore, RootStore } from "./root";
-import { getKeplrFromWindow } from "@keplr-wallet/stores";
-import { Keplr } from "@keplr-wallet/types";
+import { getTitanFromWindow } from "@titan-wallet/stores";
+import { Titan } from "@titan-wallet/types";
 import { autorun } from "mobx";
-import { PlainObject } from "@keplr-wallet/background";
+import { PlainObject } from "@titan-wallet/background";
 import { addGlobalEventListener } from "../utils/global-events";
 
-interface KeplrCoreTypes {
+interface TitanCoreTypes {
   __core__getAnalyticsId(): Promise<string>;
 }
 
@@ -24,12 +24,12 @@ export const StoreProvider: FunctionComponent<PropsWithChildren> = ({
   const [stores] = useState(() => createRootStore());
 
   useEffect(() => {
-    getKeplrFromWindow().then(
-      (keplr: (Keplr & Partial<KeplrCoreTypes>) | undefined) => {
-        // Remember that `KeplrCoreTypes` is only usable on privileged env.
+    getTitanFromWindow().then(
+      (titan: (Titan & Partial<TitanCoreTypes>) | undefined) => {
+        // Remember that `TitanCoreTypes` is only usable on privileged env.
         // Definitely, extension is privileged env. So, we can use `getAnalyticsId()`.
-        if (keplr && keplr.__core__getAnalyticsId) {
-          keplr.__core__getAnalyticsId().then((id) => {
+        if (titan && titan.__core__getAnalyticsId) {
+          titan.__core__getAnalyticsId().then((id) => {
             stores.analyticsStore.setUserId(id);
           });
         }
@@ -43,7 +43,7 @@ export const StoreProvider: FunctionComponent<PropsWithChildren> = ({
     //      원래 팝업에서는 이런 경우가 사실상 발생하기 어려웠기 때문에 이런걸 따로 처리할 구조를 가지고 있지 않았다.
     //      어쩔 수 없으니 일단 그런 경우가 발생할 수 있다고 파악될 경우 수동으로 일일히 처리해준다...
     const disposal1 = addGlobalEventListener(
-      "keplr_keyring_changed",
+      "titan_keyring_changed",
       async () => {
         await stores.keyRingStore.refreshKeyRingStatus();
         await stores.chainStore.updateEnabledChainIdentifiersFromBackground();
@@ -68,7 +68,7 @@ export const StoreProvider: FunctionComponent<PropsWithChildren> = ({
     );
 
     const disposal2 = addGlobalEventListener(
-      "keplr_new_key_created",
+      "titan_new_key_created",
       async (newKeyId: string) => {
         await stores.keyRingStore.refreshKeyRingStatus();
         if (newKeyId && stores.keyRingStore.selectedKeyInfo?.id === newKeyId) {
@@ -95,7 +95,7 @@ export const StoreProvider: FunctionComponent<PropsWithChildren> = ({
     );
 
     const disposal3 = addGlobalEventListener(
-      "keplr_enabled_chain_changed",
+      "titan_enabled_chain_changed",
       async (keyId: string) => {
         if (keyId && stores.keyRingStore.selectedKeyInfo?.id === keyId) {
           await stores.chainStore.updateEnabledChainIdentifiersFromBackground();
@@ -104,7 +104,7 @@ export const StoreProvider: FunctionComponent<PropsWithChildren> = ({
     );
 
     const disposal4 = addGlobalEventListener(
-      "keplr_derivation_path_changed",
+      "titan_derivation_path_changed",
       async (params: any) => {
         await stores.keyRingStore.refreshKeyRingStatus();
         if (params?.chainId) {
@@ -122,7 +122,7 @@ export const StoreProvider: FunctionComponent<PropsWithChildren> = ({
     );
 
     const disposal5 = addGlobalEventListener(
-      "keplr_suggested_chain_added",
+      "titan_suggested_chain_added",
       async () => {
         await stores.keyRingStore.refreshKeyRingStatus();
         await stores.chainStore.updateChainInfosFromBackground();
@@ -131,7 +131,7 @@ export const StoreProvider: FunctionComponent<PropsWithChildren> = ({
     );
 
     const disposal6 = addGlobalEventListener(
-      "keplr_suggested_chain_removed",
+      "titan_suggested_chain_removed",
       async () => {
         await stores.keyRingStore.refreshKeyRingStatus();
         await stores.chainStore.updateChainInfosFromBackground();
@@ -140,7 +140,7 @@ export const StoreProvider: FunctionComponent<PropsWithChildren> = ({
     );
 
     const disposal7 = addGlobalEventListener(
-      "keplr_keyring_locked",
+      "titan_keyring_locked",
       async () => {
         await stores.keyRingStore.refreshKeyRingStatus();
       }

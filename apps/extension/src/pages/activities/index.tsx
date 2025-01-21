@@ -20,9 +20,9 @@ import {
   IAccountStore,
   IChainInfoImpl,
   IChainStore,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { action, computed, makeObservable, observable } from "mobx";
-import { Bech32Address } from "@keplr-wallet/cosmos";
+import { Bech32Address } from "@titan-wallet/cosmos";
 import { Buffer } from "buffer/";
 import { FormattedMessage } from "react-intl";
 
@@ -97,7 +97,7 @@ export const ActivitiesPage: FunctionComponent = observer(() => {
   const [selectedKey, setSelectedKey] = useState<string>("__all__");
 
   const querySupported = queriesStore.simpleQuery.queryGet<string[]>(
-    process.env["KEPLR_EXT_CONFIG_SERVER"],
+    process.env["TITAN_EXT_CONFIG_SERVER"],
     "/tx-history/supports"
   );
 
@@ -115,9 +115,9 @@ export const ActivitiesPage: FunctionComponent = observer(() => {
   otherBech32Addresses.setSupportedChainList(supportedChainList);
 
   const msgHistory = usePaginatedCursorQuery<ResMsgsHistory>(
-    process.env["KEPLR_EXT_TX_HISTORY_BASE_URL"],
+    process.env["TITAN_EXT_TX_HISTORY_BASE_URL"],
     () => {
-      return `/history/msgs/keplr-multi-chain?baseBech32Address=${
+      return `/history/msgs/titan-multi-chain?baseBech32Address=${
         account.bech32Address
       }&chainIdentifiers=${(() => {
         if (selectedKey === "__all__") {

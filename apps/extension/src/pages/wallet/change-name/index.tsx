@@ -10,7 +10,7 @@ import { useStore } from "../../../stores";
 import { useSearchParams } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { useInteractionInfo } from "../../../hooks";
-import { InteractionWaitingData } from "@keplr-wallet/background";
+import { InteractionWaitingData } from "@titan-wallet/background";
 import { useIntl } from "react-intl";
 import { handleExternalInteractionWithNoProceedNext } from "../../../utils";
 

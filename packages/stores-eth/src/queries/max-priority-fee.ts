@@ -1,4 +1,4 @@
-import { ChainGetter, QuerySharedContext } from "@keplr-wallet/stores";
+import { ChainGetter, QuerySharedContext } from "@titan-wallet/stores";
 import { computed, makeObservable } from "mobx";
 import { ObservableEvmChainJsonRpcQuery } from "./evm-chain-json-rpc";
 

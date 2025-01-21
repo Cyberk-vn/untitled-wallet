@@ -5,8 +5,8 @@ import {
   INTERACTION_TYPE_GLOBAL_PERMISSION,
   INTERACTION_TYPE_PERMISSION,
   PermissionData,
-} from "@keplr-wallet/background";
-import { BACKGROUND_PORT, MessageRequester } from "@keplr-wallet/router";
+} from "@titan-wallet/background";
+import { BACKGROUND_PORT, MessageRequester } from "@titan-wallet/router";
 import { computed, makeObservable } from "mobx";
 import { PermissionManagerStore } from "../permission-manager";
 

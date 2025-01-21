@@ -5,7 +5,7 @@ import { Box } from "../../../../components/box";
 import { useNavigate } from "react-router";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
-import { Dec } from "@keplr-wallet/unit";
+import { Dec } from "@titan-wallet/unit";
 import { Skeleton } from "../../../../components/skeleton";
 import { useIntl } from "react-intl";
 

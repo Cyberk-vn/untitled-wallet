@@ -7,7 +7,7 @@ import {
   useSceneTransition,
 } from "../../../components/transition";
 import { observer } from "mobx-react-lite";
-import { PlainObject } from "@keplr-wallet/background";
+import { PlainObject } from "@titan-wallet/background";
 import { useIntl } from "react-intl";
 
 export const RegisterNamePasswordScene: FunctionComponent<{

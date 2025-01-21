@@ -7,9 +7,9 @@ import ReactDOM from "react-dom";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { StoreProvider } from "./stores";
 import { GlobalStyle, ScrollBarStyle } from "./styles";
-import { Keplr } from "@keplr-wallet/provider";
+import { Titan } from "@titan-wallet/provider";
 import manifest from "./manifest.v2.json";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
 import { configure } from "mobx";
 import { ModalRootProvider } from "./components/modal";
 import { ConfirmProvider } from "./hooks/confirm";
@@ -27,7 +27,7 @@ configure({
   enforceActions: "always", // Make mobx to strict mode.
 });
 
-window.keplr = new Keplr(
+window.titan = new Titan(
   manifest.version,
   "core",
   new InExtensionMessageRequester()

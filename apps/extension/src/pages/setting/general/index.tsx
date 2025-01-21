@@ -14,9 +14,9 @@ import { Toggle } from "../../../components/toggle";
 import {
   GetSidePanelEnabledMsg,
   GetSidePanelIsSupportedMsg,
-} from "@keplr-wallet/background";
-import { InExtensionMessageRequester } from "@keplr-wallet/router-extension";
-import { BACKGROUND_PORT } from "@keplr-wallet/router";
+} from "@titan-wallet/background";
+import { InExtensionMessageRequester } from "@titan-wallet/router-extension";
+import { BACKGROUND_PORT } from "@titan-wallet/router";
 import { Subtitle2 } from "../../../components/typography";
 import { toggleSidePanelMode } from "../../../utils";
 
@@ -102,7 +102,7 @@ export const SettingGeneralPage: FunctionComponent = observer(() => {
               id: "page.setting.general.link-kpelr-mobile-title",
             })}
             endIcon={<RightArrowIcon />}
-            onClick={() => navigate("/setting/general/link-keplr-mobile")}
+            onClick={() => navigate("/setting/general/link-titan-mobile")}
           />
 
           {sidePanelSupported ? (

@@ -14,7 +14,7 @@ import { ColorPalette } from "../../../styles";
 import { Body1, Subtitle3 } from "../../../components/typography";
 import { CopyToClipboard } from "../components/copy-to-clipboard";
 import { Buffer } from "buffer/";
-import { PlainObject } from "@keplr-wallet/background";
+import { PlainObject } from "@titan-wallet/background";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useTheme } from "styled-components";
 

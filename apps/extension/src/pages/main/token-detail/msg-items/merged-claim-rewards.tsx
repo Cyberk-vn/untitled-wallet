@@ -2,10 +2,10 @@ import React, { FunctionComponent, useMemo } from "react";
 import { MsgHistory } from "../types";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
-import { CoinPretty, Dec, PricePretty } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, PricePretty } from "@titan-wallet/unit";
 import { MsgItemBase } from "./base";
 import { ItemLogo } from "./logo";
-import { isValidCoinStr, parseCoinStr } from "@keplr-wallet/common";
+import { isValidCoinStr, parseCoinStr } from "@titan-wallet/common";
 import { ColorPalette } from "../../../../styles";
 import styled, { useTheme } from "styled-components";
 import { Box } from "../../../../components/box";
@@ -14,7 +14,7 @@ import { VerticalCollapseTransition } from "../../../../components/transition/ve
 import { Body3, Button2, Subtitle3 } from "../../../../components/typography";
 import { XAxis, YAxis } from "../../../../components/axis";
 import { Gutter } from "../../../../components/gutter";
-import { AppCurrency } from "@keplr-wallet/types";
+import { AppCurrency } from "@titan-wallet/types";
 import { MessageClaimRewardIcon } from "../../../../components/icon";
 
 export const MsgRelationMergedClaimRewards: FunctionComponent<{

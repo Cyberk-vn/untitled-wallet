@@ -1,4 +1,4 @@
-import { SettledResponse, SettledResponses } from "@keplr-wallet/types";
+import { SettledResponse, SettledResponses } from "@titan-wallet/types";
 import { runInAction } from "mobx";
 
 type Request<ARGS, R> = {

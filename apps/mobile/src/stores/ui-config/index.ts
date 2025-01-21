@@ -10,14 +10,14 @@ import {
   runInAction,
   toJS,
 } from 'mobx';
-import {KVStore} from '@keplr-wallet/common';
-import {CoinGeckoPriceStore} from '@keplr-wallet/stores';
-import {KeyRingStore} from '@keplr-wallet/stores-core';
-import {FiatCurrency} from '@keplr-wallet/types';
+import {KVStore} from '@titan-wallet/common';
+import {CoinGeckoPriceStore} from '@titan-wallet/stores';
+import {KeyRingStore} from '@titan-wallet/stores-core';
+import {FiatCurrency} from '@titan-wallet/types';
 import {CopyAddressConfig} from './copy-address';
 import {ChainStore} from '../chain';
 import {AddressBookConfig} from './address-book';
-import {MessageRequester} from '@keplr-wallet/router';
+import {MessageRequester} from '@titan-wallet/router';
 import {AutoLockConfig} from './auto-lock';
 import {IBCSwapConfig} from './ibc-swap.ts';
 import {SelectWalletConfig} from './select-wallet.ts';

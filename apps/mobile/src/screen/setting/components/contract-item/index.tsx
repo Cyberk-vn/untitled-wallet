@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {useIntl} from 'react-intl';
 import {Box} from '../../../../components/box';
 import {useStyle} from '../../../../styles';

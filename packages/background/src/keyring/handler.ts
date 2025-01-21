@@ -2,9 +2,9 @@ import {
   Env,
   Handler,
   InternalHandler,
-  KeplrError,
+  TitanError,
   Message,
-} from "@keplr-wallet/router";
+} from "@titan-wallet/router";
 import {
   GetIsLockedMsg,
   ChangeKeyRingNameMsg,
@@ -129,7 +129,7 @@ export const getHandler: (service: KeyRingService) => Handler = (
       case SearchKeyRingsMsg:
         return handleSearchKeyRingsMsg(service)(env, msg as SearchKeyRingsMsg);
       default:
-        throw new KeplrError("keyring", 221, "Unknown msg type");
+        throw new TitanError("keyring", 221, "Unknown msg type");
     }
   };
 };

@@ -1,4 +1,4 @@
-import { KeplrError, Message } from "@keplr-wallet/router";
+import { TitanError, Message } from "@titan-wallet/router";
 import { ROUTE } from "./constants";
 import { AllPermissionDataPerOrigin } from "./types";
 
@@ -16,11 +16,11 @@ export class GetPermissionOriginsMsg extends Message<string[]> {
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("permission", 100, "chain id not set");
+      throw new TitanError("permission", 100, "chain id not set");
     }
 
     if (!this.permissionType) {
-      throw new KeplrError("permission", 110, "empty permission type");
+      throw new TitanError("permission", 110, "empty permission type");
     }
   }
 
@@ -47,11 +47,11 @@ export class GetOriginPermittedChainsMsg extends Message<string[]> {
 
   validateBasic(): void {
     if (!this.permissionOrigin) {
-      throw new KeplrError("permission", 101, "origin not set");
+      throw new TitanError("permission", 101, "origin not set");
     }
 
     if (!this.permissionType) {
-      throw new KeplrError("permission", 110, "empty permission type");
+      throw new TitanError("permission", 110, "empty permission type");
     }
   }
 
@@ -75,7 +75,7 @@ export class GetGlobalPermissionOriginsMsg extends Message<string[]> {
 
   validateBasic(): void {
     if (!this.permissionType) {
-      throw new KeplrError("permission", 110, "empty permission type");
+      throw new TitanError("permission", 110, "empty permission type");
     }
   }
 
@@ -103,15 +103,15 @@ export class AddPermissionOrigin extends Message<void> {
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("permission", 100, "chain id not set");
+      throw new TitanError("permission", 100, "chain id not set");
     }
 
     if (!this.permissionType) {
-      throw new KeplrError("permission", 110, "empty permission type");
+      throw new TitanError("permission", 110, "empty permission type");
     }
 
     if (!this.permissionOrigin) {
-      throw new KeplrError("permission", 111, "empty permission origin");
+      throw new TitanError("permission", 111, "empty permission origin");
     }
   }
 
@@ -139,15 +139,15 @@ export class RemovePermissionOrigin extends Message<void> {
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("permission", 100, "chain id not set");
+      throw new TitanError("permission", 100, "chain id not set");
     }
 
     if (!this.permissionType) {
-      throw new KeplrError("permission", 110, "empty permission type");
+      throw new TitanError("permission", 110, "empty permission type");
     }
 
     if (!this.permissionOrigin) {
-      throw new KeplrError("permission", 111, "empty permission origin");
+      throw new TitanError("permission", 111, "empty permission origin");
     }
   }
 
@@ -174,11 +174,11 @@ export class RemoveGlobalPermissionOriginMsg extends Message<void> {
 
   validateBasic(): void {
     if (!this.permissionType) {
-      throw new KeplrError("permission", 110, "empty permission type");
+      throw new TitanError("permission", 110, "empty permission type");
     }
 
     if (!this.permissionOrigin) {
-      throw new KeplrError("permission", 111, "empty permission origin");
+      throw new TitanError("permission", 111, "empty permission origin");
     }
   }
 
@@ -202,7 +202,7 @@ export class ClearOriginPermissionMsg extends Message<void> {
 
   validateBasic(): void {
     if (!this.permissionOrigin) {
-      throw new KeplrError("permission", 111, "empty permission origin");
+      throw new TitanError("permission", 111, "empty permission origin");
     }
   }
 
@@ -270,7 +270,7 @@ export class GetCurrentChainIdForEVMMsg extends Message<string | undefined> {
 
   validateBasic(): void {
     if (!this.permissionOrigin) {
-      throw new KeplrError("permission", 111, "empty permission origin");
+      throw new TitanError("permission", 111, "empty permission origin");
     }
   }
 
@@ -297,11 +297,11 @@ export class UpdateCurrentChainIdForEVMMsg extends Message<void> {
 
   validateBasic(): void {
     if (!this.permissionOrigin) {
-      throw new KeplrError("permission", 111, "empty permission origin");
+      throw new TitanError("permission", 111, "empty permission origin");
     }
 
     if (!this.chainId) {
-      throw new KeplrError("permission", 100, "chain id not set");
+      throw new TitanError("permission", 100, "chain id not set");
     }
   }
 
@@ -327,7 +327,7 @@ export class GetCurrentChainIdForStarknetMsg extends Message<
 
   validateBasic(): void {
     if (!this.permissionOrigin) {
-      throw new KeplrError("permission", 111, "empty permission origin");
+      throw new TitanError("permission", 111, "empty permission origin");
     }
   }
 
@@ -354,11 +354,11 @@ export class UpdateCurrentChainIdForStarknetMsg extends Message<void> {
 
   validateBasic(): void {
     if (!this.permissionOrigin) {
-      throw new KeplrError("permission", 111, "empty permission origin");
+      throw new TitanError("permission", 111, "empty permission origin");
     }
 
     if (!this.chainId) {
-      throw new KeplrError("permission", 100, "chain id not set");
+      throw new TitanError("permission", 100, "chain id not set");
     }
   }
 

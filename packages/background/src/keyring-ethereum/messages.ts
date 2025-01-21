@@ -1,6 +1,6 @@
-import { Bech32Address } from "@keplr-wallet/cosmos";
-import { Message } from "@keplr-wallet/router";
-import { EthSignType } from "@keplr-wallet/types";
+import { Bech32Address } from "@titan-wallet/cosmos";
+import { Message } from "@titan-wallet/router";
+import { EthSignType } from "@titan-wallet/types";
 import { ROUTE } from "./constants";
 
 export class RequestSignEthereumMsg extends Message<Uint8Array> {

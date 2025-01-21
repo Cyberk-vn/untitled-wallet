@@ -1,10 +1,10 @@
 import {
   ChainGetter,
-  getKeplrFromWindow,
+  getTitanFromWindow,
   HasMapStore,
   ObservableJsonRPCQuery,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 
 export class ObservableEvmChainJsonRpcQuery<
   T = unknown,
@@ -30,8 +30,8 @@ export class ObservableEvmChainJsonRpcQuery<
   }
 
   protected override async fetchResponse(): Promise<{ headers: any; data: T }> {
-    const keplr = await getKeplrFromWindow();
-    const data = await keplr?.ethereum.request({
+    const titan = await getTitanFromWindow();
+    const data = await titan?.ethereum.request({
       method: this.method,
       params: this.params,
       chainId: this._chainId,

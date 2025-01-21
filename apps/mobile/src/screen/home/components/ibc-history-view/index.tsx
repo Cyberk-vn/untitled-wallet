@@ -5,8 +5,8 @@ import {
   GetIBCHistoriesMsg,
   IBCHistory,
   RemoveIBCHistoryMsg,
-} from '@keplr-wallet/background';
-import {BACKGROUND_PORT} from '@keplr-wallet/router';
+} from '@titan-wallet/background';
+import {BACKGROUND_PORT} from '@titan-wallet/router';
 import {useLayoutEffectOnce} from '../../../../hooks';
 import {RNMessageRequesterInternal} from '../../../../router';
 import {Stack} from '../../../../components/stack';
@@ -20,9 +20,9 @@ import {Gutter} from '../../../../components/gutter';
 import {Text} from 'react-native';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {RectButton} from '../../../../components/rect-button';
-import {CoinPretty} from '@keplr-wallet/unit';
+import {CoinPretty} from '@titan-wallet/unit';
 import {VerticalCollapseTransition} from '../../../../components/transition';
-import {IChainInfoImpl} from '@keplr-wallet/stores';
+import {IChainInfoImpl} from '@titan-wallet/stores';
 import {ArrowRightSolidIcon} from '../../../../components/icon/arrow-right-solid';
 import Reanimated, {
   useSharedValue,

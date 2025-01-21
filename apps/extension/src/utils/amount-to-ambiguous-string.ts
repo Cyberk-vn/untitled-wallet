@@ -1,4 +1,4 @@
-import { Dec, Int } from "@keplr-wallet/unit";
+import { Dec, Int } from "@titan-wallet/unit";
 
 export const amountToAmbiguousString = (amount: { toDec: () => Dec }) => {
   if (amount.toDec().lte(new Dec(0))) {

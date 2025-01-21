@@ -1,5 +1,5 @@
-import { ObservableQuery, QuerySharedContext } from "@keplr-wallet/stores";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ObservableQuery, QuerySharedContext } from "@titan-wallet/stores";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { TokenContract } from "./types";
 
 export class ObservableQueryTokenContracts extends ObservableQuery<

@@ -1,7 +1,7 @@
-import { KeplrError, Message } from "@keplr-wallet/router";
+import { TitanError, Message } from "@titan-wallet/router";
 import { ROUTE } from "./constants";
 import { ERC20TokenInfo } from "./types";
-import { AppCurrency } from "@keplr-wallet/types";
+import { AppCurrency } from "@titan-wallet/types";
 
 export class GetAllERC20TokenInfosMsg extends Message<
   Record<string, ERC20TokenInfo[] | undefined>
@@ -45,11 +45,11 @@ export class SuggestERC20TokenMsg extends Message<void> {
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("tokens", 100, "Chain id is empty");
+      throw new TitanError("tokens", 100, "Chain id is empty");
     }
 
     if (!this.contractAddress) {
-      throw new KeplrError("tokens", 101, "Contract address is empty");
+      throw new TitanError("tokens", 101, "Contract address is empty");
     }
   }
 
@@ -78,7 +78,7 @@ export class AddERC20TokenMsg extends Message<
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("tokens", 100, "Chain id is empty");
+      throw new TitanError("tokens", 100, "Chain id is empty");
     }
   }
 
@@ -107,7 +107,7 @@ export class RemoveERC20TokenMsg extends Message<
 
   validateBasic(): void {
     if (!this.chainId) {
-      throw new KeplrError("tokens", 100, "Chain id is empty");
+      throw new TitanError("tokens", 100, "Chain id is empty");
     }
   }
 

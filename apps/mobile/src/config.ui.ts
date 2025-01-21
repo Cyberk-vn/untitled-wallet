@@ -1,14 +1,14 @@
 // Seperate shared config from UI config to prevent code mixup between UI and background process code.
-import {FiatCurrency} from '@keplr-wallet/types';
+import {FiatCurrency} from '@titan-wallet/types';
 
-export const HelpDeskUrl = 'https://help.keplr.app';
-export const TermsOfUseUrl = 'https://terms-of-use.keplr.app';
+export const HelpDeskUrl = 'https://help.titan.app';
+export const TermsOfUseUrl = 'https://terms-of-use.titan.app';
 
 export const CoinGeckoAPIEndPoint =
-  process.env['KEPLR_EXT_COINGECKO_ENDPOINT'] ||
+  process.env['TITAN_EXT_COINGECKO_ENDPOINT'] ||
   'https://api.coingecko.com/api/v3';
 export const CoinGeckoGetPrice =
-  process.env['KEPLR_EXT_COINGECKO_GETPRICE'] || '/simple/price';
+  process.env['TITAN_EXT_COINGECKO_GETPRICE'] || '/simple/price';
 export const AutoFetchingFiatValueInterval = 300 * 1000; // 5min
 
 export const AutoFetchingAssetsInterval = 15 * 1000; // 15sec
@@ -18,12 +18,12 @@ export const DefaultGasMsgWithdrawRewards = 240000; // Gas per messages.
 // Endpoint for Ethereum node.
 // This is used for ENS.
 export const EthereumEndpoint =
-  process.env['KEPLR_EXT_ETHEREUM_ENDPOINT'] || '';
+  process.env['TITAN_EXT_ETHEREUM_ENDPOINT'] || '';
 
 export const TokenContractListURL =
   'https://opbaqquqruxn7fdsgcncrtfrwa0qxnoj.lambda-url.us-west-2.on.aws/';
 export const TokenContractListRepoURL =
-  'https://github.com/chainapsis/keplr-contract-registry';
+  'https://github.com/chainapsis/titan-contract-registry';
 
 export const FiatCurrencies: FiatCurrency[] = [
   {
@@ -94,7 +94,7 @@ export const FiatCurrencies: FiatCurrency[] = [
   },
 ];
 
-export const AmplitudeApiKey = process.env['KEPLR_EXT_AMPLITUDE_API_KEY'] || '';
+export const AmplitudeApiKey = process.env['TITAN_EXT_AMPLITUDE_API_KEY'] || '';
 
 export const ICNSInfo = {
   chainId: 'osmosis-1',

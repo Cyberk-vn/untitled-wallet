@@ -1,6 +1,6 @@
 import React, {FunctionComponent, useLayoutEffect, useState} from 'react';
-import {PlainObject} from '@keplr-wallet/background';
-import {KeplrError} from '@keplr-wallet/router';
+import {PlainObject} from '@titan-wallet/background';
+import {TitanError} from '@titan-wallet/router';
 
 import {useIntl} from 'react-intl';
 import {
@@ -28,7 +28,7 @@ export const LedgerGuideBox: FunctionComponent<{
   useLayoutEffect(() => {
     if (ledgerInteractingError) {
       if (
-        ledgerInteractingError instanceof KeplrError &&
+        ledgerInteractingError instanceof TitanError &&
         ledgerInteractingError.module === ErrModuleLedgerSign
       ) {
         switch (ledgerInteractingError.code) {
@@ -49,7 +49,7 @@ export const LedgerGuideBox: FunctionComponent<{
       {(() => {
         if (ledgerInteractingError) {
           if (
-            ledgerInteractingError instanceof KeplrError &&
+            ledgerInteractingError instanceof TitanError &&
             ledgerInteractingError.module === ErrModuleLedgerSign
           ) {
             switch (ledgerInteractingError.code) {

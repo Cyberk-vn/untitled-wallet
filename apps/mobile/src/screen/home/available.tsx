@@ -1,11 +1,11 @@
 import React, {FunctionComponent, useMemo, useState} from 'react';
-import {CoinPretty, Dec} from '@keplr-wallet/unit';
+import {CoinPretty, Dec} from '@titan-wallet/unit';
 import {observer} from 'mobx-react-lite';
 import {Stack} from '../../components/stack';
 import {Button} from '../../components/button';
 import {useStore} from '../../stores';
 import {Box} from '../../components/box';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
 import {EmptyView} from '../../components/empty-view';
 import {YAxis} from '../../components/axis';
 import {Text} from 'react-native';
@@ -26,7 +26,7 @@ import {
   InformationModalProps,
 } from '../../components/modal/infoModal';
 import {StackNavProp} from '../../navigation';
-import {Secret20Currency} from '@keplr-wallet/types';
+import {Secret20Currency} from '@titan-wallet/types';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 const zeroDec = new Dec(0);

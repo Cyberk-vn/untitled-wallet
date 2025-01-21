@@ -1,7 +1,7 @@
-import { KVStore, PrefixKVStore } from "@keplr-wallet/common";
+import { KVStore, PrefixKVStore } from "@titan-wallet/common";
 import { autorun, makeObservable, observable, runInAction, toJS } from "mobx";
 import { ChainStore } from "../chain";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { computedFn } from "mobx-utils";
 
 export class CopyAddressConfig {

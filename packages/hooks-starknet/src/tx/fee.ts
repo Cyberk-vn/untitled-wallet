@@ -6,11 +6,11 @@ import {
   UIProperties,
 } from "./types";
 import { TxChainSetter } from "./chain";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { action, computed, makeObservable, observable } from "mobx";
 import { useState } from "react";
-import { StarknetQueriesStore } from "@keplr-wallet/stores-starknet";
-import { CoinPretty, Dec, Int } from "@keplr-wallet/unit";
+import { StarknetQueriesStore } from "@titan-wallet/stores-starknet";
+import { CoinPretty, Dec, Int } from "@titan-wallet/unit";
 import { InsufficientFeeError } from "./errors";
 
 export class FeeConfig extends TxChainSetter implements IFeeConfig {

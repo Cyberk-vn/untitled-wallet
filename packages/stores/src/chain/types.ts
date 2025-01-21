@@ -7,7 +7,7 @@ import {
   FeeCurrency,
   ModularChainInfo,
   ChainInfoModule,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 
 export type CurrencyRegistrar = (
   chainId: string,

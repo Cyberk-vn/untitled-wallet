@@ -7,7 +7,7 @@ import {GovernanceCardBody} from '../components/card';
 import {useStore} from '../../../stores';
 import {ProposalStatus} from '../../../stores/governance/types';
 import {GovernanceV1ChainIdentifiers} from '../../../config';
-import {ChainIdHelper} from '@keplr-wallet/cosmos';
+import {ChainIdHelper} from '@titan-wallet/cosmos';
 import {Gutter} from '../../../components/gutter';
 import {EmptyView, EmptyViewText} from '../../../components/empty-view';
 import {useIntl} from 'react-intl';

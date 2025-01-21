@@ -1,9 +1,9 @@
-import { Env, KeplrError } from "@keplr-wallet/router";
-import { AppCurrency, ChainInfo, ERC20Currency } from "@keplr-wallet/types";
-import { ERC20CurrencySchema } from "@keplr-wallet/chain-validator";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { Env, TitanError } from "@titan-wallet/router";
+import { AppCurrency, ChainInfo, ERC20Currency } from "@titan-wallet/types";
+import { ERC20CurrencySchema } from "@titan-wallet/chain-validator";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { ChainsService } from "../chains";
-import { KVStore, PrefixKVStore } from "@keplr-wallet/common";
+import { KVStore, PrefixKVStore } from "@titan-wallet/common";
 import { InteractionService } from "../interaction";
 import {
   action,
@@ -211,7 +211,7 @@ export class TokenERC20Service {
           currency = await TokenERC20Service.validateERC20Currency(currency);
           break;
         default:
-          throw new KeplrError("tokens", 110, "Unknown type of currency");
+          throw new TitanError("tokens", 110, "Unknown type of currency");
       }
     } else {
       throw new Error("Unknown type of currency");

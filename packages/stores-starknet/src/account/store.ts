@@ -1,14 +1,14 @@
-import { ChainGetter, HasMapStore } from "@keplr-wallet/stores";
+import { ChainGetter, HasMapStore } from "@titan-wallet/stores";
 import { StarknetAccountBase } from "./base";
-import { Keplr } from "@keplr-wallet/types";
+import { Titan } from "@titan-wallet/types";
 
 export class StarknetAccountStore extends HasMapStore<StarknetAccountBase> {
   constructor(
     protected readonly chainGetter: ChainGetter,
-    protected readonly getKeplr: () => Promise<Keplr | undefined>
+    protected readonly getTitan: () => Promise<Titan | undefined>
   ) {
     super((chainId: string) => {
-      return new StarknetAccountBase(chainGetter, chainId, getKeplr);
+      return new StarknetAccountBase(chainGetter, chainId, getTitan);
     });
   }
 

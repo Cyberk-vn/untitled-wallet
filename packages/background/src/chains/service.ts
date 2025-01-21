@@ -2,14 +2,14 @@ import {
   KVStore,
   PrefixKVStore,
   sortedJsonByKeyStringify,
-} from "@keplr-wallet/common";
+} from "@titan-wallet/common";
 import {
   ChainInfo,
   ChainInfoWithoutEndpoints,
   EVMInfo,
   ModularChainInfo,
   StarknetChainInfo,
-} from "@keplr-wallet/types";
+} from "@titan-wallet/types";
 import {
   action,
   autorun,
@@ -19,15 +19,15 @@ import {
   runInAction,
   toJS,
 } from "mobx";
-import { ChainIdHelper } from "@keplr-wallet/cosmos";
+import { ChainIdHelper } from "@titan-wallet/cosmos";
 import { computedFn } from "mobx-utils";
 import {
   checkChainFeatures,
   validateBasicChainInfoType,
-} from "@keplr-wallet/chain-validator";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+} from "@titan-wallet/chain-validator";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import { InteractionService } from "../interaction";
-import { Env } from "@keplr-wallet/router";
+import { Env } from "@titan-wallet/router";
 import { SuggestChainInfoMsg } from "./messages";
 import { ChainInfoWithCoreTypes, ChainInfoWithSuggestedOptions } from "./types";
 import { AnalyticsService } from "../analytics";

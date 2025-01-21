@@ -4,7 +4,7 @@ import {
   UIProperties,
 } from "./types";
 import { TxChainSetter } from "./chain";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import {
   action,
   computed,
@@ -20,7 +20,7 @@ import {
 } from "./errors";
 import { useState } from "react";
 import { Buffer } from "buffer/";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 import { CallData, constants } from "starknet";
 
 interface StarknetIDFetchData {

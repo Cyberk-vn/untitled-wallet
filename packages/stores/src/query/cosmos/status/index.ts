@@ -1,6 +1,6 @@
 import { ChainGetter } from "../../../chain";
 import { ObservableChainQueryRPC } from "../../chain-rpc-query";
-import { Int } from "@keplr-wallet/unit";
+import { Int } from "@titan-wallet/unit";
 import { QuerySharedContext } from "../../../common";
 
 type RPCStatusResult = {

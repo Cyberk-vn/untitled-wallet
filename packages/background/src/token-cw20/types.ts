@@ -1,4 +1,4 @@
-import { AppCurrency } from "@keplr-wallet/types";
+import { AppCurrency } from "@titan-wallet/types";
 
 export interface TokenInfo {
   // Hex encoded

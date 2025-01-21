@@ -4,7 +4,7 @@ import {
   IGasConfig,
   IGasSimulator,
   InsufficientFeeError,
-} from "@keplr-wallet/hooks";
+} from "@titan-wallet/hooks";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
 import { useTheme } from "styled-components";
@@ -12,7 +12,7 @@ import { Box } from "../../../../components/box";
 import { XAxis, YAxis } from "../../../../components/axis";
 import { Subtitle3, Subtitle4 } from "../../../../components/typography";
 import { ColorPalette } from "../../../../styles";
-import { CoinPretty, Dec, PricePretty } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, PricePretty } from "@titan-wallet/unit";
 import { Gutter } from "../../../../components/gutter";
 import { VerticalResizeTransition } from "../../../../components/transition";
 import { FormattedMessage, useIntl } from "react-intl";

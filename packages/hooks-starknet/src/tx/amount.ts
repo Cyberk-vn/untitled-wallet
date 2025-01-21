@@ -5,9 +5,9 @@ import {
   UIProperties,
 } from "./types";
 import { TxChainSetter } from "./chain";
-import { ChainGetter } from "@keplr-wallet/stores";
+import { ChainGetter } from "@titan-wallet/stores";
 import { action, computed, makeObservable, observable } from "mobx";
-import { ERC20Currency } from "@keplr-wallet/types";
+import { ERC20Currency } from "@titan-wallet/types";
 import {
   EmptyAmountError,
   InsufficientAmountError,
@@ -16,9 +16,9 @@ import {
   NotSupportedCurrencyError,
   ZeroAmountError,
 } from "./errors";
-import { CoinPretty, Dec, DecUtils } from "@keplr-wallet/unit";
+import { CoinPretty, Dec, DecUtils } from "@titan-wallet/unit";
 import { useState } from "react";
-import { StarknetQueriesStore } from "@keplr-wallet/stores-starknet";
+import { StarknetQueriesStore } from "@titan-wallet/stores-starknet";
 
 export class AmountConfig extends TxChainSetter implements IAmountConfig {
   @observable.ref

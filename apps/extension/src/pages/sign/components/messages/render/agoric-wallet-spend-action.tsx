@@ -11,7 +11,7 @@ import { displayAmount } from "../../../utils/agoric/display-amount";
 import yaml from "js-yaml";
 import { useTheme } from "styled-components";
 import { ColorPalette } from "../../../../../styles";
-import { MsgWalletSpendAction } from "@keplr-wallet/proto-types/agoric/swingset/msgs";
+import { MsgWalletSpendAction } from "@titan-wallet/proto-types/agoric/swingset/msgs";
 import type { CopyBag } from "../../../utils/agoric/display-amount";
 
 export const AgoricWalletSpendActionMessage: IMessageRenderer = {

@@ -1,7 +1,7 @@
 import React, { FunctionComponent, PropsWithChildren } from "react";
 import { IMessageRenderer, IMessageRenderRegistry } from "./types";
-import { Msg } from "@keplr-wallet/types";
-import { AnyWithUnpacked, ProtoCodec } from "@keplr-wallet/cosmos";
+import { Msg } from "@titan-wallet/types";
+import { AnyWithUnpacked, ProtoCodec } from "@titan-wallet/cosmos";
 import yaml from "js-yaml";
 import {
   AgoricProvisionMessage,

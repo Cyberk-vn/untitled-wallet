@@ -1,4 +1,4 @@
-import {APP_PORT, Env, MessageSender} from '@keplr-wallet/router';
+import {APP_PORT, Env, MessageSender} from '@titan-wallet/router';
 import {RNMessageRequesterInternalToUI} from './requester';
 
 export class RNEnv {

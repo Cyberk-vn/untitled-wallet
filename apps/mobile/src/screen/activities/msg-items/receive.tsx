@@ -3,8 +3,8 @@ import {observer} from 'mobx-react-lite';
 import {MsgItemBase} from './base.tsx';
 import {useStore} from '../../../stores';
 import {useStyle} from '../../../styles';
-import {CoinPretty} from '@keplr-wallet/unit';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {CoinPretty} from '@titan-wallet/unit';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {MsgHistory} from '../types.ts';
 import {MessageReceiveIcon} from '../../../components/icon';
 

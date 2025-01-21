@@ -1,6 +1,6 @@
 import { ObservableQuery, QueryOptions } from "./query";
 import { QuerySharedContext } from "./context";
-import { MemoryKVStore } from "@keplr-wallet/common";
+import { MemoryKVStore } from "@titan-wallet/common";
 import { autorun, makeObservable, observable, runInAction } from "mobx";
 
 export class MockObservableQuery extends ObservableQuery<string> {

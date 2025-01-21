@@ -1,6 +1,6 @@
 import React from 'react';
-import {Msg} from '@keplr-wallet/types';
-import {AnyWithUnpacked, ProtoCodec} from '@keplr-wallet/cosmos';
+import {Msg} from '@titan-wallet/types';
+import {AnyWithUnpacked, ProtoCodec} from '@titan-wallet/cosmos';
 
 export interface IMessageRenderer {
   process(

@@ -13,9 +13,9 @@ import {Column, Columns} from '../../../../../components/column';
 import {Box} from '../../../../../components/box';
 import {Button} from '../../../../../components/button';
 import {autorun} from 'mobx';
-import {TokenInfo} from '@keplr-wallet/background';
+import {TokenInfo} from '@titan-wallet/background';
 import {EmptyView} from '../../../../../components/empty-view';
-import {Bech32Address} from '@keplr-wallet/cosmos';
+import {Bech32Address} from '@titan-wallet/cosmos';
 import {useConfirm} from '../../../../../hooks/confirm';
 
 import {FormattedMessage, useIntl} from 'react-intl';

@@ -1,5 +1,5 @@
 import Transport from "@ledgerhq/hw-transport";
-import { CosmosApp, getAppInfo } from "@keplr-wallet/ledger-cosmos";
+import { CosmosApp, getAppInfo } from "@titan-wallet/ledger-cosmos";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 import TransportWebHID from "@ledgerhq/hw-transport-webhid";
 

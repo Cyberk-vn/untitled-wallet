@@ -2,13 +2,13 @@ import {
   HasMapStore,
   ObservableQuery,
   QuerySharedContext,
-} from "@keplr-wallet/stores";
+} from "@titan-wallet/stores";
 import { AssetsResponse } from "./types";
 import { computed, makeObservable } from "mobx";
 import Joi from "joi";
 import { InternalChainStore } from "../internal";
 import { SwapUsageQueries } from "../swap-usage";
-import { simpleFetch } from "@keplr-wallet/simple-fetch";
+import { simpleFetch } from "@titan-wallet/simple-fetch";
 
 const Schema = Joi.object<AssetsResponse>({
   chain_to_assets_map: Joi.object().pattern(

@@ -5,14 +5,14 @@ import { ChainGetter } from "../../chain";
 import { ObservableQuerySecretContractCodeHash } from "./contract-hash";
 import { computed, makeObservable } from "mobx";
 import { ObservableSecretContractChainQuery } from "./contract-query";
-import { Keplr } from "@keplr-wallet/types";
+import { Titan } from "@titan-wallet/types";
 
 export class ObservableQuerySecret20ContactInfoInner extends ObservableSecretContractChainQuery<Secret20ContractTokenInfo> {
   constructor(
     sharedContext: QuerySharedContext,
     chainId: string,
     chainGetter: ChainGetter,
-    apiGetter: () => Promise<Keplr | undefined>,
+    apiGetter: () => Promise<Titan | undefined>,
     contractAddress: string,
     querySecretContractCodeHash: ObservableQuerySecretContractCodeHash
   ) {
@@ -52,7 +52,7 @@ export class ObservableQuerySecret20ContractInfo extends ObservableChainQueryMap
     sharedContext: QuerySharedContext,
     chainId: string,
     chainGetter: ChainGetter,
-    protected readonly apiGetter: () => Promise<Keplr | undefined>,
+    protected readonly apiGetter: () => Promise<Titan | undefined>,
     protected readonly querySecretContractCodeHash: ObservableQuerySecretContractCodeHash
   ) {
     super(sharedContext, chainId, chainGetter, (contractAddress: string) => {

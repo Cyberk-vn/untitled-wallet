@@ -10,7 +10,7 @@ import {Gutter} from '../gutter';
 import {Box} from '../box';
 import {registerCardModal} from './card';
 import * as ExpoImage from 'expo-image';
-import {PermissionData} from '@keplr-wallet/background';
+import {PermissionData} from '@titan-wallet/background';
 import {useStore} from '../../stores';
 
 export const BasicAccessModal = registerCardModal(
