@@ -70,6 +70,7 @@
   "pages.register.intro.import-wallet-button": "Import an existing wallet",
   "pages.register.intro.connect-hardware-wallet-button": "Connect Ledger",
   "pages.register.intro.create-new-passphrase-button": "Create a new passphrase account",
+  "pages.register.intro.more-options-button": "More options",
 
   "pages.register.intro-new-user.title": "Create New Wallet",
   "pages.register.intro-new-user.paragraph": "Select the way you want to create your wallet",

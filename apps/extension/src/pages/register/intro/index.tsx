@@ -9,13 +9,10 @@ import {
 import { useRegisterHeader } from "../components/header";
 import { YAxis } from "../../../components/axis";
 import { Gutter } from "../../../components/gutter";
-import { TextButton } from "../../../components/button-text";
 import { observer } from "mobx-react-lite";
-import { useStore } from "../../../stores";
 import { useIntl } from "react-intl";
 
 export const RegisterIntroScene: FunctionComponent = observer(() => {
-  const { uiConfigStore } = useStore();
   const sceneTransition = useSceneTransition();
   const intl = useIntl();
 
@@ -50,25 +47,13 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
         />
         <Button
           text={intl.formatMessage({
-            id: "pages.register.intro.import-wallet-button",
+            id: "pages.register.intro.more-options-button",
           })}
           size="large"
-          color="secondary"
           onClick={() => {
             sceneTransition.push("existing-user");
           }}
         />
-        {uiConfigStore.platform !== "firefox" ? (
-          <TextButton
-            text={intl.formatMessage({
-              id: "pages.register.intro.connect-hardware-wallet-button",
-            })}
-            size="large"
-            onClick={() => {
-              sceneTransition.push("connect-hardware-wallet");
-            }}
-          />
-        ) : null}
       </Stack>
     </RegisterSceneBox>
   );
