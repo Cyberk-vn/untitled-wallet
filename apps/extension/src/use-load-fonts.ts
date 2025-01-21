@@ -7,31 +7,48 @@ const languageToFontFaces: {
 } = {
   en: [
     new FontFace(
-      "Inter",
-      `url(${require("./public/assets/font/Inter-Regular.ttf")})`,
+      "SF PRO",
+      `url(${require("./public/assets/font/SFPRODISPLAYREGULAR.OTF")})`,
       {
         weight: "400",
       }
     ),
     new FontFace(
-      "Inter",
-      `url(${require("./public/assets/font/Inter-Medium.ttf")})`,
+      "SF PRO",
+      `url(${require("./public/assets/font/SFPRODISPLAYMEDIUM.OTF")})`,
       {
         weight: "500",
       }
     ),
     new FontFace(
-      "Inter",
-      `url(${require("./public/assets/font/Inter-SemiBold.ttf")})`,
+      "SF PRO",
+      `url(${require("./public/assets/font/SFPRODISPLAYSEMIBOLDITALIC.OTF")})`,
       {
         weight: "600",
+        style: "italic",
       }
     ),
     new FontFace(
-      "Inter",
-      `url(${require("./public/assets/font/Inter-Bold.ttf")})`,
+      "SF PRO",
+      `url(${require("./public/assets/font/SFPRODISPLAYBOLD.OTF")})`,
       {
         weight: "700",
+      }
+    ),
+    new FontFace(
+      "SF PRO",
+      `url(${require("./public/assets/font/SFPRODISPLAYHEAVYITALIC.OTF")})`,
+      {
+        weight: "800",
+        style: "italic",
+      }
+    ),
+    new FontFace(
+      "SF PRO",
+      `url(${require("./public/assets/font/SFPRODISPLAYBLACKITALIC.OTF")})`,
+      {
+        weight: "900",
+        style: "italic",
       }
     ),
   ],

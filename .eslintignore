@@ -7,6 +7,7 @@
 **/*.ttf
 **/*.woff
 **/*.woff2
+**/*.otf
 **/*.secret
 **/*.md
 **/*.webm

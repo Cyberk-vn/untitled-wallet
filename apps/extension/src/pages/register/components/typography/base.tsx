@@ -5,7 +5,7 @@ type BaseTypographyProps = {
 };
 
 export const BaseHafferTypography = styled.div<BaseTypographyProps>`
-  font-family: "Haffer", "Inter", sans-serif;
+  font-family: "Haffer", "SF PRO", sans-serif;
 
   color: ${({ color }) => (color ? color : "inherit")};
 `;
