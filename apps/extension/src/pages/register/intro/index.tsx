@@ -7,13 +7,13 @@ import {
   useSceneTransition,
 } from "../../../components/transition";
 import { useRegisterHeader } from "../components/header";
-import { YAxis } from "../../../components/axis";
 import { Gutter } from "../../../components/gutter";
 import { observer } from "mobx-react-lite";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Body2 } from "../../../components/typography";
+import { Body2, Subtitle2 } from "../../../components/typography";
 import { useTheme } from "styled-components";
 import { ColorPalette } from "../../../styles";
+import { Box } from "../../../components/box";
 
 export const RegisterIntroScene: FunctionComponent = observer(() => {
   const sceneTransition = useSceneTransition();
@@ -31,14 +31,29 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
 
   return (
     <RegisterSceneBox>
-      <YAxis alignX="center">
-        <video width="200" height="200" autoPlay={true} loop={true}>
-          <source
-            src={require("../../../public/assets/lottie/register/intro.webm")}
-          />
-        </video>
-      </YAxis>
-      <Gutter size="3.125rem" />
+      <Box
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Subtitle2>Name the app: </Subtitle2>
+        <input
+          type="text"
+          style={{
+            border: "none",
+            background: "transparent",
+            outline: "none",
+            fontWeight: 500,
+            fontSize: "1rem",
+            color: ColorPalette["gray-300"],
+          }}
+          placeholder="Untitled App"
+        />
+      </Box>
+      <Gutter size="3.75rem" />
       <Stack gutter="0.5rem">
         <Button
           text={intl.formatMessage({
@@ -73,6 +88,11 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
               <a
                 style={{
                   fontWeight: 500,
+                  color:
+                    theme.mode === "light"
+                      ? ColorPalette["white"]
+                      : ColorPalette["white"],
+                  textDecoration: "none",
                 }}
                 href="https://google.com"
                 target="_blank"
@@ -85,6 +105,11 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
               <a
                 style={{
                   fontWeight: 500,
+                  color:
+                    theme.mode === "light"
+                      ? ColorPalette["white"]
+                      : ColorPalette["white"],
+                  textDecoration: "none",
                 }}
                 href="https://x.com"
                 target="_blank"
