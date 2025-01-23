@@ -231,7 +231,7 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             {
               name: "intro",
               element: RegisterIntroScene,
-              width: "22rem",
+              width: "21.875rem",
             },
             {
               name: "new-user",
