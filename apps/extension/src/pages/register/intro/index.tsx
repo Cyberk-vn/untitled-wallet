@@ -61,7 +61,7 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
             id: "pages.register.intro.more-options-button",
           })}
           onClick={() => {
-            sceneTransition.push("existing-user");
+            sceneTransition.push("more-options");
           }}
         />
       </Stack>

@@ -40,6 +40,7 @@ import {
   ConnectKeystoneUSBScene,
 } from "./connect-keystone";
 import { ScanKeystoneScene } from "./connect-keystone/scan";
+import { RegisterMoreOptionsScene } from "./more-options";
 
 const Container = styled.div`
   min-width: 100vw;
@@ -231,6 +232,11 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             {
               name: "intro",
               element: RegisterIntroScene,
+              width: "21.875rem",
+            },
+            {
+              name: "more-options",
+              element: RegisterMoreOptionsScene,
               width: "21.875rem",
             },
             {
