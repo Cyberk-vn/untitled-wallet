@@ -48,3 +48,4 @@ storybook-static
 build-storybook.log
 
 node_modules
+.cursorrules

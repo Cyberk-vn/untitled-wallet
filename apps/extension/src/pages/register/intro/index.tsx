@@ -10,6 +10,7 @@ import { Body2, Subtitle2 } from "../../../components/typography";
 import { useTheme } from "styled-components";
 import { ColorPalette } from "../../../styles";
 import { Box } from "../../../components/box";
+import { IntroCarousel } from "./components/intro-carousel";
 
 export const RegisterIntroScene: FunctionComponent = observer(() => {
   const sceneTransition = useSceneTransition();
@@ -41,6 +42,8 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
         />
       </Box>
       <Gutter size="3.75rem" />
+      <IntroCarousel />
+      <Gutter size="1.125rem" />
       <Stack gutter="0.5rem">
         <Button
           text={intl.formatMessage({
