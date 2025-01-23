@@ -19,6 +19,7 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
 
   return (
     <RegisterSceneBox>
+      <Gutter size="7rem" />
       <Box
         style={{
           display: "flex",
@@ -27,7 +28,9 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
           justifyContent: "center",
         }}
       >
-        <Subtitle2>Name the app: </Subtitle2>
+        <Subtitle2>
+          <FormattedMessage id="pages.register.intro.name-the-app-title" />:{" "}
+        </Subtitle2>
         <input
           type="text"
           style={{

@@ -55,6 +55,13 @@
   "pages.register.intro.create-new-passphrase-button": "Create a new passphrase account",
   "pages.register.intro.more-options-button": "More options",
   "pages.register.intro.paragraph-privacy-tos": "By continuing, you agree to our <tos>Terms of Service</tos> and <privacy>Privacy Policy</privacy>",
+  "pages.register.intro.name-the-app-title": "Name the app",
+  "pages.register.intro.effortless-asset-management-title": "Effortless Asset Management",
+  "pages.register.intro.effortless-asset-management-sub": "Gateway to Titan, swap tokens and DeFi",
+  "pages.register.intro.pre-sign-check-title": "Pre-sign check for security",
+  "pages.register.intro.pre-sign-check-sub": "You see exactly what you sign",
+  "pages.register.intro.seamless-integration-title": "Seamless Integration",
+  "pages.register.intro.seamless-integration-sub": "Bridging, staking and on-off ramp can be done all through the wallet",
 
   "pages.register.intro-new-user.title": "Welcome to Titan",
   "pages.register.intro-new-user.paragraph": "Select the way you want to create your wallet",

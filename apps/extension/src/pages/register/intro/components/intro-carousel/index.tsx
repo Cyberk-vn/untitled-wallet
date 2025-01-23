@@ -7,6 +7,7 @@ import { CarouselDots } from "../../../../../components/carousel/dots";
 import { Carousel, CarouselSlide } from "../../../../../components/carousel";
 import { Stack } from "../../../../../components/stack";
 import { H4 } from "../../../../../components/typography";
+import { FormattedMessage } from "react-intl";
 
 export const IntroCarousel = () => {
   return (
@@ -42,14 +43,16 @@ export const IntroCarousel = () => {
         <CarouselSlide>
           <Box paddingY="1rem" height="8rem" paddingX="1.875rem">
             <Stack alignX="center" gutter="0.5rem">
-              <H4>Effortless Asset Management</H4>
+              <H4>
+                <FormattedMessage id="pages.register.intro.effortless-asset-management-title" />
+              </H4>
               <Body2
                 style={{
                   color: "#FFFFFF99",
                   textAlign: "center",
                 }}
               >
-                Gateway to Titan, swap tokens and DeFi
+                <FormattedMessage id="pages.register.intro.effortless-asset-management-sub" />
               </Body2>
             </Stack>
           </Box>
@@ -57,14 +60,16 @@ export const IntroCarousel = () => {
         <CarouselSlide>
           <Box paddingY="1rem" height="8rem" paddingX="1.875rem">
             <Stack alignX="center" gutter="0.5rem">
-              <H4>Pre-sign check for security</H4>
+              <H4>
+                <FormattedMessage id="pages.register.intro.pre-sign-check-title" />
+              </H4>
               <Body2
                 style={{
                   color: "#FFFFFF99",
                   textAlign: "center",
                 }}
               >
-                You see exactly what you sign
+                <FormattedMessage id="pages.register.intro.pre-sign-check-sub" />
               </Body2>
             </Stack>
           </Box>
@@ -72,15 +77,16 @@ export const IntroCarousel = () => {
         <CarouselSlide>
           <Box paddingY="1rem" height="8rem" paddingX="1.875rem">
             <Stack alignX="center" gutter="0.5rem">
-              <H4>Seamless Integration</H4>
+              <H4>
+                <FormattedMessage id="pages.register.intro.seamless-integration-title" />
+              </H4>
               <Body2
                 style={{
                   color: "#FFFFFF99",
                   textAlign: "center",
                 }}
               >
-                Bridging, staking and on-off ramp can be done all through the
-                wallet
+                <FormattedMessage id="pages.register.intro.seamless-integration-sub" />
               </Body2>
             </Stack>
           </Box>
