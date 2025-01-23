@@ -53,7 +53,7 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
             id: "pages.register.intro.create-new-passphrase-button",
           })}
           onClick={() => {
-            sceneTransition.push("new-user");
+            sceneTransition.push("new-mnemonic");
           }}
         />
         <Button
