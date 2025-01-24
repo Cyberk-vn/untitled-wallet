@@ -41,7 +41,10 @@ import {
 } from "./connect-keystone";
 import { ScanKeystoneScene } from "./connect-keystone/scan";
 import { RegisterMoreOptionsScene } from "./more-options";
-import { RegisterImportPrivateKeyScene } from "./import-wallet/import-private-key";
+import {
+  RegisterImportPassphraseScene,
+  RegisterImportPrivateKeyScene,
+} from "./import-wallet";
 
 const Container = styled.div`
   min-width: 100vw;
@@ -243,6 +246,11 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             {
               name: "import-private-key",
               element: RegisterImportPrivateKeyScene,
+              width: "21.875rem",
+            },
+            {
+              name: "import-passphrase",
+              element: RegisterImportPassphraseScene,
               width: "21.875rem",
             },
             {

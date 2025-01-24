@@ -56,7 +56,9 @@ export const RegisterMoreOptionsScene: FunctionComponent = () => {
             text={intl.formatMessage({
               id: "pages.register.more-options.import-passphrase-button",
             })}
-            onClick={() => {}}
+            onClick={() => {
+              sceneTransition.push("import-passphrase");
+            }}
           />
           <MoreOptionsButton
             text={intl.formatMessage({
