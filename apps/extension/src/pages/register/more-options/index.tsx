@@ -1,35 +1,29 @@
 import React, { FunctionComponent } from "react";
-import { Box } from "../../../components/box";
 import { Body2 } from "../../../components/typography";
 import { Stack } from "../../../components/stack";
 import { Button } from "../../../components/button";
 import { Gutter } from "../../../components/gutter";
 import { MoreOptionsButton } from "./components/more-options-button";
 import { useSceneTransition } from "../../../components/transition";
-import { useIntl } from "react-intl";
-import { RegisterSimpleHeaderWithSeparator } from "../components/simple-header-with-separator";
+import { FormattedMessage, useIntl } from "react-intl";
+import {
+  RegisterSceneBoxBody,
+  RegisterSceneBoxFooter,
+  RegisterSceneBoxWithHeight,
+} from "../components/register-scene-box-with-height";
 
 export const RegisterMoreOptionsScene: FunctionComponent = () => {
   const sceneTransition = useSceneTransition();
   const intl = useIntl();
 
   return (
-    <Box minHeight="35rem">
-      <RegisterSimpleHeaderWithSeparator
-        title={intl.formatMessage({ id: "pages.register.more-options.title" })}
-      />
-      <Box
-        style={{ flex: 1, alignItems: "stretch", textAlign: "center" }}
-        padding="1.5rem"
-        alignX="center"
-      >
+    <RegisterSceneBoxWithHeight
+      title={intl.formatMessage({ id: "pages.register.more-options.title" })}
+    >
+      <RegisterSceneBoxBody textAlign="center">
         <Stack gutter="0.75rem">
-          <Body2 color="#FFFFFF99">
-            {intl
-              .formatMessage({
-                id: "pages.register.more-options.create-new",
-              })
-              .toUpperCase()}
+          <Body2 color="#FFFFFF99" style={{ textTransform: "uppercase" }}>
+            <FormattedMessage id="pages.register.more-options.create-new" />
           </Body2>
           <MoreOptionsButton
             text={intl.formatMessage({
@@ -42,12 +36,8 @@ export const RegisterMoreOptionsScene: FunctionComponent = () => {
         </Stack>
         <Gutter size="2rem" />
         <Stack gutter="0.75rem">
-          <Body2 color="#FFFFFF99">
-            {intl
-              .formatMessage({
-                id: "pages.register.more-options.import-existing-accounts",
-              })
-              .toUpperCase()}
+          <Body2 color="#FFFFFF99" style={{ textTransform: "uppercase" }}>
+            <FormattedMessage id="pages.register.more-options.import-existing-accounts" />
           </Body2>
           <MoreOptionsButton
             text={intl.formatMessage({
@@ -66,8 +56,8 @@ export const RegisterMoreOptionsScene: FunctionComponent = () => {
             }}
           />
         </Stack>
-      </Box>
-      <Box padding="1.5rem">
+      </RegisterSceneBoxBody>
+      <RegisterSceneBoxFooter>
         <Button
           mode="outline"
           text={intl.formatMessage({
@@ -77,7 +67,7 @@ export const RegisterMoreOptionsScene: FunctionComponent = () => {
             sceneTransition.pop();
           }}
         />
-      </Box>
-    </Box>
+      </RegisterSceneBoxFooter>
+    </RegisterSceneBoxWithHeight>
   );
 };
