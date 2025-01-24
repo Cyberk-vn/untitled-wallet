@@ -63,6 +63,14 @@
   "pages.register.intro.seamless-integration-title": "연동 쉽게 하기",
   "pages.register.intro.seamless-integration-sub": "브리지, 스테이킹 및 온/오프 램프를 모두 지갑에서 쉽게 할 수 있습니다.",
 
+  "pages.register.more-options.title": "계정 추가하기",
+  "pages.register.more-options.create-new": "새로 생성하기",
+  "pages.register.more-options.import-existing-accounts": "기존 계정 불러오기",
+  "pages.register.more-options.create-new-passphrase-button": "새로운 복구 문구 생성하기",
+  "pages.register.more-options.import-passphrase-button": "복구 문구 불러오기",
+  "pages.register.more-options.import-private-key-button": "프라이빗키 불러오기",
+  "pages.register.more-options.back-button": "뒤로가기",
+
   "pages.register.intro-new-user.title": "만나서 반가워요!",
   "pages.register.intro-new-user.paragraph": "케플러 지갑을 생성할 방식을 선택해주세요.",
   "pages.register.intro-new-user.recovery-path-title": "복구 문구로 생성하기",

@@ -57,6 +57,14 @@
   "pages.register.intro.seamless-integration-title": "无缝集成",
   "pages.register.intro.seamless-integration-sub": "跨链、质押和出入金都可以在钱包内完成",
 
+  "pages.register.more-options.title": "添加账户",
+  "pages.register.more-options.create-new": "创建新账户",
+  "pages.register.more-options.import-existing-accounts": "导入已有账户",
+  "pages.register.more-options.create-new-passphrase-button": "创建新助记词",
+  "pages.register.more-options.import-passphrase-button": "导入助记词",
+  "pages.register.more-options.import-private-key-button": "导入私钥",
+  "pages.register.more-options.back-button": "返回",
+
   "pages.register.intro-new-user.title": "欢迎使用Titan",
   "pages.register.intro-new-user.paragraph": "选择你想要创建钱包的方式",
   "pages.register.intro-new-user.recovery-path-title": "使用助记词",
