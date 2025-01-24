@@ -10,6 +10,7 @@ export const RegisterSceneBoxBody: FunctionComponent<
   return (
     <Box
       padding="1.5rem"
+      paddingTop="1rem"
       style={{
         flex: 1,
         alignItems: "stretch",
