@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from "react";
 import { Box } from "../../../components/box";
-import { Separator } from "../../../components/separator";
-import { Body2, Subtitle2 } from "../../../components/typography";
+import { Body2 } from "../../../components/typography";
 import { Stack } from "../../../components/stack";
 import { Button } from "../../../components/button";
 import { Gutter } from "../../../components/gutter";
 import { MoreOptionsButton } from "./components/more-options-button";
 import { useSceneTransition } from "../../../components/transition";
 import { useIntl } from "react-intl";
+import { RegisterSimpleHeaderWithSeparator } from "../components/simple-header-with-separator";
 
 export const RegisterMoreOptionsScene: FunctionComponent = () => {
   const sceneTransition = useSceneTransition();
@@ -15,12 +15,9 @@ export const RegisterMoreOptionsScene: FunctionComponent = () => {
 
   return (
     <Box minHeight="35rem">
-      <Box alignX="center" paddingY="1rem">
-        <Subtitle2>
-          {intl.formatMessage({ id: "pages.register.more-options.title" })}
-        </Subtitle2>
-      </Box>
-      <Separator />
+      <RegisterSimpleHeaderWithSeparator
+        title={intl.formatMessage({ id: "pages.register.more-options.title" })}
+      />
       <Box
         style={{ flex: 1, alignItems: "stretch", textAlign: "center" }}
         padding="1.5rem"
