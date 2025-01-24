@@ -84,6 +84,27 @@ const buttonStyleFromColorAndMode: Record<
           ${makeTextAndSvgColor(ColorPalette["white"])}
         `,
       },
+      outline: {
+        enabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["orange-400"]};
+
+          ${makeTextAndSvgColor(ColorPalette["orange-400"])}
+
+          :hover {
+            ::after {
+              background-color: ${ColorPalette["gray-500"]};
+              opacity: 0.05;
+            }
+          }
+        `,
+        disabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["orange-200"]};
+
+          ${makeTextAndSvgColor(ColorPalette["orange-200"])}
+        `,
+      },
     },
     dark: {
       fill: {
@@ -110,6 +131,27 @@ const buttonStyleFromColorAndMode: Record<
           ${makeTextAndSvgColor(ColorPalette["white"])}
         `,
       },
+      outline: {
+        enabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["orange-400"]};
+
+          ${makeTextAndSvgColor(ColorPalette["orange-400"])}
+
+          :hover {
+            ::after {
+              background-color: ${ColorPalette["gray-500"]};
+              opacity: 0.2;
+            }
+          }
+        `,
+        disabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["gray-400"]};
+
+          ${makeTextAndSvgColor(ColorPalette["gray-400"])}
+        `,
+      },
     },
   },
   secondary: {
@@ -130,6 +172,27 @@ const buttonStyleFromColorAndMode: Record<
 
         disabled: css`
           background-color: ${ColorPalette["orange-50"]};
+
+          ${makeTextAndSvgColor(ColorPalette["orange-200"])}
+        `,
+      },
+      outline: {
+        enabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["orange-400"]};
+
+          ${makeTextAndSvgColor(ColorPalette["orange-400"])}
+
+          :hover {
+            ::after {
+              background-color: ${ColorPalette["gray-500"]};
+              opacity: 0.02;
+            }
+          }
+        `,
+        disabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["orange-200"]};
 
           ${makeTextAndSvgColor(ColorPalette["orange-200"])}
         `,
@@ -161,6 +224,27 @@ const buttonStyleFromColorAndMode: Record<
           ${makeTextAndSvgColor(ColorPalette["white"])}
         `,
       },
+      outline: {
+        enabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["gray-300"]};
+
+          ${makeTextAndSvgColor(ColorPalette["white"])}
+
+          :hover {
+            ::after {
+              background-color: ${ColorPalette["gray-600"]};
+              opacity: 0.2;
+            }
+          }
+        `,
+        disabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["gray-500"]};
+
+          ${makeTextAndSvgColor(ColorPalette["gray-400"])}
+        `,
+      },
     },
   },
   danger: {
@@ -189,6 +273,27 @@ const buttonStyleFromColorAndMode: Record<
           ${makeTextAndSvgColor(ColorPalette["red-400"])}
         `,
       },
+      outline: {
+        enabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["red-400"]};
+
+          ${makeTextAndSvgColor(ColorPalette["red-400"])}
+
+          :hover {
+            ::after {
+              background-color: ${ColorPalette["gray-500"]};
+              opacity: 0.05;
+            }
+          }
+        `,
+        disabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["red-200"]};
+
+          ${makeTextAndSvgColor(ColorPalette["red-200"])}
+        `,
+      },
     },
     dark: {
       fill: {
@@ -214,6 +319,27 @@ const buttonStyleFromColorAndMode: Record<
           }
 
           ${makeTextAndSvgColor(ColorPalette["white"])}
+        `,
+      },
+      outline: {
+        enabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["red-400"]};
+
+          ${makeTextAndSvgColor(ColorPalette["red-400"])}
+
+          :hover {
+            ::after {
+              background-color: ${ColorPalette["gray-500"]};
+              opacity: 0.2;
+            }
+          }
+        `,
+        disabled: css`
+          background-color: transparent;
+          border: 1px solid ${ColorPalette["gray-400"]};
+
+          ${makeTextAndSvgColor(ColorPalette["gray-400"])}
         `,
       },
     },
