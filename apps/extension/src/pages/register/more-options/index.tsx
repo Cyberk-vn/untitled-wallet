@@ -62,7 +62,9 @@ export const RegisterMoreOptionsScene: FunctionComponent = () => {
             text={intl.formatMessage({
               id: "pages.register.more-options.import-private-key-button",
             })}
-            onClick={() => {}}
+            onClick={() => {
+              sceneTransition.push("import-private-key");
+            }}
           />
         </Stack>
       </Box>
