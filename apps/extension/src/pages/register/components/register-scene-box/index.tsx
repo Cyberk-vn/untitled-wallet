@@ -9,7 +9,7 @@ export const RegisterSceneBox: FunctionComponent<
   }>
 > = ({ children, style }) => {
   return (
-    <Box paddingX="3.25rem" paddingY="3rem" style={style}>
+    <Box paddingX="1.5rem" paddingY="1.5rem" style={style}>
       {children}
     </Box>
   );

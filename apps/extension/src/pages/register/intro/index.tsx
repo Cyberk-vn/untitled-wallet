@@ -2,74 +2,118 @@ import React, { FunctionComponent } from "react";
 import { RegisterSceneBox } from "../components/register-scene-box";
 import { Stack } from "../../../components/stack";
 import { Button } from "../../../components/button";
-import {
-  useSceneEvents,
-  useSceneTransition,
-} from "../../../components/transition";
-import { useRegisterHeader } from "../components/header";
-import { YAxis } from "../../../components/axis";
+import { useSceneTransition } from "../../../components/transition";
 import { Gutter } from "../../../components/gutter";
-import { TextButton } from "../../../components/button-text";
 import { observer } from "mobx-react-lite";
-import { useStore } from "../../../stores";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
+import { Body2, Subtitle2 } from "../../../components/typography";
+import { useTheme } from "styled-components";
+import { ColorPalette } from "../../../styles";
+import { Box } from "../../../components/box";
+import { IntroCarousel } from "./components/intro-carousel";
 
 export const RegisterIntroScene: FunctionComponent = observer(() => {
-  const { uiConfigStore } = useStore();
   const sceneTransition = useSceneTransition();
   const intl = useIntl();
-
-  const header = useRegisterHeader();
-  useSceneEvents({
-    onWillVisible: () => {
-      header.setHeader({
-        mode: "intro",
-      });
-    },
-  });
+  const theme = useTheme();
 
   return (
     <RegisterSceneBox>
-      <YAxis alignX="center">
-        <video width="200" height="200" autoPlay={true} loop={true}>
-          <source
-            src={require("../../../public/assets/lottie/register/intro.webm")}
-          />
-        </video>
-      </YAxis>
-      <Gutter size="3.125rem" />
-      <Stack gutter="1.25rem">
+      <Gutter size="7rem" />
+      <Box
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Subtitle2>
+          <FormattedMessage id="pages.register.intro.name-the-app-title" />:{" "}
+        </Subtitle2>
+        <input
+          type="text"
+          style={{
+            border: "none",
+            background: "transparent",
+            outline: "none",
+            fontWeight: 500,
+            fontSize: "1rem",
+            color: ColorPalette["gray-300"],
+          }}
+          placeholder="Untitled App"
+        />
+      </Box>
+      <Gutter size="3.75rem" />
+      <IntroCarousel />
+      <Gutter size="1.125rem" />
+      <Stack gutter="0.5rem">
         <Button
           text={intl.formatMessage({
-            id: "pages.register.intro.create-wallet-button",
+            id: "pages.register.intro.create-new-passphrase-button",
           })}
-          size="large"
           onClick={() => {
-            sceneTransition.push("new-user");
+            sceneTransition.push("new-mnemonic");
           }}
         />
         <Button
           text={intl.formatMessage({
-            id: "pages.register.intro.import-wallet-button",
+            id: "pages.register.intro.more-options-button",
           })}
-          size="large"
-          color="secondary"
           onClick={() => {
-            sceneTransition.push("existing-user");
+            sceneTransition.push("more-options");
           }}
         />
-        {uiConfigStore.platform !== "firefox" ? (
-          <TextButton
-            text={intl.formatMessage({
-              id: "pages.register.intro.connect-hardware-wallet-button",
-            })}
-            size="large"
-            onClick={() => {
-              sceneTransition.push("connect-hardware-wallet");
-            }}
-          />
-        ) : null}
       </Stack>
+      <Gutter size="1.125rem" />
+      <Body2
+        style={{ textAlign: "center" }}
+        color={
+          theme.mode === "light"
+            ? ColorPalette["gray-200"]
+            : ColorPalette["gray-200"]
+        }
+      >
+        <FormattedMessage
+          id="pages.register.intro.paragraph-privacy-tos"
+          values={{
+            tos: (...chunks: any) => (
+              <a
+                style={{
+                  fontWeight: 500,
+                  color:
+                    theme.mode === "light"
+                      ? ColorPalette["white"]
+                      : ColorPalette["white"],
+                  textDecoration: "none",
+                }}
+                href="https://google.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {chunks}
+              </a>
+            ),
+            privacy: (...chunks: any) => (
+              <a
+                style={{
+                  fontWeight: 500,
+                  color:
+                    theme.mode === "light"
+                      ? ColorPalette["white"]
+                      : ColorPalette["white"],
+                  textDecoration: "none",
+                }}
+                href="https://x.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {chunks}
+              </a>
+            ),
+          }}
+        />
+      </Body2>
     </RegisterSceneBox>
   );
 });

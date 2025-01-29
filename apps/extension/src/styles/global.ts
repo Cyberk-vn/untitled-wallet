@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   html, body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'SF PRO', sans-serif;
     -webkit-font-smoothing: antialiased;
     
     &[data-lang="ko"] {
@@ -42,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   pre {
-    font-family: 'Inter', sans-serif;
+    font-family: 'SF PRO', sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
     font-size: 0.8125rem;
