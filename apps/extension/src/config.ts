@@ -3,8 +3,8 @@ import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 
 export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
   {
-    rpc: "https://rpc-cosmoshub.titan.app",
-    rest: "https://lcd-cosmoshub.titan.app",
+    rpc: "https://rpc-cosmoshub.keplr.app",
+    rest: "https://lcd-cosmoshub.keplr.app",
     chainId: "cosmoshub-4",
     chainName: "Cosmos Hub",
     stakeCurrency: {
@@ -15,11 +15,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/cosmos-hub"
+        ? "https://wallet.keplr.app/chains/cosmos-hub"
         : "http://localhost:8080/chains/cosmos-hub",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/cosmos-hub"
+        ? "https://wallet.keplr.app/chains/cosmos-hub"
         : "http://localhost:8080/chains/cosmos-hub",
     bip44: {
       coinType: 118,
@@ -44,8 +44,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "ibc-go"],
   },
   {
-    rpc: "https://rpc-osmosis.titan.app",
-    rest: "https://lcd-osmosis.titan.app",
+    rpc: "https://rpc-osmosis.keplr.app",
+    rest: "https://lcd-osmosis.keplr.app",
     chainId: "osmosis-1",
     chainName: "Osmosis",
     stakeCurrency: {
@@ -60,7 +60,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         : "https://app.osmosis.zone",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/osmosis"
+        ? "https://wallet.keplr.app/chains/osmosis"
         : "http://localhost:8080/chains/osmosis",
     bip44: { coinType: 118 },
     bech32Config: Bech32Address.defaultBech32Config("osmo"),
@@ -100,8 +100,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     ],
   },
   {
-    rpc: "https://rpc-secret.titan.app",
-    rest: "https://lcd-secret.titan.app",
+    rpc: "https://rpc-secret.keplr.app",
+    rest: "https://lcd-secret.keplr.app",
     chainId: "secret-4",
     chainName: "Secret Network",
     stakeCurrency: {
@@ -112,11 +112,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/secret-network"
+        ? "https://wallet.keplr.app/chains/secret-network"
         : "http://localhost:8080/chains/secret-network",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/secret-network"
+        ? "https://wallet.keplr.app/chains/secret-network"
         : "http://localhost:8080/chains/secret-network",
     bip44: {
       coinType: 529,
@@ -151,8 +151,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["secretwasm", "ibc-go", "ibc-transfer"],
   },
   {
-    rpc: "https://rpc-akash.titan.app",
-    rest: "https://lcd-akash.titan.app",
+    rpc: "https://rpc-akash.keplr.app",
+    rest: "https://lcd-akash.keplr.app",
     chainId: "akashnet-2",
     chainName: "Akash",
     stakeCurrency: {
@@ -163,11 +163,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/akash"
+        ? "https://wallet.keplr.app/chains/akash"
         : "http://localhost:8080/chains/akash",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/akash"
+        ? "https://wallet.keplr.app/chains/akash"
         : "http://localhost:8080/chains/akash",
     bip44: {
       coinType: 118,
@@ -192,8 +192,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer"],
   },
   {
-    rpc: "https://rpc-mars.titan.app",
-    rest: "https://lcd-mars.titan.app",
+    rpc: "https://rpc-mars.keplr.app",
+    rest: "https://lcd-mars.keplr.app",
     chainId: "mars-1",
     chainName: "Mars Hub",
     stakeCurrency: {
@@ -203,11 +203,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/mars"
+        ? "https://wallet.keplr.app/chains/mars"
         : "http://localhost:8080/chains/mars",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/mars"
+        ? "https://wallet.keplr.app/chains/mars"
         : "http://localhost:8080/chains/mars",
     bip44: {
       coinType: 118,
@@ -240,8 +240,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-crypto-org.titan.app",
-    rest: "https://lcd-crypto-org.titan.app",
+    rpc: "https://rpc-crypto-org.keplr.app",
+    rest: "https://lcd-crypto-org.keplr.app",
     chainId: "crypto-org-chain-mainnet-1",
     chainName: "Crypto.org",
     stakeCurrency: {
@@ -252,11 +252,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/crypto-org"
+        ? "https://wallet.keplr.app/chains/crypto-org"
         : "http://localhost:8080/chains/crypto-org",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/crypto-org"
+        ? "https://wallet.keplr.app/chains/crypto-org"
         : "http://localhost:8080/chains/crypto-org",
     bip44: {
       coinType: 394,
@@ -293,8 +293,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer"],
   },
   {
-    rpc: "https://rpc-iris.titan.app",
-    rest: "https://lcd-iris.titan.app",
+    rpc: "https://rpc-iris.keplr.app",
+    rest: "https://lcd-iris.keplr.app",
     chainId: "irishub-1",
     chainName: "IRISnet",
     stakeCurrency: {
@@ -305,11 +305,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/irisnet"
+        ? "https://wallet.keplr.app/chains/irisnet"
         : "http://localhost:8080/chains/irisnet",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/irisnet"
+        ? "https://wallet.keplr.app/chains/irisnet"
         : "http://localhost:8080/chains/irisnet",
     bip44: {
       coinType: 118,
@@ -351,8 +351,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "ibc-go"],
   },
   {
-    rpc: "https://rpc-regen.titan.app",
-    rest: "https://lcd-regen.titan.app",
+    rpc: "https://rpc-regen.keplr.app",
+    rest: "https://lcd-regen.keplr.app",
     chainId: "regen-1",
     chainName: "Regen",
     stakeCurrency: {
@@ -363,11 +363,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/regen"
+        ? "https://wallet.keplr.app/chains/regen"
         : "http://localhost:8080/chains/regen",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/regen"
+        ? "https://wallet.keplr.app/chains/regen"
         : "http://localhost:8080/chains/regen",
     bip44: {
       coinType: 118,
@@ -397,8 +397,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-go", "ibc-transfer"],
   },
   {
-    rpc: "https://rpc-persistence.titan.app",
-    rest: "https://lcd-persistence.titan.app",
+    rpc: "https://rpc-persistence.keplr.app",
+    rest: "https://lcd-persistence.keplr.app",
     chainId: "core-1",
     chainName: "Persistence",
     stakeCurrency: {
@@ -409,11 +409,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/persistence"
+        ? "https://wallet.keplr.app/chains/persistence"
         : "http://localhost:8080/chains/persistence",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/persistence"
+        ? "https://wallet.keplr.app/chains/persistence"
         : "http://localhost:8080/chains/persistence",
     bip44: {
       coinType: 118,
@@ -453,8 +453,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "ibc-go"],
   },
   {
-    rpc: "https://rpc-sentinel.titan.app",
-    rest: "https://lcd-sentinel.titan.app",
+    rpc: "https://rpc-sentinel.keplr.app",
+    rest: "https://lcd-sentinel.keplr.app",
     chainId: "sentinelhub-2",
     chainName: "Sentinel",
     stakeCurrency: {
@@ -465,11 +465,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/sentinel"
+        ? "https://wallet.keplr.app/chains/sentinel"
         : "http://localhost:8080/chains/sentinel",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/sentinel"
+        ? "https://wallet.keplr.app/chains/sentinel"
         : "http://localhost:8080/chains/sentinel",
     bip44: {
       coinType: 118,
@@ -499,8 +499,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer"],
   },
   {
-    rpc: "https://rpc-agoric.titan.app",
-    rest: "https://lcd-agoric.titan.app",
+    rpc: "https://rpc-agoric.keplr.app",
+    rest: "https://lcd-agoric.keplr.app",
     chainId: "agoric-3",
     chainName: "Agoric",
     stakeCurrency: {
@@ -511,11 +511,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/agoric"
+        ? "https://wallet.keplr.app/chains/agoric"
         : "http://localhost:8080/chains/agoric",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/agoric"
+        ? "https://wallet.keplr.app/chains/agoric"
         : "http://localhost:8080/chains/agoric",
     bip44: {
       coinType: 564,
@@ -560,8 +560,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-go"],
   },
   {
-    rpc: "https://rpc-cyber.titan.app",
-    rest: "https://lcd-cyber.titan.app",
+    rpc: "https://rpc-cyber.keplr.app",
+    rest: "https://lcd-cyber.keplr.app",
     chainId: "bostrom",
     chainName: "Bostrom",
     stakeCurrency: {
@@ -571,11 +571,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/bostrom"
+        ? "https://wallet.keplr.app/chains/bostrom"
         : "http://localhost:8080/chains/bostrom",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/bostrom"
+        ? "https://wallet.keplr.app/chains/bostrom"
         : "http://localhost:8080/chains/bostrom",
     bip44: {
       coinType: 118,
@@ -623,8 +623,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "cosmwasm", "ibc-go"],
   },
   {
-    rpc: "https://rpc-juno.titan.app",
-    rest: "https://lcd-juno.titan.app",
+    rpc: "https://rpc-juno.keplr.app",
+    rest: "https://lcd-juno.keplr.app",
     chainId: "juno-1",
     chainName: "Juno",
     stakeCurrency: {
@@ -635,11 +635,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/juno"
+        ? "https://wallet.keplr.app/chains/juno"
         : "http://localhost:8080/chains/juno",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/juno"
+        ? "https://wallet.keplr.app/chains/juno"
         : "http://localhost:8080/chains/juno",
     bip44: {
       coinType: 118,
@@ -680,8 +680,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["cosmwasm", "ibc-transfer", "ibc-go", "wasmd_0.24+"],
   },
   {
-    rpc: "https://rpc-stargaze.titan.app",
-    rest: "https://lcd-stargaze.titan.app",
+    rpc: "https://rpc-stargaze.keplr.app",
+    rest: "https://lcd-stargaze.keplr.app",
     chainId: "stargaze-1",
     chainName: "Stargaze",
     stakeCurrency: {
@@ -692,11 +692,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/stargaze"
+        ? "https://wallet.keplr.app/chains/stargaze"
         : "http://localhost:8080/chains/stargaze",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/stargaze"
+        ? "https://wallet.keplr.app/chains/stargaze"
         : "http://localhost:8080/chains/stargaze",
     bip44: {
       coinType: 118,
@@ -721,8 +721,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "ibc-go"],
   },
   {
-    rpc: "https://rpc-axelar.titan.app",
-    rest: "https://lcd-axelar.titan.app",
+    rpc: "https://rpc-axelar.keplr.app",
+    rest: "https://lcd-axelar.keplr.app",
     chainId: "axelar-dojo-1",
     chainName: "Axelar",
     stakeCurrency: {
@@ -733,11 +733,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/axelar"
+        ? "https://wallet.keplr.app/chains/axelar"
         : "http://localhost:8080/chains/axelar",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/axelar"
+        ? "https://wallet.keplr.app/chains/axelar"
         : "http://localhost:8080/chains/axelar",
     bip44: {
       coinType: 118,
@@ -875,8 +875,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "ibc-go", "axelar-evm-bridge"],
   },
   {
-    rpc: "https://rpc-sommelier.titan.app",
-    rest: "https://lcd-sommelier.titan.app",
+    rpc: "https://rpc-sommelier.keplr.app",
+    rest: "https://lcd-sommelier.keplr.app",
     chainId: "sommelier-3",
     chainName: "Sommelier",
     stakeCurrency: {
@@ -887,11 +887,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/sommelier"
+        ? "https://wallet.keplr.app/chains/sommelier"
         : "http://localhost:8080/chains/sommelier",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/sommelier"
+        ? "https://wallet.keplr.app/chains/sommelier"
         : "http://localhost:8080/chains/sommelier",
     bip44: {
       coinType: 118,
@@ -916,8 +916,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "ibc-go"],
   },
   {
-    rpc: "https://rpc-umee.titan.app",
-    rest: "https://lcd-umee.titan.app",
+    rpc: "https://rpc-umee.keplr.app",
+    rest: "https://lcd-umee.keplr.app",
     chainId: "umee-1",
     chainName: "Umee",
     stakeCurrency: {
@@ -927,11 +927,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/umee"
+        ? "https://wallet.keplr.app/chains/umee"
         : "http://localhost:8080/chains/umee",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/umee"
+        ? "https://wallet.keplr.app/chains/umee"
         : "http://localhost:8080/chains/umee",
     bip44: {
       coinType: 118,
@@ -959,8 +959,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "ibc-go"],
   },
   {
-    rpc: "https://rpc-stride.titan.app",
-    rest: "https://lcd-stride.titan.app",
+    rpc: "https://rpc-stride.keplr.app",
+    rest: "https://lcd-stride.keplr.app",
     chainId: "stride-1",
     chainName: "Stride",
     stakeCurrency: {
@@ -971,11 +971,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/stride"
+        ? "https://wallet.keplr.app/chains/stride"
         : "http://localhost:8080/chains/stride",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/stride"
+        ? "https://wallet.keplr.app/chains/stride"
         : "http://localhost:8080/chains/stride",
     bip44: {
       coinType: 118,
@@ -1025,11 +1025,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "ibc-go"],
   },
   {
-    rpc: "https://rpc-evmos.titan.app",
-    rest: "https://lcd-evmos.titan.app",
+    rpc: "https://rpc-evmos.keplr.app",
+    rest: "https://lcd-evmos.keplr.app",
     evm: {
       chainId: 9001,
-      rpc: "https://evm-evmos.titan.app",
+      rpc: "https://evm-evmos.keplr.app",
     },
     chainId: "evmos_9001-2",
     chainName: "Evmos",
@@ -1041,11 +1041,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/evmos"
+        ? "https://wallet.keplr.app/chains/evmos"
         : "http://localhost:8080/chains/evmos",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/evmos"
+        ? "https://wallet.keplr.app/chains/evmos"
         : "http://localhost:8080/chains/evmos",
     bip44: {
       coinType: 60,
@@ -1075,8 +1075,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "ibc-go", "eth-address-gen", "eth-key-sign"],
   },
   {
-    rpc: "https://rpc-injective.titan.app",
-    rest: "https://lcd-injective.titan.app",
+    rpc: "https://rpc-injective.keplr.app",
+    rest: "https://lcd-injective.keplr.app",
     chainId: "injective-1",
     chainName: "Injective",
     stakeCurrency: {
@@ -1087,11 +1087,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/injective"
+        ? "https://wallet.keplr.app/chains/injective"
         : "http://localhost:8080/chains/injective",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/injective"
+        ? "https://wallet.keplr.app/chains/injective"
         : "http://localhost:8080/chains/injective",
     bip44: {
       coinType: 60,
@@ -1121,8 +1121,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["ibc-transfer", "ibc-go", "eth-address-gen", "eth-key-sign"],
   },
   {
-    rpc: "https://rpc-kava.titan.app",
-    rest: "https://lcd-kava.titan.app",
+    rpc: "https://rpc-kava.keplr.app",
+    rest: "https://lcd-kava.keplr.app",
     chainId: "kava_2222-10",
     chainName: "Kava",
     stakeCurrency: {
@@ -1133,11 +1133,11 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrl:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/kava"
+        ? "https://wallet.keplr.app/chains/kava"
         : "http://localhost:8080/chains/kava",
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/kava"
+        ? "https://wallet.keplr.app/chains/kava"
         : "http://localhost:8080/chains/kava",
     bip44: { coinType: 459 },
     alternativeBIP44s: [{ coinType: 118 }],
@@ -1202,8 +1202,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     ],
   },
   {
-    rpc: "https://rpc-quicksilver.titan.app",
-    rest: "https://lcd-quicksilver.titan.app",
+    rpc: "https://rpc-quicksilver.keplr.app",
+    rest: "https://lcd-quicksilver.keplr.app",
     chainId: "quicksilver-1",
     chainName: "Quicksilver",
     stakeCurrency: {
@@ -1213,7 +1213,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/quicksilver"
+        ? "https://wallet.keplr.app/chains/quicksilver"
         : "http://localhost:8080/chains/quicksilver",
     bip44: {
       coinType: 118,
@@ -1248,8 +1248,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-phoenix.titan.app",
-    rest: "https://lcd-phoenix.titan.app",
+    rpc: "https://rpc-phoenix.keplr.app",
+    rest: "https://lcd-phoenix.keplr.app",
     chainId: "phoenix-1",
     chainName: "Terra",
     stakeCurrency: {
@@ -1260,7 +1260,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     },
     walletUrlForStaking:
       process.env.NODE_ENV === "production"
-        ? "https://wallet.titan.app/chains/terra"
+        ? "https://wallet.keplr.app/chains/terra"
         : "http://localhost:8080/chains/terra",
     bip44: {
       coinType: 330,
@@ -1297,8 +1297,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-columbus.titan.app",
-    rest: "https://lcd-columbus.titan.app",
+    rpc: "https://rpc-columbus.keplr.app",
+    rest: "https://lcd-columbus.keplr.app",
     chainId: "columbus-5",
     chainName: "Terra Classic",
     stakeCurrency: {
@@ -1359,8 +1359,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["terra-classic-fee"],
   },
   {
-    rpc: "https://rpc-quasar.titan.app",
-    rest: "https://lcd-quasar.titan.app",
+    rpc: "https://rpc-quasar.keplr.app",
+    rest: "https://lcd-quasar.keplr.app",
     chainId: "quasar-1",
     chainName: "Quasar",
     stakeCurrency: {
@@ -1424,8 +1424,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-noble.titan.app",
-    rest: "https://lcd-noble.titan.app",
+    rpc: "https://rpc-noble.keplr.app",
+    rest: "https://lcd-noble.keplr.app",
     chainId: "noble-1",
     chainName: "Noble",
     stakeCurrency: {
@@ -1477,8 +1477,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-omniflixhub.titan.app",
-    rest: "https://lcd-omniflixhub.titan.app",
+    rpc: "https://rpc-omniflixhub.keplr.app",
+    rest: "https://lcd-omniflixhub.keplr.app",
     chainId: "omniflixhub-1",
     chainName: "OmniFlix",
     stakeCurrency: {
@@ -1519,8 +1519,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-kyve.titan.app",
-    rest: "https://lcd-kyve.titan.app",
+    rpc: "https://rpc-kyve.keplr.app",
+    rest: "https://lcd-kyve.keplr.app",
     chainId: "kyve-1",
     chainName: "KYVE",
     stakeCurrency: {
@@ -1561,8 +1561,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-neutron.titan.app",
-    rest: "https://lcd-neutron.titan.app",
+    rpc: "https://rpc-neutron.keplr.app",
+    rest: "https://lcd-neutron.keplr.app",
     chainId: "neutron-1",
     chainName: "Neutron",
     stakeCurrency: {
@@ -1603,8 +1603,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-likecoin.titan.app",
-    rest: "https://lcd-likecoin.titan.app",
+    rpc: "https://rpc-likecoin.keplr.app",
+    rest: "https://lcd-likecoin.keplr.app",
     chainId: "likecoin-mainnet-2",
     chainName: "Likecoin",
     stakeCurrency: {
@@ -1648,8 +1648,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-dydx.titan.app",
-    rest: "https://lcd-dydx.titan.app",
+    rpc: "https://rpc-dydx.keplr.app",
+    rest: "https://lcd-dydx.keplr.app",
     chainId: "dydx-mainnet-1",
     chainName: "dYdX",
     stakeCurrency: {
@@ -1685,8 +1685,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-celestia.titan.app",
-    rest: "https://lcd-celestia.titan.app",
+    rpc: "https://rpc-celestia.keplr.app",
+    rest: "https://lcd-celestia.keplr.app",
     chainId: "celestia",
     chainName: "Celestia",
     stakeCurrency: {
@@ -1715,8 +1715,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: [],
   },
   {
-    rpc: "https://rpc-passage.titan.app",
-    rest: "https://lcd-passage.titan.app",
+    rpc: "https://rpc-passage.keplr.app",
+    rest: "https://lcd-passage.keplr.app",
     chainId: "passage-2",
     chainName: "Passage",
     stakeCurrency: {
@@ -1750,15 +1750,15 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
   {
     chainId: "dymension_1100-1",
     chainName: "Dymension",
-    rpc: "https://rpc-dymension.titan.app",
-    rest: "https://lcd-dymension.titan.app",
+    rpc: "https://rpc-dymension.keplr.app",
+    rest: "https://lcd-dymension.keplr.app",
     currencies: [
       {
         coinMinimalDenom: "adym",
         coinDenom: "DYM",
         coinDecimals: 18,
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/dymension_1100/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/dymension_1100/chain.png",
       },
     ],
     bip44: {
@@ -1794,8 +1794,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
   {
     chainId: "chihuahua-1",
     chainName: "Chihuahua",
-    rpc: "https://rpc-chihuahua.titan.app",
-    rest: "https://lcd-chihuahua.titan.app",
+    rpc: "https://rpc-chihuahua.keplr.app",
+    rest: "https://lcd-chihuahua.keplr.app",
     stakeCurrency: {
       coinDenom: "HUAHUA",
       coinMinimalDenom: "uhuahua",
@@ -1878,8 +1878,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
   {
     chainId: "ssc-1",
     chainName: "Saga",
-    rpc: "https://rpc-saga.titan.app",
-    rest: "https://lcd-saga.titan.app",
+    rpc: "https://rpc-saga.keplr.app",
+    rest: "https://lcd-saga.keplr.app",
     stakeCurrency: {
       coinDenom: "SAGA",
       coinMinimalDenom: "usaga",
@@ -1914,8 +1914,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
   {
     chainId: "seda-1",
     chainName: "SEDA",
-    rpc: "https://rpc-seda.titan.app",
-    rest: "https://lcd-seda.titan.app",
+    rpc: "https://rpc-seda.keplr.app",
+    rest: "https://lcd-seda.keplr.app",
     stakeCurrency: {
       coinDenom: "SEDA",
       coinMinimalDenom: "aseda",
@@ -1954,8 +1954,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["cosmwasm"],
   },
   {
-    rpc: "https://rpc-dimension.titan.app",
-    rest: "https://lcd-dimension.titan.app",
+    rpc: "https://rpc-dimension.keplr.app",
+    rest: "https://lcd-dimension.keplr.app",
     chainId: "dimension_37-1",
     chainName: "XPLA",
     stakeCurrency: {
@@ -1999,8 +1999,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["eth-address-gen", "eth-key-sign", "cosmwasm"],
   },
   {
-    rpc: "https://rpc-pryzm.titan.app",
-    rest: "https://lcd-pryzm.titan.app",
+    rpc: "https://rpc-pryzm.keplr.app",
+    rest: "https://lcd-pryzm.keplr.app",
     chainId: "pryzm-1",
     chainName: "Pryzm",
     stakeCurrency: {
@@ -2036,8 +2036,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["cosmwasm"],
   },
   {
-    rpc: "https://rpc-zetachain.titan.app",
-    rest: "https://lcd-zetachain.titan.app",
+    rpc: "https://rpc-zetachain.keplr.app",
+    rest: "https://lcd-zetachain.keplr.app",
     chainId: "zetachain_7000-1",
     chainName: "ZetaChain",
     stakeCurrency: {
@@ -2078,17 +2078,17 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["eth-address-gen", "eth-key-sign"],
   },
   {
-    rpc: "https://evm-1.titan.app",
-    rest: "https://evm-1.titan.app",
+    rpc: "https://evm-1.keplr.app",
+    rest: "https://evm-1.keplr.app",
     evm: {
       chainId: 1,
-      rpc: "https://evm-1.titan.app",
-      websocket: "wss://evm-1.titan.app/websocket",
+      rpc: "https://evm-1.keplr.app",
+      websocket: "wss://evm-1.keplr.app/websocket",
     },
     chainId: "eip155:1",
     chainName: "Ethereum",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/chain.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/chain.png",
     bip44: {
       coinType: 60,
     },
@@ -2099,7 +2099,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "ethereum",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/chain.png",
       },
     ],
     feeCurrencies: [
@@ -2109,23 +2109,23 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "ethereum",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/chain.png",
       },
     ],
     features: [],
   },
   {
-    rpc: "https://evm-8453.titan.app",
-    rest: "https://evm-8453.titan.app",
+    rpc: "https://evm-8453.keplr.app",
+    rest: "https://evm-8453.keplr.app",
     evm: {
       chainId: 8453,
-      rpc: "https://evm-8453.titan.app",
-      websocket: "wss://evm-8453.titan.app/websocket",
+      rpc: "https://evm-8453.keplr.app",
+      websocket: "wss://evm-8453.keplr.app/websocket",
     },
     chainId: "eip155:8453",
     chainName: "Base",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:8453/chain.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:8453/chain.png",
     bip44: {
       coinType: 60,
     },
@@ -2136,7 +2136,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "ethereum",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/chain.png",
       },
     ],
     feeCurrencies: [
@@ -2146,23 +2146,23 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "ethereum",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/chain.png",
       },
     ],
     features: ["op-stack-l1-data-fee"],
   },
   {
-    rpc: "https://evm-10.titan.app",
-    rest: "https://evm-10.titan.app",
+    rpc: "https://evm-10.keplr.app",
+    rest: "https://evm-10.keplr.app",
     evm: {
       chainId: 10,
-      rpc: "https://evm-10.titan.app",
-      websocket: "wss://evm-10.titan.app/websocket",
+      rpc: "https://evm-10.keplr.app",
+      websocket: "wss://evm-10.keplr.app/websocket",
     },
     chainId: "eip155:10",
     chainName: "Optimism",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:10/chain.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:10/chain.png",
     bip44: {
       coinType: 60,
     },
@@ -2173,7 +2173,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "ethereum",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/chain.png",
       },
     ],
     feeCurrencies: [
@@ -2183,23 +2183,23 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "ethereum",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/chain.png",
       },
     ],
     features: ["op-stack-l1-data-fee"],
   },
   {
-    rpc: "https://evm-42161.titan.app",
-    rest: "https://evm-42161.titan.app",
+    rpc: "https://evm-42161.keplr.app",
+    rest: "https://evm-42161.keplr.app",
     evm: {
       chainId: 42161,
-      rpc: "https://evm-42161.titan.app",
-      websocket: "wss://evm-42161.titan.app/websocket",
+      rpc: "https://evm-42161.keplr.app",
+      websocket: "wss://evm-42161.keplr.app/websocket",
     },
     chainId: "eip155:42161",
     chainName: "Arbitrum",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:42161/chain.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:42161/chain.png",
     bip44: {
       coinType: 60,
     },
@@ -2210,7 +2210,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "ethereum",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/chain.png",
       },
     ],
     feeCurrencies: [
@@ -2220,23 +2220,23 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "ethereum",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/chain.png",
       },
     ],
     features: ["eth-address-gen", "eth-key-sign"],
   },
   {
-    rpc: "https://evm-137.titan.app",
-    rest: "https://evm-137.titan.app",
+    rpc: "https://evm-137.keplr.app",
+    rest: "https://evm-137.keplr.app",
     evm: {
       chainId: 137,
-      rpc: "https://evm-137.titan.app",
-      websocket: "wss://evm-137.titan.app/websocket",
+      rpc: "https://evm-137.keplr.app",
+      websocket: "wss://evm-137.keplr.app/websocket",
     },
     chainId: "eip155:137",
     chainName: "Polygon",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:137/chain.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:137/chain.png",
     bip44: {
       coinType: 60,
     },
@@ -2247,7 +2247,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "matic-network",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:137/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:137/chain.png",
       },
     ],
     feeCurrencies: [
@@ -2257,23 +2257,23 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "matic-network",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:137/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:137/chain.png",
       },
     ],
     features: [],
   },
   {
-    rpc: "https://evm-56.titan.app",
-    rest: "https://evm-56.titan.app",
+    rpc: "https://evm-56.keplr.app",
+    rest: "https://evm-56.keplr.app",
     evm: {
       chainId: 56,
-      rpc: "https://evm-56.titan.app",
-      websocket: "wss://evm-56.titan.app/websocket",
+      rpc: "https://evm-56.keplr.app",
+      websocket: "wss://evm-56.keplr.app/websocket",
     },
     chainId: "eip155:56",
     chainName: "BNB Smart Chain",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:56/chain.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:56/chain.png",
     bip44: {
       coinType: 60,
     },
@@ -2284,7 +2284,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "binancecoin",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:56/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:56/chain.png",
       },
     ],
     feeCurrencies: [
@@ -2294,23 +2294,23 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "binancecoin",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:56/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:56/chain.png",
       },
     ],
     features: [],
   },
   {
-    rpc: "https://evm-43114.titan.app",
-    rest: "https://evm-43114.titan.app",
+    rpc: "https://evm-43114.keplr.app",
+    rest: "https://evm-43114.keplr.app",
     evm: {
       chainId: 43114,
-      rpc: "https://evm-43114.titan.app",
-      websocket: "wss://evm-43114.titan.app/websocket",
+      rpc: "https://evm-43114.keplr.app",
+      websocket: "wss://evm-43114.keplr.app/websocket",
     },
     chainId: "eip155:43114",
     chainName: "Avalanche",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:43114/chain.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:43114/chain.png",
     bip44: {
       coinType: 60,
     },
@@ -2321,7 +2321,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "avalanche-2",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:43114/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:43114/chain.png",
       },
     ],
     feeCurrencies: [
@@ -2331,23 +2331,23 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "avalanche-2",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:43114/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:43114/chain.png",
       },
     ],
     features: [],
   },
   {
-    rpc: "https://evm-81457.titan.app",
-    rest: "https://evm-81457.titan.app",
+    rpc: "https://evm-81457.keplr.app",
+    rest: "https://evm-81457.keplr.app",
     evm: {
       chainId: 81457,
-      rpc: "https://evm-81457.titan.app",
-      websocket: "wss://evm-81457.titan.app/websocket",
+      rpc: "https://evm-81457.keplr.app",
+      websocket: "wss://evm-81457.keplr.app/websocket",
     },
     chainId: "eip155:81457",
     chainName: "Blast",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:81457/chain.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:81457/chain.png",
     bip44: {
       coinType: 60,
     },
@@ -2370,8 +2370,8 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     features: ["op-stack-l1-data-fee"],
   },
   {
-    rpc: "https://rpc-lava.titan.app",
-    rest: "https://lcd-lava.titan.app",
+    rpc: "https://rpc-lava.keplr.app",
+    rest: "https://lcd-lava.keplr.app",
     chainId: "lava-mainnet-1",
     chainName: "Lava",
     stakeCurrency: {
@@ -2418,10 +2418,10 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     chainId: "starknet:SN_MAIN",
     chainName: "Starknet",
     chainSymbolImageUrl:
-      "https://titan-ext-update-note-images.s3.amazonaws.com/token/starknet.png",
+      "https://keplr-ext-update-note-images.s3.amazonaws.com/token/starknet.png",
     starknet: {
       chainId: "starknet:SN_MAIN",
-      rpc: "https://rpc-starknet.titan.app",
+      rpc: "https://rpc-starknet.keplr.app",
       currencies: [
         {
           type: "erc20",
@@ -2433,7 +2433,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
           coinDecimals: 18,
           coinGeckoId: "ethereum",
           coinImageUrl:
-            "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/ethereum-native.png",
+            "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/ethereum-native.png",
         },
         {
           type: "erc20",
@@ -2445,7 +2445,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
           coinDecimals: 18,
           coinGeckoId: "starknet",
           coinImageUrl:
-            "https://titan-ext-update-note-images.s3.amazonaws.com/token/starknet.png",
+            "https://keplr-ext-update-note-images.s3.amazonaws.com/token/starknet.png",
         },
         {
           type: "erc20",
@@ -2457,7 +2457,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
           coinDecimals: 8,
           coinGeckoId: "wrapped-bitcoin",
           coinImageUrl:
-            "https://titan-ext-update-note-images.s3.amazonaws.com/token/wbtc.png",
+            "https://keplr-ext-update-note-images.s3.amazonaws.com/token/wbtc.png",
         },
         {
           type: "erc20",
@@ -2469,7 +2469,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
           coinDecimals: 18,
           coinGeckoId: "wrapped-steth",
           coinImageUrl:
-            "https://titan-ext-update-note-images.s3.amazonaws.com/token/wstETH.png",
+            "https://keplr-ext-update-note-images.s3.amazonaws.com/token/wstETH.png",
         },
         {
           type: "erc20",
@@ -2481,7 +2481,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
           coinDecimals: 6,
           coinGeckoId: "tether",
           coinImageUrl:
-            "https://titan-ext-update-note-images.s3.amazonaws.com/token/usdt.png",
+            "https://keplr-ext-update-note-images.s3.amazonaws.com/token/usdt.png",
         },
         {
           type: "erc20",
@@ -2493,7 +2493,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
           coinDecimals: 6,
           coinGeckoId: "usd-coin",
           coinImageUrl:
-            "https://titan-ext-update-note-images.s3.amazonaws.com/token/usdc.png",
+            "https://keplr-ext-update-note-images.s3.amazonaws.com/token/usdc.png",
         },
         {
           type: "erc20",
@@ -2505,7 +2505,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
           coinDecimals: 18,
           coinGeckoId: "dai",
           coinImageUrl:
-            "https://titan-ext-update-note-images.s3.amazonaws.com/token/dai.png",
+            "https://keplr-ext-update-note-images.s3.amazonaws.com/token/dai.png",
         },
         {
           type: "erc20",
@@ -2527,10 +2527,10 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     chainId: "starknet:SN_SEPOLIA",
     chainName: "Starknet Sepolia",
     chainSymbolImageUrl:
-      "https://titan-ext-update-note-images.s3.amazonaws.com/token/starknet.png",
+      "https://keplr-ext-update-note-images.s3.amazonaws.com/token/starknet.png",
     starknet: {
       chainId: "starknet:SN_SEPOLIA",
-      rpc: "https://rpc-starknet-sepolia.titan.app",
+      rpc: "https://rpc-starknet-sepolia.keplr.app",
       currencies: [
         {
           type: "erc20",
@@ -2541,7 +2541,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
             "erc20:0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
           coinDecimals: 18,
           coinImageUrl:
-            "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:1/ethereum-native.png",
+            "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:1/ethereum-native.png",
         },
         {
           type: "erc20",
@@ -2552,7 +2552,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
             "erc20:0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
           coinDecimals: 18,
           coinImageUrl:
-            "https://titan-ext-update-note-images.s3.amazonaws.com/token/starknet.png",
+            "https://keplr-ext-update-note-images.s3.amazonaws.com/token/starknet.png",
         },
       ],
       ethContractAddress:
@@ -2565,9 +2565,9 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     chainId: "mantra-1",
     chainName: "MANTRA",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/mantra/chain.png",
-    rpc: "https://rpc-mantra.titan.app",
-    rest: "https://lcd-mantra.titan.app",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/mantra/chain.png",
+    rpc: "https://rpc-mantra.keplr.app",
+    rest: "https://lcd-mantra.keplr.app",
     bip44: {
       coinType: 118,
     },
@@ -2586,7 +2586,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 6,
         coinGeckoId: "mantra-dao",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/mantra/om.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/mantra/om.png",
       },
     ],
     feeCurrencies: [
@@ -2596,7 +2596,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 6,
         coinGeckoId: "mantra-dao",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/mantra/om.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/mantra/om.png",
         gasPriceStep: {
           low: 0.01,
           average: 0.025,
@@ -2610,24 +2610,24 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
       coinDecimals: 6,
       coinGeckoId: "mantra-dao",
       coinImageUrl:
-        "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/mantra/om.png",
+        "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/mantra/om.png",
     },
     features: ["cosmwasm"],
   },
   {
-    rpc: "https://rpc-pirin.titan.app",
-    rest: "https://lcd-pirin.titan.app",
+    rpc: "https://rpc-pirin.keplr.app",
+    rest: "https://lcd-pirin.keplr.app",
     chainId: "pirin-1",
     chainName: "Nolus",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/pirin/nolus.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pirin/nolus.png",
     stakeCurrency: {
       coinDenom: "NLS",
       coinMinimalDenom: "unls",
       coinDecimals: 6,
       coinGeckoId: "nolus",
       coinImageUrl:
-        "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/pirin/nolus.png",
+        "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pirin/nolus.png",
     },
     bip44: {
       coinType: 118,
@@ -2647,7 +2647,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 6,
         coinGeckoId: "nolus",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/pirin/nolus.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pirin/nolus.png",
       },
     ],
     feeCurrencies: [
@@ -2657,7 +2657,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 6,
         coinGeckoId: "nolus",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/pirin/nolus.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pirin/nolus.png",
         gasPriceStep: {
           low: 0.01,
           average: 0.025,
@@ -2678,7 +2678,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     chainId: "eip155:984122",
     chainName: "Forma",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:984122/chain.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:984122/chain.png",
     bip44: {
       coinType: 60,
     },
@@ -2689,7 +2689,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "celestia",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:984122/utia.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:984122/utia.png",
       },
     ],
     feeCurrencies: [
@@ -2699,7 +2699,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "celestia",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:984122/utia.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:984122/utia.png",
       },
     ],
     features: [],
@@ -2715,7 +2715,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     chainId: "eip155:253368190",
     chainName: "Flame",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:253368190/chain.png",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:253368190/chain.png",
     bip44: {
       coinType: 60,
     },
@@ -2726,7 +2726,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "celestia",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:253368190/utia.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:253368190/utia.png",
       },
       {
         coinDenom: "WTIA",
@@ -2734,7 +2734,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "celestia",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:253368190/wtia.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:253368190/wtia.png",
       },
       {
         coinDenom: "USDC",
@@ -2742,7 +2742,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 6,
         coinGeckoId: "usd-coin",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:253368190/uusdc.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:253368190/uusdc.png",
       },
       {
         coinDenom: "stTIA",
@@ -2750,7 +2750,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "stride-staked-tia",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:253368190/sttia.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:253368190/sttia.png",
       },
       {
         coinDenom: "milkTIA",
@@ -2758,7 +2758,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 18,
         coinGeckoId: "milkyway-staked-tia",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:253368190/milktia.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:253368190/milktia.png",
       },
     ],
     feeCurrencies: [
@@ -2767,26 +2767,26 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinMinimalDenom: "flame-native",
         coinDecimals: 18,
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/eip155:253368190/utia.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/eip155:253368190/utia.png",
       },
     ],
     features: [],
   },
   {
-    rpc: "https://rpc-xion.titan.app",
-    rest: "https://lcd-xion.titan.app",
+    rpc: "https://rpc-xion.keplr.app",
+    rest: "https://lcd-xion.keplr.app",
     chainId: "xion-mainnet-1",
     chainName: "Xion",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/xion-mainnet/chain.png",
-    walletUrlForStaking: "https://wallet.titan.app/chains/xion",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/xion-mainnet/chain.png",
+    walletUrlForStaking: "https://wallet.keplr.app/chains/xion",
     stakeCurrency: {
       coinDenom: "XION",
       coinMinimalDenom: "uxion",
       coinDecimals: 6,
       coinGeckoId: "xion-2",
       coinImageUrl:
-        "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/xion-mainnet/chain.png",
+        "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/xion-mainnet/chain.png",
     },
     bip44: {
       coinType: 118,
@@ -2806,7 +2806,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 6,
         coinGeckoId: "xion-2",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/xion-mainnet/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/xion-mainnet/chain.png",
       },
     ],
     feeCurrencies: [
@@ -2816,7 +2816,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 6,
         coinGeckoId: "xion-2",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/xion-mainnet/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/xion-mainnet/chain.png",
         gasPriceStep: {
           low: 0.0005,
           average: 0.001,
@@ -2830,10 +2830,10 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     chainId: "jackal-1",
     chainName: "Jackal",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/jackal/chain.png",
-    rpc: "https://rpc-jackal.titan.app",
-    rest: "https://lcd-jackal.titan.app",
-    walletUrlForStaking: "https://wallet.titan.app/chains/jackal",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/jackal/chain.png",
+    rpc: "https://rpc-jackal.keplr.app",
+    rest: "https://lcd-jackal.keplr.app",
+    walletUrlForStaking: "https://wallet.keplr.app/chains/jackal",
     bip44: {
       coinType: 118,
     },
@@ -2852,7 +2852,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 6,
         coinGeckoId: "jackal-protocol",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/jackal/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/jackal/chain.png",
       },
     ],
     feeCurrencies: [
@@ -2862,7 +2862,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 6,
         coinGeckoId: "jackal-protocol",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/jackal/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/jackal/chain.png",
         gasPriceStep: {
           low: 0.002,
           average: 0.004,
@@ -2876,7 +2876,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
       coinDecimals: 6,
       coinGeckoId: "jackal-protocol",
       coinImageUrl:
-        "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/jackal/chain.png",
+        "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/jackal/chain.png",
     },
     features: ["cosmwasm"],
   },
@@ -2884,9 +2884,9 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     chainId: "thorchain-1",
     chainName: "THORChain",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/thorchain/chain.png",
-    rpc: "https://rpc-thorchain.titan.app",
-    rest: "https://lcd-thorchain.titan.app",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/thorchain/chain.png",
+    rpc: "https://rpc-thorchain.keplr.app",
+    rest: "https://lcd-thorchain.keplr.app",
     bip44: {
       coinType: 931,
     },
@@ -2905,7 +2905,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 8,
         coinGeckoId: "thorchain",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/thorchain/rune.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/thorchain/rune.png",
       },
     ],
     feeCurrencies: [
@@ -2915,7 +2915,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 8,
         coinGeckoId: "thorchain",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/thorchain/rune.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/thorchain/rune.png",
         gasPriceStep: {
           low: 0.02,
           average: 0.02,
@@ -2929,10 +2929,10 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
     chainId: "elys-1",
     chainName: "Elys Network",
     chainSymbolImageUrl:
-      "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/elys/chain.png",
-    rpc: "https://rpc-elys.titan.app",
-    rest: "https://lcd-elys.titan.app",
-    walletUrlForStaking: "https://wallet.titan.app/chains/elys-network",
+      "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/elys/chain.png",
+    rpc: "https://rpc-elys.keplr.app",
+    rest: "https://lcd-elys.keplr.app",
+    walletUrlForStaking: "https://wallet.keplr.app/chains/elys-network",
     bip44: {
       coinType: 118,
     },
@@ -2951,7 +2951,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
         coinDecimals: 6,
         coinGeckoId: "elys-network",
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/elys/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/elys/chain.png",
       },
     ],
     feeCurrencies: [
@@ -2965,7 +2965,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
           high: 0.03,
         },
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/elys/chain.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/elys/chain.png",
       },
       {
         coinDenom: "USDC",
@@ -2979,7 +2979,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
           high: 0.03,
         },
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/elys/uusdc.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/elys/uusdc.png",
       },
       {
         coinDenom: "ATOM",
@@ -2993,7 +2993,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
           high: 0.03,
         },
         coinImageUrl:
-          "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/elys/uatom.png",
+          "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/elys/uatom.png",
       },
     ],
     stakeCurrency: {
@@ -3001,7 +3001,7 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
       coinMinimalDenom: "uelys",
       coinDecimals: 6,
       coinImageUrl:
-        "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/elys/chain.png",
+        "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/elys/chain.png",
     },
     features: [],
   },
@@ -3009,18 +3009,18 @@ export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
 
 // The origins that are able to pass any permission that external webpages can have.
 export const PrivilegedOrigins: string[] = [
-  "https://wallet.titan.app",
-  "https://validator.titan.app",
-  "https://chains.titan.app",
-  "https://testnet.titan.app",
-  "https://multisig.titan.app",
+  "https://wallet.keplr.app",
+  "https://validator.keplr.app",
+  "https://chains.keplr.app",
+  "https://testnet.keplr.app",
+  "https://multisig.keplr.app",
 ];
 
 export const CommunityChainInfoRepo = {
   organizationName: "chainapsis",
-  repoName: "titan-chain-registry",
+  repoName: "keplr-chain-registry",
   branchName: "main",
-  alternativeURL: process.env["TITAN_EXT_CHAIN_REGISTRY_URL"]
-    ? process.env["TITAN_EXT_CHAIN_REGISTRY_URL"]
+  alternativeURL: process.env["keplr_EXT_CHAIN_REGISTRY_URL"]
+    ? process.env["keplr_EXT_CHAIN_REGISTRY_URL"]
     : undefined,
 };
