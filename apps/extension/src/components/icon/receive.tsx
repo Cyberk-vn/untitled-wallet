@@ -4,7 +4,7 @@ import { IconProps } from "./types";
 export const ReceiveIcon: FunctionComponent<IconProps> = ({
   width = "1.5rem",
   height = "1.5rem",
-  color,
+  // color,
 }) => {
   return (
     <svg
