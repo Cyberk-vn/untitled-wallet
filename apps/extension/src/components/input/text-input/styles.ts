@@ -44,7 +44,10 @@ export const Styles = {
     line-height: ${({ isTextarea }) => (isTextarea ? 0 : undefined)};
   `,
   TextInputContainer: styled.div<
-    Pick<TextInputProps, "error" | "disabled" | "paragraph" | "errorBorder"> & {
+    Pick<
+      TextInputProps,
+      "error" | "disabled" | "paragraph" | "errorBorder" | "borderRadius"
+    > & {
       isTextarea?: boolean;
     }
   >`
@@ -75,8 +78,8 @@ export const Styles = {
           ? ColorPalette["gray-100"]
           : ColorPalette["gray-400"];
       }};
-      border-radius: ${TEXT_INPUT_BORDER_RADIUS};
-
+      border-radius: ${({ borderRadius }) =>
+        borderRadius || TEXT_INPUT_BORDER_RADIUS};
       pointer-events: none;
     }
     :focus-within {
@@ -103,7 +106,8 @@ export const Styles = {
       }}
     }
 
-    border-radius: ${TEXT_INPUT_BORDER_RADIUS};
+    border-radius: ${({ borderRadius }) =>
+      borderRadius || TEXT_INPUT_BORDER_RADIUS};
     background-color: ${(props) =>
       props.theme.mode === "light"
         ? ColorPalette["white"]
@@ -126,7 +130,8 @@ export const Styles = {
         ? ColorPalette["white"]
         : ColorPalette["gray-700"]};
     border: 0;
-    border-radius: ${TEXT_INPUT_BORDER_RADIUS};
+    border-radius: ${({ borderRadius }) =>
+      borderRadius || TEXT_INPUT_BORDER_RADIUS};
 
     color: ${(props) =>
       props.theme.mode === "light"
