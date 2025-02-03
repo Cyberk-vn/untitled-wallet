@@ -236,22 +236,22 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             {
               name: "intro",
               element: RegisterIntroScene,
-              width: "21.875rem",
+              width: "22.5rem",
             },
             {
               name: "more-options",
               element: RegisterMoreOptionsScene,
-              width: "21.875rem",
+              width: "22.5rem",
             },
             {
               name: "import-private-key",
               element: RegisterImportPrivateKeyScene,
-              width: "21.875rem",
+              width: "22.5rem",
             },
             {
               name: "import-passphrase",
               element: RegisterImportPassphraseScene,
-              width: "21.875rem",
+              width: "22.5rem",
             },
             {
               name: "new-user",
@@ -266,7 +266,7 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             {
               name: "new-mnemonic",
               element: NewMnemonicScene,
-              width: "33.75rem",
+              width: "25rem",
             },
             {
               name: "verify-mnemonic",
