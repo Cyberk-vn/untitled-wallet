@@ -8,11 +8,15 @@ export const Styles = {
     display: grid;
     grid-template-columns: repeat(${({ columns }) => columns}, 1fr);
     gap: 0.75rem 0;
+
+    input {
+      height: 2.5rem !important;
+    }
   `,
 
   IndexText: styled.div`
     font-weight: 500;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     text-align: right;
     color: ${(props) =>
       props.theme.mode === "light"
