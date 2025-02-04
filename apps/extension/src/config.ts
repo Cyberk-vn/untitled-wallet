@@ -1,11 +1,13 @@
 import { Bech32Address } from "@titan-wallet/cosmos";
 import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 
+export const TITAN_CHAIN_ID = "titan_18888-1";
+
 const UranusSupportedEmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
   {
     rpc: "https://titan-rpc.titanlab.io",
     rest: "https://titan-lcd.titanlab.io",
-    chainId: "titan_18888-1",
+    chainId: TITAN_CHAIN_ID,
     chainName: "Titan",
     chainSymbolImageUrl:
       "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/titan_18888/chain.png",
