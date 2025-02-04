@@ -38,7 +38,7 @@ const { initFn, keyRingService, analyticsService } = init(
   PrivilegedOrigins,
   PrivilegedOrigins,
   PrivilegedOrigins,
-  ["https://testnet.titan.app", "https://multisig.titan.app"],
+  ["https://testnet.keplr.app", "https://multisig.keplr.app"],
   CommunityChainInfoRepo,
   {
     create: (params: {
@@ -65,7 +65,7 @@ const { initFn, keyRingService, analyticsService } = init(
       }
     );
   },
-  "https://blocklist.titan.app",
+  "https://blocklist.keplr.app",
   {
     commonCrypto: {
       scrypt: async (
@@ -102,8 +102,8 @@ const { initFn, keyRingService, analyticsService } = init(
     try {
       if (lastEmbedChainInfos.find((c) => c.chainId === "ixo-4")) {
         await chainsService.addSuggestedChainInfo({
-          rpc: "https://rpc-ixo.titan.app",
-          rest: "https://lcd-ixo.titan.app",
+          rpc: "https://rpc-ixo.keplr.app",
+          rest: "https://lcd-ixo.keplr.app",
           chainId: "ixo-4",
           chainName: "ixo",
           stakeCurrency: {
@@ -113,11 +113,11 @@ const { initFn, keyRingService, analyticsService } = init(
           },
           walletUrl:
             process.env.NODE_ENV === "production"
-              ? "https://wallet.titan.app/chains/ixo"
+              ? "https://wallet.keplr.app/chains/ixo"
               : "http://localhost:8080/chains/ixo",
           walletUrlForStaking:
             process.env.NODE_ENV === "production"
-              ? "https://wallet.titan.app/chains/ixo"
+              ? "https://wallet.keplr.app/chains/ixo"
               : "http://localhost:8080/chains/ixo",
           bip44: {
             coinType: 118,
@@ -140,8 +140,8 @@ const { initFn, keyRingService, analyticsService } = init(
           features: ["ibc-transfer"],
         });
         await chainsService.addSuggestedChainInfo({
-          rpc: "https://rpc-iov.titan.app",
-          rest: "https://lcd-iov.titan.app",
+          rpc: "https://rpc-iov.keplr.app",
+          rest: "https://lcd-iov.keplr.app",
           chainId: "iov-mainnet-ibc",
           chainName: "Starname",
           stakeCurrency: {
@@ -152,11 +152,11 @@ const { initFn, keyRingService, analyticsService } = init(
           },
           walletUrl:
             process.env.NODE_ENV === "production"
-              ? "https://wallet.titan.app/chains/starname"
+              ? "https://wallet.keplr.app/chains/starname"
               : "http://localhost:8080/chains/starname",
           walletUrlForStaking:
             process.env.NODE_ENV === "production"
-              ? "https://wallet.titan.app/chains/starname"
+              ? "https://wallet.keplr.app/chains/starname"
               : "http://localhost:8080/chains/starname",
           bip44: {
             coinType: 234,
@@ -186,8 +186,8 @@ const { initFn, keyRingService, analyticsService } = init(
           features: ["ibc-transfer"],
         });
         await chainsService.addSuggestedChainInfo({
-          rpc: "https://rpc-emoney.titan.app",
-          rest: "https://lcd-emoney.titan.app",
+          rpc: "https://rpc-emoney.keplr.app",
+          rest: "https://lcd-emoney.keplr.app",
           chainId: "emoney-3",
           chainName: "e-Money",
           stakeCurrency: {
@@ -198,11 +198,11 @@ const { initFn, keyRingService, analyticsService } = init(
           },
           walletUrl:
             process.env.NODE_ENV === "production"
-              ? "https://wallet.titan.app/chains/e-money"
+              ? "https://wallet.keplr.app/chains/e-money"
               : "http://localhost:8080/chains/e-money",
           walletUrlForStaking:
             process.env.NODE_ENV === "production"
-              ? "https://wallet.titan.app/chains/e-money"
+              ? "https://wallet.keplr.app/chains/e-money"
               : "http://localhost:8080/chains/e-money",
           bip44: {
             coinType: 118,
@@ -312,8 +312,8 @@ const { initFn, keyRingService, analyticsService } = init(
 
       if (lastEmbedChainInfos.find((c) => c.chainId === "tgrade-mainnet-1")) {
         await chainsService.addSuggestedChainInfo({
-          rpc: "https://rpc-tgrade.titan.app",
-          rest: "https://lcd-tgrade.titan.app",
+          rpc: "https://rpc-tgrade.keplr.app",
+          rest: "https://lcd-tgrade.keplr.app",
           chainId: "tgrade-mainnet-1",
           chainName: "Tgrade",
           stakeCurrency: {
@@ -354,8 +354,8 @@ const { initFn, keyRingService, analyticsService } = init(
           chainName: "Gitopia",
           chainSymbolImageUrl:
             "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gitopia/chain.png",
-          rpc: "https://rpc-gitopia.titan.app",
-          rest: "https://lcd-gitopia.titan.app",
+          rpc: "https://rpc-gitopia.keplr.app",
+          rest: "https://lcd-gitopia.keplr.app",
           bip44: {
             coinType: 118,
           },
@@ -402,8 +402,8 @@ const { initFn, keyRingService, analyticsService } = init(
 
       if (lastEmbedChainInfos.find((c) => c.chainId === "shentu-2.2")) {
         await chainsService.addSuggestedChainInfo({
-          rpc: "https://rpc-certik.titan.app",
-          rest: "https://lcd-certik.titan.app",
+          rpc: "https://rpc-certik.keplr.app",
+          rest: "https://lcd-certik.keplr.app",
           chainId: "shentu-2.2",
           chainName: "Shentu",
           chainSymbolImageUrl:
@@ -416,8 +416,8 @@ const { initFn, keyRingService, analyticsService } = init(
             coinImageUrl:
               "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/shentu-2.2/uctk.png",
           },
-          walletUrl: "https://wallet.titan.app/chains/shentu",
-          walletUrlForStaking: "https://wallet.titan.app/chains/shentu",
+          walletUrl: "https://wallet.keplr.app/chains/shentu",
+          walletUrlForStaking: "https://wallet.keplr.app/chains/shentu",
           bip44: {
             coinType: 118,
           },
@@ -455,8 +455,8 @@ const { initFn, keyRingService, analyticsService } = init(
 
       if (lastEmbedChainInfos.find((c) => c.chainId === "sifchain-1")) {
         await chainsService.addSuggestedChainInfo({
-          rpc: "https://rpc-sifchain.titan.app",
-          rest: "https://lcd-sifchain.titan.app",
+          rpc: "https://rpc-sifchain.keplr.app",
+          rest: "https://lcd-sifchain.keplr.app",
           chainId: "sifchain-1",
           chainName: "Sifchain",
           chainSymbolImageUrl:
@@ -469,8 +469,8 @@ const { initFn, keyRingService, analyticsService } = init(
             coinImageUrl:
               "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/sifchain/rowan.png",
           },
-          walletUrl: "https://wallet.titan.app/chains/sifchain",
-          walletUrlForStaking: "https://wallet.titan.app/chains/sifchain",
+          walletUrl: "https://wallet.keplr.app/chains/sifchain",
+          walletUrlForStaking: "https://wallet.keplr.app/chains/sifchain",
           bip44: {
             coinType: 118,
           },
@@ -933,8 +933,8 @@ const { initFn, keyRingService, analyticsService } = init(
 
       if (lastEmbedChainInfos.find((c) => c.chainId === "gravity-bridge-3")) {
         await chainsService.addSuggestedChainInfo({
-          rpc: "https://rpc-gravity-bridge.titan.app",
-          rest: "https://lcd-gravity-bridge.titan.app",
+          rpc: "https://rpc-gravity-bridge.keplr.app",
+          rest: "https://lcd-gravity-bridge.keplr.app",
           chainId: "gravity-bridge-3",
           chainName: "Gravity Bridge",
           chainSymbolImageUrl:
@@ -947,8 +947,8 @@ const { initFn, keyRingService, analyticsService } = init(
             coinImageUrl:
               "https://raw.githubusercontent.com/chainapsis/titan-chain-registry/main/images/gravity-bridge/ugraviton.png",
           },
-          walletUrl: "https://wallet.titan.app/chains/gravity-bridge",
-          walletUrlForStaking: "https://wallet.titan.app/chains/gravity-bridge",
+          walletUrl: "https://wallet.keplr.app/chains/gravity-bridge",
+          walletUrlForStaking: "https://wallet.keplr.app/chains/gravity-bridge",
           bip44: {
             coinType: 118,
           },
