@@ -41,6 +41,7 @@ import { isRunningInSidePanel } from "./utils";
 import { UntitledMainPage } from "./pages/untitled-main";
 import { useAutoLockMonitoring } from "./use-auto-lock-monitoring";
 import { UnlockPage } from "./pages/unlock";
+import { ModularChainInfo } from "@titan-wallet/types";
 
 configure({
   enforceActions: "always", // Make mobx to strict mode.
@@ -53,7 +54,7 @@ window.titan = new Titan(
 );
 
 const RoutesAfterReady: FunctionComponent = observer(() => {
-  const { keyRingStore } = useStore();
+  const { keyRingStore, chainStore, accountStore } = useStore();
 
   useAutoLockMonitoring();
 
@@ -97,8 +98,58 @@ const RoutesAfterReady: FunctionComponent = observer(() => {
     hasBeenReady.current = true;
     return true;
   })();
+
+  const addresses: {
+    modularChainInfo: ModularChainInfo;
+    bech32Address?: string;
+    ethereumAddress?: string;
+    starknetAddress?: string;
+  }[] = chainStore.modularChainInfosInUI.map((modularChainInfo) => {
+    const accountInfo = accountStore.getAccount(modularChainInfo.chainId);
+
+    const bech32Address = (() => {
+      if (!("cosmos" in modularChainInfo)) {
+        return undefined;
+      }
+
+      if (modularChainInfo.chainId.startsWith("eip155")) {
+        return undefined;
+      }
+
+      return accountInfo.bech32Address;
+    })();
+    const ethereumAddress = (() => {
+      if (!("cosmos" in modularChainInfo)) {
+        return undefined;
+      }
+
+      if (modularChainInfo.chainId.startsWith("injective")) {
+        return undefined;
+      }
+
+      return accountInfo.hasEthereumHexAddress
+        ? accountInfo.ethereumHexAddress
+        : undefined;
+    })();
+    const starknetAddress = (() => {
+      if (!("starknet" in modularChainInfo)) {
+        return undefined;
+      }
+
+      return accountInfo.starknetHexAddress;
+    })();
+
+    return {
+      modularChainInfo,
+      bech32Address,
+      ethereumAddress,
+      starknetAddress,
+    };
+  });
+
   return (
     <div>
+      <div>{addresses[0].bech32Address}</div>
       {!isReady || shouldShowLockScreen ? <UnlockPage /> : <UntitledMainPage />}
     </div>
   );
