@@ -28,8 +28,6 @@ import { RegisterNamePasswordScene } from "./name-password";
 import { ConnectHardwareWalletScene } from "./connect-hardware";
 import { ConnectLedgerScene } from "./connect-ledger";
 import { RegisterNamePasswordHardwareScene } from "./name-password-hardware";
-import { FinalizeKeyScene } from "./finalize-key";
-import { EnableChainsScene } from "./enable-chains";
 import { SelectDerivationPathScene } from "./select-derivation-path";
 import { useStore } from "../../stores";
 import { useSearchParams } from "react-router-dom";
@@ -45,6 +43,7 @@ import {
   RegisterImportPassphraseScene,
   RegisterImportPrivateKeyScene,
 } from "./import-wallet";
+import { FinalizeKeyAndChainScene } from "./finalize-key-and-chain";
 
 const Container = styled.div`
   min-width: 100vw;
@@ -320,13 +319,8 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             },
             {
               name: "finalize-key",
-              element: FinalizeKeyScene,
+              element: FinalizeKeyAndChainScene,
               width: "17.5rem",
-            },
-            {
-              name: "enable-chains",
-              element: EnableChainsScene,
-              width: "34.5rem",
             },
             {
               name: "select-derivation-path",
