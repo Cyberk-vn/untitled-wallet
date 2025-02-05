@@ -56,3 +56,9 @@ export * from "./msg-receive";
 export * from "./msg-swap";
 export * from "./msg-cancel-undelegate";
 export * from "./folder-minus";
+
+export * from "./deposit";
+export * from "./sidebar-view";
+export * from "./swap";
+export * from "./send";
+export * from "./receive";

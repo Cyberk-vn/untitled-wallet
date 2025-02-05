@@ -24,6 +24,7 @@ export const TextInput = forwardRef<
       bottom,
       isLoading,
       autoComplete,
+      borderRadius,
       ...props
     },
     ref
@@ -41,6 +42,7 @@ export const TextInput = forwardRef<
           error={error}
           disabled={props.disabled}
           errorBorder={props.errorBorder}
+          borderRadius={borderRadius}
         >
           <Columns sum={1}>
             {/*
@@ -62,6 +64,7 @@ export const TextInput = forwardRef<
                 autoComplete={autoComplete || "off"}
                 paragraph={paragraph}
                 error={error}
+                borderRadius={borderRadius}
                 ref={ref}
               />
             </Column>

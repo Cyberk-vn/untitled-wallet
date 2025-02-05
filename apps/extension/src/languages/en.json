@@ -63,6 +63,8 @@
   "pages.register.intro.seamless-integration-title": "Seamless Integration",
   "pages.register.intro.seamless-integration-sub": "Bridging, staking and on-off ramp can be done all through the wallet",
 
+  "pages.register.welcome.finish-button": "Finish",
+
   "pages.register.more-options.title": "Add Account",
   "pages.register.more-options.create-new": "Create New",
   "pages.register.more-options.import-existing-accounts": "Import Existing Accounts",

@@ -3,7 +3,7 @@ import { GuideBoxProps } from "../guide-box";
 import { Box } from "../box";
 import { IconProps } from "../icon/types";
 import { Columns } from "../column";
-import { Body3, H5 } from "../typography";
+import { Body2 } from "../typography";
 import { ColorPalette } from "../../styles";
 import { Gutter } from "../gutter";
 import { useTheme } from "styled-components";
@@ -14,61 +14,76 @@ export const WarningBox: FunctionComponent<Omit<GuideBoxProps, "color">> = ({
 }) => {
   const theme = useTheme();
   return (
-    <Box padding="1.125rem">
-      <Columns sum={1} alignY="center" gutter="0.25rem">
+    <Box>
+      <Columns sum={1} alignY="top" gutter="0.5rem">
         <WarningIcon
-          width="1.25rem"
-          height="1.25rem"
+          width="0.875rem"
+          height="0.875rem"
           color={
             theme.mode === "light"
-              ? ColorPalette["orange-400"]
+              ? ColorPalette["orange-500"]
               : ColorPalette["yellow-400"]
           }
         />
-        <H5
+        <Body2
           color={
             theme.mode === "light"
-              ? ColorPalette["orange-400"]
+              ? ColorPalette["orange-500"]
               : ColorPalette["yellow-500"]
           }
         >
           {title}
-        </H5>
+        </Body2>
       </Columns>
 
       <Gutter size="0.375rem" />
 
-      <Body3
+      <Body2
         color={
           theme.mode === "light"
-            ? ColorPalette["gray-400"]
-            : ColorPalette["white"]
+            ? ColorPalette["gray-100"]
+            : ColorPalette["gray-100"]
         }
       >
         {paragraph}
-      </Body3>
+      </Body2>
     </Box>
   );
 };
 
 const WarningIcon: FunctionComponent<IconProps> = ({
-  width = "1.5rem",
-  height = "1.5rem",
+  width = "0.875rem",
+  height = "0.875rem",
   color,
 }) => {
   return (
     <svg
       width={width}
       height={height}
-      viewBox="0 0 24 24"
+      viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9.40123 3.0034C10.5557 1.00229 13.4439 1.00229 14.5983 3.0034L21.9527 15.7509C23.1065 17.7509 21.6631 20.2501 19.3541 20.2501H4.64546C2.33649 20.2501 0.893061 17.7509 2.04691 15.7509L9.40123 3.0034ZM12 8.25C12.4142 8.25 12.75 8.58579 12.75 9V12.75C12.75 13.1642 12.4142 13.5 12 13.5C11.5858 13.5 11.25 13.1642 11.25 12.75V9C11.25 8.58579 11.5858 8.25 12 8.25ZM12 16.5C12.4142 16.5 12.75 16.1642 12.75 15.75C12.75 15.3358 12.4142 15 12 15C11.5858 15 11.25 15.3358 11.25 15.75C11.25 16.1642 11.5858 16.5 12 16.5Z"
-        fill={color || "currentColor"}
+        d="M7 5.25V8.16667"
+        stroke={color || "currentColor"}
+        strokeWidth="0.875"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7 12.4892H3.465C1.44083 12.4892 0.595001 11.0425 1.575 9.27504L3.395 5.9967L5.11 2.9167C6.14834 1.0442 7.85167 1.0442 8.89 2.9167L10.605 6.00254L12.425 9.28087C13.405 11.0484 12.5533 12.495 10.535 12.495H7V12.4892Z"
+        stroke={color || "currentColor"}
+        strokeWidth="0.875"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.99707 9.91663H7.00231"
+        stroke={color || "currentColor"}
+        strokeWidth="1.16667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

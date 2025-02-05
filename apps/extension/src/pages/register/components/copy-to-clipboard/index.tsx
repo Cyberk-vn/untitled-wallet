@@ -1,5 +1,5 @@
 import { Columns } from "../../../../components/column";
-import { Button1 } from "../../../../components/typography";
+import { Subtitle3 } from "../../../../components/typography";
 import { ColorPalette } from "../../../../styles";
 import { TextButton } from "../../../../components/button-text";
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
@@ -54,9 +54,9 @@ export const CopyToClipboard: FunctionComponent<{ text: string }> = ({
       text={
         hasCopied ? (
           <Columns sum={1} gutter="0.25rem">
-            <Button1 color={ColorPalette["green-400"]}>
+            <Subtitle3 color={ColorPalette["green-400"]}>
               <FormattedMessage id="pages.register.components.copy-to-clipboard.button-after" />
-            </Button1>
+            </Subtitle3>
             <div
               style={{ width: "1.125rem", height: "1.125rem" }}
               ref={checkAnimDivRef}
@@ -66,7 +66,6 @@ export const CopyToClipboard: FunctionComponent<{ text: string }> = ({
           <FormattedMessage id="pages.register.components.copy-to-clipboard.button-before" />
         )
       }
-      size="large"
       onClick={async () => {
         await navigator.clipboard.writeText(text);
 
@@ -75,6 +74,9 @@ export const CopyToClipboard: FunctionComponent<{ text: string }> = ({
         setTimeout(() => {
           setHasCopied(false);
         }, 1000);
+      }}
+      style={{
+        fontSize: "0.875rem",
       }}
     />
   );

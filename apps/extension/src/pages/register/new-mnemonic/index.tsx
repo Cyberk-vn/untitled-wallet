@@ -20,13 +20,11 @@ import { Gutter } from "../../../components/gutter";
 import { Bleed } from "../../../components/bleed";
 import { Box } from "../../../components/box";
 import { Mnemonic } from "@titan-wallet/crypto";
-import { SetBip44PathCard, useBIP44PathState } from "../components/bip-44-path";
+import { useBIP44PathState } from "../components/bip-44-path";
 import { observer } from "mobx-react-lite";
 import lottie from "lottie-web";
 import AnimSeed from "../../../public/assets/lottie/register/seed.json";
 import { useRegisterHeader } from "../components/header";
-import { HorizontalRadioGroup } from "../../../components/radio-group";
-import { VerticalCollapseTransition } from "../../../components/transition/vertical-collapse";
 import { WarningBox } from "../../../components/warning-box";
 import { CopyToClipboard } from "../components/copy-to-clipboard";
 import { useIntl } from "react-intl";
@@ -82,13 +80,15 @@ export const NewMnemonicScene: FunctionComponent = observer(() => {
 
   const sceneTransition = useSceneTransition();
 
-  const [wordsType, setWordsType] = useState<WordsType>("12words");
+  // const [wordsType, setWordsType] = useState<WordsType>("12words");
+  const wordsType: WordsType = "12words";
 
   const fixedWidthScene = useFixedWidthScene();
   useEffect(() => {
-    if (wordsType === "24words") {
-      fixedWidthScene.setWidth("41.5rem");
-    } else {
+    // if (wordsType === "24words") {
+    //   fixedWidthScene.setWidth("41.5rem");
+    // } else
+    {
       fixedWidthScene.setWidth(undefined);
     }
   }, [fixedWidthScene, wordsType]);
@@ -110,7 +110,6 @@ export const NewMnemonicScene: FunctionComponent = observer(() => {
   }, [wordsType]);
 
   const bip44PathState = useBIP44PathState();
-  const [isBIP44CardOpen, setIsBIP44CardOpen] = useState(false);
 
   return (
     <RegisterSceneBox>
@@ -123,39 +122,19 @@ export const NewMnemonicScene: FunctionComponent = observer(() => {
             />
           </BlurBackdrop>
         ) : null}
-        <Box alignX="center">
-          <HorizontalRadioGroup
-            size="large"
-            selectedKey={wordsType}
-            onSelect={(key) => {
-              setWordsType(key as WordsType);
-            }}
-            items={[
-              {
-                key: "12words",
-                text: intl.formatMessage({
-                  id: "pages.register.new-mnemonic.12-words-tab",
-                }),
-              },
-              {
-                key: "24words",
-                text: intl.formatMessage({
-                  id: "pages.register.new-mnemonic.24-words-tab",
-                }),
-              },
-            ]}
-            itemMinWidth="6.25rem"
-          />
-        </Box>
         <Gutter size="1rem" />
         <Bleed left="1rem">
           <VerticalResizeTransition>
-            <Styles.WordsGridContainer columns={words.length > 12 ? 4 : 3}>
+            <Styles.WordsGridContainer columns={3}>
               {words.map((word, i) => {
                 return (
                   <XAxis key={i} alignY="center">
                     <Styles.IndexText>{i + 1}.</Styles.IndexText>
-                    <TextInput value={word} readOnly={true} />
+                    <TextInput
+                      value={word}
+                      readOnly={true}
+                      borderRadius="0.5rem"
+                    />
                   </XAxis>
                 );
               })}
@@ -165,9 +144,8 @@ export const NewMnemonicScene: FunctionComponent = observer(() => {
         </Bleed>
 
         <CopyToClipboard text={words.join(" ")} />
-
-        <Gutter size="1.625rem" />
       </Box>
+      <Gutter size="1.625rem" />
 
       <Box>
         <WarningBox
@@ -179,6 +157,8 @@ export const NewMnemonicScene: FunctionComponent = observer(() => {
           })}
         />
 
+        <Gutter size="0.875rem" />
+
         <WarningBox
           title={intl.formatMessage({
             id: "pages.register.new-mnemonic.back-up-warning-box-title",
@@ -189,41 +169,13 @@ export const NewMnemonicScene: FunctionComponent = observer(() => {
         />
       </Box>
 
-      <Gutter size="1.5rem" />
-
-      <Box width="27.25rem" marginX="auto">
-        <VerticalCollapseTransition width="100%" collapsed={isBIP44CardOpen}>
-          <Box alignX="center">
-            <Button
-              size="small"
-              color="secondary"
-              text={intl.formatMessage({
-                id: "button.advanced",
-              })}
-              disabled={!policyVerified}
-              onClick={() => {
-                setIsBIP44CardOpen(true);
-              }}
-            />
-          </Box>
-        </VerticalCollapseTransition>
-        <VerticalCollapseTransition collapsed={!isBIP44CardOpen}>
-          <SetBip44PathCard
-            state={bip44PathState}
-            onClose={() => {
-              setIsBIP44CardOpen(false);
-            }}
-          />
-        </VerticalCollapseTransition>
-      </Box>
-      <Gutter size="1.25rem" />
-      <Box width="22.5rem" marginX="auto">
+      <Gutter size="2rem" />
+      <Box width="100%" marginX="auto">
         {policyVerified ? (
           <Button
             text={intl.formatMessage({
               id: "button.next",
             })}
-            size="large"
             onClick={() => {
               if (words.join(" ").trim() !== "") {
                 sceneTransition.push("verify-mnemonic", {
@@ -244,7 +196,6 @@ export const NewMnemonicScene: FunctionComponent = observer(() => {
                 ? ` (${Math.ceil(policyDelayRemaining / 1000)})`
                 : ""
             }`}
-            size="large"
             disabled={policyDelayRemaining > 0}
             onClick={() => {
               setPolicyVerified(true);
@@ -263,7 +214,7 @@ const BlurBackdrop: FunctionComponent<PropsWithChildren> = ({ children }) => {
     <div
       style={{
         position: "absolute",
-        top: "-1.625rem",
+        top: "-1.5rem",
         bottom: 0,
         left: "-1rem",
         right: "-1rem",

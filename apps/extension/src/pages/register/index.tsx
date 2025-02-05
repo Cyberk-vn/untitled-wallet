@@ -7,7 +7,6 @@ import React, {
   useState,
 } from "react";
 import styled, { useTheme } from "styled-components";
-import { ColorPalette } from "../../styles";
 import {
   FixedWidthSceneTransition,
   SceneTransitionRef,
@@ -28,8 +27,6 @@ import { RegisterNamePasswordScene } from "./name-password";
 import { ConnectHardwareWalletScene } from "./connect-hardware";
 import { ConnectLedgerScene } from "./connect-ledger";
 import { RegisterNamePasswordHardwareScene } from "./name-password-hardware";
-import { FinalizeKeyScene } from "./finalize-key";
-import { EnableChainsScene } from "./enable-chains";
 import { SelectDerivationPathScene } from "./select-derivation-path";
 import { useStore } from "../../stores";
 import { useSearchParams } from "react-router-dom";
@@ -45,6 +42,8 @@ import {
   RegisterImportPassphraseScene,
   RegisterImportPrivateKeyScene,
 } from "./import-wallet";
+import { FinalizeKeyAndChainScene } from "./finalize-key-and-chain";
+import { RegisterWelcomeScene } from "./welcome";
 
 const Container = styled.div`
   min-width: 100vw;
@@ -219,15 +218,16 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
       <Box
         position="relative"
         marginX="auto"
-        backgroundColor={
-          theme.mode === "light" ? ColorPalette.white : ColorPalette["gray-600"]
-        }
         borderRadius="1.5rem"
         style={{
           boxShadow:
             theme.mode === "light"
               ? "0px 1px 4px 0px rgba(43, 39, 55, 0.10)"
               : "none",
+          backgroundImage: `url(${require("../../public/assets/img/register/register-common-bg.png")})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          overflow: "hidden",
         }}
       >
         <FixedWidthSceneTransition
@@ -236,22 +236,27 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             {
               name: "intro",
               element: RegisterIntroScene,
-              width: "21.875rem",
+              width: "22.5rem",
+            },
+            {
+              name: "welcome",
+              element: RegisterWelcomeScene,
+              width: "22.5rem",
             },
             {
               name: "more-options",
               element: RegisterMoreOptionsScene,
-              width: "21.875rem",
+              width: "22.5rem",
             },
             {
               name: "import-private-key",
               element: RegisterImportPrivateKeyScene,
-              width: "21.875rem",
+              width: "22.5rem",
             },
             {
               name: "import-passphrase",
               element: RegisterImportPassphraseScene,
-              width: "21.875rem",
+              width: "22.5rem",
             },
             {
               name: "new-user",
@@ -266,7 +271,7 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             {
               name: "new-mnemonic",
               element: NewMnemonicScene,
-              width: "33.75rem",
+              width: "25rem",
             },
             {
               name: "verify-mnemonic",
@@ -320,13 +325,8 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             },
             {
               name: "finalize-key",
-              element: FinalizeKeyScene,
+              element: FinalizeKeyAndChainScene,
               width: "17.5rem",
-            },
-            {
-              name: "enable-chains",
-              element: EnableChainsScene,
-              width: "34.5rem",
             },
             {
               name: "select-derivation-path",
