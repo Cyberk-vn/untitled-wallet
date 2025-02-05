@@ -402,20 +402,13 @@ export const FinalizeKeyAndChainScene: FunctionComponent<{
       ) {
         onceRef.current = true;
 
-        // sceneTransition.replace("enable-chains", {
-        //   vaultId,
-        //   candidateAddresses,
-        //   isFresh: mnemonic?.isFresh ?? false,
-        //   stepPrevious: stepPrevious,
-        //   stepTotal: stepTotal,
-        // });
         replaceToWelcomePage();
       }
     }, [
       candidateAddresses,
       isAnimEnded,
       mnemonic?.isFresh,
-      sceneTransition,
+      replaceToWelcomePage,
       stepPrevious,
       stepTotal,
       vaultId,
