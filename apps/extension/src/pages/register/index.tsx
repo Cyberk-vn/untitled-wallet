@@ -7,7 +7,6 @@ import React, {
   useState,
 } from "react";
 import styled, { useTheme } from "styled-components";
-import { ColorPalette } from "../../styles";
 import {
   FixedWidthSceneTransition,
   SceneTransitionRef,
@@ -44,6 +43,7 @@ import {
   RegisterImportPrivateKeyScene,
 } from "./import-wallet";
 import { FinalizeKeyAndChainScene } from "./finalize-key-and-chain";
+import { RegisterWelcomeScene } from "./welcome";
 
 const Container = styled.div`
   min-width: 100vw;
@@ -218,15 +218,16 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
       <Box
         position="relative"
         marginX="auto"
-        backgroundColor={
-          theme.mode === "light" ? ColorPalette.white : ColorPalette["gray-600"]
-        }
         borderRadius="1.5rem"
         style={{
           boxShadow:
             theme.mode === "light"
               ? "0px 1px 4px 0px rgba(43, 39, 55, 0.10)"
               : "none",
+          backgroundImage: `url(${require("../../public/assets/img/register/register-common-bg.png")})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          overflow: "hidden",
         }}
       >
         <FixedWidthSceneTransition
@@ -235,6 +236,11 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             {
               name: "intro",
               element: RegisterIntroScene,
+              width: "22.5rem",
+            },
+            {
+              name: "welcome",
+              element: RegisterWelcomeScene,
               width: "22.5rem",
             },
             {

@@ -22,7 +22,6 @@ import { MultiAccounts } from "@keystonehq/keystone-sdk";
 import { useTheme } from "styled-components";
 import { dispatchGlobalEventExceptSelf } from "../../../utils/global-events";
 import { TITAN_CHAIN_ID } from "../../../config";
-import { useNavigate } from "react-router";
 
 /**
  * FinalizeKeyScene is used to create the key (account).
@@ -113,11 +112,8 @@ export const FinalizeKeyAndChainScene: FunctionComponent<{
     const [vaultId, setVaultId] = useState("");
     const [isAnimEnded, setIsAnimEnded] = useState(false);
 
-    const navigate = useNavigate();
     const replaceToWelcomePage = () => {
-      navigate("/welcome", {
-        replace: true,
-      });
+      sceneTransition.replace("welcome");
     };
 
     useEffectOnce(() => {
