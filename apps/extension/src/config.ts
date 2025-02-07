@@ -3,7 +3,7 @@ import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 
 export const TITAN_CHAIN_ID = "titan_18888-1";
 
-const UranusSupportedEmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
+const UntitledSupportedEmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
   {
     rpc: "https://titan-rpc.titanlab.io",
     rest: "https://titan-lcd.titanlab.io",
@@ -3088,4 +3088,4 @@ export const CommunityChainInfoRepo = {
     : undefined,
 };
 
-export const EmbedChainInfos = UranusSupportedEmbedChainInfos;
+export const EmbedChainInfos = UntitledSupportedEmbedChainInfos;
