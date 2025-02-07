@@ -5,7 +5,7 @@ import { RegisterSceneBox } from "../components/register-scene-box";
 import { Box } from "../../../components/box";
 import { H1 } from "../../../components/typography";
 import { Button } from "../../../components/button";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export const RegisterWelcomeScene: FunctionComponent = () => {
   const intl = useIntl();
@@ -60,9 +60,12 @@ export const RegisterWelcomeScene: FunctionComponent = () => {
                 position="absolute"
                 style={{
                   top: "12rem",
+                  color: "#fff",
                 }}
               >
-                <H1 style={{}}>Wallet Created Successfully!</H1>
+                <H1>
+                  <FormattedMessage id="pages.register.welcome.message" />
+                </H1>
               </Box>
             </Box>
           </Box>
