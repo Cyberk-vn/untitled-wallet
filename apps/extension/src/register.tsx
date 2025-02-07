@@ -43,13 +43,23 @@ const AppRouter: FunctionComponent = () => {
   useLoadFonts();
 
   return (
-    <HashRouter>
-      <RoutePageAnalytics prefix="/register" />
-      <Routes>
-        <Route path="/" element={<RegisterPage />} />
-        <Route path="/welcome" element={<WelcomePage />} />
-      </Routes>
-    </HashRouter>
+    <div
+      style={{
+        backgroundImage: `url(${require("./public/assets/img/register/register-main-bg.png")})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        overflow: "hidden",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <HashRouter>
+        <RoutePageAnalytics prefix="/register" />
+        <Routes>
+          <Route path="/" element={<RegisterPage />} />
+          <Route path="/welcome" element={<WelcomePage />} />
+        </Routes>
+      </HashRouter>
+    </div>
   );
 };
 
