@@ -31,7 +31,10 @@ export class ExtensionKVStore extends BaseKVStore implements MultiGet {
       throw new Error("Can't initialize kv store for browser extension");
     }
 
-    super(ExtensionKVStore.KVStoreProvider, prefix);
+    // super(ExtensionKVStore.KVStoreProvider, prefix);
+    const extensionId = browser.runtime.id;
+
+    super(ExtensionKVStore.KVStoreProvider, `${prefix}/${extensionId}`);
   }
 
   async multiGet(keys: string[]): Promise<{ [key: string]: any }> {

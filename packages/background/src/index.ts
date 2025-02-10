@@ -58,6 +58,7 @@ import { KVStore } from "@titan-wallet/common";
 import { ChainInfo, ModularChainInfo } from "@titan-wallet/types";
 import { Notification } from "./tx";
 import { ChainInfoWithCoreTypes } from "./chains";
+import { ROUTE } from "./keyring/constants";
 
 export function init(
   router: Router,
@@ -182,7 +183,7 @@ export function init(
   );
 
   const keyRingV2Service = new KeyRingV2.KeyRingService(
-    storeCreator("keyring-v2"),
+    storeCreator(ROUTE),
     {
       kvStore: storeCreator("keyring"),
       commonCrypto: keyRingMigrations.commonCrypto,
